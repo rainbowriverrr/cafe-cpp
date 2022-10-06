@@ -17,7 +17,7 @@
 #include <typeinfo>
 #include <iostream>
 
-#include <sqlite3.h>
+#include "sqlite3.h"
 
 #include "Model.hpp"
 #include "SqlCondition.hpp"

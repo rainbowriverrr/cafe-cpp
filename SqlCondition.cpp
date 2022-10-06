@@ -5,6 +5,7 @@
 //  Created by Julian Koksal on 2022-10-02.
 //
 
+#include <stdexcept>
 #include "SqlCondition.hpp"
 
 SqlCondition::SqlCondition(std::string field, std::string op, bool value)

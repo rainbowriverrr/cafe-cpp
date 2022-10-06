@@ -33,8 +33,8 @@ std::map<std::string, std::any> MenuItem::toMap()
 
 Model * MenuItem::fromMap(std::map<std::string, std::any> mMap)
 {
-    std::string mName = any_cast<std::string>(mMap["name"]);
-    double mPrice = any_cast<double>(mMap["price"]);
+    std::string mName = std::any_cast<std::string>(mMap["name"]);
+    double mPrice = std::any_cast<double>(mMap["price"]);
     MenuItem *model = new MenuItem(mName, mPrice);
     return model;
 }

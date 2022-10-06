@@ -1,7 +1,7 @@
 std = -std=c++20
 
 test: main.o DBHelper.o SqlCondition.o MenuItem.o
-	g++ -o test -lsqlite3 main.o DBHelper.o SqlCondition.o MenuItem.o
+	g++ -o test main.o DBHelper.o SqlCondition.o MenuItem.o -lsqlite3
 
 main.o: main.cpp
 	g++ -c $(std) main.cpp

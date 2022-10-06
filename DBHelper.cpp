@@ -5,6 +5,7 @@
 //  Created by Julian Koksal on 2022-09-25.
 //
 
+#include "sqlite3.h"
 #include "DBHelper.hpp"
 
 DBHelper::DBHelper()
@@ -71,19 +72,19 @@ void DBHelper::insert(Model *model)
             const std::type_info *attrType = &it->second.type();
             if (*attrType == typeid(bool))
             {
-                bindResult = sqlite3_bind_int(statement, index, any_cast<bool>(it->second));
+                bindResult = sqlite3_bind_int(statement, index, std::any_cast<bool>(it->second));
             }
             if (*attrType == typeid(int))
             {
-                bindResult = sqlite3_bind_int(statement, index, any_cast<int>(it->second));
+                bindResult = sqlite3_bind_int(statement, index, std::any_cast<int>(it->second));
             }
             if (*attrType == typeid(double))
             {
-                bindResult = sqlite3_bind_double(statement, index, any_cast<double>(it->second));
+                bindResult = sqlite3_bind_double(statement, index, std::any_cast<double>(it->second));
             }
             if (*attrType == typeid(std::string))
             {
-                bindResult = sqlite3_bind_text(statement, index, any_cast<std::string>(it->second).c_str(), -1, NULL);
+                bindResult = sqlite3_bind_text(statement, index, std::any_cast<std::string>(it->second).c_str(), -1, NULL);
             }
         }
         
@@ -160,19 +161,19 @@ void DBHelper::update(Model *model)
             const std::type_info *attrType = &it->second.type();
             if (*attrType == typeid(bool))
             {
-                bindResult = sqlite3_bind_int(statement, index, any_cast<bool>(it->second));
+                bindResult = sqlite3_bind_int(statement, index, std::any_cast<bool>(it->second));
             }
             if (*attrType == typeid(int))
             {
-                bindResult = sqlite3_bind_int(statement, index, any_cast<int>(it->second));
+                bindResult = sqlite3_bind_int(statement, index, std::any_cast<int>(it->second));
             }
             if (*attrType == typeid(double))
             {
-                bindResult = sqlite3_bind_double(statement, index, any_cast<double>(it->second));
+                bindResult = sqlite3_bind_double(statement, index, std::any_cast<double>(it->second));
             }
             if (*attrType == typeid(std::string))
             {
-                bindResult = sqlite3_bind_text(statement, index, any_cast<std::string>(it->second).c_str(), -1, NULL);
+                bindResult = sqlite3_bind_text(statement, index, std::any_cast<std::string>(it->second).c_str(), -1, NULL);
             }
             
             if (bindResult != SQLITE_OK)
@@ -198,11 +199,11 @@ void DBHelper::update(Model *model)
         const std::type_info *attrType = &mMap[*it].type();
         if (*attrType == typeid(int))
         {
-            bindResult = sqlite3_bind_int(statement, index, any_cast<int>(mMap[*it]));
+            bindResult = sqlite3_bind_int(statement, index, std::any_cast<int>(mMap[*it]));
         }
         if (*attrType == typeid(std::string))
         {
-            bindResult = sqlite3_bind_text(statement, index, any_cast<std::string>(mMap[*it]).c_str(), -1, NULL);
+            bindResult = sqlite3_bind_text(statement, index, std::any_cast<std::string>(mMap[*it]).c_str(), -1, NULL);
         }
         
         if (bindResult != SQLITE_OK)
@@ -272,19 +273,19 @@ void DBHelper::updateWhere(Model *model, std::vector<SqlCondition> conditions)
             const std::type_info *attrType = &it->second.type();
             if (*attrType == typeid(bool))
             {
-                bindResult = sqlite3_bind_int(statement, index, any_cast<bool>(it->second));
+                bindResult = sqlite3_bind_int(statement, index, std::any_cast<bool>(it->second));
             }
             if (*attrType == typeid(int))
             {
-                bindResult = sqlite3_bind_int(statement, index, any_cast<int>(it->second));
+                bindResult = sqlite3_bind_int(statement, index, std::any_cast<int>(it->second));
             }
             if (*attrType == typeid(double))
             {
-                bindResult = sqlite3_bind_double(statement, index, any_cast<double>(it->second));
+                bindResult = sqlite3_bind_double(statement, index, std::any_cast<double>(it->second));
             }
             if (*attrType == typeid(std::string))
             {
-                bindResult = sqlite3_bind_text(statement, index, any_cast<std::string>(it->second).c_str(), -1, NULL);
+                bindResult = sqlite3_bind_text(statement, index, std::any_cast<std::string>(it->second).c_str(), -1, NULL);
             }
             
             if (bindResult != SQLITE_OK)
@@ -310,19 +311,19 @@ void DBHelper::updateWhere(Model *model, std::vector<SqlCondition> conditions)
         const std::type_info *attrType = &conditions[i].value.type();
         if (*attrType == typeid(bool))
         {
-            bindResult = sqlite3_bind_int(statement, index, any_cast<bool>(conditions[i].value));
+            bindResult = sqlite3_bind_int(statement, index, std::any_cast<bool>(conditions[i].value));
         }
         if (*attrType == typeid(int))
         {
-            bindResult = sqlite3_bind_int(statement, index, any_cast<int>(conditions[i].value));
+            bindResult = sqlite3_bind_int(statement, index, std::any_cast<int>(conditions[i].value));
         }
         if (*attrType == typeid(double))
         {
-            bindResult = sqlite3_bind_double(statement, index, any_cast<double>(conditions[i].value));
+            bindResult = sqlite3_bind_double(statement, index, std::any_cast<double>(conditions[i].value));
         }
         if (*attrType == typeid(std::string))
         {
-            bindResult = sqlite3_bind_text(statement, index, any_cast<std::string>(conditions[i].value).c_str(), -1, NULL);
+            bindResult = sqlite3_bind_text(statement, index, std::any_cast<std::string>(conditions[i].value).c_str(), -1, NULL);
         }
         
         if (bindResult != SQLITE_OK)
@@ -385,11 +386,11 @@ void DBHelper::destroy(Model *model)
         const std::type_info *attrType = &mMap[*it].type();
         if (*attrType == typeid(int))
         {
-            bindResult = sqlite3_bind_int(statement, index, any_cast<int>(mMap[*it]));
+            bindResult = sqlite3_bind_int(statement, index, std::any_cast<int>(mMap[*it]));
         }
         if (*attrType == typeid(std::string))
         {
-            bindResult = sqlite3_bind_text(statement, index, any_cast<std::string>(mMap[*it]).c_str(), -1, NULL);
+            bindResult = sqlite3_bind_text(statement, index, std::any_cast<std::string>(mMap[*it]).c_str(), -1, NULL);
         }
         
         if (bindResult != SQLITE_OK)
@@ -442,19 +443,19 @@ void DBHelper::destroyWhere(Model *model, std::vector<SqlCondition> conditions)
         const std::type_info *attrType = &conditions[i].value.type();
         if (*attrType == typeid(bool))
         {
-            bindResult = sqlite3_bind_int(statement, i + 1, any_cast<bool>(conditions[i].value));
+            bindResult = sqlite3_bind_int(statement, i + 1, std::any_cast<bool>(conditions[i].value));
         }
         if (*attrType == typeid(int))
         {
-            bindResult = sqlite3_bind_int(statement, i + 1, any_cast<int>(conditions[i].value));
+            bindResult = sqlite3_bind_int(statement, i + 1, std::any_cast<int>(conditions[i].value));
         }
         if (*attrType == typeid(double))
         {
-            bindResult = sqlite3_bind_double(statement, i + 1, any_cast<double>(conditions[i].value));
+            bindResult = sqlite3_bind_double(statement, i + 1, std::any_cast<double>(conditions[i].value));
         }
         if (*attrType == typeid(std::string))
         {
-            bindResult = sqlite3_bind_text(statement, i + 1, any_cast<std::string>(conditions[i].value).c_str(), -1, NULL);
+            bindResult = sqlite3_bind_text(statement, i + 1, std::any_cast<std::string>(conditions[i].value).c_str(), -1, NULL);
         }
         
         if (bindResult != SQLITE_OK)
@@ -522,19 +523,19 @@ std::vector<Model *> DBHelper::selectWhereHelper(Model *model, std::vector<SqlCo
         const std::type_info *attrType = &conditions[i].value.type();
         if (*attrType == typeid(bool))
         {
-            bindResult = sqlite3_bind_int(statement, i + 1, any_cast<bool>(conditions[i].value));
+            bindResult = sqlite3_bind_int(statement, i + 1, std::any_cast<bool>(conditions[i].value));
         }
         if (*attrType == typeid(int))
         {
-            bindResult = sqlite3_bind_int(statement, i + 1, any_cast<int>(conditions[i].value));
+            bindResult = sqlite3_bind_int(statement, i + 1, std::any_cast<int>(conditions[i].value));
         }
         if (*attrType == typeid(double))
         {
-            bindResult = sqlite3_bind_double(statement, i + 1, any_cast<double>(conditions[i].value));
+            bindResult = sqlite3_bind_double(statement, i + 1, std::any_cast<double>(conditions[i].value));
         }
         if (*attrType == typeid(std::string))
         {
-            bindResult = sqlite3_bind_text(statement, i + 1, any_cast<std::string>(conditions[i].value).c_str(), -1, nullptr);
+            bindResult = sqlite3_bind_text(statement, i + 1, std::any_cast<std::string>(conditions[i].value).c_str(), -1, nullptr);
         }
         
         if (bindResult != SQLITE_OK)
