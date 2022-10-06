@@ -16,6 +16,7 @@
 
 #include <string>
 #include <any>
+#include <stdexcept>
 
 class SqlCondition
 {

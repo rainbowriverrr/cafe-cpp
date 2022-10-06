@@ -5,7 +5,6 @@
 //  Created by Julian Koksal on 2022-09-25.
 //
 
-#include "sqlite3.h"
 #include "DBHelper.hpp"
 
 DBHelper::DBHelper()

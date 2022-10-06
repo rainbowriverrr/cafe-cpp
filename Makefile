@@ -1,9 +1,6 @@
 STD = -std=c++17
 OBJ = main.o DBHelper.o SqlCondition.o MenuItem.o
 
-test: main.o DBHelper.o SqlCondition.o MenuItem.o
-	g++ -o test main.o DBHelper.o SqlCondition.o MenuItem.o -lsqlite3
-##
 test: $(OBJ)
 	g++ -o test $(OBJ) -lsqlite3
 
