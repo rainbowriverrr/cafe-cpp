@@ -228,10 +228,24 @@ void DBHelper::update(Model *model)
     }
 }
 
-void DBHelper::updateWhere(Model *model, std::vector<SqlCondition> conditions)
+void DBHelper::updateWhere(Model *model, std::vector<SqlCondition> conditions, std::set<std::string> columns)
 {
     std::map<std::string, std::any> mMap = model->toMap();
     std::set<std::string> keys = model->keys;
+    
+    for (std::set<std::string>::iterator it = columns.begin(); it != columns.end(); it++)
+    {
+        if (!mMap.count(*it))
+        {
+            throw std::runtime_error("Error in call to DBHelper::updateWhere(). '" + *it + "' is not a column of '"
+                                     + model->tableName + "'.");
+        }
+        if (keys.count(*it))
+        {
+            throw std::runtime_error("Error in call to DBHelper::updateWhere(). '" + *it + "' is a primary key of '"
+                                     + model->tableName + "'. Primary keys cannot be updated.");
+        }
+    }
     
     std::string query;
     query  = "UPDATE " + model->tableName + " SET ";
@@ -239,10 +253,12 @@ void DBHelper::updateWhere(Model *model, std::vector<SqlCondition> conditions)
     for (std::map<std::string, std::any>::iterator it = mMap.begin(); it != mMap.end(); it++)
     {
         // Primary keys should not be updated.
-        if (!keys.count(it->first))
-        {
-            query += it->first + " = ?,";
-        }
+        if (keys.count(it->first))
+            continue;
+        if (!columns.empty() && !columns.count(it->first))
+            continue;
+        
+        query += it->first + " = ?,";
     }
     query  = query.substr(0, query.size() - 1);
     query += " WHERE 1=1";
@@ -265,41 +281,43 @@ void DBHelper::updateWhere(Model *model, std::vector<SqlCondition> conditions)
     int index = 1; // SQL statement parameter index.
     for (std::map<std::string, std::any>::iterator it = mMap.begin(); it != mMap.end(); it++)
     {
-        if (!keys.count(it->first))
+        if (keys.count(it->first))
+            continue;
+        if (!columns.empty() && !columns.count(it->first))
+            continue;
+        
+        int bindResult = -1;
+        
+        const std::type_info *attrType = &it->second.type();
+        if (*attrType == typeid(bool))
         {
-            int bindResult = -1;
-            
-            const std::type_info *attrType = &it->second.type();
-            if (*attrType == typeid(bool))
-            {
-                bindResult = sqlite3_bind_int(statement, index, std::any_cast<bool>(it->second));
-            }
-            if (*attrType == typeid(int))
-            {
-                bindResult = sqlite3_bind_int(statement, index, std::any_cast<int>(it->second));
-            }
-            if (*attrType == typeid(double))
-            {
-                bindResult = sqlite3_bind_double(statement, index, std::any_cast<double>(it->second));
-            }
-            if (*attrType == typeid(std::string))
-            {
-                bindResult = sqlite3_bind_text(statement, index, std::any_cast<std::string>(it->second).c_str(), -1, NULL);
-            }
-            
-            if (bindResult != SQLITE_OK)
-            {
-                sqlite3_finalize(statement);
-                if (bindResult == -1)
-                {
-                    throw std::runtime_error("Error in call to DBHelper::updateWhere(). The value of '"
-                                             + it->first + "' is not a supported data type.");
-                }
-                throw std::runtime_error("Error binding update statement. SQLite3 error code: " + std::to_string(bindResult));
-            }
-            
-            index++;
+            bindResult = sqlite3_bind_int(statement, index, std::any_cast<bool>(it->second));
         }
+        if (*attrType == typeid(int))
+        {
+            bindResult = sqlite3_bind_int(statement, index, std::any_cast<int>(it->second));
+        }
+        if (*attrType == typeid(double))
+        {
+            bindResult = sqlite3_bind_double(statement, index, std::any_cast<double>(it->second));
+        }
+        if (*attrType == typeid(std::string))
+        {
+            bindResult = sqlite3_bind_text(statement, index, std::any_cast<std::string>(it->second).c_str(), -1, NULL);
+        }
+        
+        if (bindResult != SQLITE_OK)
+        {
+            sqlite3_finalize(statement);
+            if (bindResult == -1)
+            {
+                throw std::runtime_error("Error in call to DBHelper::updateWhere(). The value of '"
+                                         + it->first + "' is not a supported data type.");
+            }
+            throw std::runtime_error("Error binding update statement. SQLite3 error code: " + std::to_string(bindResult));
+        }
+        
+        index++;
     }
     
     // Iterates the conditions parameter and binds their values to the WHERE clause of the SQL statement.
@@ -488,10 +506,10 @@ std::vector<Model *> DBHelper::selectWhereHelper(Model *model, std::vector<SqlCo
     // If a non-empty columns parameter is given then only the field names that are also in columns will be included.
     for (std::map<std::string, std::any>::iterator it = mMap.begin(); it != mMap.end(); it++)
     {
-        if (columns.empty() || columns.count(it->first))
-        {
-            query += it->first + ",";
-        }
+        if (!columns.empty() && !columns.count(it->first))
+            continue;
+        
+        query += it->first + ",";
     }
     query = query.substr(0, query.size() - 1);
     query += " FROM " + model->tableName;

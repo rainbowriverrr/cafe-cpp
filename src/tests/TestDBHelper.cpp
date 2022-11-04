@@ -110,7 +110,7 @@ int main(int argc, const char * argv[]) {
     
     
     MenuItem updatedModel = MenuItem("", 29.99);
-    db.updateWhere(&updatedModel, { SqlCondition("price", ">", 9.99) });
+    db.updateWhere(&updatedModel, { SqlCondition("price", ">", 9.99) }, { "price" });
     menu = db.selectWhere(&menuItemModel);
 
     printMenu(menu, "Full menu after price was updated to 29.99 where price > 9.99, unsorted:");

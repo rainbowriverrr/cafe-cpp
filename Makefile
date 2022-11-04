@@ -40,3 +40,5 @@ clean:
 	rm -f *.out
 	rm -rf target
 
+cleandb:
+	rm -i resources/data.db

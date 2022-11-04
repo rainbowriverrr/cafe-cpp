@@ -35,7 +35,7 @@ public:
     // Reads all rows from the table represented by model, and returns the result as a vector<T>.
     // model must inherit from Model.
     // The values of model do not matter, it is used only to determine the table name, columns, and column types, and to cast the results.
-    // conditions is a vector of SqlCondition objects used to generate the WHERE clause of the select statement.
+    // conditions is used to generate the WHERE clause of the select statement.
     // orderBy is the field and direction used to generate the ORDER BY clause of the select statement. e.g. "price DESC"
     // columns is the set of column names to select. If it is empty, all columns will be selected.
     template<class T, class = std::enable_if_t<std::is_base_of<Model, T>::value>>
@@ -61,7 +61,9 @@ public:
     void update(Model *model);
     
     // Conditionally updates the table that model represents with the values of model.
-    void updateWhere(Model *model, std::vector<SqlCondition> conditions);
+    // conditions is used to generate the WHERE clause of the update statement.
+    // columns is the set of column names to update. If it empty, all columns will be updated.
+    void updateWhere(Model *model, std::vector<SqlCondition> conditions, std::set<std::string> columns);
     
     // Deletes the given model from the database by its primary key(s).
     void destroy(Model *model);
