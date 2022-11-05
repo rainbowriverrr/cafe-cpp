@@ -9,25 +9,15 @@ MKDIR_P = @ mkdir -p $(@D)
 # EXECUTABLES
 
 TestDBHelper.out: $(OBJ) target/tests/TestDBHelper.o
-	$(CXX) $(CXXFLAGS) $(LDLIBS) $(OBJ) target/tests/TestDBHelper.o -o $@
+	$(CXX) $(CXXFLAGS) $(LDLIBS) $^ -o $@
 
 # OBJECTS
 
-# tests
-target/tests/TestDBHelper.o: src/tests/TestDBHelper.cpp
+target/%.o: src/%.cpp
 	$(MKDIR_P)
-	$(CXX) $(CXXFLAGS) -c src/tests/TestDBHelper.cpp -o $@
+	$(CXX) $(CXXFLAGS) -MMD -MP -c $< -o $@
 
-# data
-target/data/DBHelper.o: src/data/DBHelper.cpp src/data/DBHelper.hpp
-	$(MKDIR_P)
-	$(CXX) $(CXXFLAGS) -c src/data/DBHelper.cpp -o $@
-target/data/SqlCondition.o: src/data/SqlCondition.cpp src/data/SqlCondition.hpp
-	$(MKDIR_P)
-	$(CXX) $(CXXFLAGS) -c src/data/SqlCondition.cpp -o $@
-target/data/MenuItem.o: src/data/MenuItem.cpp src/data/MenuItem.hpp src/data/Model.hpp
-	$(MKDIR_P)
-	$(CXX) $(CXXFLAGS) -c src/data/MenuItem.cpp -o $@
+-include $(wildcard target/**/*.d)
 
 # PHONY
 
