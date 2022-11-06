@@ -24,8 +24,8 @@ void printMenu(std::vector<MenuItem> &menu, std::string header)
     std::cout << std::endl;
 }
 
-int main(int argc, const char * argv[]) {
-    
+int main(int argc, const char * argv[])
+{
     DBHelper db = DBHelper();
     db.createTableMenuItem();
     

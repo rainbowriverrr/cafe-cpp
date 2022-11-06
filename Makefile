@@ -3,12 +3,28 @@
 CXX = g++
 CXXFLAGS = -std=c++17 -I src/data
 LDLIBS = -lsqlite3 -lwt -lwthttp
-OBJ = target/data/DBHelper.o target/data/SqlCondition.o target/data/MenuItem.o
+
+_MAIN = Application.cpp
+MAIN = $(subst src/,target/,$(subst .cpp,.o,$(wildcard src/*/$(_MAIN))))
+TESTS = $(subst src/,target/,$(subst .cpp,.o,$(wildcard src/tests/*.cpp)))
+OBJ = $(subst src/,target/,$(subst .cpp,.o,$(wildcard src/*/*.cpp)))
+
 MKDIR_P = @ mkdir -p $(@D)
+
+.SECONDARY: $(OBJ)
 
 # EXECUTABLES
 
-TestDBHelper.out: $(OBJ) target/tests/TestDBHelper.o
+all: main tests
+
+main: $(basename $(notdir $(MAIN)))
+
+$(basename $(notdir $(MAIN))): $(filter-out $(TESTS),$(OBJ))
+	$(CXX) $(CXXFLAGS) $(LDLIBS) $^ -o $@
+
+tests: $(basename $(notdir $(TESTS)))
+
+%: $(filter-out $(MAIN) $(TESTS),$(OBJ)) target/tests/%.o
 	$(CXX) $(CXXFLAGS) $(LDLIBS) $^ -o $@
 
 # OBJECTS
@@ -17,7 +33,7 @@ target/%.o: src/%.cpp
 	$(MKDIR_P)
 	$(CXX) $(CXXFLAGS) -MMD -MP -c $< -o $@
 
--include $(wildcard target/**/*.d)
+-include $(wildcard target/*/*.d)
 
 # PHONY
 
@@ -26,10 +42,11 @@ target/%.o: src/%.cpp
 clean: cleanout cleanobj
 
 cleanout:
-	rm -rf *.out
+	rm -f $(basename $(notdir $(MAIN) $(TESTS)))
 
 cleanobj:
 	rm -rf target
 
 cleandb:
 	rm -i resources/data.db
+
