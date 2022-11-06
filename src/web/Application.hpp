@@ -15,11 +15,14 @@
 #include <Wt/WPushButton.h>
 #include <Wt/WText.h>
 
+#include "MenuWidgets.hpp"
+
 class Application : public Wt::WApplication {
    public:
     Application(const Wt::WEnvironment &env);
 
    private:
+    Wt::WContainerWidget *menuPage_;
     Wt::WLineEdit *nameEdit_;
     Wt::WText *greeting_;
 };
