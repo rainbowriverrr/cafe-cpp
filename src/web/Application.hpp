@@ -15,7 +15,7 @@
 #include <Wt/WPushButton.h>
 #include <Wt/WText.h>
 
-#include "web/MenuWidgets.hpp"
+#include "MenuWidgets.hpp"
 
 class Application : public Wt::WApplication {
    public:

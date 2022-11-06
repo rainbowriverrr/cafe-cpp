@@ -15,7 +15,7 @@
 
 #include <string>
 
-class MenuItem : public Wt::WContainerWidget {
+class MenuItem : public Wt::WTemplate {
    public:
     MenuItem(const std::string &name, const std::string &price, const std::string &description, const Wt::WPushButton *cartButton);
     Wt::WPushButton *getCartPtr();
