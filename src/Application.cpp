@@ -5,6 +5,9 @@
 
 #include "Application.hpp"
 
+#include "data/DBHelper.hpp"
+#include "data/MenuItem.hpp"
+
 Application::Application(const Wt::WEnvironment &env)
     : Wt::WApplication(env) {
     setTitle("Hello world");
