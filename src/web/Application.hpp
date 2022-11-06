@@ -8,20 +8,35 @@
 #ifndef _APPLICATION_HPP_
 #define _APPLICATION_HPP_
 
+#include <iostream>
+#include <fstream>
+
+#include <Wt/WString.h>
 #include <Wt/WApplication.h>
-#include <Wt/WBreak.h>
 #include <Wt/WContainerWidget.h>
-#include <Wt/WLineEdit.h>
-#include <Wt/WPushButton.h>
+#include <Wt/WStackedWidget.h>
+#include <Wt/WTemplate.h>
 #include <Wt/WText.h>
+#include <Wt/WAnchor.h>
+#include <Wt/WLink.h>
+#include <Wt/WImage.h>
 
-class Application : public Wt::WApplication {
-   public:
+class Application : public Wt::WApplication
+{
+public:
     Application(const Wt::WEnvironment &env);
-
-   private:
-    Wt::WLineEdit *nameEdit_;
-    Wt::WText *greeting_;
+    void handleInternalPath(const std::string &internalPath);
+private:
+    Wt::WContainerWidget *page;
+    
+    Wt::WTemplate *navbar;
+    Wt::WStackedWidget *stack;
+    
+    Wt::WText *pageHome;
+    Wt::WText *pageMenu;
+    Wt::WText *pageOrders;
+    
+    const Wt::WString readHtml(std::string fileName);
 };
 
 #endif

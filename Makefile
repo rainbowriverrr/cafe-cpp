@@ -1,10 +1,10 @@
 # VARIABLES
 
 CXX = g++
-CXXFLAGS = -std=c++17 -I src/data
+CXXFLAGS = -std=c++17 -I src/data -I src/web
 LDLIBS = -lsqlite3 -lwt -lwthttp
 
-_MAIN = Application.cpp
+_MAIN = Main.cpp
 MAIN = $(subst src/,target/,$(subst .cpp,.o,$(wildcard src/*/$(_MAIN))))
 TESTS = $(subst src/,target/,$(subst .cpp,.o,$(wildcard src/tests/*.cpp)))
 OBJ = $(subst src/,target/,$(subst .cpp,.o,$(wildcard src/*/*.cpp)))

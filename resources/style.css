@@ -1,0 +1,58 @@
+@font-face {
+    font-family: "SF Mono";
+    src: url("SF-Mono-Bold.otf");
+}
+
+body {
+    margin: 0px;
+    background-color: #1D1C1D;
+    color: white;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex {
+    flex: 1;
+}
+
+.navbar {
+    justify-content: flex-start;
+    align-items: stretch;
+    height: 4em;
+    width: 100%;
+    background-color: #333333;
+}
+
+.navbar-item {
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-item:hover {
+    background-color: #1B437E;
+    transition: background-color 0.5s
+}
+
+.navbar-item a {
+    width: 120px;
+    height: 4em;
+    line-height: 4em;
+    text-align: center;
+    text-decoration: none;
+    font-family: "SF Mono", "Courier New", monospace;
+    color: white;
+}
+
+.navbar-item a img {
+    display: inline-block;
+    height: 2.5em;
+    vertical-align: middle;
+}
