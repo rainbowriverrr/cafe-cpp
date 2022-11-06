@@ -15,15 +15,16 @@
 
 #include <string>
 
-class MenuItem : public Wt::WTemplate {
+class MenuItemWidget : public Wt::WTemplate {
    public:
-    MenuItem(const std::string &name, const std::string &price, const std::string &description, const Wt::WPushButton *cartButton);
+    MenuItemWidget(const std::string &name, const std::string &price, const std::string &description, const Wt::WPushButton *cartButton);
     Wt::WPushButton *getCartPtr();
 
    private:
     Wt::WText *name_;
     Wt::WText *price_;
     Wt::WText *description_;
+    Wt::WLineEdit *quantity_;
     Wt::WPushButton *cartButton_;
 };
 

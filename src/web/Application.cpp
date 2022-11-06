@@ -12,6 +12,8 @@ Application::Application(const Wt::WEnvironment &env)
     : Wt::WApplication(env) {
     setTitle("Hello world");
 
+    messageResourceBundle().use(appRoot() + "templates");
+
     // root()->addWidget(std::make_unique<Wt::WText>("Your name, please ? "));
     // nameEdit_ = root()->addWidget(std::make_unique<Wt::WLineEdit>());
     // auto button = root()->addWidget(std::make_unique<Wt::WPushButton>("Greet me."));
@@ -22,7 +24,7 @@ Application::Application(const Wt::WEnvironment &env)
     // };
     // button->clicked().connect(greet);
 
-    MenuItem *item1 = root()->addWidget(std::make_unique<MenuItem>("item1", "1.00", "item1 description", nullptr));
+    MenuItemWidget *item1 = root()->addWidget(std::make_unique<MenuItemWidget>("item1", "1.00", "item1 description", nullptr));
 }
 
 int main(int argc, char **argv) {
