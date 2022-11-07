@@ -15,16 +15,18 @@
 #include <Wt/WPushButton.h>
 #include <Wt/WText.h>
 
+#include "DBHelper.hpp"
 #include "MenuWidgets.hpp"
 
 class Application : public Wt::WApplication {
    public:
-    Application(const Wt::WEnvironment &env);
+    Application(const Wt::WEnvironment &env, DBHelper *dbHelper);
 
    private:
     Wt::WContainerWidget *menuPage_;
     Wt::WLineEdit *nameEdit_;
     Wt::WText *greeting_;
+    DBHelper *db;
 };
 
 #endif
