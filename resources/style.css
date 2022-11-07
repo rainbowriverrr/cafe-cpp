@@ -1,6 +1,37 @@
 @font-face {
-    font-family: "SF Mono";
+    font-family: "SF Mono Regular";
+    src: url("SF-Mono-Regular.otf");
+}
+
+@font-face {
+    font-family: "SF Mono Bold";
     src: url("SF-Mono-Bold.otf");
+}
+
+.font-regular {
+    font-family: "SF Mono Regular", "Courier New", monospace;
+    font-weight: normal;
+}
+
+.font-bold {
+    font-family: "SF Mono Bold", "Courier New", monospace;
+    font-weight: bold;
+}
+
+.colour-magenta {
+    color: #E500E5;
+}
+
+.colour-cyan {
+    color: #00E5E5;
+}
+
+.colour-lightblue {
+    color: #7199CD;
+}
+
+.colour-darkblue {
+    color: #1B437E;
 }
 
 body {
@@ -38,7 +69,7 @@ body {
 
 .navbar-item:hover {
     background-color: #1B437E;
-    transition: background-color 0.5s
+    transition: background-color 0.3s
 }
 
 .navbar-item a {
@@ -47,7 +78,6 @@ body {
     line-height: 4em;
     text-align: center;
     text-decoration: none;
-    font-family: "SF Mono", "Courier New", monospace;
     color: white;
 }
 
@@ -55,4 +85,26 @@ body {
     display: inline-block;
     height: 2.5em;
     vertical-align: middle;
+}
+
+.page {
+    padding: 1em;    
+}
+
+.page-orders {
+    justify-content: center;
+}
+
+.w-order-list-item {
+    border: 0.2em solid white;
+    border-radius: 1em;
+    padding: 1em;
+    margin-bottom: 1em;
+    width: 50vw;
+    line-height: 2em;
+}
+
+.w-order-list-item > div:first-child {
+    border-bottom: 0.1em solid;
+    margin-bottom: 0.5em;
 }

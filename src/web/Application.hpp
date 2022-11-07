@@ -10,16 +10,22 @@
 
 #include <iostream>
 #include <fstream>
+#include <string>
+#include <vector>
 
 #include <Wt/WString.h>
 #include <Wt/WApplication.h>
 #include <Wt/WContainerWidget.h>
 #include <Wt/WStackedWidget.h>
+#include <Wt/WPanel.h>
 #include <Wt/WTemplate.h>
 #include <Wt/WText.h>
 #include <Wt/WAnchor.h>
 #include <Wt/WLink.h>
 #include <Wt/WImage.h>
+
+#include "DBHelper.hpp"
+#include "OrderMaster.hpp"
 
 class Application : public Wt::WApplication
 {
@@ -34,7 +40,9 @@ private:
     
     Wt::WText *pageHome;
     Wt::WText *pageMenu;
-    Wt::WText *pageOrders;
+    Wt::WTemplate *pageOrders;
+    
+    DBHelper db;
     
     const Wt::WString readHtml(std::string fileName);
 };

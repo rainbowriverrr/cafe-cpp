@@ -14,7 +14,7 @@ DBHelper::DBHelper()
 
 DBHelper::~DBHelper()
 {
-    closeDB();
+    //closeDB();
 }
 
 void DBHelper::createTableMenuItem()
