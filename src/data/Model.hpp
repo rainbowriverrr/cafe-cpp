@@ -30,11 +30,11 @@ protected:
     
     // Returns a map representation of this object where for each member variable there is a key value pair where
     // the key is the name of the member variable and the value is the value of the member variable.
-    virtual std::map<std::string, std::any> toMap() = 0;
+    virtual std::map<std::string, std::any> toMap() const = 0;
     
     // Returns a pointer to a new object with member variables initialized according to mMap.
     // mMap is a map representing the object, as created by a call to toMap().
-    virtual Model * fromMap(std::map<std::string, std::any> mMap) = 0;
+    virtual Model * fromMap(std::map<std::string, std::any> mMap) const = 0;
 };
 
 #endif /* Model_hpp */

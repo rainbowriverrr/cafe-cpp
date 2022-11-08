@@ -25,12 +25,12 @@
 class DBHelper
 {
 public:
-    DBHelper();
-    
     ~DBHelper();
     
+    static const DBHelper & getInstance();
+    
     // Creates the MenuItem table. Used only for the example.
-    void createTableMenuItem();
+    void createTableMenuItem() const;
     
     // Reads all rows from the table represented by model, and returns the result as a vector<T>.
     // model must inherit from Model.
@@ -39,7 +39,7 @@ public:
     // orderBy is the field and direction used to generate the ORDER BY clause of the select statement. e.g. "price DESC"
     // columns is the set of column names to select. If it is empty, all columns will be selected.
     template<class T, class = std::enable_if_t<std::is_base_of<Model, T>::value>>
-    std::vector<T> selectWhere(T *model, std::vector<SqlCondition> conditions = std::vector<SqlCondition>(), std::string orderBy = "", std::set<std::string> columns = std::set<std::string>())
+    std::vector<T> selectWhere(const T &model, std::vector<SqlCondition> conditions = std::vector<SqlCondition>(), std::string orderBy = "", std::set<std::string> columns = std::set<std::string>()) const
     {
         std::vector<T> result;
         // Helper reads from the database.
@@ -55,23 +55,29 @@ public:
     }
     
     // Inserts the given model to its associated table in the database.
-    void insert(Model *model);
+    void insert(const Model &model) const;
     
     // Updates the given model in the database by its primary key(s).
-    void update(Model *model);
+    void update(const Model &model) const;
     
     // Conditionally updates the table that model represents with the values of model.
     // conditions is used to generate the WHERE clause of the update statement.
     // columns is the set of column names to update. If it empty, all columns will be updated.
-    void updateWhere(Model *model, std::vector<SqlCondition> conditions, std::set<std::string> columns);
+    void updateWhere(const Model &model, std::vector<SqlCondition> conditions, std::set<std::string> columns) const;
     
     // Deletes the given model from the database by its primary key(s).
-    void destroy(Model *model);
+    void destroy(const Model &model) const;
     
     // Conditionally deletes from the table that model represents.
-    void destroyWhere(Model *model, std::vector<SqlCondition> conditions);
+    void destroyWhere(const Model &model, std::vector<SqlCondition> conditions) const;
     
 private:
+    DBHelper(const DBHelper &other);
+    
+    DBHelper& operator=(const DBHelper &other);
+    
+    static const DBHelper * instance;
+    
     // SQLite3 handle
     sqlite3* db;
     
@@ -80,7 +86,9 @@ private:
     // conditions is a vector of SqlCondition objects used to generate the WHERE clause of the select statement.
     // orderBy is the field and direction used to generate the ORDER BY clause of the select statement. e.g. "price DESC"
     // columns is the set of column names to select. If it is empty, all columns will be selected.
-    std::vector<Model *> selectWhereHelper(Model *model, std::vector<SqlCondition> conditions, std::string orderBy, std::set<std::string> columns);
+    std::vector<Model *> selectWhereHelper(const Model &model, std::vector<SqlCondition> conditions, std::string orderBy, std::set<std::string> columns) const;
+    
+    DBHelper();
     
     // Opens the sqlite3 database handle.
     void openDB();

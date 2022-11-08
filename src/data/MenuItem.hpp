@@ -22,8 +22,8 @@ public:
     
     void setPrice(double price);
 protected:
-    virtual std::map<std::string, std::any> toMap() override;
-    virtual Model * fromMap(std::map<std::string, std::any> mMap) override;
+    virtual std::map<std::string, std::any> toMap() const;
+    virtual Model * fromMap(std::map<std::string, std::any> mMap) const;
 private:
     std::string name;
     double price;

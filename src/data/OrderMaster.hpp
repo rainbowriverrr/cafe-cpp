@@ -28,8 +28,8 @@ public:
     void setOrderDate(std::string val);
     void setIsComplete(bool val);
 protected:
-    virtual std::map<std::string, std::any> toMap();
-    virtual Model * fromMap(std::map<std::string, std::any> mMap);
+    virtual std::map<std::string, std::any> toMap() const;
+    virtual Model * fromMap(std::map<std::string, std::any> mMap) const;
 private:
     int orderNumber;
     std::string orderedBy;

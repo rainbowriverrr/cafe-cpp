@@ -8,8 +8,6 @@
 #ifndef _APPLICATION_HPP_
 #define _APPLICATION_HPP_
 
-#include <iostream>
-#include <fstream>
 #include <string>
 #include <vector>
 
@@ -25,7 +23,10 @@
 #include <Wt/WImage.h>
 
 #include "DBHelper.hpp"
+#include "IOHelper.hpp"
 #include "OrderMaster.hpp"
+#include "NavbarWidget.hpp"
+#include "OrderListPage.hpp"
 
 class Application : public Wt::WApplication
 {
@@ -34,17 +35,13 @@ public:
     void handleInternalPath(const std::string &internalPath);
 private:
     Wt::WContainerWidget *page;
-    
-    Wt::WTemplate *navbar;
     Wt::WStackedWidget *stack;
+    
+    NavbarWidget *navbar;
     
     Wt::WText *pageHome;
     Wt::WText *pageMenu;
-    Wt::WTemplate *pageOrders;
-    
-    DBHelper db;
-    
-    const Wt::WString readHtml(std::string fileName);
+    OrderListPage *pageOrderList;
 };
 
 #endif
