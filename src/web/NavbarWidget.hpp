@@ -1,8 +1,6 @@
 //
 //  NavbarWidget.hpp
 //
-//  Created by Julian Koksal on 2022-11-07.
-//
 
 #ifndef NavbarWidget_hpp
 #define NavbarWidget_hpp
@@ -14,10 +12,22 @@
 
 #include "IOHelper.hpp"
 
+/**
+ * Class representing the navbar widget.
+ * @author Julian Koksal
+ * @date 2022-11-07
+ */
 class NavbarWidget : public Wt::WContainerWidget
 {
 public:
+    /**
+     * Constructor.
+     */
     NavbarWidget();
+    
+    /**
+     * Destructor.
+     */
     ~NavbarWidget();
 };
 

@@ -1,6 +1,5 @@
 //
 //  DBHelper.cpp
-//  DAL Test
 //
 //  Created by Julian Koksal on 2022-09-25.
 //

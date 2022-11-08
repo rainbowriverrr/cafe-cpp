@@ -114,6 +114,7 @@ body {
 
 .w-order-list-item > div:first-child {
     border-bottom: 0.1em solid;
+    font-family: "SF Mono Bold", "Courier New", monospace;
 }
 
 .w-order-list-item > div:nth-child(n+2) {

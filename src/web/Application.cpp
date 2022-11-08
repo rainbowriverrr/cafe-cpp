@@ -26,6 +26,11 @@ Application::Application(const Wt::WEnvironment &env): Wt::WApplication(env)
     pageOrderList = stack->addWidget(std::make_unique<OrderListPage>());
 }
 
+Application::~Application()
+{
+    
+}
+
 void Application::handleInternalPath(const std::string &internalPath)
 {
     if (internalPath == "/home")
