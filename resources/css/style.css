@@ -1,11 +1,11 @@
 @font-face {
     font-family: "SF Mono Regular";
-    src: url("SF-Mono-Regular.otf");
+    src: url("../fonts/SF-Mono-Regular.otf");
 }
 
 @font-face {
     font-family: "SF Mono Bold";
-    src: url("SF-Mono-Bold.otf");
+    src: url("../fonts/SF-Mono-Bold.otf");
 }
 
 .font-regular {
@@ -144,7 +144,7 @@ body {
 
 .w-order-list-item .order-list-details-wrapper > div > div:first-child::after {
     content: "";
-    background-image: url("chevron.png");
+    background-image: url("../images/chevron.png");
     background-size: 1em;
     width: 1em;
     height: 1em;

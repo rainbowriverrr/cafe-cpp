@@ -11,7 +11,7 @@ const Wt::WString IOHelper::readHtml(std::string fileName)
     std::string html = "";
     
     std::ifstream in;
-    in.open("resources/" + fileName);
+    in.open("resources/html/" + fileName);
     if (in.is_open())
     {
         html.assign(std::istreambuf_iterator<char>(in), std::istreambuf_iterator<char>());

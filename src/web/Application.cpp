@@ -11,7 +11,7 @@ Application::Application(const Wt::WEnvironment &env): Wt::WApplication(env)
     
     setTitle("Cafe C++");
     
-    useStyleSheet("resources/style.css");
+    useStyleSheet("resources/css/style.css");
     
     internalPathChanged().connect(this, &Application::handleInternalPath);
     

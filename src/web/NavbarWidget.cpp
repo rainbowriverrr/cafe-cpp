@@ -11,7 +11,7 @@ NavbarWidget::NavbarWidget()
     Wt::WTemplate *navbarTemplate = addWidget(std::make_unique<Wt::WTemplate>(IOHelper::readHtml("w_navbar.html")));
     
     Wt::WLink linkHome = Wt::WLink(Wt::LinkType::InternalPath, "/home");
-    navbarTemplate->bindWidget("a-home", std::make_unique<Wt::WAnchor>(linkHome, std::make_unique<Wt::WImage>("resources/logo.png")));
+    navbarTemplate->bindWidget("a-home", std::make_unique<Wt::WAnchor>(linkHome, std::make_unique<Wt::WImage>("resources/images/logo.png")));
     
     Wt::WLink linkMenu = Wt::WLink(Wt::LinkType::InternalPath, "/menu");
     navbarTemplate->bindWidget("a-menu", std::make_unique<Wt::WAnchor>(linkMenu, "menu"));
