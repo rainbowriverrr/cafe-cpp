@@ -1,6 +1,5 @@
 //
 //  MenuItem.cpp
-//  DAL Test
 //
 //  Created by Julian Koksal on 2022-09-25.
 //
@@ -22,7 +21,7 @@ MenuItem::~MenuItem()
     
 }
 
-std::map<std::string, std::any> MenuItem::toMap()
+std::map<std::string, std::any> MenuItem::toMap() const
 {
     std::map<std::string, std::any> mMap;
     mMap["name"] = name;
@@ -31,7 +30,7 @@ std::map<std::string, std::any> MenuItem::toMap()
     return mMap;
 }
 
-Model * MenuItem::fromMap(std::map<std::string, std::any> mMap)
+Model * MenuItem::fromMap(std::map<std::string, std::any> mMap) const
 {
     std::string mName = std::any_cast<std::string>(mMap["name"]);
     double mPrice = std::any_cast<double>(mMap["price"]);

@@ -23,7 +23,7 @@ OrderMaster::~OrderMaster()
     
 }
 
-std::map<std::string, std::any> OrderMaster::toMap()
+std::map<std::string, std::any> OrderMaster::toMap() const
 {
     std::map<std::string, std::any> mMap;
     mMap["orderNumber"] = orderNumber;
@@ -34,7 +34,7 @@ std::map<std::string, std::any> OrderMaster::toMap()
     return mMap;
 }
 
-Model * OrderMaster::fromMap(std::map<std::string, std::any> mMap)
+Model * OrderMaster::fromMap(std::map<std::string, std::any> mMap) const
 {
     int mOrderNumber = std::any_cast<int>(mMap["orderNumber"]);
     std::string mOrderedBy = std::any_cast<std::string>(mMap["orderedBy"]);
