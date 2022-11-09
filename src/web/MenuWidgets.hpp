@@ -3,8 +3,8 @@
     Date   : 2022/10/27
 */
 
-#ifndef _MENU_PAGE_HPP_
-#define _MENU_PAGE_HPP_
+#ifndef _MENUWIDGETS_HPP_
+#define _MENUWIDGETS_HPP_
 
 #include <Wt/WContainerWidget.h>
 #include <Wt/WIntValidator.h>
@@ -17,7 +17,7 @@
 
 class MenuItemWidget : public Wt::WTemplate {
    public:
-    MenuItemWidget(const std::string &name, const std::string &price, const std::string &description, const Wt::WPushButton *cartButton);
+    MenuItemWidget(const std::string &name, const std::string &price, const std::string &description);
     Wt::WPushButton *getCartPtr();
 
    private:
