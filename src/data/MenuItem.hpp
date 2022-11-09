@@ -5,6 +5,9 @@
 #ifndef MenuItem_hpp
 #define MenuItem_hpp
 
+#include <string>
+#include <map>
+
 #include "Model.hpp"
 
 /**

@@ -7,8 +7,6 @@
 
 Application::Application(const Wt::WEnvironment &env): Wt::WApplication(env)
 {
-    const DBHelper &db = DBHelper::getInstance();
-    
     setTitle("Cafe C++");
     
     useStyleSheet("resources/css/style.css");
@@ -33,14 +31,21 @@ Application::~Application()
 
 void Application::handleInternalPath(const std::string &internalPath)
 {
-    if (internalPath == "/home") {
+    if (internalPath == "/home")
+    {
         stack->setCurrentWidget(pageHome);
-    } else if (internalPath == "/menu") {
+    }
+    else if (internalPath == "/menu")
+    {
         stack->setCurrentWidget(pageMenu);
-    } else if (internalPath == "/orders") {
+    }
+    else if (internalPath == "/orders")
+    {
         stack->setCurrentWidget(pageOrderList);
-    } else {
-        WApplication::instance()->setInternalPath("/home", true);
+    }
+    else
+    {
+        setInternalPath("/home", true);
     }
 }
 

@@ -53,11 +53,11 @@ private:
     /** The container widget that contains the entire application. */
     Wt::WContainerWidget *page;
     
-    /** The stack widget that contains the body of the pages. */
-    Wt::WStackedWidget *stack;
-    
     /** The navbar widget. */
     NavbarWidget *navbar;
+    
+    /** The stack widget that contains the body of the pages. */
+    Wt::WStackedWidget *stack;
     
     /** The home page widget. */
     Wt::WText *pageHome;

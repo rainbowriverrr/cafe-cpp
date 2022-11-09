@@ -2,14 +2,18 @@
 // Created by Sharon Nikritin on 2022-11-07.
 //
 
-#ifndef InventoryItem_h
-#define InventoryItem_h
+#ifndef InventoryItem_hpp
+#define InventoryItem_hpp
+
+#include <string>
+#include <map>
 
 #include "Model.hpp"
 
-class InventoryItem: public Model{
+class InventoryItem: public Model
+{
 public:
-    InventoryItem(int itemID, std::string itemName = "", int quantity=0);
+    InventoryItem(int itemID = 0, std::string itemName = "", int quantity = 0);
 
     ~InventoryItem();
 
@@ -26,8 +30,8 @@ public:
     void setQuantity (int quantity);
 
 protected:
-    virtual std::map<std::string, std::any> toMap() override;
-    virtual Model * fromMap(std::map<std::string, std::any> mMap) override;
+    virtual std::map<std::string, std::any> toMap() const override;
+    virtual Model * fromMap(std::map<std::string, std::any> mMap) const override;
 
 private:
     int itemID;
@@ -37,5 +41,5 @@ private:
 };
 
 
-#endif //InventoryItem.h
+#endif //InventoryItem.hpp
 

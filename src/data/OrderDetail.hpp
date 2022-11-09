@@ -2,12 +2,16 @@
 // Created by Sharon Nikritin on 2022-11-07.
 //
 
-#ifndef OrderDetail_h
-#define OrderDetail_h
+#ifndef OrderDetail_hpp
+#define OrderDetail_hpp
+
+#include <string>
+#include <map>
 
 #include "Model.hpp"
 
-class OrderDetail : public Model{
+class OrderDetail : public Model
+{
 public:
     OrderDetail(int orderID, std::string menuItemName = "", int quantity=0);
 
@@ -26,8 +30,8 @@ public:
     void setQuantity(int quantity);
 
 protected:
-    virtual std::map<std::string, std::any> toMap() override;
-    virtual Model * fromMap(std::map<std::string, std::any> mMap) override;
+    virtual std::map<std::string, std::any> toMap() const override;
+    virtual Model * fromMap(std::map<std::string, std::any> mMap) const override;
 
 private:
     int orderID;
@@ -37,4 +41,4 @@ private:
 };
 
 
-#endif //OrderDetail_h
+#endif //OrderDetail_hpp
