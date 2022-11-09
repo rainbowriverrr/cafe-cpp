@@ -20,7 +20,7 @@ Application::Application(const Wt::WEnvironment &env) : Wt::WApplication(env) {
     stack = page->addWidget(std::make_unique<Wt::WStackedWidget>());
 
     pageHome = stack->addWidget(std::make_unique<Wt::WText>("Home Page"));
-    pageMenu = stack->addWidget(std::make_unique<MenuPage>(this));
+    pageMenu = stack->addWidget(std::make_unique<MenuPage>());
     pageOrderList = stack->addWidget(std::make_unique<OrderListPage>());
 }
 

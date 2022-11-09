@@ -17,7 +17,7 @@
 
 class MenuItemWidget : public Wt::WTemplate {
    public:
-    MenuItemWidget(const std::string &name, const std::string &price, const std::string &description, const Wt::WPushButton *cartButton);
+    MenuItemWidget(const std::string &name, const std::string &price, const std::string &description);
     Wt::WPushButton *getCartPtr();
 
    private:
