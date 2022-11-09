@@ -11,10 +11,12 @@ MenuPage::MenuPage() {
 
     for (std::vector<MenuItem>::iterator it = menuItems.begin(); it != menuItems.end(); it++) {
         auto orderItem = [this, it] {
-            OrderDetail orderDeets = OrderDetail(0, it->getName(), 1);
-            OrderMaster orderMast = OrderMaster(orderDeets.getOrderID());
-            DBHelper::getInstance().insert(orderDeets);
-            DBHelper::getInstance().insert(orderMast);
+            // int numOrders = DBHelper::getinstance().selectWhere(OrderMaster()).size();
+
+            // OrderDetail orderDeets = OrderDetail(0, numOrders, it->getName(), 1);
+            // OrderMaster orderMast = OrderMaster(orderDeets.getOrderID());
+            // DBHelper::getInstance().insert(orderDeets);
+            // DBHelper::getInstance().insert(orderMast);
 
             Wt::WApplication::instance()->setInternalPath("/orders", true);
         };
