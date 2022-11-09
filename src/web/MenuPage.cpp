@@ -11,14 +11,14 @@ MenuPage::MenuPage() {
 
     for (std::vector<MenuItem>::iterator it = menuItems.begin(); it != menuItems.end(); it++) {
         auto orderItem = [this, it] {
-//            int numOrders = DBHelper::getInstance().selectWhere(OrderMaster()).size();
-//
-//            OrderDetail orderDeets = OrderDetail(0, numOrders + 1, it->getName(), 1);
-//            OrderMaster orderMast = OrderMaster(numOrders + 1, "test", "test date", 0);
-//            DBHelper::getInstance().insert(orderDeets);
-//            DBHelper::getInstance().insert(orderMast);
-//
-//            Wt::WApplication::instance()->setInternalPath("/orders", true);
+            
+            OrderMaster orderMast = OrderMaster(0, "test", "test date", 0);
+            int orderNum = (int)DBHelper::getInstance().insert(orderMast);
+            
+            OrderDetail orderDeets = OrderDetail(0, orderNum, it->getName(), 1);
+            DBHelper::getInstance().insert(orderDeets);
+
+            Wt::WApplication::instance()->setInternalPath("/orders", true);
         };
 
         MenuItemWidget *itemWidget = page->addWidget(std::make_unique<MenuItemWidget>(it->getName(), std::to_string(it->getPrice()), "no description"));

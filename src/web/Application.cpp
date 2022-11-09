@@ -13,28 +13,32 @@ Application::Application(const Wt::WEnvironment &env) : Wt::WApplication(env) {
 
     internalPathChanged().connect(this, &Application::handleInternalPath);
 
-    page = root()->addWidget(std::make_unique<Wt::WContainerWidget>());
-
-    navbar = page->addWidget(std::make_unique<NavbarWidget>());
-
-    stack = page->addWidget(std::make_unique<Wt::WStackedWidget>());
-
-    pageHome = stack->addWidget(std::make_unique<Wt::WText>("Home Page"));
-    pageMenu = stack->addWidget(std::make_unique<MenuPage>());
-    pageOrderList = stack->addWidget(std::make_unique<OrderListPage>());
+    page = root()->addNew<Wt::WContainerWidget>();
+    navbar = page->addNew<NavbarWidget>();
+    body = page->addNew<Wt::WText>("Home Page");
 }
 
 Application::~Application() {
 }
 
 void Application::handleInternalPath(const std::string &internalPath) {
-    if (internalPath == "/home") {
-        stack->setCurrentWidget(pageHome);
-    } else if (internalPath == "/menu") {
-        stack->setCurrentWidget(pageMenu);
-    } else if (internalPath == "/orders") {
-        stack->setCurrentWidget(pageOrderList);
-    } else {
-        WApplication::instance()->setInternalPath("/home", true);
+    if (internalPath == "/home")
+    {
+        page->removeWidget(body);
+        body = page->addNew<Wt::WText>("Home Page");
+    }
+    else if (internalPath == "/menu")
+    {
+        page->removeWidget(body);
+        body = page->addNew<MenuPage>();
+    }
+    else if (internalPath == "/orders")
+    {
+        page->removeWidget(body);
+        body = page->addNew<OrderListPage>();
+    }
+    else
+    {
+        setInternalPath("/home", true);
     }
 }

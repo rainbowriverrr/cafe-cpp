@@ -111,6 +111,12 @@ body {
     line-height: 2em;
 }
 
+div.w-order-list-item-completed > .w-order-list-item {
+    transform: translateX(20em);
+    opacity: 0;
+    transition: transform 0.5s, opacity 0.4s;
+}
+
 .w-order-list-item > div:first-child {
     border-bottom: 0.1em solid;
     font-family: "SF Mono Bold", "Courier New", monospace;
@@ -127,6 +133,17 @@ body {
     padding: 0em 0.5em;
     font-family: "SF Mono Regular", "Courier New", monospace;
     cursor: pointer;
+}
+
+.w-order-list-item > div:first-child button:hover {
+    background-color: #1B437E;
+}
+
+.w-order-list-item > div:first-child button img {
+    display: inline-block;
+    height: 1.2em;
+    margin-right: 0.3em;
+    vertical-align: middle;
 }
 
 .w-order-list-item > div:nth-child(n+2) {

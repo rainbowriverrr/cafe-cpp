@@ -15,8 +15,11 @@
 #include <Wt/WPanel.h>
 #include <Wt/WTable.h>
 #include <Wt/WPushButton.h>
+#include <Wt/WLink.h>
 #include <Wt/WText.h>
 #include <Wt/WString.h>
+#include <Wt/WFlags.h>
+#include <Wt/WAnimation.h>
 
 #include "DBHelper.hpp"
 #include "IOHelper.hpp"

@@ -73,7 +73,7 @@ public:
      * Inserts the given model to its associated table in the database.
      * @param model The model to insert to the database.
      */
-    void insert(const Model &model) const;
+    long long insert(const Model &model) const;
     
     /**
      * Updates the given model in the database by its primary key(s).

@@ -52,18 +52,9 @@ class Application : public Wt::WApplication {
 
     /** The navbar widget. */
     NavbarWidget *navbar;
-
-    /** The stack widget that contains the body of the pages. */
-    Wt::WStackedWidget *stack;
-
-    /** The home page widget. */
-    Wt::WText *pageHome;
-
-    /** The menu page widget. */
-    MenuPage *pageMenu;
-
-    /** The order list page widget. */
-    OrderListPage *pageOrderList;
+    
+    /** The body page widget. */
+    Wt::WWidget *body;
 };
 
 #endif

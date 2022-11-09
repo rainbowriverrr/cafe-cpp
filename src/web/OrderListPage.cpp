@@ -20,7 +20,21 @@ OrderListPage::OrderListPage()
     {
         Wt::WTemplate *item = orderList->addNew<Wt::WTemplate>(IOHelper::readHtml("w_OrderListItem.html"));
         
-        item->bindWidget("btn-complete", std::make_unique<Wt::WPushButton>("Complete Order"));
+        Wt::WPushButton *completeBtn = item->bindWidget("btn-complete", std::make_unique<Wt::WPushButton>("Complete Order"));
+        completeBtn->setIcon("resources/images/check_circle.png");
+        
+        OrderMaster orderMasterObj = *it;
+        completeBtn->clicked().connect([item, orderMasterObj, completeBtn] {
+            item->addStyleClass("w-order-list-item-completed");
+            //completeBtn->animateHide(Wt::WAnimation(Wt::AnimationEffect::SlideInFromLeft | Wt::AnimationEffect::Fade, Wt::TimingFunction::Ease, 500));
+            OrderMaster om = orderMasterObj;
+            om.setIsComplete(true);
+            DBHelper::getInstance().update(om);
+        });
+        
+        // Not a great solution, but Wt animations are bugged and do not seem to work on any browser.
+        item->doJavaScript(item->jsRef() + ".firstElementChild.addEventListener('transitionend', (e) => {"
+                           "if (e.target == " + item->jsRef() + ".firstElementChild) " + item->jsRef() + ".style.display = 'none' });");
         
         item->bindWidget("txt-ordernum", std::make_unique<Wt::WText>((std::to_string(it->getOrderNumber()))));
         item->bindWidget("txt-orderedby", std::make_unique<Wt::WText>(it->getOrderedBy()));
