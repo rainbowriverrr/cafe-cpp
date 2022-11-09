@@ -1,12 +1,22 @@
 <?xml version = "1.0" encoding = "UTF-8" ?>
 <messages>
     <message id="menu-item">
-        <div class="menu-item">
-            <h3 class="menu-title">${name}</h3>
-            <p class="menu-text">${description}</p>
-            <p class="menu-price">${price}</p>
-            <p class="menu-quantity">${quantity-box}</p>
+        <div class="page page-order-list flex-row font-regular">
+        <div class="font-regular w-order-list-item">
+            <div>
+                <h3 class="menu-title">${name}</h3>
+            </div>
+            <div>
+                <p class="menu-text">${description}</p>
+            </div>
+            <div>
+                <p class="menu-price">${price}</p>
+            </div>
+            <div>
+                <p class="menu-quantity">${quantity-box}</p>
+            </div>
             <div>${cart-button}</div>
+        </div>
         </div>
     </message>
     <message id="page-orders">

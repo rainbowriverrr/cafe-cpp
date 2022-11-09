@@ -11,8 +11,7 @@ MenuPage::MenuPage() {
 
     for (std::vector<MenuItem>::iterator it = menuItems.begin(); it != menuItems.end(); it++) {
         auto orderItem = [this, it] {
-            int numOrders = DBHelper::getInstance().selectWhere(OrderMaster()).size();
-            OrderDetail orderDeets = OrderDetail(numOrders, it->getName(), 1);
+            OrderDetail orderDeets = OrderDetail(0, it->getName(), 1);
             OrderMaster orderMast = OrderMaster(orderDeets.getOrderID());
             DBHelper::getInstance().insert(orderDeets);
             DBHelper::getInstance().insert(orderMast);
