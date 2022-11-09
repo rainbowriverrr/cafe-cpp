@@ -13,15 +13,15 @@ Application::Application(const Wt::WEnvironment &env): Wt::WApplication(env)
     
     internalPathChanged().connect(this, &Application::handleInternalPath);
     
-    page = root()->addWidget(std::make_unique<Wt::WContainerWidget>());
+    page = root()->addNew<Wt::WContainerWidget>();
     
-    navbar = page->addWidget(std::make_unique<NavbarWidget>());
+    navbar = page->addNew<NavbarWidget>();
     
-    stack = page->addWidget(std::make_unique<Wt::WStackedWidget>());
+    stack = page->addNew<Wt::WStackedWidget>();
 
-    pageHome = stack->addWidget(std::make_unique<Wt::WText>("Home Page"));
-    pageMenu = stack->addWidget(std::make_unique<Wt::WText>("Menu Page"));
-    pageOrderList = stack->addWidget(std::make_unique<OrderListPage>());
+    pageHome = stack->addNew<Wt::WText>("Home Page");
+    pageMenu = stack->addNew<Wt::WText>("Menu Page");
+    pageOrderList = stack->addNew<OrderListPage>();
 }
 
 Application::~Application()
@@ -53,6 +53,6 @@ void Application::handleMenuPage()
 {
     std::vector<MenuItem> menuItems = DBHelper::getInstance().selectWhere(MenuItem());
     for (int i = 0; i < menuItems.size(); i++) {
-        stack->addWidget(std::make_unique<MenuItemWidget>(menuItems[i].getName(), std::to_string(menuItems[i].getPrice()), "description here", nullptr));
+        stack->addNew<MenuItemWidget>(menuItems[i].getName(), std::to_string(menuItems[i].getPrice()), "description here", nullptr);
     }
 }

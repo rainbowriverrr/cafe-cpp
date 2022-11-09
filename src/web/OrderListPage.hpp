@@ -8,16 +8,20 @@
 #define OrderListPage_hpp
 
 #include <string>
+#include <sstream>
 
 #include <Wt/WContainerWidget.h>
 #include <Wt/WTemplate.h>
 #include <Wt/WPanel.h>
+#include <Wt/WTable.h>
+#include <Wt/WPushButton.h>
 #include <Wt/WText.h>
 #include <Wt/WString.h>
 
 #include "DBHelper.hpp"
 #include "IOHelper.hpp"
 #include "OrderMaster.hpp"
+#include "vOrderDetail.hpp"
 
 /**
  * Class representing the order list page widget.

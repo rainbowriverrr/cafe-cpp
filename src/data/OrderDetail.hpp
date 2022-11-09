@@ -13,17 +13,19 @@
 class OrderDetail : public Model
 {
 public:
-    OrderDetail(int orderID, std::string menuItemName = "", int quantity=0);
+    OrderDetail(int orderDetailID = 0, int orderNumber = 0, std::string menuItemName = "", int quantity = 0);
 
     ~OrderDetail();
+    
+    int getOrderDetailID();
 
-    int getOrderID();
+    int getOrderNumber();
 
     std::string getMenuItemName();
 
     int getQuantity();
 
-    void setOrderID (int orderID);
+    void setOrderNumber(int orderNumber);
 
     void setMenuItemName (std::string menuItemName);
 
@@ -34,7 +36,8 @@ protected:
     virtual Model * fromMap(std::map<std::string, std::any> mMap) const override;
 
 private:
-    int orderID;
+    int orderDetailID;
+    int orderNumber;
     std::string menuItemName;
     int quantity;
 

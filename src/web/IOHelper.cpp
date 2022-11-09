@@ -20,3 +20,10 @@ const Wt::WString IOHelper::readHtml(std::string fileName)
     
     return Wt::WString(html);
 }
+
+const Wt::WString IOHelper::formatPrice(double price)
+{
+    std::ostringstream ss;
+    ss << std::setprecision(2) << std::fixed << "$ " << price;
+    return Wt::WString(ss.str());
+}

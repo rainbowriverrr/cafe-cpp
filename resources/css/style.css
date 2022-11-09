@@ -104,7 +104,6 @@ body {
 }
 
 .w-order-list-item {
-    /*border: 0.2em solid;*/
     background-color: #333333;
     border-radius: 1em;
     padding: 0.5em 2em;
@@ -115,6 +114,13 @@ body {
 .w-order-list-item > div:first-child {
     border-bottom: 0.1em solid;
     font-family: "SF Mono Bold", "Courier New", monospace;
+    justify-content: space-between;
+}
+
+.w-order-list-item > div:first-child button {
+    font: initial;
+    color: #1D1C1D;
+    background-color: #FFFFFF;
 }
 
 .w-order-list-item > div:nth-child(n+2) {
@@ -123,9 +129,7 @@ body {
 
 .w-order-list-item .order-list-details-wrapper > div {
     flex: 1;
-    /*border: 0.1em solid;*/
     border-radius: 0.5em;
-    /*padding: 0.2em 1em 0em 1em;*/
     background-color: #1D1C1D;
 }
 
@@ -155,5 +159,22 @@ body {
 }
 
 .w-order-list-item .order-list-details-wrapper > div.expanded > div:first-child::after {
-    transform: rotate(-180deg);
+    -webkit-transform: scale(1,-1);
+    transform: scale(1,-1);
+}
+
+.w-order-list-item .order-list-details-wrapper thead tr th:first-child {
+    width: 35%;
+}
+
+.w-order-list-item .order-list-details-wrapper tbody tr td {
+    padding: 0em 1em;
+}
+
+.w-order-list-item .order-list-details-wrapper tbody tr td:nth-child(n+2) {
+    text-align: right;
+}
+
+.w-order-list-item .order-list-details-wrapper tbody tr:last-child {
+    border-top: 0.1em solid;
 }

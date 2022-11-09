@@ -11,14 +11,17 @@ OrderListPage::OrderListPage()
     // The orders not marked as complete.
     std::vector<OrderMaster> orders = DBHelper::getInstance().selectWhere(OrderMaster(), { SqlCondition("isComplete", "=", 0) }, "OrderDate DESC");
     
-    Wt::WTemplate *pageTemplate = addWidget(std::make_unique<Wt::WTemplate>(IOHelper::readHtml("page_orderList.html")));
+    Wt::WTemplate *pageTemplate = addNew<Wt::WTemplate>(IOHelper::readHtml("page_orderList.html"));
     
     Wt::WContainerWidget *orderList = pageTemplate->bindWidget("w-order-list", std::make_unique<Wt::WContainerWidget>());
     
     // Iterates the orders and adds them to list.
     for (std::vector<OrderMaster>::iterator it = orders.begin(); it != orders.end(); it++)
     {
-        Wt::WTemplate *item = orderList->addWidget(std::make_unique<Wt::WTemplate>(IOHelper::readHtml("w_OrderListItem.html")));
+        Wt::WTemplate *item = orderList->addNew<Wt::WTemplate>(IOHelper::readHtml("w_OrderListItem.html"));
+        
+        item->bindWidget("btn-complete", std::make_unique<Wt::WPushButton>("Complete"));
+        
         item->bindWidget("txt-ordernum", std::make_unique<Wt::WText>((std::to_string(it->getOrderNumber()))));
         item->bindWidget("txt-orderedby", std::make_unique<Wt::WText>(it->getOrderedBy()));
         item->bindWidget("txt-orderdate", std::make_unique<Wt::WText>(it->getOrderDate().substr(0, 19)));
@@ -36,10 +39,34 @@ OrderListPage::OrderListPage()
                                  100);
         panelOrderDetails->setAnimation(animation);
         
-        panelOrderDetails->setCentralWidget(std::make_unique<Wt::WText>("Coffee"));
-        
         panelOrderDetails->expanded().connect([this, panelOrderDetails] { panelOrderDetailsExpanded(panelOrderDetails); });
         panelOrderDetails->collapsed().connect([this, panelOrderDetails] { panelOrderDetailsCollapsed(panelOrderDetails); });
+        
+        Wt::WTable *table = panelOrderDetails->setCentralWidget(std::make_unique<Wt::WTable>());
+        
+        table->setWidth(Wt::WLength("100%"));
+        table->setHeaderCount(1);
+        table->elementAt(0, 0)->addNew<Wt::WText>("Item");
+        table->elementAt(0, 1)->addNew<Wt::WText>("Quantity");
+        table->elementAt(0, 2)->addNew<Wt::WText>("Price");
+        table->elementAt(0, 3)->addNew<Wt::WText>("Total");
+        
+        std::vector<vOrderDetail> details = DBHelper::getInstance()
+            .selectWhere(vOrderDetail(), { SqlCondition("orderNumber", "=", it->getOrderNumber()) }, "menuItemName");
+        double total = 0;
+        int row = 1;
+        for (std::vector<vOrderDetail>::iterator it = details.begin(); it != details.end(); it++)
+        {
+            table->elementAt(row, 0)->addNew<Wt::WText>(it->getMenuItemName());
+            table->elementAt(row, 1)->addNew<Wt::WText>(std::to_string(it->getQuantity()));
+            table->elementAt(row, 2)->addNew<Wt::WText>(IOHelper::formatPrice(it->getPrice()));
+            table->elementAt(row, 3)->addNew<Wt::WText>(IOHelper::formatPrice(it->getTotal()));
+            total += it->getTotal();
+            row++;
+        }
+        
+        table->elementAt(row, 0)->addNew<Wt::WText>("Total");
+        table->elementAt(row, 3)->addNew<Wt::WText>(IOHelper::formatPrice(total));
     }
 }
 

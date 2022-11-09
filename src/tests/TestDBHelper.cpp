@@ -110,25 +110,24 @@ int main(int argc, const char * argv[])
 
     printMenu(menu, "Full menu after price was updated to 29.99 where price > 9.99, unsorted:");
     
-    
     // --- DELETE from database ---
     
-    db.destroy(m6);
-    menu = db.selectWhere(MenuItem());
-
-    printMenu(menu, "Full menu after Lunch Combo 2 was deleted, unsorted:");
-    
-    
-    db.destroyWhere(MenuItem(), { SqlCondition("price", "<=", 5.00) });
-    menu = db.selectWhere(MenuItem());
-    
-    printMenu(menu, "Full menu after everything with price <= 5.00 was deleted, unsorted:");
-    
-    
-    db.destroyWhere(MenuItem(), { });
-    menu = db.selectWhere(MenuItem());
-
-    printMenu(menu, "Full menu after everything was deleted:");
+//    db.destroy(m6);
+//    menu = db.selectWhere(MenuItem());
+//
+//    printMenu(menu, "Full menu after Lunch Combo 2 was deleted, unsorted:");
+//    
+//    
+//    db.destroyWhere(MenuItem(), { SqlCondition("price", "<=", 5.00) });
+//    menu = db.selectWhere(MenuItem());
+//    
+//    printMenu(menu, "Full menu after everything with price <= 5.00 was deleted, unsorted:");
+//    
+//    
+//    db.destroyWhere(MenuItem(), { });
+//    menu = db.selectWhere(MenuItem());
+//
+//    printMenu(menu, "Full menu after everything was deleted:");
     
     return 0;
 }
