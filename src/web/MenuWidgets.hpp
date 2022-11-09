@@ -3,7 +3,7 @@
     Date   : 2022/10/27
 */
 
-#ifndef _MENUWIDGETS_HPP
+#ifndef _MENUWIDGETS_HPP_
 #define _MENUWIDGETS_HPP_
 
 #include <Wt/WContainerWidget.h>
