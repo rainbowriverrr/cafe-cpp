@@ -118,9 +118,15 @@ body {
 }
 
 .w-order-list-item > div:first-child button {
-    font: initial;
-    color: #1D1C1D;
-    background-color: #FFFFFF;
+    all: unset;
+    background-color: #1D1C1D;
+    border-top: 0.1em solid;
+    border-left: 0.1em solid;
+    border-right: 0.1em solid;
+    border-radius: 0.5em 0.5em 0em 0em;
+    padding: 0em 0.5em;
+    font-family: "SF Mono Regular", "Courier New", monospace;
+    cursor: pointer;
 }
 
 .w-order-list-item > div:nth-child(n+2) {

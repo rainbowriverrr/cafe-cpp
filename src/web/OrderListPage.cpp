@@ -20,7 +20,7 @@ OrderListPage::OrderListPage()
     {
         Wt::WTemplate *item = orderList->addNew<Wt::WTemplate>(IOHelper::readHtml("w_OrderListItem.html"));
         
-        item->bindWidget("btn-complete", std::make_unique<Wt::WPushButton>("Complete"));
+        item->bindWidget("btn-complete", std::make_unique<Wt::WPushButton>("Complete Order"));
         
         item->bindWidget("txt-ordernum", std::make_unique<Wt::WText>((std::to_string(it->getOrderNumber()))));
         item->bindWidget("txt-orderedby", std::make_unique<Wt::WText>(it->getOrderedBy()));
