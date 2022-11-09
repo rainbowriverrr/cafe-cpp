@@ -21,6 +21,7 @@ main: $(basename $(notdir $(MAIN)))
 
 $(basename $(notdir $(MAIN))): $(filter-out $(TESTS),$(OBJ))
 	$(CXX) $(CXXFLAGS) $(LDLIBS) $^ -o $@
+	sqlite3 resources/data.db < q.sql
 
 tests: $(basename $(notdir $(TESTS)))
 
@@ -39,7 +40,7 @@ target/%.o: src/%.cpp
 
 .PHONY: clean cleanout cleanobj cleandb
 
-clean: cleanout cleanobj
+clean: cleanout cleanobj cleandb
 
 cleanout:
 	rm -f $(basename $(notdir $(MAIN) $(TESTS)))
@@ -48,5 +49,5 @@ cleanobj:
 	rm -rf target
 
 cleandb:
-	rm -i resources/data.db
+	rm -f resources/data.db
 
