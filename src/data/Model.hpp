@@ -23,7 +23,7 @@ protected:
     /** The name of the SQL table that this model represents. */
     std::string tableName;
     
-    /** The columns of the SQL table, ordered. */
+    /** The columns of the SQL table, in the correct order. */
     std::vector<std::string> columns;
     
     /** The primary key(s) of the SQL table. */

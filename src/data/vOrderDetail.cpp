@@ -46,8 +46,8 @@ Model * vOrderDetail::fromMap(std::map<std::string, std::any> mMap) const
     int mOrderNumber = std::any_cast<int>(mMap[columns[1]]);
     std::string mName = std::any_cast<std::string>(mMap[columns[2]]);
     int mQuantity = std::any_cast<int>(mMap[columns[3]]);
-    int mPrice = std::any_cast<double>(mMap[columns[4]]);
-    int mTotal = std::any_cast<double>(mMap[columns[5]]);
+    double mPrice = std::any_cast<double>(mMap[columns[4]]);
+    double mTotal = std::any_cast<double>(mMap[columns[5]]);
     vOrderDetail *model = new vOrderDetail(mOrderDetailID, mOrderNumber, mName, mQuantity, mPrice, mTotal);
 
     return model;

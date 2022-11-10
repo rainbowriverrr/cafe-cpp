@@ -15,6 +15,11 @@ OrderListPage::OrderListPage()
     
     Wt::WContainerWidget *orderList = pageTemplate->bindWidget("w-order-list", std::make_unique<Wt::WContainerWidget>());
     
+    if (orders.empty())
+    {
+        orderList->addNew<Wt::WTemplate>(IOHelper::readHtml("w_orderlistempty.html"));
+    }
+    
     // Iterates the orders and adds them to list.
     for (std::vector<OrderMaster>::iterator it = orders.begin(); it != orders.end(); it++)
     {
@@ -24,12 +29,17 @@ OrderListPage::OrderListPage()
         completeBtn->setIcon("resources/images/check_circle.png");
         
         OrderMaster orderMasterObj = *it;
-        completeBtn->clicked().connect([item, orderMasterObj, completeBtn] {
+        completeBtn->clicked().connect([orderList, item, orderMasterObj] {
             item->addStyleClass("w-order-list-item-completed");
             //completeBtn->animateHide(Wt::WAnimation(Wt::AnimationEffect::SlideInFromLeft | Wt::AnimationEffect::Fade, Wt::TimingFunction::Ease, 500));
             OrderMaster om = orderMasterObj;
             om.setIsComplete(true);
             DBHelper::getInstance().update(om);
+            
+            if (DBHelper::getInstance().selectWhere(OrderMaster(), { SqlCondition("isComplete", "=", 0) }).empty())
+            {
+                orderList->addNew<Wt::WTemplate>(IOHelper::readHtml("w_orderlistempty.html"));
+            }
         });
         
         // Not a great solution, but Wt animations are bugged and do not seem to work on any browser.

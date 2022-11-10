@@ -54,6 +54,11 @@ body {
     flex: 1;
 }
 
+.sticky-top {
+    position: sticky;
+    top: 0px;
+}
+
 .navbar {
     justify-content: flex-start;
     align-items: stretch;

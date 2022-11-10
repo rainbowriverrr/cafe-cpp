@@ -8,6 +8,8 @@
 
 NavbarWidget::NavbarWidget()
 {
+    addStyleClass("sticky-top");
+    
     Wt::WTemplate *navbarTemplate = addNew<Wt::WTemplate>(IOHelper::readHtml("w_navbar.html"));
     
     Wt::WLink linkHome = Wt::WLink(Wt::LinkType::InternalPath, "/home");
