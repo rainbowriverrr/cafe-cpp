@@ -9,6 +9,14 @@
     --font-family-bold: "SF Mono Bold", monospace;
 }
 
+.colour-magenta {
+    color: var(--colour-magenta);
+}
+
+.colour-cyan {
+    color: var(--colour-cyan);
+}
+
 @font-face {
     font-family: "SF Mono Regular";
     src: url("../fonts/SF-Mono-Regular.otf");
