@@ -1,3 +1,14 @@
+:root {
+    --colour-dark-gray: #1D1C1D;
+    --colour-light-gray: #333333;
+    --colour-magenta: #E500E5;
+    --colour-cyan: #00E5E5;
+    --colour-dark-blue: #1B437E;
+    --colour-light-blue: #7199CD;
+    --font-family-regular: "SF Mono Regular", monospace;
+    --font-family-bold: "SF Mono Bold", monospace;
+}
+
 @font-face {
     font-family: "SF Mono Regular";
     src: url("../fonts/SF-Mono-Regular.otf");
@@ -9,35 +20,13 @@
 }
 
 .font-regular {
-    font-family: "SF Mono Regular", "Courier New", monospace;
+    font-family: var(--font-family-regular);
     font-weight: normal;
 }
 
 .font-bold {
-    font-family: "SF Mono Bold", "Courier New", monospace;
+    font-family: var(--font-family-bold);
     font-weight: bold;
-}
-
-.colour-magenta {
-    color: #E500E5;
-}
-
-.colour-cyan {
-    color: #00E5E5;
-}
-
-.colour-lightblue {
-    color: #7199CD;
-}
-
-.colour-darkblue {
-    color: #1B437E;
-}
-
-body {
-    margin: 0px;
-    background-color: #1D1C1D;
-    color: white;
 }
 
 .flex-row {
@@ -59,26 +48,40 @@ body {
     top: 0px;
 }
 
+body {
+    margin: 0px;
+    background-color: var(--colour-dark-gray);
+    color: white;
+    font-family: var(--font-family-regular);
+    font-weight: normal;
+}
+
 .navbar {
+    display: flex;
+    flex-direction: row;
     justify-content: flex-start;
     align-items: stretch;
     height: 4em;
     width: 100%;
-    background-color: #333333;
+    background-color: var(--colour-light-gray);
+    font-family: var(--font-family-bold);
+    font-weight: bold;
 }
 
 .navbar-item {
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
 .navbar-item:hover {
-    background-color: #1B437E;
+    background-color: var(--colour-dark-blue);
     transition: background-color 0.3s
 }
 
 .navbar-item a {
-    width: 120px;
+    width: 8em;
     height: 4em;
     line-height: 4em;
     text-align: center;
@@ -92,45 +95,50 @@ body {
     vertical-align: middle;
 }
 
-.page {
-    padding: 1em;    
+.list {
+    display: flex;
+    flex-direction: row;
+    padding: 1em;
 }
 
-.page-order-list {
-    justify-content: center;
+.list > div {
+    flex: 2;
+    min-width: 40em;
 }
 
-.page-order-list > div:nth-child(2n-1) {
+.list::before, .list::after {
+    content: "";
     flex: 1;
 }
 
-.page-order-list > div:nth-child(2n) {
-    flex: 2
-}
-
-.w-order-list-item {
-    background-color: #333333;
+.list-item {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--colour-light-gray);
     border-radius: 1em;
     padding: 0.5em 2em;
     margin-bottom: 1.5em;
     line-height: 2em;
 }
 
-div.w-order-list-item-completed > .w-order-list-item {
+div.list-item-removed > .list-item {
     transform: translateX(20em);
     opacity: 0;
     transition: transform 0.5s, opacity 0.4s;
 }
 
-.w-order-list-item > div:first-child {
-    border-bottom: 0.1em solid;
-    font-family: "SF Mono Bold", "Courier New", monospace;
+.list-item-header {
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    border-bottom: 0.1em solid;
+    font-family: var(--font-family-bold);
+    font-weight: bold;
 }
 
-.w-order-list-item > div:first-child button {
+.list-item > .list-item-header button {
     all: unset;
-    background-color: #1D1C1D;
+    background-color: var(--colour-dark-gray);
     border-top: 0.1em solid;
     border-left: 0.1em solid;
     border-right: 0.1em solid;
@@ -140,69 +148,78 @@ div.w-order-list-item-completed > .w-order-list-item {
     cursor: pointer;
 }
 
-.w-order-list-item > div:first-child button:hover {
-    background-color: #1B437E;
+.list-item > .list-item-header button:hover {
+    background-color: var(--colour-dark-blue);
 }
 
-.w-order-list-item > div:first-child button img {
+.list-item > .list-item-header button img {
     display: inline-block;
     height: 1.2em;
     margin-right: 0.3em;
     vertical-align: middle;
 }
 
-.w-order-list-item > div:nth-child(n+2) {
+.list-item > div:nth-child(n+2) {
     margin-top: 0.5em;
 }
 
-.w-order-list-item .order-list-details-wrapper > div {
-    flex: 1;
-    border-radius: 0.5em;
-    background-color: #1D1C1D;
+.panel-wrapper {
+    display: flex;
+    flex-direction: row;
 }
 
-.w-order-list-item .order-list-details-wrapper > div > div:first-child {
-    color: #E500E5;
+.panel-wrapper > div {
+    flex: 1;
+    border-radius: 0.5em;
+    background-color: var(--colour-dark-gray);
+}
+
+.panel-wrapper > div > div:first-child {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    color: var(--colour-magenta);
     cursor: pointer;
 }
 
-.w-order-list-item .order-list-details-wrapper > div > div:nth-child(n+2) {
-    border-top: 0.2em solid #333333;
+.panel-wrapper > div > div:nth-child(n+2) {
+    border-top: 0.2em solid var(--colour-light-gray);
     padding: 0em 1em;
 }
 
-.w-order-list-item .order-list-details-wrapper > div > div:first-child::after {
+.panel-wrapper > div > div:first-child::after {
     content: "";
     background-image: url("../images/chevron.png");
     background-size: 1em;
+    align-self: center;
+    display: inline-block;
     width: 1em;
     height: 1em;
-    display: inline-block;
     margin-left: 0.5em;
-    align-self: center;
     transition: 0.2s ease-in-out;
 }
 
-.w-order-list-item .order-list-details-wrapper > div.expanded > div:first-child::after {
+.panel-wrapper > div.panel-expanded > div:first-child::after {
     -webkit-transform: scale(1,-1);
     transform: scale(1,-1);
 }
 
-.w-order-list-item .order-list-details-wrapper thead tr th:first-child {
+.table-order-details {
+    width: 100%;
+}
+
+.table-order-details thead tr th:first-child {
     width: 35%;
 }
 
-.w-order-list-item .order-list-details-wrapper tbody tr td {
+.table-order-details tbody tr td {
     padding: 0em 1em;
 }
 
-.w-order-list-item .order-list-details-wrapper tbody tr td:nth-child(n+2) {
+.table-order-details tbody tr td:nth-child(n+2) {
     text-align: right;
 }
 
-.w-order-list-item .order-list-details-wrapper tbody tr:last-child {
+.table-order-details tbody tr:last-child {
     border-top: 0.1em solid;
 }

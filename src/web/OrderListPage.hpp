@@ -1,8 +1,6 @@
 //
 //  OrderListPage.hpp
 //
-//  Created by Julian Koksal on 2022-11-07.
-//
 
 #ifndef OrderListPage_hpp
 #define OrderListPage_hpp
@@ -27,7 +25,7 @@
 #include "vOrderDetail.hpp"
 
 /**
- * Class representing the order list page widget.
+ * @brief Class representing the order list page widget.
  * @author Julian Koksal
  * @date 2022-11-07
  */
@@ -44,19 +42,23 @@ public:
      */
     ~OrderListPage();
     
-    /**
-     * Event handler for when the order details panel is expanded.
-     * Changes the text and plays the animation.
-     * @param panel The panel widget.
-     */
-    void panelOrderDetailsExpanded(Wt::WPanel *panel);
+    void onCompleteOrderBtnClicked(Wt::WTemplate *itemTemplate, OrderMaster order);
     
     /**
-     * Event handler for when the order details panel is collapsed.
+     * @brief Event handler for when the order details panel is expanded.
      * Changes the text and plays the animation.
      * @param panel The panel widget.
      */
-    void panelOrderDetailsCollapsed(Wt::WPanel *panel);
+    void onPanelOrderDetailsExpanded(Wt::WPanel *panel);
+    
+    /**
+     * @brief Event handler for when the order details panel is collapsed.
+     * Changes the text and plays the animation.
+     * @param panel The panel widget.
+     */
+    void onPanelOrderDetailsCollapsed(Wt::WPanel *panel);
+private:
+    Wt::WContainerWidget *listWidget;
 };
 
 #endif /* OrderListPage_hpp */

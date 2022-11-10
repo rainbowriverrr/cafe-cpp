@@ -5,7 +5,8 @@
 
 #include "Application.hpp"
 
-Application::Application(const Wt::WEnvironment &env) : Wt::WApplication(env) {
+Application::Application(const Wt::WEnvironment &env) : Wt::WApplication(env)
+{
     setTitle("Cafe C++");
 
     useStyleSheet("resources/css/style.css");
@@ -14,14 +15,18 @@ Application::Application(const Wt::WEnvironment &env) : Wt::WApplication(env) {
     internalPathChanged().connect(this, &Application::handleInternalPath);
 
     page = root()->addNew<Wt::WContainerWidget>();
+    
     navbar = page->addNew<NavbarWidget>();
     body = page->addNew<Wt::WText>("Home Page");
 }
 
-Application::~Application() {
+Application::~Application()
+{
+    
 }
 
-void Application::handleInternalPath(const std::string &internalPath) {
+void Application::handleInternalPath(const std::string &internalPath)
+{
     if (internalPath == "/home")
     {
         page->removeWidget(body);

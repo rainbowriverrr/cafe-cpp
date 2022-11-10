@@ -5,3 +5,4 @@ target
 /web
 Main
 TestDBHelper
+resources/data.db

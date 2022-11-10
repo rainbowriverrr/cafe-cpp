@@ -1,5 +1,12 @@
 <?xml version = "1.0" encoding = "UTF-8" ?>
 <messages>
+    <message id="navbar">
+        <div class="navbar">
+            <span class="navbar-item">${a-home}</span>
+            <span class="navbar-item">${a-menu}</span>
+            <span class="navbar-item">${a-orders}</span>
+        </div>
+    </message>
     <message id="menu-item">
         <div class="page page-order-list flex-row font-regular">
         <div class="font-regular w-order-list-item">
@@ -19,9 +26,24 @@
         </div>
         </div>
     </message>
-    <message id="page-orders">
-        <div class="page page-orders flex-row font-regular">
-            ${w-order-list}
+    <message id="order-list-item">
+        <div class="list-item">
+            <div class="list-item-header">
+                <span class="colour-cyan">Order #${txt-ordernum}</span>
+                ${btn-complete}
+            </div>
+            <div class="flex-row">
+                <span class="flex">${txt-orderedby}</span>
+                <span>${txt-orderdate}</span>
+            </div>
+            <div class="panel-wrapper">
+                ${panel-orderdetails}
+            </div>
+        </div>
+    </message>
+    <message id="order-list-empty">
+        <div class="list-item">
+            <span>There are no orders.</span>
         </div>
     </message>
 </messages>
