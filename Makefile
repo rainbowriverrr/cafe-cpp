@@ -2,7 +2,7 @@
 
 CXX = g++
 CXXFLAGS = -std=c++17 -I src/data -I src/web
-LDLIBS = -lsqlite3 -lwt -lwthttp
+LDLIBS = -lsqlite3 -lwt -lwthttp -L/usr/local/lib
 
 _MAIN = Main.cpp
 MAIN = $(subst src/,target/,$(subst .cpp,.o,$(wildcard src/*/$(_MAIN))))
@@ -20,13 +20,13 @@ all: main tests
 main: $(basename $(notdir $(MAIN)))
 
 $(basename $(notdir $(MAIN))): $(filter-out $(TESTS),$(OBJ))
-	$(CXX) $(CXXFLAGS) $(LDLIBS) $^ -o $@
+	$(CXX) $(CXXFLAGS) $^ -o $@ $(LDLIBS) 
 	sqlite3 resources/data.db < q.sql
 
 tests: $(basename $(notdir $(TESTS)))
 
 %: $(filter-out $(MAIN) $(TESTS),$(OBJ)) target/tests/%.o
-	$(CXX) $(CXXFLAGS) $(LDLIBS) $^ -o $@
+	$(CXX) $(CXXFLAGS) $^ -o $@  $(LDLIBS)
 
 # OBJECTS
 
