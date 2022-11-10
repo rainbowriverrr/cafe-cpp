@@ -30,7 +30,7 @@ void Application::handleInternalPath(const std::string &internalPath)
     if (internalPath == "/home")
     {
         page->removeWidget(body);
-        body = page->addNew<Wt::WText>("Home Page");
+        body = page->addNew<Wt::WText>("Temp Home Page");
     }
     else if (internalPath == "/menu")
     {
@@ -41,6 +41,21 @@ void Application::handleInternalPath(const std::string &internalPath)
     {
         page->removeWidget(body);
         body = page->addNew<OrderListPage>();
+    }
+    else if (internalPath == "/inventory")
+    {
+        page->removeWidget(body);
+        body = page->addNew<Wt::WText>("Temp Inventory Page");
+    }
+    else if (internalPath == "/cart")
+    {
+        page->removeWidget(body);
+        body = page->addNew<Wt::WText>("Temp Cart Page");
+    }
+    else if (internalPath == "/login")
+    {
+        page->removeWidget(body);
+        body = page->addNew<Wt::WText>("Temp Login Page");
     }
     else
     {

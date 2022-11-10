@@ -20,13 +20,13 @@ all: main tests
 main: $(basename $(notdir $(MAIN)))
 
 $(basename $(notdir $(MAIN))): $(filter-out $(TESTS),$(OBJ))
-	$(CXX) $(CXXFLAGS) $(LDLIBS) $^ -o $@
+	$(CXX) $(CXXFLAGS) $^ -o $@ $(LDLIBS)
 	sqlite3 resources/data.db < q.sql
 
 tests: $(basename $(notdir $(TESTS)))
 
 %: $(filter-out $(MAIN) $(TESTS),$(OBJ)) target/tests/%.o
-	$(CXX) $(CXXFLAGS) $(LDLIBS) $^ -o $@
+	$(CXX) $(CXXFLAGS) $^ -o $@ $(LDLIBS)
 
 # OBJECTS
 

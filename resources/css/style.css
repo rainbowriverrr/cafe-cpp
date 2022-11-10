@@ -62,6 +62,7 @@ body {
     color: white;
     font-family: var(--font-family-regular);
     font-weight: normal;
+    min-width: 54em;
 }
 
 .navbar {
@@ -74,6 +75,10 @@ body {
     background-color: var(--colour-light-gray);
     font-family: var(--font-family-bold);
     font-weight: bold;
+}
+
+.navbar-spacer {
+    flex: 1;
 }
 
 .navbar-item {
@@ -89,7 +94,7 @@ body {
 }
 
 .navbar-item a {
-    width: 8em;
+    width: 9em;
     height: 4em;
     line-height: 4em;
     text-align: center;
@@ -99,8 +104,15 @@ body {
 
 .navbar-item a img {
     display: inline-block;
-    height: 2.5em;
     vertical-align: middle;
+}
+
+.navbar-item-home a img {
+    height: 2.5em;
+}
+
+.navbar-item-cart a img {
+    height: 2em;
 }
 
 .list {

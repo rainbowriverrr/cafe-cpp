@@ -2,9 +2,13 @@
 <messages>
     <message id="navbar">
         <div class="navbar">
-            <span class="navbar-item">${a-home}</span>
+            <span class="navbar-item navbar-item-home">${a-home}</span>
             <span class="navbar-item">${a-menu}</span>
             <span class="navbar-item">${a-orders}</span>
+            <span class="navbar-item">${a-inventory}</span>
+            <span class="navbar-spacer"></span>
+            <span class="navbar-item">${a-login}</span>
+            <span class="navbar-item navbar-item-cart">${a-cart}</span>
         </div>
     </message>
     <message id="menu-item">
