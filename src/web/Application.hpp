@@ -47,9 +47,6 @@ class Application : public Wt::WApplication {
     void handleInternalPath(const std::string &internalPath);
 
    private:
-    /** The container widget that contains the entire application. */
-    Wt::WContainerWidget *page;
-
     /** The navbar widget. */
     NavbarWidget *navbar;
     

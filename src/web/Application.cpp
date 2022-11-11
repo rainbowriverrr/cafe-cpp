@@ -13,11 +13,9 @@ Application::Application(const Wt::WEnvironment &env) : Wt::WApplication(env)
     messageResourceBundle().use("resources/html/templates");
 
     internalPathChanged().connect(this, &Application::handleInternalPath);
-
-    page = root()->addNew<Wt::WContainerWidget>();
     
-    navbar = page->addNew<NavbarWidget>();
-    body = page->addNew<Wt::WText>("Home Page");
+    navbar = root()->addNew<NavbarWidget>();
+    body = root()->addNew<Wt::WText>("Home Page");
 }
 
 Application::~Application()
@@ -29,33 +27,33 @@ void Application::handleInternalPath(const std::string &internalPath)
 {
     if (internalPath == "/home")
     {
-        page->removeWidget(body);
-        body = page->addNew<Wt::WText>("Temp Home Page");
+        root()->removeWidget(body);
+        body = root()->addNew<Wt::WText>("Temp Home Page");
     }
     else if (internalPath == "/menu")
     {
-        page->removeWidget(body);
-        body = page->addNew<MenuPage>();
+        root()->removeWidget(body);
+        body = root()->addNew<MenuPage>();
     }
     else if (internalPath == "/orders")
     {
-        page->removeWidget(body);
-        body = page->addNew<OrderListPage>();
+        root()->removeWidget(body);
+        body = root()->addNew<OrderListPage>();
     }
     else if (internalPath == "/inventory")
     {
-        page->removeWidget(body);
-        body = page->addNew<Wt::WText>("Temp Inventory Page");
+        root()->removeWidget(body);
+        body = root()->addNew<Wt::WText>("Temp Inventory Page");
     }
     else if (internalPath == "/cart")
     {
-        page->removeWidget(body);
-        body = page->addNew<Wt::WText>("Temp Cart Page");
+        root()->removeWidget(body);
+        body = root()->addNew<Wt::WText>("Temp Cart Page");
     }
     else if (internalPath == "/login")
     {
-        page->removeWidget(body);
-        body = page->addNew<Wt::WText>("Temp Login Page");
+        root()->removeWidget(body);
+        body = root()->addNew<Wt::WText>("Temp Login Page");
     }
     else
     {
