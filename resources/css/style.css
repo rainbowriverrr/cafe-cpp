@@ -85,12 +85,15 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
 }
 
 .navbar-item:hover {
     background-color: var(--colour-dark-blue);
     transition: background-color 0.3s
+}
+
+.navbar-item.navbar-item-active {
+    border-bottom: 0.5em solid var(--colour-dark-blue);
 }
 
 .navbar-item a {
@@ -100,6 +103,7 @@ body {
     text-align: center;
     text-decoration: none;
     color: white;
+    cursor: pointer;
 }
 
 .navbar-item a img {
@@ -107,11 +111,11 @@ body {
     vertical-align: middle;
 }
 
-.navbar-item-home a img {
+#navbar-item-home a img {
     height: 2.5em;
 }
 
-.navbar-item-cart a img {
+#navbar-item-cart a img {
     height: 2em;
 }
 

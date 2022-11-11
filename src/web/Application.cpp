@@ -16,6 +16,8 @@ Application::Application(const Wt::WEnvironment &env) : Wt::WApplication(env)
     
     navbar = root()->addNew<NavbarWidget>();
     body = root()->addNew<Wt::WText>("Home Page");
+    
+    setInternalPath("/home", false);
 }
 
 Application::~Application()
@@ -25,38 +27,40 @@ Application::~Application()
 
 void Application::handleInternalPath(const std::string &internalPath)
 {
+    root()->removeWidget(body);
+    
     if (internalPath == "/home")
     {
-        root()->removeWidget(body);
         body = root()->addNew<Wt::WText>("Temp Home Page");
     }
     else if (internalPath == "/menu")
     {
-        root()->removeWidget(body);
         body = root()->addNew<MenuPage>();
     }
     else if (internalPath == "/orders")
     {
-        root()->removeWidget(body);
         body = root()->addNew<OrderListPage>();
     }
     else if (internalPath == "/inventory")
     {
-        root()->removeWidget(body);
         body = root()->addNew<Wt::WText>("Temp Inventory Page");
     }
     else if (internalPath == "/cart")
     {
-        root()->removeWidget(body);
         body = root()->addNew<Wt::WText>("Temp Cart Page");
     }
     else if (internalPath == "/login")
     {
-        root()->removeWidget(body);
         body = root()->addNew<Wt::WText>("Temp Login Page");
     }
     else
     {
         setInternalPath("/home", true);
+        return;
     }
+    
+    // Underlines the navbar item that was navigated to.
+    doJavaScript("const items = document.getElementsByClassName('navbar-item');"
+                 "for (const item of items) item.classList.remove('navbar-item-active');"
+                 "document.getElementById('navbar-item-" + internalPath.substr(1) + "').classList.add('navbar-item-active');");
 }

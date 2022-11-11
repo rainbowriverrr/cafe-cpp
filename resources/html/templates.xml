@@ -1,15 +1,28 @@
 <?xml version = "1.0" encoding = "UTF-8" ?>
 <messages>
     <message id="navbar">
-        <div class="navbar">
-            <span class="navbar-item navbar-item-home">${a-home}</span>
-            <span class="navbar-item">${a-menu}</span>
-            <span class="navbar-item">${a-orders}</span>
-            <span class="navbar-item">${a-inventory}</span>
+        <nav class="navbar">
+            <span class="navbar-item navbar-item-active" 
+                id="navbar-item-home">
+                ${a-home}
+            </span>
+            <span class="navbar-item" id="navbar-item-menu">
+                ${a-menu}
+            </span>
+            <span class="navbar-item" id="navbar-item-orders">
+                ${a-orders}
+            </span>
+            <span class="navbar-item" id="navbar-item-inventory">
+                ${a-inventory}
+            </span>
             <span class="navbar-spacer"></span>
-            <span class="navbar-item">${a-login}</span>
-            <span class="navbar-item navbar-item-cart">${a-cart}</span>
-        </div>
+            <span class="navbar-item" id="navbar-item-login">
+                ${a-login}
+            </span>
+            <span class="navbar-item" id="navbar-item-cart">
+                ${a-cart}
+            </span>
+        </nav>
     </message>
     <message id="menu-item">
         <div class="page page-order-list flex-row font-regular">

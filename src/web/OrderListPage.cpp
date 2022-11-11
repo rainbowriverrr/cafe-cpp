@@ -34,9 +34,9 @@ OrderListPage::OrderListPage()
         completeBtn->clicked().connect([this, itemTemplate, orderObj] { onCompleteOrderBtnClicked(itemTemplate, orderObj); });
         
         // Not a great solution, but Wt animations are bugged and do not seem to work on any browser.
-        itemTemplate->doJavaScript(itemTemplate->jsRef() + ".firstElementChild.addEventListener('transitionend', (e) => {"
-                                   + "if (e.target == " + itemTemplate->jsRef() + ".firstElementChild) " + itemTemplate->jsRef()
-                                   + ".style.display = 'none' });");
+        doJavaScript(itemTemplate->jsRef() + ".firstElementChild.addEventListener('transitionend', (e) => {"
+                     + "if (e.target == " + itemTemplate->jsRef() + ".firstElementChild) " + itemTemplate->jsRef()
+                     + ".style.display = 'none' });");
         
         // Binding text
         
