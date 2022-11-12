@@ -1,6 +1,5 @@
 //
-//  main.cpp
-//  DAL Test
+//  TestDBHelper.cpp
 //
 //  Created by Julian Koksal on 2022-09-25.
 //
@@ -25,8 +24,6 @@ void printMenu(std::vector<MenuItem> &menu, std::string header) {
 
 int main(int argc, const char *argv[]) {
     const DBHelper &db = DBHelper::getInstance();
-
-    db.createTableMenuItem();
 
     MenuItem m1 = MenuItem("Coffee", 2.29);
     MenuItem m2 = MenuItem("Latte", 3.00);

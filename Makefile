@@ -13,20 +13,21 @@ MKDIR_P = @ mkdir -p $(@D)
 
 .SECONDARY: $(OBJ)
 
-# EXECUTABLES
+.PHONY: clean cleanout cleanobj cleandb dbtables dbtestdata
 
-all: main tests
+# EXECUTABLES
 
 main: $(basename $(notdir $(MAIN)))
 
 $(basename $(notdir $(MAIN))): $(filter-out $(TESTS),$(OBJ))
 	$(CXX) $(CXXFLAGS) $^ -o $@ $(LDLIBS)
-	sqlite3 resources/data.db < q.sql
+	@ $(MAKE) dbtestdata
 
 tests: $(basename $(notdir $(TESTS)))
 
 %: $(filter-out $(MAIN) $(TESTS),$(OBJ)) target/tests/%.o
 	$(CXX) $(CXXFLAGS) $^ -o $@ $(LDLIBS)
+	@ $(MAKE) dbtables
 
 # OBJECTS
 
@@ -38,7 +39,11 @@ target/%.o: src/%.cpp
 
 # PHONY
 
-.PHONY: clean cleanout cleanobj cleandb
+dbtables: cleandb
+	sqlite3 resources/data.db < tables.sql
+
+dbtestdata: dbtables
+	sqlite3 resources/data.db < test_data.sql
 
 clean: cleanout cleanobj cleandb
 
