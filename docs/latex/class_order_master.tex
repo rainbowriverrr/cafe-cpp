@@ -1,0 +1,328 @@
+\hypertarget{class_order_master}{}\doxysection{Order\+Master Class Reference}
+\label{class_order_master}\index{OrderMaster@{OrderMaster}}
+
+
+{\ttfamily \#include $<$Order\+Master.\+hpp$>$}
+
+Inheritance diagram for Order\+Master\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_order_master}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_order_master_ab48f399d31e75d7e8999a2cf52211956}{Order\+Master}} (int \mbox{\hyperlink{class_order_master_a76a523ff9de17f7ce0287b8271856ec6}{order\+Number}}=0, std\+::string \mbox{\hyperlink{class_order_master_a50daa427815b406d8559545519435ffa}{ordered\+By}}=\char`\"{}\char`\"{}, std\+::string \mbox{\hyperlink{class_order_master_a8a107fa761d68ba658278b5e5411c361}{order\+Date}}=\char`\"{}\char`\"{}, bool \mbox{\hyperlink{class_order_master_aa391932e6754868168415eb707cf8bfb}{is\+Complete}}=0)
+\item 
+\mbox{\hyperlink{class_order_master_ab29983277b16d2a24a819d71d1af1783}{$\sim$\+Order\+Master}} ()
+\item 
+int \mbox{\hyperlink{class_order_master_a44a1068fcd2aae8eb13a9aef5ad3f71d}{get\+Order\+Number}} ()
+\item 
+std\+::string \mbox{\hyperlink{class_order_master_a8d42923360484793627f42223660ee39}{get\+Ordered\+By}} ()
+\item 
+std\+::string \mbox{\hyperlink{class_order_master_ad8f6603a3f4722619c717cf0073f9d58}{get\+Order\+Date}} ()
+\item 
+\mbox{\Hypertarget{class_order_master_a56de6e179b2c53d5473875f0db695e92}\label{class_order_master_a56de6e179b2c53d5473875f0db695e92}} 
+bool {\bfseries get\+Is\+Complete} ()
+\item 
+void \mbox{\hyperlink{class_order_master_ae1d60f757c75790c7cceefdb75af5749}{set\+Ordered\+By}} (std\+::string val)
+\item 
+void \mbox{\hyperlink{class_order_master_ad40e1a59af6e33398cadc68e91235369}{set\+Order\+Date}} (std\+::string val)
+\item 
+void \mbox{\hyperlink{class_order_master_ae4293fcc4cfbec67b3c298b0b5f3cb8e}{set\+Is\+Complete}} (bool val)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::string \mbox{\hyperlink{class_order_master_a8e70f800b11ec64d768b9bfdc76d2c38}{table\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the name of the SQL table that this model represents. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_order_master_ad33e6f8ed27a8c3fe553722de49bd7be}{columns}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the column names of the SQL table, in the correct order. \end{DoxyCompactList}\item 
+virtual std\+::set$<$ std\+::string $>$ \mbox{\hyperlink{class_order_master_a5f7e584ecbfbc18a804507e8445ea1b3}{keys}} () const override
+\begin{DoxyCompactList}\small\item\em Return the column name(s) of the primary key(s) of the SQL table. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_order_master_a18857bd417d2283a87da09e546bec721}{is\+Auto\+Generated\+Key}} () const override
+\begin{DoxyCompactList}\small\item\em Return true if the primary key is of type INTEGER and should have a unique value automatically chosen when inserting, false otherwise. \end{DoxyCompactList}\item 
+virtual std\+::map$<$ std\+::string, std\+::any $>$ \mbox{\hyperlink{class_order_master_a601963a0b0342fd46723300820caab0e}{to\+Map}} () const override
+\begin{DoxyCompactList}\small\item\em Returns a map representation of this object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_model}{Model}} $\ast$ \mbox{\hyperlink{class_order_master_abf6478678d6c6c68bc69946fb594b268}{from\+Map}} (std\+::map$<$ std\+::string, std\+::any $>$ m\+Map) const override
+\begin{DoxyCompactList}\small\item\em Returns a pointer to a new object with member variables initialized according to m\+Map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_order_master_a76a523ff9de17f7ce0287b8271856ec6}{order\+Number}}
+\item 
+std\+::string \mbox{\hyperlink{class_order_master_a50daa427815b406d8559545519435ffa}{ordered\+By}}
+\item 
+std\+::string \mbox{\hyperlink{class_order_master_a8a107fa761d68ba658278b5e5411c361}{order\+Date}}
+\item 
+bool \mbox{\hyperlink{class_order_master_aa391932e6754868168415eb707cf8bfb}{is\+Complete}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing a row of the \mbox{\hyperlink{class_order_master}{Order\+Master}} table. \begin{DoxyAuthor}{Author}
+Julian Koksal 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2022-\/11-\/07 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_order_master_ab48f399d31e75d7e8999a2cf52211956}\label{class_order_master_ab48f399d31e75d7e8999a2cf52211956}} 
+\index{OrderMaster@{OrderMaster}!OrderMaster@{OrderMaster}}
+\index{OrderMaster@{OrderMaster}!OrderMaster@{OrderMaster}}
+\doxysubsubsection{\texorpdfstring{OrderMaster()}{OrderMaster()}}
+{\footnotesize\ttfamily Order\+Master\+::\+Order\+Master (\begin{DoxyParamCaption}\item[{int}]{order\+Number = {\ttfamily 0},  }\item[{std\+::string}]{ordered\+By = {\ttfamily \char`\"{}\char`\"{}},  }\item[{std\+::string}]{order\+Date = {\ttfamily \char`\"{}\char`\"{}},  }\item[{bool}]{is\+Complete = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Constructor creates a \mbox{\hyperlink{class_order_master}{Order\+Master}} object initialized with the given values. 
+\begin{DoxyParams}{Parameters}
+{\em order\+Number} & The order number (primary key). \\
+\hline
+{\em ordered\+By} & Name of the customer of who placed the order. \\
+\hline
+{\em order\+Date} & The date and time of the order. \\
+\hline
+{\em is\+Complete} & Is the order completed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_order_master_ab29983277b16d2a24a819d71d1af1783}\label{class_order_master_ab29983277b16d2a24a819d71d1af1783}} 
+\index{OrderMaster@{OrderMaster}!````~OrderMaster@{$\sim$OrderMaster}}
+\index{````~OrderMaster@{$\sim$OrderMaster}!OrderMaster@{OrderMaster}}
+\doxysubsubsection{\texorpdfstring{$\sim$OrderMaster()}{~OrderMaster()}}
+{\footnotesize\ttfamily Order\+Master\+::$\sim$\+Order\+Master (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_order_master_ad33e6f8ed27a8c3fe553722de49bd7be}\label{class_order_master_ad33e6f8ed27a8c3fe553722de49bd7be}} 
+\index{OrderMaster@{OrderMaster}!columns@{columns}}
+\index{columns@{columns}!OrderMaster@{OrderMaster}}
+\doxysubsubsection{\texorpdfstring{columns()}{columns()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Order\+Master\+::columns (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Returns the column names of the SQL table, in the correct order. 
+
+The order of the vector should be the same as the order of the columns in the SQL table.
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}}. When implemented in a subclass, it should always return the same value for that class.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+vector of column names 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_aa4ca2ad0ac6188800cb560626b9c731d}{Model}}.
+
+\mbox{\Hypertarget{class_order_master_abf6478678d6c6c68bc69946fb594b268}\label{class_order_master_abf6478678d6c6c68bc69946fb594b268}} 
+\index{OrderMaster@{OrderMaster}!fromMap@{fromMap}}
+\index{fromMap@{fromMap}!OrderMaster@{OrderMaster}}
+\doxysubsubsection{\texorpdfstring{fromMap()}{fromMap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_model}{Model}} $\ast$ Order\+Master\+::from\+Map (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, std\+::any $>$}]{m\+Map }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Returns a pointer to a new object with member variables initialized according to m\+Map. 
+
+This is essentially the inverse of \mbox{\hyperlink{class_order_master_a601963a0b0342fd46723300820caab0e}{to\+Map()}}. m\+Map should be a map as described there.
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}} to create an object from the SQLite3 API results.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em m\+Map} & a map representation of the object, as created by a call to \mbox{\hyperlink{class_order_master_a601963a0b0342fd46723300820caab0e}{to\+Map()}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the new model 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_a374adf0b008ef2c644e022a2c849f897}{Model}}.
+
+\mbox{\Hypertarget{class_order_master_ad8f6603a3f4722619c717cf0073f9d58}\label{class_order_master_ad8f6603a3f4722619c717cf0073f9d58}} 
+\index{OrderMaster@{OrderMaster}!getOrderDate@{getOrderDate}}
+\index{getOrderDate@{getOrderDate}!OrderMaster@{OrderMaster}}
+\doxysubsubsection{\texorpdfstring{getOrderDate()}{getOrderDate()}}
+{\footnotesize\ttfamily std\+::string Order\+Master\+::get\+Order\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets the order date. \begin{DoxyReturn}{Returns}
+order\+Date 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_order_master_a8d42923360484793627f42223660ee39}\label{class_order_master_a8d42923360484793627f42223660ee39}} 
+\index{OrderMaster@{OrderMaster}!getOrderedBy@{getOrderedBy}}
+\index{getOrderedBy@{getOrderedBy}!OrderMaster@{OrderMaster}}
+\doxysubsubsection{\texorpdfstring{getOrderedBy()}{getOrderedBy()}}
+{\footnotesize\ttfamily std\+::string Order\+Master\+::get\+Ordered\+By (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets ordered\+By. \begin{DoxyReturn}{Returns}
+ordered\+By 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_order_master_a44a1068fcd2aae8eb13a9aef5ad3f71d}\label{class_order_master_a44a1068fcd2aae8eb13a9aef5ad3f71d}} 
+\index{OrderMaster@{OrderMaster}!getOrderNumber@{getOrderNumber}}
+\index{getOrderNumber@{getOrderNumber}!OrderMaster@{OrderMaster}}
+\doxysubsubsection{\texorpdfstring{getOrderNumber()}{getOrderNumber()}}
+{\footnotesize\ttfamily int Order\+Master\+::get\+Order\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets the order number. \begin{DoxyReturn}{Returns}
+order\+Number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_order_master_a18857bd417d2283a87da09e546bec721}\label{class_order_master_a18857bd417d2283a87da09e546bec721}} 
+\index{OrderMaster@{OrderMaster}!isAutoGeneratedKey@{isAutoGeneratedKey}}
+\index{isAutoGeneratedKey@{isAutoGeneratedKey}!OrderMaster@{OrderMaster}}
+\doxysubsubsection{\texorpdfstring{isAutoGeneratedKey()}{isAutoGeneratedKey()}}
+{\footnotesize\ttfamily bool Order\+Master\+::is\+Auto\+Generated\+Key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Return true if the primary key is of type INTEGER and should have a unique value automatically chosen when inserting, false otherwise. 
+
+When calling DBHelper\+::insert(model), where model is an object that extends \mbox{\hyperlink{class_model}{Model}}, NULL will be used as the value of the primary key column. In place of NULL, SQLite3 will automatically choose the next highest integer as the key.
+
+For more details, see\+: \href{https://www.sqlite.org/lang_createtable.html\#rowid}{\texttt{ https\+://www.\+sqlite.\+org/lang\+\_\+createtable.\+html\#rowid}} \href{https://www.sqlite.org/autoinc.html}{\texttt{ https\+://www.\+sqlite.\+org/autoinc.\+html}}
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}}. When implemented in a subclass, it should always return the same value for that class.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+true if the key should be auto generated, false otherwise 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_a3b8a37c35da901d5d81f411f86e5fc0d}{Model}}.
+
+\mbox{\Hypertarget{class_order_master_a5f7e584ecbfbc18a804507e8445ea1b3}\label{class_order_master_a5f7e584ecbfbc18a804507e8445ea1b3}} 
+\index{OrderMaster@{OrderMaster}!keys@{keys}}
+\index{keys@{keys}!OrderMaster@{OrderMaster}}
+\doxysubsubsection{\texorpdfstring{keys()}{keys()}}
+{\footnotesize\ttfamily std\+::set$<$ std\+::string $>$ Order\+Master\+::keys (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Return the column name(s) of the primary key(s) of the SQL table. 
+
+Returns a subset of column names from \mbox{\hyperlink{class_order_master_ad33e6f8ed27a8c3fe553722de49bd7be}{columns()}}, where those names are the PRIMARY KEY columns of the table.
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}}. When implemented in a subclass, it should always return the same value for that class.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+vector of primary keys 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_a6df15ae2b38971e9a0b562cf046991e2}{Model}}.
+
+\mbox{\Hypertarget{class_order_master_ae4293fcc4cfbec67b3c298b0b5f3cb8e}\label{class_order_master_ae4293fcc4cfbec67b3c298b0b5f3cb8e}} 
+\index{OrderMaster@{OrderMaster}!setIsComplete@{setIsComplete}}
+\index{setIsComplete@{setIsComplete}!OrderMaster@{OrderMaster}}
+\doxysubsubsection{\texorpdfstring{setIsComplete()}{setIsComplete()}}
+{\footnotesize\ttfamily void Order\+Master\+::set\+Is\+Complete (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})}
+
+Sets is\+Complete. 
+\begin{DoxyParams}{Parameters}
+{\em val} & The new value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_order_master_ad40e1a59af6e33398cadc68e91235369}\label{class_order_master_ad40e1a59af6e33398cadc68e91235369}} 
+\index{OrderMaster@{OrderMaster}!setOrderDate@{setOrderDate}}
+\index{setOrderDate@{setOrderDate}!OrderMaster@{OrderMaster}}
+\doxysubsubsection{\texorpdfstring{setOrderDate()}{setOrderDate()}}
+{\footnotesize\ttfamily void Order\+Master\+::set\+Order\+Date (\begin{DoxyParamCaption}\item[{std\+::string}]{val }\end{DoxyParamCaption})}
+
+Sets order\+Date. 
+\begin{DoxyParams}{Parameters}
+{\em val} & The new value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_order_master_ae1d60f757c75790c7cceefdb75af5749}\label{class_order_master_ae1d60f757c75790c7cceefdb75af5749}} 
+\index{OrderMaster@{OrderMaster}!setOrderedBy@{setOrderedBy}}
+\index{setOrderedBy@{setOrderedBy}!OrderMaster@{OrderMaster}}
+\doxysubsubsection{\texorpdfstring{setOrderedBy()}{setOrderedBy()}}
+{\footnotesize\ttfamily void Order\+Master\+::set\+Ordered\+By (\begin{DoxyParamCaption}\item[{std\+::string}]{val }\end{DoxyParamCaption})}
+
+Sets ordered\+By. 
+\begin{DoxyParams}{Parameters}
+{\em val} & The new value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_order_master_a8e70f800b11ec64d768b9bfdc76d2c38}\label{class_order_master_a8e70f800b11ec64d768b9bfdc76d2c38}} 
+\index{OrderMaster@{OrderMaster}!tableName@{tableName}}
+\index{tableName@{tableName}!OrderMaster@{OrderMaster}}
+\doxysubsubsection{\texorpdfstring{tableName()}{tableName()}}
+{\footnotesize\ttfamily std\+::string Order\+Master\+::table\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Returns the name of the SQL table that this model represents. 
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}}. When implemented in a subclass, it should always return the same value for that class.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+the table name 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_aa268944617c5b6bf53115243db0228b8}{Model}}.
+
+\mbox{\Hypertarget{class_order_master_a601963a0b0342fd46723300820caab0e}\label{class_order_master_a601963a0b0342fd46723300820caab0e}} 
+\index{OrderMaster@{OrderMaster}!toMap@{toMap}}
+\index{toMap@{toMap}!OrderMaster@{OrderMaster}}
+\doxysubsubsection{\texorpdfstring{toMap()}{toMap()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, std\+::any $>$ Order\+Master\+::to\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Returns a map representation of this object. 
+
+For each member variable of this object the map has a key value pair where the key is the name of the member variable and the value is the value of the member variable.
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}} to iterate the member variables of this object.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+a map representation of this object 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_aba5aa6aee8243a03a6d0bc1335503e5f}{Model}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_order_master_aa391932e6754868168415eb707cf8bfb}\label{class_order_master_aa391932e6754868168415eb707cf8bfb}} 
+\index{OrderMaster@{OrderMaster}!isComplete@{isComplete}}
+\index{isComplete@{isComplete}!OrderMaster@{OrderMaster}}
+\doxysubsubsection{\texorpdfstring{isComplete}{isComplete}}
+{\footnotesize\ttfamily bool Order\+Master\+::is\+Complete\hspace{0.3cm}{\ttfamily [private]}}
+
+Is the order completed. \mbox{\Hypertarget{class_order_master_a8a107fa761d68ba658278b5e5411c361}\label{class_order_master_a8a107fa761d68ba658278b5e5411c361}} 
+\index{OrderMaster@{OrderMaster}!orderDate@{orderDate}}
+\index{orderDate@{orderDate}!OrderMaster@{OrderMaster}}
+\doxysubsubsection{\texorpdfstring{orderDate}{orderDate}}
+{\footnotesize\ttfamily std\+::string Order\+Master\+::order\+Date\hspace{0.3cm}{\ttfamily [private]}}
+
+The date and time of the order. \mbox{\Hypertarget{class_order_master_a50daa427815b406d8559545519435ffa}\label{class_order_master_a50daa427815b406d8559545519435ffa}} 
+\index{OrderMaster@{OrderMaster}!orderedBy@{orderedBy}}
+\index{orderedBy@{orderedBy}!OrderMaster@{OrderMaster}}
+\doxysubsubsection{\texorpdfstring{orderedBy}{orderedBy}}
+{\footnotesize\ttfamily std\+::string Order\+Master\+::ordered\+By\hspace{0.3cm}{\ttfamily [private]}}
+
+Name of the customer of who placed the order. \mbox{\Hypertarget{class_order_master_a76a523ff9de17f7ce0287b8271856ec6}\label{class_order_master_a76a523ff9de17f7ce0287b8271856ec6}} 
+\index{OrderMaster@{OrderMaster}!orderNumber@{orderNumber}}
+\index{orderNumber@{orderNumber}!OrderMaster@{OrderMaster}}
+\doxysubsubsection{\texorpdfstring{orderNumber}{orderNumber}}
+{\footnotesize\ttfamily int Order\+Master\+::order\+Number\hspace{0.3cm}{\ttfamily [private]}}
+
+The order number (primary key). 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/data/Order\+Master.\+hpp\item 
+src/data/Order\+Master.\+cpp\end{DoxyCompactItemize}

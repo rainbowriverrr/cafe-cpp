@@ -1,0 +1,205 @@
+\hypertarget{class_menu_item_ingredient}{}\doxysection{Menu\+Item\+Ingredient Class Reference}
+\label{class_menu_item_ingredient}\index{MenuItemIngredient@{MenuItemIngredient}}
+Inheritance diagram for Menu\+Item\+Ingredient\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_menu_item_ingredient}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_menu_item_ingredient_a5d0f85e57999634406630cd2d4980c1f}\label{class_menu_item_ingredient_a5d0f85e57999634406630cd2d4980c1f}} 
+{\bfseries Menu\+Item\+Ingredient} (std\+::string menu\+Item\+Name=\char`\"{}\char`\"{}, int inventory\+Item\+ID=0, int quantity=0)
+\item 
+\mbox{\Hypertarget{class_menu_item_ingredient_a526217b935ac39069c966bc4e113083c}\label{class_menu_item_ingredient_a526217b935ac39069c966bc4e113083c}} 
+std\+::string {\bfseries get\+Menu\+Item\+Name} ()
+\item 
+\mbox{\Hypertarget{class_menu_item_ingredient_a00e2080b1554b817a0dfebae645066ba}\label{class_menu_item_ingredient_a00e2080b1554b817a0dfebae645066ba}} 
+int {\bfseries get\+Inventory\+Item\+ID} ()
+\item 
+\mbox{\Hypertarget{class_menu_item_ingredient_a77721888dfbce7758289e96ce50bb7ea}\label{class_menu_item_ingredient_a77721888dfbce7758289e96ce50bb7ea}} 
+int {\bfseries get\+Quantity} ()
+\item 
+\mbox{\Hypertarget{class_menu_item_ingredient_a79d2501369968b21ce34c69eda0c26a1}\label{class_menu_item_ingredient_a79d2501369968b21ce34c69eda0c26a1}} 
+void {\bfseries set\+Menu\+Item\+Name} (std\+::string menu\+Item\+Name)
+\item 
+\mbox{\Hypertarget{class_menu_item_ingredient_a0b4844c63da353012d6c292e8b3836e6}\label{class_menu_item_ingredient_a0b4844c63da353012d6c292e8b3836e6}} 
+void {\bfseries set\+Inventory\+Item\+ID} (int inventory\+Item\+ID)
+\item 
+\mbox{\Hypertarget{class_menu_item_ingredient_a3953d5652d775e5d11deeae752f7ec8d}\label{class_menu_item_ingredient_a3953d5652d775e5d11deeae752f7ec8d}} 
+void {\bfseries set\+Quantity} (int quantity)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::string \mbox{\hyperlink{class_menu_item_ingredient_abb690995e3d1290afa32910dba2ca137}{table\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the name of the SQL table that this model represents. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_menu_item_ingredient_a7128a6977ef139d3b82cce2d59d4a01c}{columns}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the column names of the SQL table, in the correct order. \end{DoxyCompactList}\item 
+virtual std\+::set$<$ std\+::string $>$ \mbox{\hyperlink{class_menu_item_ingredient_af678ce176cc316bce0dd2ddda3a016fd}{keys}} () const override
+\begin{DoxyCompactList}\small\item\em Return the column name(s) of the primary key(s) of the SQL table. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_menu_item_ingredient_aabcd945cca5b09449efc180f423b8abe}{is\+Auto\+Generated\+Key}} () const override
+\begin{DoxyCompactList}\small\item\em Return true if the primary key is of type INTEGER and should have a unique value automatically chosen when inserting, false otherwise. \end{DoxyCompactList}\item 
+virtual std\+::map$<$ std\+::string, std\+::any $>$ \mbox{\hyperlink{class_menu_item_ingredient_a8593db1bdb15c22d8985c44b0da3f5be}{to\+Map}} () const override
+\begin{DoxyCompactList}\small\item\em Returns a map representation of this object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_model}{Model}} $\ast$ \mbox{\hyperlink{class_menu_item_ingredient_adf1583d2c8cfddc0dee0c720b3b7dedb}{from\+Map}} (std\+::map$<$ std\+::string, std\+::any $>$ m\+Map) const override
+\begin{DoxyCompactList}\small\item\em Returns a pointer to a new object with member variables initialized according to m\+Map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_menu_item_ingredient_a94116125b2f6c07630ae6ed8ae493597}\label{class_menu_item_ingredient_a94116125b2f6c07630ae6ed8ae493597}} 
+std\+::string {\bfseries menu\+Item\+Name}
+\item 
+\mbox{\Hypertarget{class_menu_item_ingredient_a132cbbd4e8a32d3643fd1ef865ee9b91}\label{class_menu_item_ingredient_a132cbbd4e8a32d3643fd1ef865ee9b91}} 
+int {\bfseries inventory\+Item\+ID}
+\item 
+\mbox{\Hypertarget{class_menu_item_ingredient_aecd2df6d2297ed5621bff7463cb9aa1b}\label{class_menu_item_ingredient_aecd2df6d2297ed5621bff7463cb9aa1b}} 
+int {\bfseries quantity}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_menu_item_ingredient_a7128a6977ef139d3b82cce2d59d4a01c}\label{class_menu_item_ingredient_a7128a6977ef139d3b82cce2d59d4a01c}} 
+\index{MenuItemIngredient@{MenuItemIngredient}!columns@{columns}}
+\index{columns@{columns}!MenuItemIngredient@{MenuItemIngredient}}
+\doxysubsubsection{\texorpdfstring{columns()}{columns()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Menu\+Item\+Ingredient\+::columns (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Returns the column names of the SQL table, in the correct order. 
+
+The order of the vector should be the same as the order of the columns in the SQL table.
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}}. When implemented in a subclass, it should always return the same value for that class.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+vector of column names 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_aa4ca2ad0ac6188800cb560626b9c731d}{Model}}.
+
+\mbox{\Hypertarget{class_menu_item_ingredient_adf1583d2c8cfddc0dee0c720b3b7dedb}\label{class_menu_item_ingredient_adf1583d2c8cfddc0dee0c720b3b7dedb}} 
+\index{MenuItemIngredient@{MenuItemIngredient}!fromMap@{fromMap}}
+\index{fromMap@{fromMap}!MenuItemIngredient@{MenuItemIngredient}}
+\doxysubsubsection{\texorpdfstring{fromMap()}{fromMap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_model}{Model}} $\ast$ Menu\+Item\+Ingredient\+::from\+Map (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, std\+::any $>$}]{m\+Map }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Returns a pointer to a new object with member variables initialized according to m\+Map. 
+
+This is essentially the inverse of \mbox{\hyperlink{class_menu_item_ingredient_a8593db1bdb15c22d8985c44b0da3f5be}{to\+Map()}}. m\+Map should be a map as described there.
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}} to create an object from the SQLite3 API results.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em m\+Map} & a map representation of the object, as created by a call to \mbox{\hyperlink{class_menu_item_ingredient_a8593db1bdb15c22d8985c44b0da3f5be}{to\+Map()}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the new model 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_a374adf0b008ef2c644e022a2c849f897}{Model}}.
+
+\mbox{\Hypertarget{class_menu_item_ingredient_aabcd945cca5b09449efc180f423b8abe}\label{class_menu_item_ingredient_aabcd945cca5b09449efc180f423b8abe}} 
+\index{MenuItemIngredient@{MenuItemIngredient}!isAutoGeneratedKey@{isAutoGeneratedKey}}
+\index{isAutoGeneratedKey@{isAutoGeneratedKey}!MenuItemIngredient@{MenuItemIngredient}}
+\doxysubsubsection{\texorpdfstring{isAutoGeneratedKey()}{isAutoGeneratedKey()}}
+{\footnotesize\ttfamily bool Menu\+Item\+Ingredient\+::is\+Auto\+Generated\+Key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Return true if the primary key is of type INTEGER and should have a unique value automatically chosen when inserting, false otherwise. 
+
+When calling DBHelper\+::insert(model), where model is an object that extends \mbox{\hyperlink{class_model}{Model}}, NULL will be used as the value of the primary key column. In place of NULL, SQLite3 will automatically choose the next highest integer as the key.
+
+For more details, see\+: \href{https://www.sqlite.org/lang_createtable.html\#rowid}{\texttt{ https\+://www.\+sqlite.\+org/lang\+\_\+createtable.\+html\#rowid}} \href{https://www.sqlite.org/autoinc.html}{\texttt{ https\+://www.\+sqlite.\+org/autoinc.\+html}}
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}}. When implemented in a subclass, it should always return the same value for that class.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+true if the key should be auto generated, false otherwise 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_a3b8a37c35da901d5d81f411f86e5fc0d}{Model}}.
+
+\mbox{\Hypertarget{class_menu_item_ingredient_af678ce176cc316bce0dd2ddda3a016fd}\label{class_menu_item_ingredient_af678ce176cc316bce0dd2ddda3a016fd}} 
+\index{MenuItemIngredient@{MenuItemIngredient}!keys@{keys}}
+\index{keys@{keys}!MenuItemIngredient@{MenuItemIngredient}}
+\doxysubsubsection{\texorpdfstring{keys()}{keys()}}
+{\footnotesize\ttfamily std\+::set$<$ std\+::string $>$ Menu\+Item\+Ingredient\+::keys (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Return the column name(s) of the primary key(s) of the SQL table. 
+
+Returns a subset of column names from \mbox{\hyperlink{class_menu_item_ingredient_a7128a6977ef139d3b82cce2d59d4a01c}{columns()}}, where those names are the PRIMARY KEY columns of the table.
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}}. When implemented in a subclass, it should always return the same value for that class.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+vector of primary keys 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_a6df15ae2b38971e9a0b562cf046991e2}{Model}}.
+
+\mbox{\Hypertarget{class_menu_item_ingredient_abb690995e3d1290afa32910dba2ca137}\label{class_menu_item_ingredient_abb690995e3d1290afa32910dba2ca137}} 
+\index{MenuItemIngredient@{MenuItemIngredient}!tableName@{tableName}}
+\index{tableName@{tableName}!MenuItemIngredient@{MenuItemIngredient}}
+\doxysubsubsection{\texorpdfstring{tableName()}{tableName()}}
+{\footnotesize\ttfamily std\+::string Menu\+Item\+Ingredient\+::table\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Returns the name of the SQL table that this model represents. 
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}}. When implemented in a subclass, it should always return the same value for that class.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+the table name 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_aa268944617c5b6bf53115243db0228b8}{Model}}.
+
+\mbox{\Hypertarget{class_menu_item_ingredient_a8593db1bdb15c22d8985c44b0da3f5be}\label{class_menu_item_ingredient_a8593db1bdb15c22d8985c44b0da3f5be}} 
+\index{MenuItemIngredient@{MenuItemIngredient}!toMap@{toMap}}
+\index{toMap@{toMap}!MenuItemIngredient@{MenuItemIngredient}}
+\doxysubsubsection{\texorpdfstring{toMap()}{toMap()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, std\+::any $>$ Menu\+Item\+Ingredient\+::to\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Returns a map representation of this object. 
+
+For each member variable of this object the map has a key value pair where the key is the name of the member variable and the value is the value of the member variable.
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}} to iterate the member variables of this object.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+a map representation of this object 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_aba5aa6aee8243a03a6d0bc1335503e5f}{Model}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/data/Menu\+Item\+Ingredient.\+hpp\item 
+src/data/Menu\+Item\+Ingredient.\+cpp\end{DoxyCompactItemize}

@@ -649,7 +649,7 @@ std::vector<Model *> DBHelper::selectWhereHelper(const Model &model, std::vector
 
 void DBHelper::openDB()
 {
-    const char* file_name = "resources/data.db";
+    const char* file_name = "sql/data.db";
     int result;
     result = sqlite3_open(file_name, &db);
     if (result != SQLITE_OK) {

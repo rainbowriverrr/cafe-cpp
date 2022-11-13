@@ -1,0 +1,190 @@
+\hypertarget{class_auth_token}{}\doxysection{Auth\+Token Class Reference}
+\label{class_auth_token}\index{AuthToken@{AuthToken}}
+Inheritance diagram for Auth\+Token\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_auth_token}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_auth_token_a0e6d86fac85e360307aa05c143251f13}\label{class_auth_token_a0e6d86fac85e360307aa05c143251f13}} 
+{\bfseries Auth\+Token} (std\+::string token\+ID, std\+::string created\+Date)
+\item 
+\mbox{\Hypertarget{class_auth_token_a17a687c6231c8fc15680c416b58bbd04}\label{class_auth_token_a17a687c6231c8fc15680c416b58bbd04}} 
+std\+::string {\bfseries get\+Token\+ID} ()
+\item 
+\mbox{\Hypertarget{class_auth_token_a490248e0207d9e15faa43d8dff50d8c6}\label{class_auth_token_a490248e0207d9e15faa43d8dff50d8c6}} 
+bool {\bfseries is\+Valid} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::string \mbox{\hyperlink{class_auth_token_a4ae24a8c40631e8a902b195c0d9d39a0}{table\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the name of the SQL table that this model represents. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_auth_token_acec1065b2cf56944a2cd2d200c4d95b8}{columns}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the column names of the SQL table, in the correct order. \end{DoxyCompactList}\item 
+virtual std\+::set$<$ std\+::string $>$ \mbox{\hyperlink{class_auth_token_a9007c9e75eafc7b09d306940ba938e40}{keys}} () const override
+\begin{DoxyCompactList}\small\item\em Return the column name(s) of the primary key(s) of the SQL table. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_auth_token_a3366560a836b086c06bd682df13cb399}{is\+Auto\+Generated\+Key}} () const override
+\begin{DoxyCompactList}\small\item\em Return true if the primary key is of type INTEGER and should have a unique value automatically chosen when inserting, false otherwise. \end{DoxyCompactList}\item 
+virtual std\+::map$<$ std\+::string, std\+::any $>$ \mbox{\hyperlink{class_auth_token_a474f964609ca293b3500e5d3001d3d7f}{to\+Map}} () const override
+\begin{DoxyCompactList}\small\item\em Returns a map representation of this object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_model}{Model}} $\ast$ \mbox{\hyperlink{class_auth_token_a73e01e0f596dbc939c7af7a84f279e62}{from\+Map}} (std\+::map$<$ std\+::string, std\+::any $>$ m\+Map) const override
+\begin{DoxyCompactList}\small\item\em Returns a pointer to a new object with member variables initialized according to m\+Map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_auth_token_af00db1d9820ab67d932eb3c682d4c20c}\label{class_auth_token_af00db1d9820ab67d932eb3c682d4c20c}} 
+std\+::string {\bfseries token\+ID}
+\item 
+\mbox{\Hypertarget{class_auth_token_a13758c5c3c1364f21adf3f570d1577e7}\label{class_auth_token_a13758c5c3c1364f21adf3f570d1577e7}} 
+std\+::string {\bfseries created\+Date}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_auth_token_acec1065b2cf56944a2cd2d200c4d95b8}\label{class_auth_token_acec1065b2cf56944a2cd2d200c4d95b8}} 
+\index{AuthToken@{AuthToken}!columns@{columns}}
+\index{columns@{columns}!AuthToken@{AuthToken}}
+\doxysubsubsection{\texorpdfstring{columns()}{columns()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Auth\+Token\+::columns (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Returns the column names of the SQL table, in the correct order. 
+
+The order of the vector should be the same as the order of the columns in the SQL table.
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}}. When implemented in a subclass, it should always return the same value for that class.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+vector of column names 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_aa4ca2ad0ac6188800cb560626b9c731d}{Model}}.
+
+\mbox{\Hypertarget{class_auth_token_a73e01e0f596dbc939c7af7a84f279e62}\label{class_auth_token_a73e01e0f596dbc939c7af7a84f279e62}} 
+\index{AuthToken@{AuthToken}!fromMap@{fromMap}}
+\index{fromMap@{fromMap}!AuthToken@{AuthToken}}
+\doxysubsubsection{\texorpdfstring{fromMap()}{fromMap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_model}{Model}} $\ast$ Auth\+Token\+::from\+Map (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, std\+::any $>$}]{m\+Map }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Returns a pointer to a new object with member variables initialized according to m\+Map. 
+
+This is essentially the inverse of \mbox{\hyperlink{class_auth_token_a474f964609ca293b3500e5d3001d3d7f}{to\+Map()}}. m\+Map should be a map as described there.
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}} to create an object from the SQLite3 API results.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em m\+Map} & a map representation of the object, as created by a call to \mbox{\hyperlink{class_auth_token_a474f964609ca293b3500e5d3001d3d7f}{to\+Map()}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the new model 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_a374adf0b008ef2c644e022a2c849f897}{Model}}.
+
+\mbox{\Hypertarget{class_auth_token_a3366560a836b086c06bd682df13cb399}\label{class_auth_token_a3366560a836b086c06bd682df13cb399}} 
+\index{AuthToken@{AuthToken}!isAutoGeneratedKey@{isAutoGeneratedKey}}
+\index{isAutoGeneratedKey@{isAutoGeneratedKey}!AuthToken@{AuthToken}}
+\doxysubsubsection{\texorpdfstring{isAutoGeneratedKey()}{isAutoGeneratedKey()}}
+{\footnotesize\ttfamily bool Auth\+Token\+::is\+Auto\+Generated\+Key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Return true if the primary key is of type INTEGER and should have a unique value automatically chosen when inserting, false otherwise. 
+
+When calling DBHelper\+::insert(model), where model is an object that extends \mbox{\hyperlink{class_model}{Model}}, NULL will be used as the value of the primary key column. In place of NULL, SQLite3 will automatically choose the next highest integer as the key.
+
+For more details, see\+: \href{https://www.sqlite.org/lang_createtable.html\#rowid}{\texttt{ https\+://www.\+sqlite.\+org/lang\+\_\+createtable.\+html\#rowid}} \href{https://www.sqlite.org/autoinc.html}{\texttt{ https\+://www.\+sqlite.\+org/autoinc.\+html}}
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}}. When implemented in a subclass, it should always return the same value for that class.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+true if the key should be auto generated, false otherwise 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_a3b8a37c35da901d5d81f411f86e5fc0d}{Model}}.
+
+\mbox{\Hypertarget{class_auth_token_a9007c9e75eafc7b09d306940ba938e40}\label{class_auth_token_a9007c9e75eafc7b09d306940ba938e40}} 
+\index{AuthToken@{AuthToken}!keys@{keys}}
+\index{keys@{keys}!AuthToken@{AuthToken}}
+\doxysubsubsection{\texorpdfstring{keys()}{keys()}}
+{\footnotesize\ttfamily std\+::set$<$ std\+::string $>$ Auth\+Token\+::keys (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Return the column name(s) of the primary key(s) of the SQL table. 
+
+Returns a subset of column names from \mbox{\hyperlink{class_auth_token_acec1065b2cf56944a2cd2d200c4d95b8}{columns()}}, where those names are the PRIMARY KEY columns of the table.
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}}. When implemented in a subclass, it should always return the same value for that class.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+vector of primary keys 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_a6df15ae2b38971e9a0b562cf046991e2}{Model}}.
+
+\mbox{\Hypertarget{class_auth_token_a4ae24a8c40631e8a902b195c0d9d39a0}\label{class_auth_token_a4ae24a8c40631e8a902b195c0d9d39a0}} 
+\index{AuthToken@{AuthToken}!tableName@{tableName}}
+\index{tableName@{tableName}!AuthToken@{AuthToken}}
+\doxysubsubsection{\texorpdfstring{tableName()}{tableName()}}
+{\footnotesize\ttfamily std\+::string Auth\+Token\+::table\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Returns the name of the SQL table that this model represents. 
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}}. When implemented in a subclass, it should always return the same value for that class.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+the table name 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_aa268944617c5b6bf53115243db0228b8}{Model}}.
+
+\mbox{\Hypertarget{class_auth_token_a474f964609ca293b3500e5d3001d3d7f}\label{class_auth_token_a474f964609ca293b3500e5d3001d3d7f}} 
+\index{AuthToken@{AuthToken}!toMap@{toMap}}
+\index{toMap@{toMap}!AuthToken@{AuthToken}}
+\doxysubsubsection{\texorpdfstring{toMap()}{toMap()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, std\+::any $>$ Auth\+Token\+::to\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Returns a map representation of this object. 
+
+For each member variable of this object the map has a key value pair where the key is the name of the member variable and the value is the value of the member variable.
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}} to iterate the member variables of this object.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+a map representation of this object 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_aba5aa6aee8243a03a6d0bc1335503e5f}{Model}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/data/Auth\+Token.\+hpp\item 
+src/data/Auth\+Token.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,268 @@
+\hypertarget{class_menu_item}{}\doxysection{Menu\+Item Class Reference}
+\label{class_menu_item}\index{MenuItem@{MenuItem}}
+
+
+{\ttfamily \#include $<$Menu\+Item.\+hpp$>$}
+
+Inheritance diagram for Menu\+Item\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_menu_item}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_menu_item_a4bf1aac1d8a9bbea3107d6f6e94175b5}{Menu\+Item}} (std\+::string \mbox{\hyperlink{class_menu_item_a0e46de23f339da33aebb4b14ada546a7}{name}}=\char`\"{}\char`\"{}, double \mbox{\hyperlink{class_menu_item_a05ed0defbede1c8398b3f3a610c1c732}{price}}=0)
+\item 
+\mbox{\hyperlink{class_menu_item_a41c6086a4d066256ecb7bfa715059ea2}{$\sim$\+Menu\+Item}} ()
+\item 
+std\+::string \mbox{\hyperlink{class_menu_item_a1500747998ce2503d0b576e4c3e60101}{get\+Name}} ()
+\item 
+double \mbox{\hyperlink{class_menu_item_a5b9bbfe9c37ff669a5e3b21c171e28a0}{get\+Price}} ()
+\item 
+void \mbox{\hyperlink{class_menu_item_ae2ebb751e94c46e5bbe32dc2f8003919}{set\+Price}} (double \mbox{\hyperlink{class_menu_item_a05ed0defbede1c8398b3f3a610c1c732}{price}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::string \mbox{\hyperlink{class_menu_item_a1e9569fb3673c3cd22d4b1a51a36094f}{table\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the name of the SQL table that this model represents. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_menu_item_a3c472ad7c9a9289b8a0a8e6519022238}{columns}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the column names of the SQL table, in the correct order. \end{DoxyCompactList}\item 
+virtual std\+::set$<$ std\+::string $>$ \mbox{\hyperlink{class_menu_item_afacfc4ebc0343500f5c36bd9df210cc8}{keys}} () const override
+\begin{DoxyCompactList}\small\item\em Return the column \mbox{\hyperlink{class_menu_item_a0e46de23f339da33aebb4b14ada546a7}{name(s)}} of the primary key(s) of the SQL table. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_menu_item_a8b19537273b6a08db1ea369a0d2bbadd}{is\+Auto\+Generated\+Key}} () const override
+\begin{DoxyCompactList}\small\item\em Return true if the primary key is of type INTEGER and should have a unique value automatically chosen when inserting, false otherwise. \end{DoxyCompactList}\item 
+virtual std\+::map$<$ std\+::string, std\+::any $>$ \mbox{\hyperlink{class_menu_item_a836e2263caaf6622f7626c9dc21fab7e}{to\+Map}} () const override
+\begin{DoxyCompactList}\small\item\em Returns a map representation of this object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_model}{Model}} $\ast$ \mbox{\hyperlink{class_menu_item_a3a9886e6e7d419db93510fd514820ef9}{from\+Map}} (std\+::map$<$ std\+::string, std\+::any $>$ m\+Map) const override
+\begin{DoxyCompactList}\small\item\em Returns a pointer to a new object with member variables initialized according to m\+Map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_menu_item_a0e46de23f339da33aebb4b14ada546a7}{name}}
+\item 
+double \mbox{\hyperlink{class_menu_item_a05ed0defbede1c8398b3f3a610c1c732}{price}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing a row of the \mbox{\hyperlink{class_menu_item}{Menu\+Item}} table. \begin{DoxyAuthor}{Author}
+Julian Koksal 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2022-\/09-\/25 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_menu_item_a4bf1aac1d8a9bbea3107d6f6e94175b5}\label{class_menu_item_a4bf1aac1d8a9bbea3107d6f6e94175b5}} 
+\index{MenuItem@{MenuItem}!MenuItem@{MenuItem}}
+\index{MenuItem@{MenuItem}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{MenuItem()}{MenuItem()}}
+{\footnotesize\ttfamily Menu\+Item\+::\+Menu\+Item (\begin{DoxyParamCaption}\item[{std\+::string}]{name = {\ttfamily \char`\"{}\char`\"{}},  }\item[{double}]{price = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Constructor creates a \mbox{\hyperlink{class_menu_item}{Menu\+Item}} with the given values. 
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the \mbox{\hyperlink{class_menu_item}{Menu\+Item}}. \\
+\hline
+{\em price} & The price of the \mbox{\hyperlink{class_menu_item}{Menu\+Item}}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_menu_item_a41c6086a4d066256ecb7bfa715059ea2}\label{class_menu_item_a41c6086a4d066256ecb7bfa715059ea2}} 
+\index{MenuItem@{MenuItem}!````~MenuItem@{$\sim$MenuItem}}
+\index{````~MenuItem@{$\sim$MenuItem}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{$\sim$MenuItem()}{~MenuItem()}}
+{\footnotesize\ttfamily Menu\+Item\+::$\sim$\+Menu\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_menu_item_a3c472ad7c9a9289b8a0a8e6519022238}\label{class_menu_item_a3c472ad7c9a9289b8a0a8e6519022238}} 
+\index{MenuItem@{MenuItem}!columns@{columns}}
+\index{columns@{columns}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{columns()}{columns()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Menu\+Item\+::columns (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Returns the column names of the SQL table, in the correct order. 
+
+The order of the vector should be the same as the order of the columns in the SQL table.
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}}. When implemented in a subclass, it should always return the same value for that class.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+vector of column names 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_aa4ca2ad0ac6188800cb560626b9c731d}{Model}}.
+
+\mbox{\Hypertarget{class_menu_item_a3a9886e6e7d419db93510fd514820ef9}\label{class_menu_item_a3a9886e6e7d419db93510fd514820ef9}} 
+\index{MenuItem@{MenuItem}!fromMap@{fromMap}}
+\index{fromMap@{fromMap}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{fromMap()}{fromMap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_model}{Model}} $\ast$ Menu\+Item\+::from\+Map (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, std\+::any $>$}]{m\+Map }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Returns a pointer to a new object with member variables initialized according to m\+Map. 
+
+This is essentially the inverse of \mbox{\hyperlink{class_menu_item_a836e2263caaf6622f7626c9dc21fab7e}{to\+Map()}}. m\+Map should be a map as described there.
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}} to create an object from the SQLite3 API results.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em m\+Map} & a map representation of the object, as created by a call to \mbox{\hyperlink{class_menu_item_a836e2263caaf6622f7626c9dc21fab7e}{to\+Map()}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the new model 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_a374adf0b008ef2c644e022a2c849f897}{Model}}.
+
+\mbox{\Hypertarget{class_menu_item_a1500747998ce2503d0b576e4c3e60101}\label{class_menu_item_a1500747998ce2503d0b576e4c3e60101}} 
+\index{MenuItem@{MenuItem}!getName@{getName}}
+\index{getName@{getName}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Menu\+Item\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets the name. \begin{DoxyReturn}{Returns}
+name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_menu_item_a5b9bbfe9c37ff669a5e3b21c171e28a0}\label{class_menu_item_a5b9bbfe9c37ff669a5e3b21c171e28a0}} 
+\index{MenuItem@{MenuItem}!getPrice@{getPrice}}
+\index{getPrice@{getPrice}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{getPrice()}{getPrice()}}
+{\footnotesize\ttfamily double Menu\+Item\+::get\+Price (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets the price. \begin{DoxyReturn}{Returns}
+price 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_menu_item_a8b19537273b6a08db1ea369a0d2bbadd}\label{class_menu_item_a8b19537273b6a08db1ea369a0d2bbadd}} 
+\index{MenuItem@{MenuItem}!isAutoGeneratedKey@{isAutoGeneratedKey}}
+\index{isAutoGeneratedKey@{isAutoGeneratedKey}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{isAutoGeneratedKey()}{isAutoGeneratedKey()}}
+{\footnotesize\ttfamily bool Menu\+Item\+::is\+Auto\+Generated\+Key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Return true if the primary key is of type INTEGER and should have a unique value automatically chosen when inserting, false otherwise. 
+
+When calling DBHelper\+::insert(model), where model is an object that extends \mbox{\hyperlink{class_model}{Model}}, NULL will be used as the value of the primary key column. In place of NULL, SQLite3 will automatically choose the next highest integer as the key.
+
+For more details, see\+: \href{https://www.sqlite.org/lang_createtable.html\#rowid}{\texttt{ https\+://www.\+sqlite.\+org/lang\+\_\+createtable.\+html\#rowid}} \href{https://www.sqlite.org/autoinc.html}{\texttt{ https\+://www.\+sqlite.\+org/autoinc.\+html}}
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}}. When implemented in a subclass, it should always return the same value for that class.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+true if the key should be auto generated, false otherwise 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_a3b8a37c35da901d5d81f411f86e5fc0d}{Model}}.
+
+\mbox{\Hypertarget{class_menu_item_afacfc4ebc0343500f5c36bd9df210cc8}\label{class_menu_item_afacfc4ebc0343500f5c36bd9df210cc8}} 
+\index{MenuItem@{MenuItem}!keys@{keys}}
+\index{keys@{keys}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{keys()}{keys()}}
+{\footnotesize\ttfamily std\+::set$<$ std\+::string $>$ Menu\+Item\+::keys (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Return the column \mbox{\hyperlink{class_menu_item_a0e46de23f339da33aebb4b14ada546a7}{name(s)}} of the primary key(s) of the SQL table. 
+
+Returns a subset of column names from \mbox{\hyperlink{class_menu_item_a3c472ad7c9a9289b8a0a8e6519022238}{columns()}}, where those names are the PRIMARY KEY columns of the table.
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}}. When implemented in a subclass, it should always return the same value for that class.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+vector of primary keys 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_a6df15ae2b38971e9a0b562cf046991e2}{Model}}.
+
+\mbox{\Hypertarget{class_menu_item_ae2ebb751e94c46e5bbe32dc2f8003919}\label{class_menu_item_ae2ebb751e94c46e5bbe32dc2f8003919}} 
+\index{MenuItem@{MenuItem}!setPrice@{setPrice}}
+\index{setPrice@{setPrice}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{setPrice()}{setPrice()}}
+{\footnotesize\ttfamily void Menu\+Item\+::set\+Price (\begin{DoxyParamCaption}\item[{double}]{price }\end{DoxyParamCaption})}
+
+Sets the price. 
+\begin{DoxyParams}{Parameters}
+{\em price} & The new price. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_menu_item_a1e9569fb3673c3cd22d4b1a51a36094f}\label{class_menu_item_a1e9569fb3673c3cd22d4b1a51a36094f}} 
+\index{MenuItem@{MenuItem}!tableName@{tableName}}
+\index{tableName@{tableName}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{tableName()}{tableName()}}
+{\footnotesize\ttfamily std\+::string Menu\+Item\+::table\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Returns the name of the SQL table that this model represents. 
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}}. When implemented in a subclass, it should always return the same value for that class.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+the table name 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_aa268944617c5b6bf53115243db0228b8}{Model}}.
+
+\mbox{\Hypertarget{class_menu_item_a836e2263caaf6622f7626c9dc21fab7e}\label{class_menu_item_a836e2263caaf6622f7626c9dc21fab7e}} 
+\index{MenuItem@{MenuItem}!toMap@{toMap}}
+\index{toMap@{toMap}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{toMap()}{toMap()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, std\+::any $>$ Menu\+Item\+::to\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Returns a map representation of this object. 
+
+For each member variable of this object the map has a key value pair where the key is the name of the member variable and the value is the value of the member variable.
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}} to iterate the member variables of this object.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+a map representation of this object 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_aba5aa6aee8243a03a6d0bc1335503e5f}{Model}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_menu_item_a0e46de23f339da33aebb4b14ada546a7}\label{class_menu_item_a0e46de23f339da33aebb4b14ada546a7}} 
+\index{MenuItem@{MenuItem}!name@{name}}
+\index{name@{name}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily std\+::string Menu\+Item\+::name\hspace{0.3cm}{\ttfamily [private]}}
+
+The name of the \mbox{\hyperlink{class_menu_item}{Menu\+Item}}. \mbox{\Hypertarget{class_menu_item_a05ed0defbede1c8398b3f3a610c1c732}\label{class_menu_item_a05ed0defbede1c8398b3f3a610c1c732}} 
+\index{MenuItem@{MenuItem}!price@{price}}
+\index{price@{price}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{price}{price}}
+{\footnotesize\ttfamily double Menu\+Item\+::price\hspace{0.3cm}{\ttfamily [private]}}
+
+The price of the \mbox{\hyperlink{class_menu_item}{Menu\+Item}}. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/data/Menu\+Item.\+hpp\item 
+src/data/Menu\+Item.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,78 @@
+\hypertarget{_d_b_helper_8hpp_source}{}\doxysection{DBHelper.\+hpp}
+\label{_d_b_helper_8hpp_source}\index{src/data/DBHelper.hpp@{src/data/DBHelper.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{//  DBHelper.hpp}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef DBHelper\_hpp}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define DBHelper\_hpp}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <any>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <set>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <typeinfo>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}sqlite3.h"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}Model.hpp"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}SqlCondition.hpp"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{29 \textcolor{keyword}{class }\mbox{\hyperlink{class_d_b_helper}{DBHelper}}}
+\DoxyCodeLine{30 \{}
+\DoxyCodeLine{31 \textcolor{keyword}{public}:}
+\DoxyCodeLine{37     \textcolor{keyword}{static} \textcolor{keyword}{const} \mbox{\hyperlink{class_d_b_helper}{DBHelper}} \& \mbox{\hyperlink{class_d_b_helper_ad205c287b83371638430e41eef9d3719}{getInstance}}();}
+\DoxyCodeLine{38     }
+\DoxyCodeLine{52     template<class T, class = std::enable\_if\_t<std::is\_base\_of<Model, T>::value>>}
+\DoxyCodeLine{53     std::vector<T> \mbox{\hyperlink{class_d_b_helper_a3fbfdc09681135fd77908252e5567695}{selectWhere}}(\textcolor{keyword}{const} T \&model, std::vector<SqlCondition> conditions = std::vector<SqlCondition>(), std::string orderBy = \textcolor{stringliteral}{"{}"{}}, std::set<std::string> columns = std::set<std::string>())\textcolor{keyword}{ const}}
+\DoxyCodeLine{54 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{55         std::vector<T> result;}
+\DoxyCodeLine{56         \textcolor{comment}{// Helper reads from the database.}}
+\DoxyCodeLine{57         std::vector<Model *> helperResult = \mbox{\hyperlink{class_d_b_helper_a732b822297c4d8974c7ae403f0eb6d09}{selectWhereHelper}}(model, conditions, orderBy, columns);}
+\DoxyCodeLine{58         \textcolor{comment}{// Converts the results to static T objects and deletes the dynamic objects created by selectWhereHelper().}}
+\DoxyCodeLine{59         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < helperResult.size(); i++)}
+\DoxyCodeLine{60         \{}
+\DoxyCodeLine{61             T *row = (T *)helperResult[i];}
+\DoxyCodeLine{62             result.push\_back(*row);}
+\DoxyCodeLine{63             \textcolor{keyword}{delete} row;}
+\DoxyCodeLine{64         \}}
+\DoxyCodeLine{65         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{66     \}}
+\DoxyCodeLine{67     }
+\DoxyCodeLine{78     \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \mbox{\hyperlink{class_d_b_helper_ab04570ddeb714621672463cdf820b5f6}{insert}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_model}{Model}} \&model) \textcolor{keyword}{const};}
+\DoxyCodeLine{79     }
+\DoxyCodeLine{88     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_d_b_helper_a5297f3d8509aa010ed2dc1ecccae8d25}{update}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_model}{Model}} \&model) \textcolor{keyword}{const};}
+\DoxyCodeLine{89     }
+\DoxyCodeLine{99     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_d_b_helper_a3a5893cbc2cbf6a358498979078e923d}{updateWhere}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_model}{Model}} \&model, std::vector<SqlCondition> conditions, std::set<std::string> columns) \textcolor{keyword}{const};}
+\DoxyCodeLine{100     }
+\DoxyCodeLine{109     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_d_b_helper_a7ddd19d26ee22addbe189981831c1df1}{destroy}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_model}{Model}} \&model) \textcolor{keyword}{const};}
+\DoxyCodeLine{110     }
+\DoxyCodeLine{122     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_d_b_helper_a3d547e5917bda6febf5cd8de97a88007}{destroyWhere}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_model}{Model}} \&model, std::vector<SqlCondition> conditions) \textcolor{keyword}{const};}
+\DoxyCodeLine{123     }
+\DoxyCodeLine{124 \textcolor{keyword}{private}:}
+\DoxyCodeLine{126     \textcolor{keyword}{static} \textcolor{keyword}{const} \mbox{\hyperlink{class_d_b_helper}{DBHelper}} * \mbox{\hyperlink{class_d_b_helper_a2f64ccbcbca80c1f6d1390a80c3d9c8d}{instance}};}
+\DoxyCodeLine{127     }
+\DoxyCodeLine{129     sqlite3* \mbox{\hyperlink{class_d_b_helper_a5aab1ba1c548557b2b19760baf5ce525}{db}};}
+\DoxyCodeLine{130     }
+\DoxyCodeLine{136     \mbox{\hyperlink{class_d_b_helper_af51e420e0d6c33fe535dc25179fec5fc}{DBHelper}}();}
+\DoxyCodeLine{137     }
+\DoxyCodeLine{143     \mbox{\hyperlink{class_d_b_helper_aa2c68e0878d4383d54280e9e433381a0}{\string~DBHelper}}();}
+\DoxyCodeLine{144     }
+\DoxyCodeLine{150     \mbox{\hyperlink{class_d_b_helper_a186d267356c020cbcece975145eab073}{DBHelper}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_d_b_helper}{DBHelper}} \&other);}
+\DoxyCodeLine{151     }
+\DoxyCodeLine{157     \mbox{\hyperlink{class_d_b_helper}{DBHelper}}\& \mbox{\hyperlink{class_d_b_helper_a02f089aa9605a07c104a4efcf140b8a3}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_d_b_helper}{DBHelper}} \&other);}
+\DoxyCodeLine{158     }
+\DoxyCodeLine{174     std::vector<Model *> \mbox{\hyperlink{class_d_b_helper_a732b822297c4d8974c7ae403f0eb6d09}{selectWhereHelper}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_model}{Model}} \&model, std::vector<SqlCondition> conditions, std::string orderBy, std::set<std::string> columns) \textcolor{keyword}{const};}
+\DoxyCodeLine{175     }
+\DoxyCodeLine{181     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_d_b_helper_a3f5e15072ac9a617c2a401aefac5e5a9}{openDB}}();}
+\DoxyCodeLine{182     }
+\DoxyCodeLine{186     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_d_b_helper_acd7fadbcddf0a0bf6e623d930758feba}{closeDB}}();}
+\DoxyCodeLine{187 \};}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* DBHelper\_hpp */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

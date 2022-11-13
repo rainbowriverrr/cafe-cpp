@@ -24,6 +24,8 @@ void printMenu(std::vector<MenuItem> &menu, std::string header) {
 
 int main(int argc, const char *argv[]) {
     const DBHelper &db = DBHelper::getInstance();
+    
+    db.destroyWhere(MenuItem(), {});
 
     MenuItem m1 = MenuItem("Coffee", 2.29);
     MenuItem m2 = MenuItem("Latte", 3.00);

@@ -1,0 +1,227 @@
+\hypertarget{classv_order_detail}{}\doxysection{v\+Order\+Detail Class Reference}
+\label{classv_order_detail}\index{vOrderDetail@{vOrderDetail}}
+
+
+{\ttfamily \#include $<$v\+Order\+Detail.\+hpp$>$}
+
+Inheritance diagram for v\+Order\+Detail\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classv_order_detail}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classv_order_detail_a206da312c653e13dac63d9fa5da3cb0c}\label{classv_order_detail_a206da312c653e13dac63d9fa5da3cb0c}} 
+{\bfseries v\+Order\+Detail} (int order\+Detail\+ID=0, int order\+Number=0, std\+::string menu\+Item\+Name=\char`\"{}\char`\"{}, int quantity=0, double price=0, double total=0)
+\item 
+\mbox{\Hypertarget{classv_order_detail_a015732e789eef5f181bcb52f59daade5}\label{classv_order_detail_a015732e789eef5f181bcb52f59daade5}} 
+int {\bfseries get\+Order\+Detail\+ID} ()
+\item 
+\mbox{\Hypertarget{classv_order_detail_ac5c3f4fa620ebbf3dd39467e7c8f7a5f}\label{classv_order_detail_ac5c3f4fa620ebbf3dd39467e7c8f7a5f}} 
+int {\bfseries get\+Order\+Number} ()
+\item 
+\mbox{\Hypertarget{classv_order_detail_af2ce8d69798862ca1f9c8008c0298615}\label{classv_order_detail_af2ce8d69798862ca1f9c8008c0298615}} 
+std\+::string {\bfseries get\+Menu\+Item\+Name} ()
+\item 
+\mbox{\Hypertarget{classv_order_detail_ace6aa0d2dad9b2a1febcd6e806ca0a8b}\label{classv_order_detail_ace6aa0d2dad9b2a1febcd6e806ca0a8b}} 
+int {\bfseries get\+Quantity} ()
+\item 
+\mbox{\Hypertarget{classv_order_detail_ad6e62d6a445225dc47d25525b48a8241}\label{classv_order_detail_ad6e62d6a445225dc47d25525b48a8241}} 
+double {\bfseries get\+Price} ()
+\item 
+\mbox{\Hypertarget{classv_order_detail_a8ac68ca612bd0350537b97d5f958339c}\label{classv_order_detail_a8ac68ca612bd0350537b97d5f958339c}} 
+double {\bfseries get\+Total} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::string \mbox{\hyperlink{classv_order_detail_abd4c545e37e211b74c30a6c8623db53a}{table\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the name of the SQL table that this model represents. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classv_order_detail_acec4aa3d8f474890eb790c2d4f4301f4}{columns}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the column names of the SQL table, in the correct order. \end{DoxyCompactList}\item 
+virtual std\+::set$<$ std\+::string $>$ \mbox{\hyperlink{classv_order_detail_af612338f12ef10165605b8a1d7dd007f}{keys}} () const override
+\begin{DoxyCompactList}\small\item\em Return the column name(s) of the primary key(s) of the SQL table. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classv_order_detail_ac0475d4ef29cdf0fae8ba1ed40ba7119}{is\+Auto\+Generated\+Key}} () const override
+\begin{DoxyCompactList}\small\item\em Return true if the primary key is of type INTEGER and should have a unique value automatically chosen when inserting, false otherwise. \end{DoxyCompactList}\item 
+virtual std\+::map$<$ std\+::string, std\+::any $>$ \mbox{\hyperlink{classv_order_detail_af8ab8c313a06b6a050a58998af193364}{to\+Map}} () const override
+\begin{DoxyCompactList}\small\item\em Returns a map representation of this object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_model}{Model}} $\ast$ \mbox{\hyperlink{classv_order_detail_a860aa7524e4881438cecf46f2d3cecef}{from\+Map}} (std\+::map$<$ std\+::string, std\+::any $>$ m\+Map) const override
+\begin{DoxyCompactList}\small\item\em Returns a pointer to a new object with member variables initialized according to m\+Map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classv_order_detail_a17eaad7fc4e8a7ff1714873054532c36}\label{classv_order_detail_a17eaad7fc4e8a7ff1714873054532c36}} 
+int {\bfseries order\+Detail\+ID}
+\item 
+\mbox{\Hypertarget{classv_order_detail_ab21bfa5e6df8d42c3f10129a9ec1f37f}\label{classv_order_detail_ab21bfa5e6df8d42c3f10129a9ec1f37f}} 
+int {\bfseries order\+Number}
+\item 
+\mbox{\Hypertarget{classv_order_detail_a26ecc3ad60a0b741394d798ae398339d}\label{classv_order_detail_a26ecc3ad60a0b741394d798ae398339d}} 
+std\+::string {\bfseries menu\+Item\+Name}
+\item 
+\mbox{\Hypertarget{classv_order_detail_a9868bea84cece2eb1ecde720917718c9}\label{classv_order_detail_a9868bea84cece2eb1ecde720917718c9}} 
+int {\bfseries quantity}
+\item 
+\mbox{\Hypertarget{classv_order_detail_a438e2683ccbd43bd59d4d22fd043144e}\label{classv_order_detail_a438e2683ccbd43bd59d4d22fd043144e}} 
+double {\bfseries price}
+\item 
+\mbox{\Hypertarget{classv_order_detail_aa4d45d021636ca0de45e2fb288198e3a}\label{classv_order_detail_aa4d45d021636ca0de45e2fb288198e3a}} 
+double {\bfseries total}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Julian Koksal 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2022-\/11-\/08 
+\end{DoxyDate}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classv_order_detail_acec4aa3d8f474890eb790c2d4f4301f4}\label{classv_order_detail_acec4aa3d8f474890eb790c2d4f4301f4}} 
+\index{vOrderDetail@{vOrderDetail}!columns@{columns}}
+\index{columns@{columns}!vOrderDetail@{vOrderDetail}}
+\doxysubsubsection{\texorpdfstring{columns()}{columns()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ v\+Order\+Detail\+::columns (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Returns the column names of the SQL table, in the correct order. 
+
+The order of the vector should be the same as the order of the columns in the SQL table.
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}}. When implemented in a subclass, it should always return the same value for that class.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+vector of column names 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_aa4ca2ad0ac6188800cb560626b9c731d}{Model}}.
+
+\mbox{\Hypertarget{classv_order_detail_a860aa7524e4881438cecf46f2d3cecef}\label{classv_order_detail_a860aa7524e4881438cecf46f2d3cecef}} 
+\index{vOrderDetail@{vOrderDetail}!fromMap@{fromMap}}
+\index{fromMap@{fromMap}!vOrderDetail@{vOrderDetail}}
+\doxysubsubsection{\texorpdfstring{fromMap()}{fromMap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_model}{Model}} $\ast$ v\+Order\+Detail\+::from\+Map (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, std\+::any $>$}]{m\+Map }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Returns a pointer to a new object with member variables initialized according to m\+Map. 
+
+This is essentially the inverse of \mbox{\hyperlink{classv_order_detail_af8ab8c313a06b6a050a58998af193364}{to\+Map()}}. m\+Map should be a map as described there.
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}} to create an object from the SQLite3 API results.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em m\+Map} & a map representation of the object, as created by a call to \mbox{\hyperlink{classv_order_detail_af8ab8c313a06b6a050a58998af193364}{to\+Map()}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the new model 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_a374adf0b008ef2c644e022a2c849f897}{Model}}.
+
+\mbox{\Hypertarget{classv_order_detail_ac0475d4ef29cdf0fae8ba1ed40ba7119}\label{classv_order_detail_ac0475d4ef29cdf0fae8ba1ed40ba7119}} 
+\index{vOrderDetail@{vOrderDetail}!isAutoGeneratedKey@{isAutoGeneratedKey}}
+\index{isAutoGeneratedKey@{isAutoGeneratedKey}!vOrderDetail@{vOrderDetail}}
+\doxysubsubsection{\texorpdfstring{isAutoGeneratedKey()}{isAutoGeneratedKey()}}
+{\footnotesize\ttfamily bool v\+Order\+Detail\+::is\+Auto\+Generated\+Key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Return true if the primary key is of type INTEGER and should have a unique value automatically chosen when inserting, false otherwise. 
+
+When calling DBHelper\+::insert(model), where model is an object that extends \mbox{\hyperlink{class_model}{Model}}, NULL will be used as the value of the primary key column. In place of NULL, SQLite3 will automatically choose the next highest integer as the key.
+
+For more details, see\+: \href{https://www.sqlite.org/lang_createtable.html\#rowid}{\texttt{ https\+://www.\+sqlite.\+org/lang\+\_\+createtable.\+html\#rowid}} \href{https://www.sqlite.org/autoinc.html}{\texttt{ https\+://www.\+sqlite.\+org/autoinc.\+html}}
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}}. When implemented in a subclass, it should always return the same value for that class.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+true if the key should be auto generated, false otherwise 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_a3b8a37c35da901d5d81f411f86e5fc0d}{Model}}.
+
+\mbox{\Hypertarget{classv_order_detail_af612338f12ef10165605b8a1d7dd007f}\label{classv_order_detail_af612338f12ef10165605b8a1d7dd007f}} 
+\index{vOrderDetail@{vOrderDetail}!keys@{keys}}
+\index{keys@{keys}!vOrderDetail@{vOrderDetail}}
+\doxysubsubsection{\texorpdfstring{keys()}{keys()}}
+{\footnotesize\ttfamily std\+::set$<$ std\+::string $>$ v\+Order\+Detail\+::keys (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Return the column name(s) of the primary key(s) of the SQL table. 
+
+Returns a subset of column names from \mbox{\hyperlink{classv_order_detail_acec4aa3d8f474890eb790c2d4f4301f4}{columns()}}, where those names are the PRIMARY KEY columns of the table.
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}}. When implemented in a subclass, it should always return the same value for that class.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+vector of primary keys 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_a6df15ae2b38971e9a0b562cf046991e2}{Model}}.
+
+\mbox{\Hypertarget{classv_order_detail_abd4c545e37e211b74c30a6c8623db53a}\label{classv_order_detail_abd4c545e37e211b74c30a6c8623db53a}} 
+\index{vOrderDetail@{vOrderDetail}!tableName@{tableName}}
+\index{tableName@{tableName}!vOrderDetail@{vOrderDetail}}
+\doxysubsubsection{\texorpdfstring{tableName()}{tableName()}}
+{\footnotesize\ttfamily std\+::string v\+Order\+Detail\+::table\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Returns the name of the SQL table that this model represents. 
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}}. When implemented in a subclass, it should always return the same value for that class.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+the table name 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_aa268944617c5b6bf53115243db0228b8}{Model}}.
+
+\mbox{\Hypertarget{classv_order_detail_af8ab8c313a06b6a050a58998af193364}\label{classv_order_detail_af8ab8c313a06b6a050a58998af193364}} 
+\index{vOrderDetail@{vOrderDetail}!toMap@{toMap}}
+\index{toMap@{toMap}!vOrderDetail@{vOrderDetail}}
+\doxysubsubsection{\texorpdfstring{toMap()}{toMap()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, std\+::any $>$ v\+Order\+Detail\+::to\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Returns a map representation of this object. 
+
+For each member variable of this object the map has a key value pair where the key is the name of the member variable and the value is the value of the member variable.
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}} to iterate the member variables of this object.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+a map representation of this object 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_aba5aa6aee8243a03a6d0bc1335503e5f}{Model}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/data/v\+Order\+Detail.\+hpp\item 
+src/data/v\+Order\+Detail.\+cpp\end{DoxyCompactItemize}

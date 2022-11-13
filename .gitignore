@@ -1,8 +1,7 @@
 .DS_Store
 .vscode
 target
-*.out
 /web
 Main
 TestDBHelper
-resources/data.db
+sql/data.db

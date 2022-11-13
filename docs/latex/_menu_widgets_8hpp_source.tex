@@ -1,0 +1,37 @@
+\hypertarget{_menu_widgets_8hpp_source}{}\doxysection{Menu\+Widgets.\+hpp}
+\label{_menu_widgets_8hpp_source}\index{src/web/MenuWidgets.hpp@{src/web/MenuWidgets.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{    Author : River Wang}}
+\DoxyCodeLine{3 \textcolor{comment}{    Date   : 2022/10/27}}
+\DoxyCodeLine{4 \textcolor{comment}{*/}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef \_MENUWIDGETS\_HPP\_}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define \_MENUWIDGETS\_HPP\_}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <Wt/WContainerWidget.h>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <Wt/WIntValidator.h>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <Wt/WLineEdit.h>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <Wt/WPushButton.h>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <Wt/WTemplate.h>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <Wt/WText.h>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{class_menu_item_widget}{MenuItemWidget}} : \textcolor{keyword}{public} Wt::WTemplate \{}
+\DoxyCodeLine{19    \textcolor{keyword}{public}:}
+\DoxyCodeLine{20     \mbox{\hyperlink{class_menu_item_widget}{MenuItemWidget}}(\textcolor{keyword}{const} std::string \&name, \textcolor{keyword}{const} std::string \&price, \textcolor{keyword}{const} std::string \&description);}
+\DoxyCodeLine{21     Wt::WPushButton *getCartPtr();}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23    \textcolor{keyword}{private}:}
+\DoxyCodeLine{24     Wt::WText *name\_;}
+\DoxyCodeLine{25     Wt::WText *price\_;}
+\DoxyCodeLine{26     Wt::WText *description\_;}
+\DoxyCodeLine{27     Wt::WLineEdit *quantity\_;}
+\DoxyCodeLine{28     Wt::WPushButton *cartButton\_;}
+\DoxyCodeLine{29 \};}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

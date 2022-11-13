@@ -40,10 +40,10 @@ target/%.o: src/%.cpp
 # PHONY
 
 dbtables: cleandb
-	sqlite3 resources/data.db < tables.sql
+	sqlite3 sql/data.db < sql/tables.sql
 
 dbtestdata: dbtables
-	sqlite3 resources/data.db < test_data.sql
+	sqlite3 sql/data.db < sql/test_data.sql
 
 clean: cleanout cleanobj cleandb
 
@@ -54,5 +54,5 @@ cleanobj:
 	rm -rf target
 
 cleandb:
-	rm -f resources/data.db
+	rm -f sql/data.db
 

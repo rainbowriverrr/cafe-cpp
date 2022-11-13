@@ -1,0 +1,87 @@
+\hypertarget{class_application}{}\doxysection{Application Class Reference}
+\label{class_application}\index{Application@{Application}}
+
+
+{\ttfamily \#include $<$Application.\+hpp$>$}
+
+Inheritance diagram for Application\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_application}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_application_a6c3ac983fd282925473e2a726e976f22}{Application}} (const Wt\+::\+WEnvironment \&env)
+\item 
+\mbox{\hyperlink{class_application_a748bca84fefb9c12661cfaa2f623748d}{$\sim$\+Application}} ()
+\item 
+void \mbox{\hyperlink{class_application_aa0444cdf3c0c3edc290fdb4c75fe2202}{handle\+Internal\+Path}} (const std\+::string \&internal\+Path)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_navbar_widget}{Navbar\+Widget}} $\ast$ \mbox{\hyperlink{class_application_ae13ee8d0f12871864d9481a909214159}{navbar}}
+\item 
+Wt\+::\+WWidget $\ast$ \mbox{\hyperlink{class_application_affad32f749f259158cd4d1d1531bd004}{body}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing the Wt \mbox{\hyperlink{class_application}{Application}} (the web server). \begin{DoxyAuthor}{Author}
+River Wang 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2022-\/10-\/27 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_application_a6c3ac983fd282925473e2a726e976f22}\label{class_application_a6c3ac983fd282925473e2a726e976f22}} 
+\index{Application@{Application}!Application@{Application}}
+\index{Application@{Application}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{Application()}{Application()}}
+{\footnotesize\ttfamily Application\+::\+Application (\begin{DoxyParamCaption}\item[{const Wt\+::\+WEnvironment \&}]{env }\end{DoxyParamCaption})}
+
+Constructor. \mbox{\Hypertarget{class_application_a748bca84fefb9c12661cfaa2f623748d}\label{class_application_a748bca84fefb9c12661cfaa2f623748d}} 
+\index{Application@{Application}!````~Application@{$\sim$Application}}
+\index{````~Application@{$\sim$Application}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{$\sim$Application()}{~Application()}}
+{\footnotesize\ttfamily Application\+::$\sim$\+Application (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_application_aa0444cdf3c0c3edc290fdb4c75fe2202}\label{class_application_aa0444cdf3c0c3edc290fdb4c75fe2202}} 
+\index{Application@{Application}!handleInternalPath@{handleInternalPath}}
+\index{handleInternalPath@{handleInternalPath}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{handleInternalPath()}{handleInternalPath()}}
+{\footnotesize\ttfamily void Application\+::handle\+Internal\+Path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{internal\+Path }\end{DoxyParamCaption})}
+
+Event handler for when the internal path is changed. Sets the stack widget to the corresponding page. 
+\begin{DoxyParams}{Parameters}
+{\em internal\+Path} & The internal path that was changed to. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_application_affad32f749f259158cd4d1d1531bd004}\label{class_application_affad32f749f259158cd4d1d1531bd004}} 
+\index{Application@{Application}!body@{body}}
+\index{body@{body}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{body}{body}}
+{\footnotesize\ttfamily Wt\+::\+WWidget$\ast$ Application\+::body\hspace{0.3cm}{\ttfamily [private]}}
+
+The body page widget. \mbox{\Hypertarget{class_application_ae13ee8d0f12871864d9481a909214159}\label{class_application_ae13ee8d0f12871864d9481a909214159}} 
+\index{Application@{Application}!navbar@{navbar}}
+\index{navbar@{navbar}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{navbar}{navbar}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_navbar_widget}{Navbar\+Widget}}$\ast$ Application\+::navbar\hspace{0.3cm}{\ttfamily [private]}}
+
+The navbar widget. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/web/Application.\+hpp\item 
+src/web/Application.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,194 @@
+\hypertarget{class_sql_condition}{}\doxysection{Sql\+Condition Class Reference}
+\label{class_sql_condition}\index{SqlCondition@{SqlCondition}}
+
+
+{\ttfamily \#include $<$Sql\+Condition.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sql_condition_af4bc58103b1eaff66691b59a9db9fe58}{Sql\+Condition}} (std\+::string \mbox{\hyperlink{class_sql_condition_a367b652e05af4b92cbc11bc3f6ef2e49}{field}}, std\+::string \mbox{\hyperlink{class_sql_condition_a98798d2a9164a5322d4c5fb4961c5813}{op}}, bool \mbox{\hyperlink{class_sql_condition_a26767f4d8636ff1c6d4f5e6919faf535}{value}})
+\item 
+\mbox{\hyperlink{class_sql_condition_aea4778bc1c965be57acd43ee4a405c11}{Sql\+Condition}} (std\+::string \mbox{\hyperlink{class_sql_condition_a367b652e05af4b92cbc11bc3f6ef2e49}{field}}, std\+::string \mbox{\hyperlink{class_sql_condition_a98798d2a9164a5322d4c5fb4961c5813}{op}}, int \mbox{\hyperlink{class_sql_condition_a26767f4d8636ff1c6d4f5e6919faf535}{value}})
+\item 
+\mbox{\hyperlink{class_sql_condition_a6b5ff18622d15ae3d99732a09ddb1fba}{Sql\+Condition}} (std\+::string \mbox{\hyperlink{class_sql_condition_a367b652e05af4b92cbc11bc3f6ef2e49}{field}}, std\+::string \mbox{\hyperlink{class_sql_condition_a98798d2a9164a5322d4c5fb4961c5813}{op}}, double \mbox{\hyperlink{class_sql_condition_a26767f4d8636ff1c6d4f5e6919faf535}{value}})
+\item 
+\mbox{\hyperlink{class_sql_condition_a02b3033b493fb34a4d369ee65ba96c85}{Sql\+Condition}} (std\+::string \mbox{\hyperlink{class_sql_condition_a367b652e05af4b92cbc11bc3f6ef2e49}{field}}, std\+::string \mbox{\hyperlink{class_sql_condition_a98798d2a9164a5322d4c5fb4961c5813}{op}}, std\+::string \mbox{\hyperlink{class_sql_condition_a26767f4d8636ff1c6d4f5e6919faf535}{value}})
+\item 
+\mbox{\hyperlink{class_sql_condition_a22fc7d51901c1ae220d3d1ccf6fe1d84}{Sql\+Condition}} (std\+::string \mbox{\hyperlink{class_sql_condition_a367b652e05af4b92cbc11bc3f6ef2e49}{field}}, std\+::string \mbox{\hyperlink{class_sql_condition_a98798d2a9164a5322d4c5fb4961c5813}{op}}, const char $\ast$\mbox{\hyperlink{class_sql_condition_a26767f4d8636ff1c6d4f5e6919faf535}{value}})
+\item 
+\mbox{\hyperlink{class_sql_condition_a4e1db0a3cb2229d4d2cc3a4d75df01c7}{$\sim$\+Sql\+Condition}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_sql_condition_aed77799cf3c9250979d10199a74d44e3}{is\+Valid\+Op}} (std\+::string \mbox{\hyperlink{class_sql_condition_a98798d2a9164a5322d4c5fb4961c5813}{op}})
+\item 
+bool \mbox{\hyperlink{class_sql_condition_a1fa7ba5a8f46ce7719684494323c3c74}{is\+Valid\+Str\+Op}} (std\+::string \mbox{\hyperlink{class_sql_condition_a98798d2a9164a5322d4c5fb4961c5813}{op}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_sql_condition_a367b652e05af4b92cbc11bc3f6ef2e49}{field}}
+\item 
+std\+::string \mbox{\hyperlink{class_sql_condition_a98798d2a9164a5322d4c5fb4961c5813}{op}}
+\item 
+std\+::any \mbox{\hyperlink{class_sql_condition_a26767f4d8636ff1c6d4f5e6919faf535}{value}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sql_condition_a73ab5def4e49ae6bda78eec5f1f0e53b}\label{class_sql_condition_a73ab5def4e49ae6bda78eec5f1f0e53b}} 
+class {\bfseries DBHelper}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing a condition in the WHERE clause of a SQL query. Has three member variables, field, op, and value which describe a condition as\+: \{field\} \{op\} \{value\} For example\+: Item\+ID = 123 Price \texorpdfstring{$>$}{>}= 2.\+00 \begin{DoxyAuthor}{Author}
+Julian Koksal 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2022-\/10-\/02 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_sql_condition_af4bc58103b1eaff66691b59a9db9fe58}\label{class_sql_condition_af4bc58103b1eaff66691b59a9db9fe58}} 
+\index{SqlCondition@{SqlCondition}!SqlCondition@{SqlCondition}}
+\index{SqlCondition@{SqlCondition}!SqlCondition@{SqlCondition}}
+\doxysubsubsection{\texorpdfstring{SqlCondition()}{SqlCondition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily Sql\+Condition\+::\+Sql\+Condition (\begin{DoxyParamCaption}\item[{std\+::string}]{field,  }\item[{std\+::string}]{op,  }\item[{bool}]{value }\end{DoxyParamCaption})}
+
+Constructor creates a \mbox{\hyperlink{class_sql_condition}{Sql\+Condition}} object initialized with the given values. 
+\begin{DoxyParams}{Parameters}
+{\em field} & The field (column name). \\
+\hline
+{\em op} & The operator. \\
+\hline
+{\em value} & The value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_sql_condition_aea4778bc1c965be57acd43ee4a405c11}\label{class_sql_condition_aea4778bc1c965be57acd43ee4a405c11}} 
+\index{SqlCondition@{SqlCondition}!SqlCondition@{SqlCondition}}
+\index{SqlCondition@{SqlCondition}!SqlCondition@{SqlCondition}}
+\doxysubsubsection{\texorpdfstring{SqlCondition()}{SqlCondition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily Sql\+Condition\+::\+Sql\+Condition (\begin{DoxyParamCaption}\item[{std\+::string}]{field,  }\item[{std\+::string}]{op,  }\item[{int}]{value }\end{DoxyParamCaption})}
+
+Constructor creates a \mbox{\hyperlink{class_sql_condition}{Sql\+Condition}} object initialized with the given values. 
+\begin{DoxyParams}{Parameters}
+{\em field} & The field (column name). \\
+\hline
+{\em op} & The operator. \\
+\hline
+{\em value} & The value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_sql_condition_a6b5ff18622d15ae3d99732a09ddb1fba}\label{class_sql_condition_a6b5ff18622d15ae3d99732a09ddb1fba}} 
+\index{SqlCondition@{SqlCondition}!SqlCondition@{SqlCondition}}
+\index{SqlCondition@{SqlCondition}!SqlCondition@{SqlCondition}}
+\doxysubsubsection{\texorpdfstring{SqlCondition()}{SqlCondition()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily Sql\+Condition\+::\+Sql\+Condition (\begin{DoxyParamCaption}\item[{std\+::string}]{field,  }\item[{std\+::string}]{op,  }\item[{double}]{value }\end{DoxyParamCaption})}
+
+Constructor creates a \mbox{\hyperlink{class_sql_condition}{Sql\+Condition}} object initialized with the given values. 
+\begin{DoxyParams}{Parameters}
+{\em field} & The field (column name). \\
+\hline
+{\em op} & The operator. \\
+\hline
+{\em value} & The value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_sql_condition_a02b3033b493fb34a4d369ee65ba96c85}\label{class_sql_condition_a02b3033b493fb34a4d369ee65ba96c85}} 
+\index{SqlCondition@{SqlCondition}!SqlCondition@{SqlCondition}}
+\index{SqlCondition@{SqlCondition}!SqlCondition@{SqlCondition}}
+\doxysubsubsection{\texorpdfstring{SqlCondition()}{SqlCondition()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily Sql\+Condition\+::\+Sql\+Condition (\begin{DoxyParamCaption}\item[{std\+::string}]{field,  }\item[{std\+::string}]{op,  }\item[{std\+::string}]{value }\end{DoxyParamCaption})}
+
+Constructor creates a \mbox{\hyperlink{class_sql_condition}{Sql\+Condition}} object initialized with the given values. 
+\begin{DoxyParams}{Parameters}
+{\em field} & The field (column name). \\
+\hline
+{\em op} & The operator. \\
+\hline
+{\em value} & The value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_sql_condition_a22fc7d51901c1ae220d3d1ccf6fe1d84}\label{class_sql_condition_a22fc7d51901c1ae220d3d1ccf6fe1d84}} 
+\index{SqlCondition@{SqlCondition}!SqlCondition@{SqlCondition}}
+\index{SqlCondition@{SqlCondition}!SqlCondition@{SqlCondition}}
+\doxysubsubsection{\texorpdfstring{SqlCondition()}{SqlCondition()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily Sql\+Condition\+::\+Sql\+Condition (\begin{DoxyParamCaption}\item[{std\+::string}]{field,  }\item[{std\+::string}]{op,  }\item[{const char $\ast$}]{value }\end{DoxyParamCaption})}
+
+Constructor creates a \mbox{\hyperlink{class_sql_condition}{Sql\+Condition}} object initialized with the given values. 
+\begin{DoxyParams}{Parameters}
+{\em field} & The field (column name). \\
+\hline
+{\em op} & The operator. \\
+\hline
+{\em value} & The value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_sql_condition_a4e1db0a3cb2229d4d2cc3a4d75df01c7}\label{class_sql_condition_a4e1db0a3cb2229d4d2cc3a4d75df01c7}} 
+\index{SqlCondition@{SqlCondition}!````~SqlCondition@{$\sim$SqlCondition}}
+\index{````~SqlCondition@{$\sim$SqlCondition}!SqlCondition@{SqlCondition}}
+\doxysubsubsection{\texorpdfstring{$\sim$SqlCondition()}{~SqlCondition()}}
+{\footnotesize\ttfamily Sql\+Condition\+::$\sim$\+Sql\+Condition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sql_condition_aed77799cf3c9250979d10199a74d44e3}\label{class_sql_condition_aed77799cf3c9250979d10199a74d44e3}} 
+\index{SqlCondition@{SqlCondition}!isValidOp@{isValidOp}}
+\index{isValidOp@{isValidOp}!SqlCondition@{SqlCondition}}
+\doxysubsubsection{\texorpdfstring{isValidOp()}{isValidOp()}}
+{\footnotesize\ttfamily bool Sql\+Condition\+::is\+Valid\+Op (\begin{DoxyParamCaption}\item[{std\+::string}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Returns true if op is a valid operator. False otherwise. Valid operators\+: =, !=, \texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}, \texorpdfstring{$>$}{>}, \texorpdfstring{$>$}{>}=, \texorpdfstring{$<$}{<}, \texorpdfstring{$<$}{<}= 
+\begin{DoxyParams}{Parameters}
+{\em op} & The operator. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if op is valid, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sql_condition_a1fa7ba5a8f46ce7719684494323c3c74}\label{class_sql_condition_a1fa7ba5a8f46ce7719684494323c3c74}} 
+\index{SqlCondition@{SqlCondition}!isValidStrOp@{isValidStrOp}}
+\index{isValidStrOp@{isValidStrOp}!SqlCondition@{SqlCondition}}
+\doxysubsubsection{\texorpdfstring{isValidStrOp()}{isValidStrOp()}}
+{\footnotesize\ttfamily bool Sql\+Condition\+::is\+Valid\+Str\+Op (\begin{DoxyParamCaption}\item[{std\+::string}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Returns true if op is a valid operator for strings. Valid string operators\+: =, !=, \texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}, \texorpdfstring{$>$}{>}, \texorpdfstring{$>$}{>}=, \texorpdfstring{$<$}{<}, \texorpdfstring{$<$}{<}=, contains, startswith, endswith 
+\begin{DoxyParams}{Parameters}
+{\em op} & The operator. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if op is valid, false otherwise. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_sql_condition_a367b652e05af4b92cbc11bc3f6ef2e49}\label{class_sql_condition_a367b652e05af4b92cbc11bc3f6ef2e49}} 
+\index{SqlCondition@{SqlCondition}!field@{field}}
+\index{field@{field}!SqlCondition@{SqlCondition}}
+\doxysubsubsection{\texorpdfstring{field}{field}}
+{\footnotesize\ttfamily std\+::string Sql\+Condition\+::field\hspace{0.3cm}{\ttfamily [private]}}
+
+The name of the field (column) in the SQL table this condition applies to. \mbox{\Hypertarget{class_sql_condition_a98798d2a9164a5322d4c5fb4961c5813}\label{class_sql_condition_a98798d2a9164a5322d4c5fb4961c5813}} 
+\index{SqlCondition@{SqlCondition}!op@{op}}
+\index{op@{op}!SqlCondition@{SqlCondition}}
+\doxysubsubsection{\texorpdfstring{op}{op}}
+{\footnotesize\ttfamily std\+::string Sql\+Condition\+::op\hspace{0.3cm}{\ttfamily [private]}}
+
+A string representation of the operator of the condition. E.\+g. \char`\"{}=\char`\"{}, \char`\"{}$>$=\char`\"{}, \char`\"{}!=\char`\"{}, etc \mbox{\Hypertarget{class_sql_condition_a26767f4d8636ff1c6d4f5e6919faf535}\label{class_sql_condition_a26767f4d8636ff1c6d4f5e6919faf535}} 
+\index{SqlCondition@{SqlCondition}!value@{value}}
+\index{value@{value}!SqlCondition@{SqlCondition}}
+\doxysubsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily std\+::any Sql\+Condition\+::value\hspace{0.3cm}{\ttfamily [private]}}
+
+The value that is compared to. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/data/Sql\+Condition.\+hpp\item 
+src/data/Sql\+Condition.\+cpp\end{DoxyCompactItemize}

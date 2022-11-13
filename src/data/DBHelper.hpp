@@ -41,7 +41,7 @@ public:
      *
      * Casts the results of DBHelper::selectWhereHelper() to type T, which is the subclass of Model that the model parameter was.
      * Conditions, sorting, and projection can be specified with the parameters, but are optional.
-     * Returns all rows and columns of the table, unsorted, if no optional parameters are given.
+     * If no optional parameters are given, returns all rows and columns of the table unsorted.
      *
      * @param model Used to determine the table name, column names and types, and to cast the results. Must inherit from Model.
      * @param conditions Used to generate the WHERE clause of the select statement.
@@ -50,15 +50,16 @@ public:
      * @return The result of the select statement as a vector of models.
      */
     template<class T, class = std::enable_if_t<std::is_base_of<Model, T>::value>>
-    std::vector<T> selectWhere(const T &model, std::vector<SqlCondition> conditions = std::vector<SqlCondition>(), std::string orderBy = "", std::set<std::string> columns = std::set<std::string>()) const
+    std::vector<T> selectWhere(const T &model, std::vector<SqlCondition> conditions = { }, std::string orderBy = "",
+                               std::set<std::string> columns = { }) const
     {
         std::vector<T> result;
         // Helper reads from the database.
         std::vector<Model *> helperResult = selectWhereHelper(model, conditions, orderBy, columns);
         // Converts the results to static T objects and deletes the dynamic objects created by selectWhereHelper().
-        for (int i = 0; i < helperResult.size(); i++)
+        for (std::vector<Model *>::iterator it = helperResult.begin(); it != helperResult.end(); it++)
         {
-            T *row = (T *)helperResult[i];
+            T *row = (T *)*it;
             result.push_back(*row);
             delete row;
         }
@@ -131,7 +132,7 @@ private:
     /**
      * @brief Constructor.
      *
-     * Opens the SQLite3 database handle using the file "resources/data.db".
+     * Opens the SQLite3 database handle using the file "sql/data.db".
      */
     DBHelper();
     
@@ -171,12 +172,13 @@ private:
      * @param columns The set of column names to select. If empty, all columns are selected.
      * @return The result of the select statement as a vector of Model pointers.
      */
-    std::vector<Model *> selectWhereHelper(const Model &model, std::vector<SqlCondition> conditions, std::string orderBy, std::set<std::string> columns) const;
+    std::vector<Model *> selectWhereHelper(const Model &model, std::vector<SqlCondition> conditions, std::string orderBy,
+                                           std::set<std::string> columns) const;
     
     /**
      * @brief Opens the sqlite3 database handle.
      *
-     * Opens the SQLite3 database handle using the file "resources/data.db".
+     * Opens the SQLite3 database handle using the file "sql/data.db".
      */
     void openDB();
     

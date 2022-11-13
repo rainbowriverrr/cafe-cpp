@@ -1,0 +1,102 @@
+\hypertarget{class_order_list_page}{}\doxysection{Order\+List\+Page Class Reference}
+\label{class_order_list_page}\index{OrderListPage@{OrderListPage}}
+
+
+Class representing the order list page widget.  
+
+
+
+
+{\ttfamily \#include $<$Order\+List\+Page.\+hpp$>$}
+
+Inheritance diagram for Order\+List\+Page\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_order_list_page}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_order_list_page_a1fb43f2cc9b91fec3384e846f086fba2}{Order\+List\+Page}} ()
+\item 
+\mbox{\hyperlink{class_order_list_page_a98451d915aec4dfc7ebe596f3da74676}{$\sim$\+Order\+List\+Page}} ()
+\item 
+\mbox{\Hypertarget{class_order_list_page_a379efd30c01d71223583d3857618816b}\label{class_order_list_page_a379efd30c01d71223583d3857618816b}} 
+void {\bfseries on\+Complete\+Order\+Btn\+Clicked} (Wt\+::\+WTemplate $\ast$item\+Template, \mbox{\hyperlink{class_order_master}{Order\+Master}} order)
+\item 
+void \mbox{\hyperlink{class_order_list_page_a21f9db3ec9eb6bf679ac213294309331}{on\+Panel\+Order\+Details\+Expanded}} (Wt\+::\+WPanel $\ast$panel)
+\begin{DoxyCompactList}\small\item\em Event handler for when the order details panel is expanded. Changes the text and plays the animation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_order_list_page_a1a00ae2c4905377065cd110ec0ce2841}{on\+Panel\+Order\+Details\+Collapsed}} (Wt\+::\+WPanel $\ast$panel)
+\begin{DoxyCompactList}\small\item\em Event handler for when the order details panel is collapsed. Changes the text and plays the animation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_order_list_page_a8f7499ab0bcd8e2d8302a3897350c47c}\label{class_order_list_page_a8f7499ab0bcd8e2d8302a3897350c47c}} 
+Wt\+::\+WContainer\+Widget $\ast$ {\bfseries list\+Widget}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing the order list page widget. 
+
+\begin{DoxyAuthor}{Author}
+Julian Koksal 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2022-\/11-\/07 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_order_list_page_a1fb43f2cc9b91fec3384e846f086fba2}\label{class_order_list_page_a1fb43f2cc9b91fec3384e846f086fba2}} 
+\index{OrderListPage@{OrderListPage}!OrderListPage@{OrderListPage}}
+\index{OrderListPage@{OrderListPage}!OrderListPage@{OrderListPage}}
+\doxysubsubsection{\texorpdfstring{OrderListPage()}{OrderListPage()}}
+{\footnotesize\ttfamily Order\+List\+Page\+::\+Order\+List\+Page (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor. \mbox{\Hypertarget{class_order_list_page_a98451d915aec4dfc7ebe596f3da74676}\label{class_order_list_page_a98451d915aec4dfc7ebe596f3da74676}} 
+\index{OrderListPage@{OrderListPage}!````~OrderListPage@{$\sim$OrderListPage}}
+\index{````~OrderListPage@{$\sim$OrderListPage}!OrderListPage@{OrderListPage}}
+\doxysubsubsection{\texorpdfstring{$\sim$OrderListPage()}{~OrderListPage()}}
+{\footnotesize\ttfamily Order\+List\+Page\+::$\sim$\+Order\+List\+Page (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_order_list_page_a1a00ae2c4905377065cd110ec0ce2841}\label{class_order_list_page_a1a00ae2c4905377065cd110ec0ce2841}} 
+\index{OrderListPage@{OrderListPage}!onPanelOrderDetailsCollapsed@{onPanelOrderDetailsCollapsed}}
+\index{onPanelOrderDetailsCollapsed@{onPanelOrderDetailsCollapsed}!OrderListPage@{OrderListPage}}
+\doxysubsubsection{\texorpdfstring{onPanelOrderDetailsCollapsed()}{onPanelOrderDetailsCollapsed()}}
+{\footnotesize\ttfamily void Order\+List\+Page\+::on\+Panel\+Order\+Details\+Collapsed (\begin{DoxyParamCaption}\item[{Wt\+::\+WPanel $\ast$}]{panel }\end{DoxyParamCaption})}
+
+
+
+Event handler for when the order details panel is collapsed. Changes the text and plays the animation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em panel} & The panel widget. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_order_list_page_a21f9db3ec9eb6bf679ac213294309331}\label{class_order_list_page_a21f9db3ec9eb6bf679ac213294309331}} 
+\index{OrderListPage@{OrderListPage}!onPanelOrderDetailsExpanded@{onPanelOrderDetailsExpanded}}
+\index{onPanelOrderDetailsExpanded@{onPanelOrderDetailsExpanded}!OrderListPage@{OrderListPage}}
+\doxysubsubsection{\texorpdfstring{onPanelOrderDetailsExpanded()}{onPanelOrderDetailsExpanded()}}
+{\footnotesize\ttfamily void Order\+List\+Page\+::on\+Panel\+Order\+Details\+Expanded (\begin{DoxyParamCaption}\item[{Wt\+::\+WPanel $\ast$}]{panel }\end{DoxyParamCaption})}
+
+
+
+Event handler for when the order details panel is expanded. Changes the text and plays the animation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em panel} & The panel widget. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/web/Order\+List\+Page.\+hpp\item 
+src/web/Order\+List\+Page.\+cpp\end{DoxyCompactItemize}

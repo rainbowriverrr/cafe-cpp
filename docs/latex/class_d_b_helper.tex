@@ -1,0 +1,299 @@
+\hypertarget{class_d_b_helper}{}\doxysection{DBHelper Class Reference}
+\label{class_d_b_helper}\index{DBHelper@{DBHelper}}
+
+
+Data access layer class.  
+
+
+
+
+{\ttfamily \#include $<$DBHelper.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T , class  = std\+::enable\+\_\+if\+\_\+t$<$std\+::is\+\_\+base\+\_\+of$<$\+Model, T$>$\+::value$>$$>$ }\\std\+::vector$<$ T $>$ \mbox{\hyperlink{class_d_b_helper_a3fbfdc09681135fd77908252e5567695}{select\+Where}} (const T \&model, std\+::vector$<$ \mbox{\hyperlink{class_sql_condition}{Sql\+Condition}} $>$ conditions=std\+::vector$<$ \mbox{\hyperlink{class_sql_condition}{Sql\+Condition}} $>$(), std\+::string order\+By=\char`\"{}\char`\"{}, std\+::set$<$ std\+::string $>$ columns=std\+::set$<$ std\+::string $>$()) const
+\begin{DoxyCompactList}\small\item\em Reads rows from the table represented by model and returns the result as a vector. \end{DoxyCompactList}\item 
+long long \mbox{\hyperlink{class_d_b_helper_ab04570ddeb714621672463cdf820b5f6}{insert}} (const \mbox{\hyperlink{class_model}{Model}} \&model) const
+\begin{DoxyCompactList}\small\item\em Inserts the given model to its associated table in the database. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_b_helper_a5297f3d8509aa010ed2dc1ecccae8d25}{update}} (const \mbox{\hyperlink{class_model}{Model}} \&model) const
+\begin{DoxyCompactList}\small\item\em Updates the given model in the database by its primary key(s). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_b_helper_a3a5893cbc2cbf6a358498979078e923d}{update\+Where}} (const \mbox{\hyperlink{class_model}{Model}} \&model, std\+::vector$<$ \mbox{\hyperlink{class_sql_condition}{Sql\+Condition}} $>$ conditions, std\+::set$<$ std\+::string $>$ columns) const
+\begin{DoxyCompactList}\small\item\em Conditionally updates the table that model represents with the values of model. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_b_helper_a7ddd19d26ee22addbe189981831c1df1}{destroy}} (const \mbox{\hyperlink{class_model}{Model}} \&model) const
+\begin{DoxyCompactList}\small\item\em Deletes the given model from its table, identified by its primary key(s). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_b_helper_a3d547e5917bda6febf5cd8de97a88007}{destroy\+Where}} (const \mbox{\hyperlink{class_model}{Model}} \&model, std\+::vector$<$ \mbox{\hyperlink{class_sql_condition}{Sql\+Condition}} $>$ conditions) const
+\begin{DoxyCompactList}\small\item\em Conditionally deletes from the table that model represents. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const \mbox{\hyperlink{class_d_b_helper}{DBHelper}} \& \mbox{\hyperlink{class_d_b_helper_ad205c287b83371638430e41eef9d3719}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Gets the singleton instance of this class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_b_helper_af51e420e0d6c33fe535dc25179fec5fc}{DBHelper}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_b_helper_aa2c68e0878d4383d54280e9e433381a0}{$\sim$\+DBHelper}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_b_helper_a186d267356c020cbcece975145eab073}{DBHelper}} (const \mbox{\hyperlink{class_d_b_helper}{DBHelper}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_b_helper}{DBHelper}} \& \mbox{\hyperlink{class_d_b_helper_a02f089aa9605a07c104a4efcf140b8a3}{operator=}} (const \mbox{\hyperlink{class_d_b_helper}{DBHelper}} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator overload. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_model}{Model}} $\ast$ $>$ \mbox{\hyperlink{class_d_b_helper_a732b822297c4d8974c7ae403f0eb6d09}{select\+Where\+Helper}} (const \mbox{\hyperlink{class_model}{Model}} \&model, std\+::vector$<$ \mbox{\hyperlink{class_sql_condition}{Sql\+Condition}} $>$ conditions, std\+::string order\+By, std\+::set$<$ std\+::string $>$ columns) const
+\begin{DoxyCompactList}\small\item\em Reads rows from the table represented by model and returns the result as a vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_b_helper_a3f5e15072ac9a617c2a401aefac5e5a9}{open\+DB}} ()
+\begin{DoxyCompactList}\small\item\em Opens the sqlite3 database handle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_d_b_helper_acd7fadbcddf0a0bf6e623d930758feba}\label{class_d_b_helper_acd7fadbcddf0a0bf6e623d930758feba}} 
+void {\bfseries close\+DB} ()
+\begin{DoxyCompactList}\small\item\em Closes the sqlite3 database handle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_b_helper_a5aab1ba1c548557b2b19760baf5ce525}\label{class_d_b_helper_a5aab1ba1c548557b2b19760baf5ce525}} 
+sqlite3 $\ast$ {\bfseries db}
+\begin{DoxyCompactList}\small\item\em SQLite3 database handle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_b_helper_a2f64ccbcbca80c1f6d1390a80c3d9c8d}\label{class_d_b_helper_a2f64ccbcbca80c1f6d1390a80c3d9c8d}} 
+static const \mbox{\hyperlink{class_d_b_helper}{DBHelper}} $\ast$ {\bfseries instance} = NULL
+\begin{DoxyCompactList}\small\item\em Singleton instance of \mbox{\hyperlink{class_d_b_helper}{DBHelper}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Data access layer class. 
+
+Provides an abstract interface for accessing the SQLite3 database.
+
+\begin{DoxyAuthor}{Author}
+Julian Koksal 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2022-\/09-\/25 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_d_b_helper_af51e420e0d6c33fe535dc25179fec5fc}\label{class_d_b_helper_af51e420e0d6c33fe535dc25179fec5fc}} 
+\index{DBHelper@{DBHelper}!DBHelper@{DBHelper}}
+\index{DBHelper@{DBHelper}!DBHelper@{DBHelper}}
+\doxysubsubsection{\texorpdfstring{DBHelper()}{DBHelper()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily DBHelper\+::\+DBHelper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Constructor. 
+
+Opens the SQLite3 database handle using the file \char`\"{}sql/data.\+db\char`\"{}. \mbox{\Hypertarget{class_d_b_helper_aa2c68e0878d4383d54280e9e433381a0}\label{class_d_b_helper_aa2c68e0878d4383d54280e9e433381a0}} 
+\index{DBHelper@{DBHelper}!````~DBHelper@{$\sim$DBHelper}}
+\index{````~DBHelper@{$\sim$DBHelper}!DBHelper@{DBHelper}}
+\doxysubsubsection{\texorpdfstring{$\sim$DBHelper()}{~DBHelper()}}
+{\footnotesize\ttfamily DBHelper\+::$\sim$\+DBHelper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Destructor. 
+
+Closes the sqlite3 database handle. \mbox{\Hypertarget{class_d_b_helper_a186d267356c020cbcece975145eab073}\label{class_d_b_helper_a186d267356c020cbcece975145eab073}} 
+\index{DBHelper@{DBHelper}!DBHelper@{DBHelper}}
+\index{DBHelper@{DBHelper}!DBHelper@{DBHelper}}
+\doxysubsubsection{\texorpdfstring{DBHelper()}{DBHelper()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily DBHelper\+::\+DBHelper (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_b_helper}{DBHelper}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Copy constructor. 
+
+Not implemented to prevent copying of singleton instance. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_d_b_helper_a7ddd19d26ee22addbe189981831c1df1}\label{class_d_b_helper_a7ddd19d26ee22addbe189981831c1df1}} 
+\index{DBHelper@{DBHelper}!destroy@{destroy}}
+\index{destroy@{destroy}!DBHelper@{DBHelper}}
+\doxysubsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily void DBHelper\+::destroy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_model}{Model}} \&}]{model }\end{DoxyParamCaption}) const}
+
+
+
+Deletes the given model from its table, identified by its primary key(s). 
+
+Deletes the row in the table with PRIMARY KEY(s) that match the key(s) of model. Called destroy because delete is a C++ keyword.
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & The model to delete. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_d_b_helper_a3d547e5917bda6febf5cd8de97a88007}\label{class_d_b_helper_a3d547e5917bda6febf5cd8de97a88007}} 
+\index{DBHelper@{DBHelper}!destroyWhere@{destroyWhere}}
+\index{destroyWhere@{destroyWhere}!DBHelper@{DBHelper}}
+\doxysubsubsection{\texorpdfstring{destroyWhere()}{destroyWhere()}}
+{\footnotesize\ttfamily void DBHelper\+::destroy\+Where (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_model}{Model}} \&}]{model,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_sql_condition}{Sql\+Condition}} $>$}]{conditions }\end{DoxyParamCaption}) const}
+
+
+
+Conditionally deletes from the table that model represents. 
+
+Deletes all rows in the table that match the conditions given. Called destroy because delete is a C++ keyword.
+
+\begin{DoxyWarning}{Warning}
+Use with caution! Will delete every row in the table if conditions is empty.
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em model} & Used to determine the table name. \\
+\hline
+{\em conditions} & Used to generate the WHERE clause of the delete statement. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_d_b_helper_ad205c287b83371638430e41eef9d3719}\label{class_d_b_helper_ad205c287b83371638430e41eef9d3719}} 
+\index{DBHelper@{DBHelper}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!DBHelper@{DBHelper}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_d_b_helper}{DBHelper}} \& DBHelper\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the singleton instance of this class. 
+
+\begin{DoxyReturn}{Returns}
+singleton instance of \mbox{\hyperlink{class_d_b_helper}{DBHelper}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_d_b_helper_ab04570ddeb714621672463cdf820b5f6}\label{class_d_b_helper_ab04570ddeb714621672463cdf820b5f6}} 
+\index{DBHelper@{DBHelper}!insert@{insert}}
+\index{insert@{insert}!DBHelper@{DBHelper}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily long long DBHelper\+::insert (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_model}{Model}} \&}]{model }\end{DoxyParamCaption}) const}
+
+
+
+Inserts the given model to its associated table in the database. 
+
+The model is inserted as is, with the exception of the INTEGER PRIMARY KEY if model.\+is\+Auto\+Generated() returns true. In that case, that column will be set to NULL and SQLite3 will automatically choose the next highest integer as the key. Returns that key, or 0 if there is no auto generated key.
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & The model to insert to the database. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the key of the inserted record if it has an autogenerated INTEGER PRIMARY KEY, 0 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_d_b_helper_a3f5e15072ac9a617c2a401aefac5e5a9}\label{class_d_b_helper_a3f5e15072ac9a617c2a401aefac5e5a9}} 
+\index{DBHelper@{DBHelper}!openDB@{openDB}}
+\index{openDB@{openDB}!DBHelper@{DBHelper}}
+\doxysubsubsection{\texorpdfstring{openDB()}{openDB()}}
+{\footnotesize\ttfamily void DBHelper\+::open\+DB (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Opens the sqlite3 database handle. 
+
+Opens the SQLite3 database handle using the file \char`\"{}sql/data.\+db\char`\"{}. \mbox{\Hypertarget{class_d_b_helper_a02f089aa9605a07c104a4efcf140b8a3}\label{class_d_b_helper_a02f089aa9605a07c104a4efcf140b8a3}} 
+\index{DBHelper@{DBHelper}!operator=@{operator=}}
+\index{operator=@{operator=}!DBHelper@{DBHelper}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_d_b_helper}{DBHelper}} \& DBHelper\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_b_helper}{DBHelper}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Assignment operator overload. 
+
+Not implemented to prevent assignment of singleton instance. \mbox{\Hypertarget{class_d_b_helper_a3fbfdc09681135fd77908252e5567695}\label{class_d_b_helper_a3fbfdc09681135fd77908252e5567695}} 
+\index{DBHelper@{DBHelper}!selectWhere@{selectWhere}}
+\index{selectWhere@{selectWhere}!DBHelper@{DBHelper}}
+\doxysubsubsection{\texorpdfstring{selectWhere()}{selectWhere()}}
+{\footnotesize\ttfamily template$<$class T , class  = std\+::enable\+\_\+if\+\_\+t$<$std\+::is\+\_\+base\+\_\+of$<$\+Model, T$>$\+::value$>$$>$ \\
+std\+::vector$<$ T $>$ DBHelper\+::select\+Where (\begin{DoxyParamCaption}\item[{const T \&}]{model,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_sql_condition}{Sql\+Condition}} $>$}]{conditions = {\ttfamily std\+:\+:vector$<$\mbox{\hyperlink{class_sql_condition}{Sql\+Condition}}$>$()},  }\item[{std\+::string}]{order\+By = {\ttfamily \char`\"{}\char`\"{}},  }\item[{std\+::set$<$ std\+::string $>$}]{columns = {\ttfamily std\+:\+:set$<$std\+:\+:string$>$()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reads rows from the table represented by model and returns the result as a vector. 
+
+Casts the results of \mbox{\hyperlink{class_d_b_helper_a732b822297c4d8974c7ae403f0eb6d09}{DBHelper\+::select\+Where\+Helper()}} to type T, which is the subclass of \mbox{\hyperlink{class_model}{Model}} that the model parameter was. Conditions, sorting, and projection can be specified with the parameters, but are optional. Returns all rows and columns of the table, unsorted, if no optional parameters are given.
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & Used to determine the table name, column names and types, and to cast the results. Must inherit from \mbox{\hyperlink{class_model}{Model}}. \\
+\hline
+{\em conditions} & Used to generate the WHERE clause of the select statement. \\
+\hline
+{\em order\+By} & The field and direction used to generate the ORDER BY clause of the select statement. e.\+g. \char`\"{}price DESC\char`\"{}. \\
+\hline
+{\em columns} & The set of column names to select. If empty, all columns are selected. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the select statement as a vector of models. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_d_b_helper_a732b822297c4d8974c7ae403f0eb6d09}\label{class_d_b_helper_a732b822297c4d8974c7ae403f0eb6d09}} 
+\index{DBHelper@{DBHelper}!selectWhereHelper@{selectWhereHelper}}
+\index{selectWhereHelper@{selectWhereHelper}!DBHelper@{DBHelper}}
+\doxysubsubsection{\texorpdfstring{selectWhereHelper()}{selectWhereHelper()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_model}{Model}} $\ast$ $>$ DBHelper\+::select\+Where\+Helper (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_model}{Model}} \&}]{model,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_sql_condition}{Sql\+Condition}} $>$}]{conditions,  }\item[{std\+::string}]{order\+By,  }\item[{std\+::set$<$ std\+::string $>$}]{columns }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reads rows from the table represented by model and returns the result as a vector. 
+
+Conditions, sorting, and projection can be specified with the parameters, but are optional. Returns all rows and columns of the table, unsorted, if no optional parameters are given.
+
+Used only by \mbox{\hyperlink{class_d_b_helper_a3fbfdc09681135fd77908252e5567695}{DBHelper\+::select\+Where()}}. Its purpose is to keep most of the implementation of \mbox{\hyperlink{class_d_b_helper_a3fbfdc09681135fd77908252e5567695}{DBHelper\+::select\+Where()}} (a template function) outside of the header file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & Used to determine the table name, column names and types, and to cast the results. \\
+\hline
+{\em conditions} & Used to generate the WHERE clause of the select statement. \\
+\hline
+{\em order\+By} & The field and direction used to generate the ORDER BY clause of the select statement. e.\+g. \char`\"{}price DESC\char`\"{}. \\
+\hline
+{\em columns} & The set of column names to select. If empty, all columns are selected. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the select statement as a vector of \mbox{\hyperlink{class_model}{Model}} pointers. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_d_b_helper_a5297f3d8509aa010ed2dc1ecccae8d25}\label{class_d_b_helper_a5297f3d8509aa010ed2dc1ecccae8d25}} 
+\index{DBHelper@{DBHelper}!update@{update}}
+\index{update@{update}!DBHelper@{DBHelper}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void DBHelper\+::update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_model}{Model}} \&}]{model }\end{DoxyParamCaption}) const}
+
+
+
+Updates the given model in the database by its primary key(s). 
+
+Updates the row in the table with PRIMARY KEY(s) that match the key(s) of model. All columns are updated to the corresponding values of model.
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & The model to update, identified by its keys member. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_d_b_helper_a3a5893cbc2cbf6a358498979078e923d}\label{class_d_b_helper_a3a5893cbc2cbf6a358498979078e923d}} 
+\index{DBHelper@{DBHelper}!updateWhere@{updateWhere}}
+\index{updateWhere@{updateWhere}!DBHelper@{DBHelper}}
+\doxysubsubsection{\texorpdfstring{updateWhere()}{updateWhere()}}
+{\footnotesize\ttfamily void DBHelper\+::update\+Where (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_model}{Model}} \&}]{model,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_sql_condition}{Sql\+Condition}} $>$}]{conditions,  }\item[{std\+::set$<$ std\+::string $>$}]{columns }\end{DoxyParamCaption}) const}
+
+
+
+Conditionally updates the table that model represents with the values of model. 
+
+Updates all rows in the table that match the conditions given to have the values of model. Only columns given in the columns parameter are updated. If columns is empty, all columns are updated.
+
+
+\begin{DoxyParams}{Parameters}
+{\em conditions} & Used to generate the WHERE clause of the update statement. \\
+\hline
+{\em columns} & The set of column names to update. If empty, all columns are updated. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/data/DBHelper.\+hpp\item 
+src/data/DBHelper.\+cpp\end{DoxyCompactItemize}

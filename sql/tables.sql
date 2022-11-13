@@ -18,12 +18,12 @@ CREATE TABLE IF NOT EXISTS MenuItem (
 );
 
 CREATE VIEW IF NOT EXISTS vOrderDetail AS
-SELECT od.orderDetailID,
-    od.orderNumber,
-    od.menuItemName,
-    od.quantity,
-    m.price,
-    (quantity * price) AS total
+    SELECT od.orderDetailID,
+        od.orderNumber,
+        od.menuItemName,
+        od.quantity,
+        m.price,
+        (quantity * price) AS total
     FROM OrderDetail AS od
     LEFT OUTER JOIN MenuItem AS m ON m.name = od.menuItemName;
 
