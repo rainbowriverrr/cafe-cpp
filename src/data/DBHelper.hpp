@@ -188,8 +188,20 @@ private:
      */
     sqlite3_stmt * prepareStatement(const std::string &query, const std::string &queryType) const;
     
+    /**
+     * @brief Generates the WHERE clause of a query from a vector of SqlCondition objects.
+     *
+     * @param conditions iterated to generate the WHERE clause
+     * @return the WHERE clause of a query
+     */
     std::string generateWhereClauseFromConditions(const std::vector<SqlCondition> &conditions) const;
     
+    /**
+     * @brief Generates the WHERE clause of a query from a vector of key column names.
+     *
+     * @param keys iterated to generate the WHERE clause
+     * @return the WHERE clause of a query
+     */
     std::string generateWhereClauseFromKeys(const std::vector<std::string> &keys) const;
     
     /**
