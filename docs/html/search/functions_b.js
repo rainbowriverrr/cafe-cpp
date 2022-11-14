@@ -1,10 +1,9 @@
 var searchData=
 [
-  ['selectwhere_0',['selectWhere',['../class_d_b_helper.html#a3fbfdc09681135fd77908252e5567695',1,'DBHelper']]],
-  ['selectwherehelper_1',['selectWhereHelper',['../class_d_b_helper.html#a732b822297c4d8974c7ae403f0eb6d09',1,'DBHelper']]],
-  ['setiscomplete_2',['setIsComplete',['../class_order_master.html#ae4293fcc4cfbec67b3c298b0b5f3cb8e',1,'OrderMaster']]],
-  ['setorderdate_3',['setOrderDate',['../class_order_master.html#ad40e1a59af6e33398cadc68e91235369',1,'OrderMaster']]],
-  ['setorderedby_4',['setOrderedBy',['../class_order_master.html#ae1d60f757c75790c7cceefdb75af5749',1,'OrderMaster']]],
-  ['setprice_5',['setPrice',['../class_menu_item.html#ae2ebb751e94c46e5bbe32dc2f8003919',1,'MenuItem']]],
-  ['sqlcondition_6',['SqlCondition',['../class_sql_condition.html#af4bc58103b1eaff66691b59a9db9fe58',1,'SqlCondition::SqlCondition(std::string field, std::string op, bool value)'],['../class_sql_condition.html#aea4778bc1c965be57acd43ee4a405c11',1,'SqlCondition::SqlCondition(std::string field, std::string op, int value)'],['../class_sql_condition.html#a6b5ff18622d15ae3d99732a09ddb1fba',1,'SqlCondition::SqlCondition(std::string field, std::string op, double value)'],['../class_sql_condition.html#a02b3033b493fb34a4d369ee65ba96c85',1,'SqlCondition::SqlCondition(std::string field, std::string op, std::string value)'],['../class_sql_condition.html#a22fc7d51901c1ae220d3d1ccf6fe1d84',1,'SqlCondition::SqlCondition(std::string field, std::string op, const char *value)']]]
+  ['onpanelorderdetailscollapsed_0',['onPanelOrderDetailsCollapsed',['../class_order_list_page.html#a1a00ae2c4905377065cd110ec0ce2841',1,'OrderListPage']]],
+  ['onpanelorderdetailsexpanded_1',['onPanelOrderDetailsExpanded',['../class_order_list_page.html#a21f9db3ec9eb6bf679ac213294309331',1,'OrderListPage']]],
+  ['opendb_2',['openDB',['../class_d_b_helper.html#a3f5e15072ac9a617c2a401aefac5e5a9',1,'DBHelper']]],
+  ['operator_3d_3',['operator=',['../class_d_b_helper.html#a02f089aa9605a07c104a4efcf140b8a3',1,'DBHelper']]],
+  ['orderlistpage_4',['OrderListPage',['../class_order_list_page.html#a1fb43f2cc9b91fec3384e846f086fba2',1,'OrderListPage']]],
+  ['ordermaster_5',['OrderMaster',['../class_order_master.html#ab48f399d31e75d7e8999a2cf52211956',1,'OrderMaster']]]
 ];

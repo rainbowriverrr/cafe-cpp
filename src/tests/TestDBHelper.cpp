@@ -75,13 +75,17 @@ int main(int argc, const char *argv[]) {
 
     printMenu(menu, "Menu where name = 'cookie', unsorted:");
 
-    menu = db.selectWhere(MenuItem(), {SqlCondition("name", "startswith", "co")});
+    menu = db.selectWhere(MenuItem(), {SqlCondition("name", "STARTSWITH", "co")});
 
     printMenu(menu, "Menu where name starts with 'co', unsorted:");
 
-    menu = db.selectWhere(MenuItem(), {SqlCondition("name", "contains", "combo")}, "price");
+    menu = db.selectWhere(MenuItem(), {SqlCondition("name", "CONTAINS", "combo")}, "price");
 
     printMenu(menu, "Menu where name contains 'combo', sorted by ascending price.");
+    
+    menu = db.selectWhere(MenuItem(), {SqlCondition("name", "IN", std::vector<std::string>({ "Coffee", "Latte" }))});
+
+    printMenu(menu, "Menu where name in ('Coffee', 'Latte'), unsorted.");
 
     // --- UPDATE database ---
 

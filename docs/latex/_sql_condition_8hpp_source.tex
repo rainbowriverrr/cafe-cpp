@@ -11,31 +11,40 @@
 \DoxyCodeLine{7 }
 \DoxyCodeLine{8 \textcolor{preprocessor}{\#include <string>}}
 \DoxyCodeLine{9 \textcolor{preprocessor}{\#include <any>}}
-\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <stdexcept>}}
-\DoxyCodeLine{11 }
-\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{class_sql_condition}{SqlCondition}}}
-\DoxyCodeLine{23 \{}
-\DoxyCodeLine{24     \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{class_d_b_helper}{DBHelper}};}
-\DoxyCodeLine{25 \textcolor{keyword}{public}:}
-\DoxyCodeLine{32     \mbox{\hyperlink{class_sql_condition}{SqlCondition}}(std::string \mbox{\hyperlink{class_sql_condition_a367b652e05af4b92cbc11bc3f6ef2e49}{field}}, std::string \mbox{\hyperlink{class_sql_condition_a98798d2a9164a5322d4c5fb4961c5813}{op}}, \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_sql_condition_a26767f4d8636ff1c6d4f5e6919faf535}{value}});}
-\DoxyCodeLine{39     \mbox{\hyperlink{class_sql_condition}{SqlCondition}}(std::string \mbox{\hyperlink{class_sql_condition_a367b652e05af4b92cbc11bc3f6ef2e49}{field}}, std::string \mbox{\hyperlink{class_sql_condition_a98798d2a9164a5322d4c5fb4961c5813}{op}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{class_sql_condition_a26767f4d8636ff1c6d4f5e6919faf535}{value}});}
-\DoxyCodeLine{46     \mbox{\hyperlink{class_sql_condition}{SqlCondition}}(std::string \mbox{\hyperlink{class_sql_condition_a367b652e05af4b92cbc11bc3f6ef2e49}{field}}, std::string \mbox{\hyperlink{class_sql_condition_a98798d2a9164a5322d4c5fb4961c5813}{op}}, \textcolor{keywordtype}{double} \mbox{\hyperlink{class_sql_condition_a26767f4d8636ff1c6d4f5e6919faf535}{value}});}
-\DoxyCodeLine{53     \mbox{\hyperlink{class_sql_condition}{SqlCondition}}(std::string \mbox{\hyperlink{class_sql_condition_a367b652e05af4b92cbc11bc3f6ef2e49}{field}}, std::string \mbox{\hyperlink{class_sql_condition_a98798d2a9164a5322d4c5fb4961c5813}{op}}, std::string \mbox{\hyperlink{class_sql_condition_a26767f4d8636ff1c6d4f5e6919faf535}{value}});}
-\DoxyCodeLine{60     \mbox{\hyperlink{class_sql_condition}{SqlCondition}}(std::string \mbox{\hyperlink{class_sql_condition_a367b652e05af4b92cbc11bc3f6ef2e49}{field}}, std::string \mbox{\hyperlink{class_sql_condition_a98798d2a9164a5322d4c5fb4961c5813}{op}}, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{class_sql_condition_a26767f4d8636ff1c6d4f5e6919faf535}{value}});}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{class_sql_condition}{SqlCondition}}}
+\DoxyCodeLine{26 \{}
+\DoxyCodeLine{27     \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{class_d_b_helper}{DBHelper}};}
+\DoxyCodeLine{28 \textcolor{keyword}{public}:}
+\DoxyCodeLine{38     \mbox{\hyperlink{class_sql_condition}{SqlCondition}}(std::string \mbox{\hyperlink{class_sql_condition_a367b652e05af4b92cbc11bc3f6ef2e49}{field}}, std::string \mbox{\hyperlink{class_sql_condition_a98798d2a9164a5322d4c5fb4961c5813}{op}}, \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_sql_condition_a26767f4d8636ff1c6d4f5e6919faf535}{value}});}
+\DoxyCodeLine{39     }
+\DoxyCodeLine{49     \mbox{\hyperlink{class_sql_condition}{SqlCondition}}(std::string \mbox{\hyperlink{class_sql_condition_a367b652e05af4b92cbc11bc3f6ef2e49}{field}}, std::string \mbox{\hyperlink{class_sql_condition_a98798d2a9164a5322d4c5fb4961c5813}{op}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{class_sql_condition_a26767f4d8636ff1c6d4f5e6919faf535}{value}});}
+\DoxyCodeLine{50     }
+\DoxyCodeLine{60     \mbox{\hyperlink{class_sql_condition}{SqlCondition}}(std::string \mbox{\hyperlink{class_sql_condition_a367b652e05af4b92cbc11bc3f6ef2e49}{field}}, std::string \mbox{\hyperlink{class_sql_condition_a98798d2a9164a5322d4c5fb4961c5813}{op}}, \textcolor{keywordtype}{double} \mbox{\hyperlink{class_sql_condition_a26767f4d8636ff1c6d4f5e6919faf535}{value}});}
 \DoxyCodeLine{61     }
-\DoxyCodeLine{65     \mbox{\hyperlink{class_sql_condition_a4e1db0a3cb2229d4d2cc3a4d75df01c7}{\string~SqlCondition}}();}
-\DoxyCodeLine{66 \textcolor{keyword}{private}:}
-\DoxyCodeLine{68     std::string \mbox{\hyperlink{class_sql_condition_a367b652e05af4b92cbc11bc3f6ef2e49}{field}};}
-\DoxyCodeLine{69     }
-\DoxyCodeLine{71     std::string \mbox{\hyperlink{class_sql_condition_a98798d2a9164a5322d4c5fb4961c5813}{op}};}
+\DoxyCodeLine{71     \mbox{\hyperlink{class_sql_condition}{SqlCondition}}(std::string \mbox{\hyperlink{class_sql_condition_a367b652e05af4b92cbc11bc3f6ef2e49}{field}}, std::string \mbox{\hyperlink{class_sql_condition_a98798d2a9164a5322d4c5fb4961c5813}{op}}, std::string \mbox{\hyperlink{class_sql_condition_a26767f4d8636ff1c6d4f5e6919faf535}{value}});}
 \DoxyCodeLine{72     }
-\DoxyCodeLine{74     std::any \mbox{\hyperlink{class_sql_condition_a26767f4d8636ff1c6d4f5e6919faf535}{value}};}
-\DoxyCodeLine{75     }
-\DoxyCodeLine{82     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_sql_condition_aed77799cf3c9250979d10199a74d44e3}{isValidOp}}(std::string \mbox{\hyperlink{class_sql_condition_a98798d2a9164a5322d4c5fb4961c5813}{op}});}
-\DoxyCodeLine{83     }
-\DoxyCodeLine{90     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_sql_condition_a1fa7ba5a8f46ce7719684494323c3c74}{isValidStrOp}}(std::string \mbox{\hyperlink{class_sql_condition_a98798d2a9164a5322d4c5fb4961c5813}{op}});}
-\DoxyCodeLine{91 \};}
-\DoxyCodeLine{92 }
-\DoxyCodeLine{93 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SqlCondition\_hpp */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{83     \mbox{\hyperlink{class_sql_condition}{SqlCondition}}(std::string \mbox{\hyperlink{class_sql_condition_a367b652e05af4b92cbc11bc3f6ef2e49}{field}}, std::string \mbox{\hyperlink{class_sql_condition_a98798d2a9164a5322d4c5fb4961c5813}{op}}, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{class_sql_condition_a26767f4d8636ff1c6d4f5e6919faf535}{value}});}
+\DoxyCodeLine{84     }
+\DoxyCodeLine{94     \mbox{\hyperlink{class_sql_condition}{SqlCondition}}(std::string \mbox{\hyperlink{class_sql_condition_a367b652e05af4b92cbc11bc3f6ef2e49}{field}}, std::string \mbox{\hyperlink{class_sql_condition_a98798d2a9164a5322d4c5fb4961c5813}{op}}, std::vector<std::string> \mbox{\hyperlink{class_sql_condition_a26767f4d8636ff1c6d4f5e6919faf535}{value}});}
+\DoxyCodeLine{95     }
+\DoxyCodeLine{99     \mbox{\hyperlink{class_sql_condition_a4e1db0a3cb2229d4d2cc3a4d75df01c7}{\string~SqlCondition}}();}
+\DoxyCodeLine{100 \textcolor{keyword}{private}:}
+\DoxyCodeLine{104     std::string \mbox{\hyperlink{class_sql_condition_a367b652e05af4b92cbc11bc3f6ef2e49}{field}};}
+\DoxyCodeLine{105     }
+\DoxyCodeLine{109     std::string \mbox{\hyperlink{class_sql_condition_a98798d2a9164a5322d4c5fb4961c5813}{op}};}
+\DoxyCodeLine{110     }
+\DoxyCodeLine{114     std::any \mbox{\hyperlink{class_sql_condition_a26767f4d8636ff1c6d4f5e6919faf535}{value}};}
+\DoxyCodeLine{115     }
+\DoxyCodeLine{124     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_sql_condition_aed77799cf3c9250979d10199a74d44e3}{isValidOp}}(std::string \mbox{\hyperlink{class_sql_condition_a98798d2a9164a5322d4c5fb4961c5813}{op}});}
+\DoxyCodeLine{125     }
+\DoxyCodeLine{134     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_sql_condition_aa5864d3070d161c490ecb32c0c69fcaf}{isValidStrOp}}(std::string \&\mbox{\hyperlink{class_sql_condition_a98798d2a9164a5322d4c5fb4961c5813}{op}});}
+\DoxyCodeLine{135     }
+\DoxyCodeLine{144     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_sql_condition_a5493b3763bce423ce173ba1e0428f02d}{isValidVectorOp}}(std::string \&\mbox{\hyperlink{class_sql_condition_a98798d2a9164a5322d4c5fb4961c5813}{op}});}
+\DoxyCodeLine{145 \};}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SqlCondition\_hpp */}\textcolor{preprocessor}{}}
 
 \end{DoxyCode}

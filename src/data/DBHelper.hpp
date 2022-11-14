@@ -43,15 +43,16 @@ public:
      * Conditions, sorting, and projection can be specified with the parameters, but are optional.
      * If no optional parameters are given, returns all rows and columns of the table unsorted.
      *
-     * @param model Used to determine the table name, column names and types, and to cast the results. Must inherit from Model.
+     * @param model Must inherit from Model. Used to determine the table name, column names and types, and to cast the results.
+     *              In the results, columns that are not selected will have the same value as in this object.
      * @param conditions Used to generate the WHERE clause of the select statement.
      * @param orderBy The field and direction used to generate the ORDER BY clause of the select statement. e.g. "price DESC".
      * @param columns The set of column names to select. If empty, all columns are selected.
      * @return The result of the select statement as a vector of models.
      */
     template<class T, class = std::enable_if_t<std::is_base_of<Model, T>::value>>
-    std::vector<T> selectWhere(const T &model, std::vector<SqlCondition> conditions = { }, std::string orderBy = "",
-                               std::set<std::string> columns = { }) const
+    std::vector<T> selectWhere(const T &model, const std::vector<SqlCondition> &conditions = { }, const std::string &orderBy = "",
+                               const std::set<std::string> &columns = { }) const
     {
         std::vector<T> result;
         // Helper reads from the database.
@@ -97,7 +98,7 @@ public:
      * @param conditions Used to generate the WHERE clause of the update statement.
      * @param columns The set of column names to update. If empty, all columns are updated.
      */
-    void updateWhere(const Model &model, std::vector<SqlCondition> conditions, std::set<std::string> columns) const;
+    void updateWhere(const Model &model, const std::vector<SqlCondition> &conditions, const std::set<std::string> &columns) const;
     
     /**
      * @brief Deletes the given model from its table, identified by its primary key(s).
@@ -120,13 +121,17 @@ public:
      * @param model Used to determine the table name.
      * @param conditions Used to generate the WHERE clause of the delete statement.
      */
-    void destroyWhere(const Model &model, std::vector<SqlCondition> conditions) const;
+    void destroyWhere(const Model &model, const std::vector<SqlCondition> &conditions) const;
     
 private:
-    /** @brief Singleton instance of DBHelper. */
+    /**
+     * @brief Singleton instance of DBHelper.
+     */
     static const DBHelper * instance;
     
-    /** @brief SQLite3 database handle. */
+    /**
+     * @brief SQLite3 database handle.
+     */
     sqlite3* db;
     
     /**
@@ -172,8 +177,57 @@ private:
      * @param columns The set of column names to select. If empty, all columns are selected.
      * @return The result of the select statement as a vector of Model pointers.
      */
-    std::vector<Model *> selectWhereHelper(const Model &model, std::vector<SqlCondition> conditions, std::string orderBy,
-                                           std::set<std::string> columns) const;
+    std::vector<Model *> selectWhereHelper(const Model &model, const std::vector<SqlCondition> &conditions, const std::string &orderBy,
+                                           const std::set<std::string> &columns) const;
+    
+    /**
+     * @brief Prepares a sqlite3 statement from the given query.
+     *
+     * @param query the query used to prepare the statement
+     * @param queryType the type of query (select, insert, etc), used to generate error messages
+     */
+    sqlite3_stmt * prepareStatement(const std::string &query, const std::string &queryType) const;
+    
+    std::string generateWhereClauseFromConditions(const std::vector<SqlCondition> &conditions) const;
+    
+    std::string generateWhereClauseFromKeys(const std::vector<std::string> &keys) const;
+    
+    /**
+     * @brief Iterates the columns vector and binds the corresponding value in the model to the statement, starting at index.
+     *
+     * Index is incremented with each iteration to allow multiple uses of bind statement methods on the same statement.
+     *
+     * @param statement the sqlite3 statement to bind
+     * @param model the model to get values from
+     * @param columns the names of the columns to bind the values of
+     * @param index the sqlite3 statement parameter index
+     * @param queryType the type of query (select, insert, etc), used to generate error messages
+     */
+    void bindStatementColumns(sqlite3_stmt *statement, const Model &model, const std::vector<std::string> &columns, int &index,
+                       const std::string &queryType) const;
+    
+    /**
+     * @brief Iterates the conditions and binds their values to the statement, starting at index.
+     *
+     * Index is incremented with each iteration to allow multiple uses of bind statement methods on the same statement.
+     *
+     * @param statement the sqlite3 statement to bind
+     * @param conditions the conditions to bind the values of
+     * @param index the sqlite3 statement parameter index
+     * @param queryType the type of query (select, insert, etc), used to generate error messages
+     */
+    void bindStatementConditions(sqlite3_stmt *statement, const std::vector<SqlCondition> &conditions, int &index,
+                       const std::string &queryType) const;
+    
+    /**
+     * @brief Finalizes the statement.
+     *
+     * Runs the destructor for statement, preventing resource leaks.
+     *
+     * @param statement the sqlite3 statement to finalize
+     * @param errorMessage the message to print if an error occurred when running the statement
+     */
+    void finalizeStatement(sqlite3_stmt *statement, const std::string &errorMessage) const;
     
     /**
      * @brief Opens the sqlite3 database handle.
@@ -184,6 +238,8 @@ private:
     
     /**
      * @brief Closes the sqlite3 database handle.
+     *
+     * Prevents resource leaks.
      */
     void closeDB();
 };

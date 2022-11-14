@@ -89,25 +89,25 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3fbfdc09681135fd77908252e5567695"><td class="memTemplParams" colspan="2">template&lt;class T , class  = std::enable_if_t&lt;std::is_base_of&lt;Model, T&gt;::value&gt;&gt; </td></tr>
-<tr class="memitem:a3fbfdc09681135fd77908252e5567695"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_d_b_helper.html#a3fbfdc09681135fd77908252e5567695">selectWhere</a> (const T &amp;model, std::vector&lt; <a class="el" href="class_sql_condition.html">SqlCondition</a> &gt; conditions=std::vector&lt; <a class="el" href="class_sql_condition.html">SqlCondition</a> &gt;(), std::string orderBy=&quot;&quot;, std::set&lt; std::string &gt; columns=std::set&lt; std::string &gt;()) const</td></tr>
-<tr class="memdesc:a3fbfdc09681135fd77908252e5567695"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads rows from the table represented by model and returns the result as a vector.  <a href="class_d_b_helper.html#a3fbfdc09681135fd77908252e5567695">More...</a><br /></td></tr>
-<tr class="separator:a3fbfdc09681135fd77908252e5567695"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7f11a99ef8f32accf91aa7e33ecc116"><td class="memTemplParams" colspan="2">template&lt;class T , class  = std::enable_if_t&lt;std::is_base_of&lt;Model, T&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:ad7f11a99ef8f32accf91aa7e33ecc116"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_d_b_helper.html#ad7f11a99ef8f32accf91aa7e33ecc116">selectWhere</a> (const T &amp;model, const std::vector&lt; <a class="el" href="class_sql_condition.html">SqlCondition</a> &gt; &amp;conditions={ }, const std::string &amp;orderBy=&quot;&quot;, const std::set&lt; std::string &gt; &amp;columns={ }) const</td></tr>
+<tr class="memdesc:ad7f11a99ef8f32accf91aa7e33ecc116"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads rows from the table represented by model and returns the result as a vector.  <a href="class_d_b_helper.html#ad7f11a99ef8f32accf91aa7e33ecc116">More...</a><br /></td></tr>
+<tr class="separator:ad7f11a99ef8f32accf91aa7e33ecc116"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab04570ddeb714621672463cdf820b5f6"><td class="memItemLeft" align="right" valign="top">long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b_helper.html#ab04570ddeb714621672463cdf820b5f6">insert</a> (const <a class="el" href="class_model.html">Model</a> &amp;model) const</td></tr>
 <tr class="memdesc:ab04570ddeb714621672463cdf820b5f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts the given model to its associated table in the database.  <a href="class_d_b_helper.html#ab04570ddeb714621672463cdf820b5f6">More...</a><br /></td></tr>
 <tr class="separator:ab04570ddeb714621672463cdf820b5f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5297f3d8509aa010ed2dc1ecccae8d25"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b_helper.html#a5297f3d8509aa010ed2dc1ecccae8d25">update</a> (const <a class="el" href="class_model.html">Model</a> &amp;model) const</td></tr>
 <tr class="memdesc:a5297f3d8509aa010ed2dc1ecccae8d25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the given model in the database by its primary key(s).  <a href="class_d_b_helper.html#a5297f3d8509aa010ed2dc1ecccae8d25">More...</a><br /></td></tr>
 <tr class="separator:a5297f3d8509aa010ed2dc1ecccae8d25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a5893cbc2cbf6a358498979078e923d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b_helper.html#a3a5893cbc2cbf6a358498979078e923d">updateWhere</a> (const <a class="el" href="class_model.html">Model</a> &amp;model, std::vector&lt; <a class="el" href="class_sql_condition.html">SqlCondition</a> &gt; conditions, std::set&lt; std::string &gt; columns) const</td></tr>
-<tr class="memdesc:a3a5893cbc2cbf6a358498979078e923d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conditionally updates the table that model represents with the values of model.  <a href="class_d_b_helper.html#a3a5893cbc2cbf6a358498979078e923d">More...</a><br /></td></tr>
-<tr class="separator:a3a5893cbc2cbf6a358498979078e923d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cca4cb6dc7e089d25ff07b76fe8c5e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b_helper.html#a1cca4cb6dc7e089d25ff07b76fe8c5e4">updateWhere</a> (const <a class="el" href="class_model.html">Model</a> &amp;model, const std::vector&lt; <a class="el" href="class_sql_condition.html">SqlCondition</a> &gt; &amp;conditions, const std::set&lt; std::string &gt; &amp;columns) const</td></tr>
+<tr class="memdesc:a1cca4cb6dc7e089d25ff07b76fe8c5e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conditionally updates the table that model represents with the values of model.  <a href="class_d_b_helper.html#a1cca4cb6dc7e089d25ff07b76fe8c5e4">More...</a><br /></td></tr>
+<tr class="separator:a1cca4cb6dc7e089d25ff07b76fe8c5e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ddd19d26ee22addbe189981831c1df1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b_helper.html#a7ddd19d26ee22addbe189981831c1df1">destroy</a> (const <a class="el" href="class_model.html">Model</a> &amp;model) const</td></tr>
 <tr class="memdesc:a7ddd19d26ee22addbe189981831c1df1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the given model from its table, identified by its primary key(s).  <a href="class_d_b_helper.html#a7ddd19d26ee22addbe189981831c1df1">More...</a><br /></td></tr>
 <tr class="separator:a7ddd19d26ee22addbe189981831c1df1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d547e5917bda6febf5cd8de97a88007"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b_helper.html#a3d547e5917bda6febf5cd8de97a88007">destroyWhere</a> (const <a class="el" href="class_model.html">Model</a> &amp;model, std::vector&lt; <a class="el" href="class_sql_condition.html">SqlCondition</a> &gt; conditions) const</td></tr>
-<tr class="memdesc:a3d547e5917bda6febf5cd8de97a88007"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conditionally deletes from the table that model represents.  <a href="class_d_b_helper.html#a3d547e5917bda6febf5cd8de97a88007">More...</a><br /></td></tr>
-<tr class="separator:a3d547e5917bda6febf5cd8de97a88007"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42899304698a39f00cbe2c24e0cb595e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b_helper.html#a42899304698a39f00cbe2c24e0cb595e">destroyWhere</a> (const <a class="el" href="class_model.html">Model</a> &amp;model, const std::vector&lt; <a class="el" href="class_sql_condition.html">SqlCondition</a> &gt; &amp;conditions) const</td></tr>
+<tr class="memdesc:a42899304698a39f00cbe2c24e0cb595e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conditionally deletes from the table that model represents.  <a href="class_d_b_helper.html#a42899304698a39f00cbe2c24e0cb595e">More...</a><br /></td></tr>
+<tr class="separator:a42899304698a39f00cbe2c24e0cb595e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -129,15 +129,32 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a02f089aa9605a07c104a4efcf140b8a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_d_b_helper.html">DBHelper</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b_helper.html#a02f089aa9605a07c104a4efcf140b8a3">operator=</a> (const <a class="el" href="class_d_b_helper.html">DBHelper</a> &amp;other)</td></tr>
 <tr class="memdesc:a02f089aa9605a07c104a4efcf140b8a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator overload.  <a href="class_d_b_helper.html#a02f089aa9605a07c104a4efcf140b8a3">More...</a><br /></td></tr>
 <tr class="separator:a02f089aa9605a07c104a4efcf140b8a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a732b822297c4d8974c7ae403f0eb6d09"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_model.html">Model</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b_helper.html#a732b822297c4d8974c7ae403f0eb6d09">selectWhereHelper</a> (const <a class="el" href="class_model.html">Model</a> &amp;model, std::vector&lt; <a class="el" href="class_sql_condition.html">SqlCondition</a> &gt; conditions, std::string orderBy, std::set&lt; std::string &gt; columns) const</td></tr>
-<tr class="memdesc:a732b822297c4d8974c7ae403f0eb6d09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads rows from the table represented by model and returns the result as a vector.  <a href="class_d_b_helper.html#a732b822297c4d8974c7ae403f0eb6d09">More...</a><br /></td></tr>
-<tr class="separator:a732b822297c4d8974c7ae403f0eb6d09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a245e930cbc31bf52c71f8d8dbc441f56"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_model.html">Model</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b_helper.html#a245e930cbc31bf52c71f8d8dbc441f56">selectWhereHelper</a> (const <a class="el" href="class_model.html">Model</a> &amp;model, const std::vector&lt; <a class="el" href="class_sql_condition.html">SqlCondition</a> &gt; &amp;conditions, const std::string &amp;orderBy, const std::set&lt; std::string &gt; &amp;columns) const</td></tr>
+<tr class="memdesc:a245e930cbc31bf52c71f8d8dbc441f56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads rows from the table represented by model and returns the result as a vector.  <a href="class_d_b_helper.html#a245e930cbc31bf52c71f8d8dbc441f56">More...</a><br /></td></tr>
+<tr class="separator:a245e930cbc31bf52c71f8d8dbc441f56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12277429c2214720af2dfab737ac21fe"><td class="memItemLeft" align="right" valign="top">sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b_helper.html#a12277429c2214720af2dfab737ac21fe">prepareStatement</a> (const std::string &amp;query, const std::string &amp;queryType) const</td></tr>
+<tr class="memdesc:a12277429c2214720af2dfab737ac21fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepares a sqlite3 statement from the given query.  <a href="class_d_b_helper.html#a12277429c2214720af2dfab737ac21fe">More...</a><br /></td></tr>
+<tr class="separator:a12277429c2214720af2dfab737ac21fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a257cd82872e03e74858fc80c60ff996d"><td class="memItemLeft" align="right" valign="top"><a id="a257cd82872e03e74858fc80c60ff996d" name="a257cd82872e03e74858fc80c60ff996d"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>generateWhereClauseFromConditions</b> (const std::vector&lt; <a class="el" href="class_sql_condition.html">SqlCondition</a> &gt; &amp;conditions) const</td></tr>
+<tr class="separator:a257cd82872e03e74858fc80c60ff996d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9686986bb04948d9c843bb98260758a7"><td class="memItemLeft" align="right" valign="top"><a id="a9686986bb04948d9c843bb98260758a7" name="a9686986bb04948d9c843bb98260758a7"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>generateWhereClauseFromKeys</b> (const std::vector&lt; std::string &gt; &amp;keys) const</td></tr>
+<tr class="separator:a9686986bb04948d9c843bb98260758a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a343726ad40336cbe56fc8c77425196ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b_helper.html#a343726ad40336cbe56fc8c77425196ec">bindStatementColumns</a> (sqlite3_stmt *statement, const <a class="el" href="class_model.html">Model</a> &amp;model, const std::vector&lt; std::string &gt; &amp;columns, int &amp;index, const std::string &amp;queryType) const</td></tr>
+<tr class="memdesc:a343726ad40336cbe56fc8c77425196ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterates the columns vector and binds the corresponding value in the model to the statement, starting at index.  <a href="class_d_b_helper.html#a343726ad40336cbe56fc8c77425196ec">More...</a><br /></td></tr>
+<tr class="separator:a343726ad40336cbe56fc8c77425196ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af734d9bc780aecdcedf5a27e340422d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b_helper.html#af734d9bc780aecdcedf5a27e340422d0">bindStatementConditions</a> (sqlite3_stmt *statement, const std::vector&lt; <a class="el" href="class_sql_condition.html">SqlCondition</a> &gt; &amp;conditions, int &amp;index, const std::string &amp;queryType) const</td></tr>
+<tr class="memdesc:af734d9bc780aecdcedf5a27e340422d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterates the conditions and binds their values to the statement, starting at index.  <a href="class_d_b_helper.html#af734d9bc780aecdcedf5a27e340422d0">More...</a><br /></td></tr>
+<tr class="separator:af734d9bc780aecdcedf5a27e340422d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f481236e2e9ea34f3629d860e50dece"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b_helper.html#a6f481236e2e9ea34f3629d860e50dece">finalizeStatement</a> (sqlite3_stmt *statement, const std::string &amp;errorMessage) const</td></tr>
+<tr class="memdesc:a6f481236e2e9ea34f3629d860e50dece"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalizes the statement.  <a href="class_d_b_helper.html#a6f481236e2e9ea34f3629d860e50dece">More...</a><br /></td></tr>
+<tr class="separator:a6f481236e2e9ea34f3629d860e50dece"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f5e15072ac9a617c2a401aefac5e5a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b_helper.html#a3f5e15072ac9a617c2a401aefac5e5a9">openDB</a> ()</td></tr>
 <tr class="memdesc:a3f5e15072ac9a617c2a401aefac5e5a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the sqlite3 database handle.  <a href="class_d_b_helper.html#a3f5e15072ac9a617c2a401aefac5e5a9">More...</a><br /></td></tr>
 <tr class="separator:a3f5e15072ac9a617c2a401aefac5e5a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd7fadbcddf0a0bf6e623d930758feba"><td class="memItemLeft" align="right" valign="top"><a id="acd7fadbcddf0a0bf6e623d930758feba" name="acd7fadbcddf0a0bf6e623d930758feba"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>closeDB</b> ()</td></tr>
-<tr class="memdesc:acd7fadbcddf0a0bf6e623d930758feba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the sqlite3 database handle. <br /></td></tr>
+<tr class="memitem:acd7fadbcddf0a0bf6e623d930758feba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b_helper.html#acd7fadbcddf0a0bf6e623d930758feba">closeDB</a> ()</td></tr>
+<tr class="memdesc:acd7fadbcddf0a0bf6e623d930758feba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the sqlite3 database handle.  <a href="class_d_b_helper.html#acd7fadbcddf0a0bf6e623d930758feba">More...</a><br /></td></tr>
 <tr class="separator:acd7fadbcddf0a0bf6e623d930758feba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
@@ -246,6 +263,161 @@ static const <a class="el" href="class_d_b_helper.html">DBHelper</a> *&#160;</td
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a343726ad40336cbe56fc8c77425196ec" name="a343726ad40336cbe56fc8c77425196ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a343726ad40336cbe56fc8c77425196ec">&#9670;&#160;</a></span>bindStatementColumns()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DBHelper::bindStatementColumns </td>
+          <td>(</td>
+          <td class="paramtype">sqlite3_stmt *&#160;</td>
+          <td class="paramname"><em>statement</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_model.html">Model</a> &amp;&#160;</td>
+          <td class="paramname"><em>model</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>columns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>queryType</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Iterates the columns vector and binds the corresponding value in the model to the statement, starting at index. </p>
+<p >Index is incremented with each iteration to allow multiple uses of bind statement methods on the same statement.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">statement</td><td>the sqlite3 statement to bind </td></tr>
+    <tr><td class="paramname">model</td><td>the model to get values from </td></tr>
+    <tr><td class="paramname">columns</td><td>the names of the columns to bind the values of </td></tr>
+    <tr><td class="paramname">index</td><td>the sqlite3 statement parameter index </td></tr>
+    <tr><td class="paramname">queryType</td><td>the type of query (select, insert, etc), used to generate error messages </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af734d9bc780aecdcedf5a27e340422d0" name="af734d9bc780aecdcedf5a27e340422d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af734d9bc780aecdcedf5a27e340422d0">&#9670;&#160;</a></span>bindStatementConditions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DBHelper::bindStatementConditions </td>
+          <td>(</td>
+          <td class="paramtype">sqlite3_stmt *&#160;</td>
+          <td class="paramname"><em>statement</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="class_sql_condition.html">SqlCondition</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>conditions</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>queryType</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Iterates the conditions and binds their values to the statement, starting at index. </p>
+<p >Index is incremented with each iteration to allow multiple uses of bind statement methods on the same statement.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">statement</td><td>the sqlite3 statement to bind </td></tr>
+    <tr><td class="paramname">conditions</td><td>the conditions to bind the values of </td></tr>
+    <tr><td class="paramname">index</td><td>the sqlite3 statement parameter index </td></tr>
+    <tr><td class="paramname">queryType</td><td>the type of query (select, insert, etc), used to generate error messages </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="acd7fadbcddf0a0bf6e623d930758feba" name="acd7fadbcddf0a0bf6e623d930758feba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd7fadbcddf0a0bf6e623d930758feba">&#9670;&#160;</a></span>closeDB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DBHelper::closeDB </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Closes the sqlite3 database handle. </p>
+<p >Prevents resource leaks. </p>
+
+</div>
+</div>
 <a id="a7ddd19d26ee22addbe189981831c1df1" name="a7ddd19d26ee22addbe189981831c1df1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7ddd19d26ee22addbe189981831c1df1">&#9670;&#160;</a></span>destroy()</h2>
 
@@ -273,8 +445,8 @@ static const <a class="el" href="class_d_b_helper.html">DBHelper</a> *&#160;</td
 
 </div>
 </div>
-<a id="a3d547e5917bda6febf5cd8de97a88007" name="a3d547e5917bda6febf5cd8de97a88007"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d547e5917bda6febf5cd8de97a88007">&#9670;&#160;</a></span>destroyWhere()</h2>
+<a id="a42899304698a39f00cbe2c24e0cb595e" name="a42899304698a39f00cbe2c24e0cb595e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42899304698a39f00cbe2c24e0cb595e">&#9670;&#160;</a></span>destroyWhere()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -288,7 +460,7 @@ static const <a class="el" href="class_d_b_helper.html">DBHelper</a> *&#160;</td
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="class_sql_condition.html">SqlCondition</a> &gt;&#160;</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="class_sql_condition.html">SqlCondition</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>conditions</em>&#160;</td>
         </tr>
         <tr>
@@ -306,6 +478,52 @@ static const <a class="el" href="class_d_b_helper.html">DBHelper</a> *&#160;</td
   <table class="params">
     <tr><td class="paramname">model</td><td>Used to determine the table name. </td></tr>
     <tr><td class="paramname">conditions</td><td>Used to generate the WHERE clause of the delete statement. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6f481236e2e9ea34f3629d860e50dece" name="a6f481236e2e9ea34f3629d860e50dece"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f481236e2e9ea34f3629d860e50dece">&#9670;&#160;</a></span>finalizeStatement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DBHelper::finalizeStatement </td>
+          <td>(</td>
+          <td class="paramtype">sqlite3_stmt *&#160;</td>
+          <td class="paramname"><em>statement</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>errorMessage</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Finalizes the statement. </p>
+<p >Runs the destructor for statement, preventing resource leaks.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">statement</td><td>the sqlite3 statement to finalize </td></tr>
+    <tr><td class="paramname">errorMessage</td><td>the message to print if an error occurred when running the statement </td></tr>
   </table>
   </dd>
 </dl>
@@ -425,8 +643,53 @@ static const <a class="el" href="class_d_b_helper.html">DBHelper</a> *&#160;</td
 
 </div>
 </div>
-<a id="a3fbfdc09681135fd77908252e5567695" name="a3fbfdc09681135fd77908252e5567695"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3fbfdc09681135fd77908252e5567695">&#9670;&#160;</a></span>selectWhere()</h2>
+<a id="a12277429c2214720af2dfab737ac21fe" name="a12277429c2214720af2dfab737ac21fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12277429c2214720af2dfab737ac21fe">&#9670;&#160;</a></span>prepareStatement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sqlite3_stmt * DBHelper::prepareStatement </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>query</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>queryType</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Prepares a sqlite3 statement from the given query. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">query</td><td>the query used to prepare the statement </td></tr>
+    <tr><td class="paramname">queryType</td><td>the type of query (select, insert, etc), used to generate error messages </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad7f11a99ef8f32accf91aa7e33ecc116" name="ad7f11a99ef8f32accf91aa7e33ecc116"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7f11a99ef8f32accf91aa7e33ecc116">&#9670;&#160;</a></span>selectWhere()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -445,20 +708,20 @@ template&lt;class T , class  = std::enable_if_t&lt;std::is_base_of&lt;Model, T&g
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="class_sql_condition.html">SqlCondition</a> &gt;&#160;</td>
-          <td class="paramname"><em>conditions</em> = <code>std::vector&lt;<a class="el" href="class_sql_condition.html">SqlCondition</a>&gt;()</code>, </td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="class_sql_condition.html">SqlCondition</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>conditions</em> = <code>{&#160;}</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>orderBy</em> = <code>&quot;&quot;</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::set&lt; std::string &gt;&#160;</td>
-          <td class="paramname"><em>columns</em> = <code>std::set&lt;std::string&gt;()</code>&#160;</td>
+          <td class="paramtype">const std::set&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>columns</em> = <code>{&#160;}</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -474,10 +737,10 @@ template&lt;class T , class  = std::enable_if_t&lt;std::is_base_of&lt;Model, T&g
 </div><div class="memdoc">
 
 <p>Reads rows from the table represented by model and returns the result as a vector. </p>
-<p >Casts the results of <a class="el" href="class_d_b_helper.html#a732b822297c4d8974c7ae403f0eb6d09" title="Reads rows from the table represented by model and returns the result as a vector.">DBHelper::selectWhereHelper()</a> to type T, which is the subclass of <a class="el" href="class_model.html" title="Abstract class representing a row of a database table.">Model</a> that the model parameter was. Conditions, sorting, and projection can be specified with the parameters, but are optional. Returns all rows and columns of the table, unsorted, if no optional parameters are given.</p>
+<p >Casts the results of <a class="el" href="class_d_b_helper.html#a245e930cbc31bf52c71f8d8dbc441f56" title="Reads rows from the table represented by model and returns the result as a vector.">DBHelper::selectWhereHelper()</a> to type T, which is the subclass of <a class="el" href="class_model.html" title="Abstract class representing a row of a database table.">Model</a> that the model parameter was. Conditions, sorting, and projection can be specified with the parameters, but are optional. If no optional parameters are given, returns all rows and columns of the table unsorted.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">model</td><td>Used to determine the table name, column names and types, and to cast the results. Must inherit from <a class="el" href="class_model.html" title="Abstract class representing a row of a database table.">Model</a>. </td></tr>
+    <tr><td class="paramname">model</td><td>Must inherit from <a class="el" href="class_model.html" title="Abstract class representing a row of a database table.">Model</a>. Used to determine the table name, column names and types, and to cast the results. In the results, columns that are not selected will have the same value as in this object. </td></tr>
     <tr><td class="paramname">conditions</td><td>Used to generate the WHERE clause of the select statement. </td></tr>
     <tr><td class="paramname">orderBy</td><td>The field and direction used to generate the ORDER BY clause of the select statement. e.g. "price DESC". </td></tr>
     <tr><td class="paramname">columns</td><td>The set of column names to select. If empty, all columns are selected. </td></tr>
@@ -488,8 +751,8 @@ template&lt;class T , class  = std::enable_if_t&lt;std::is_base_of&lt;Model, T&g
 
 </div>
 </div>
-<a id="a732b822297c4d8974c7ae403f0eb6d09" name="a732b822297c4d8974c7ae403f0eb6d09"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a732b822297c4d8974c7ae403f0eb6d09">&#9670;&#160;</a></span>selectWhereHelper()</h2>
+<a id="a245e930cbc31bf52c71f8d8dbc441f56" name="a245e930cbc31bf52c71f8d8dbc441f56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a245e930cbc31bf52c71f8d8dbc441f56">&#9670;&#160;</a></span>selectWhereHelper()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -506,19 +769,19 @@ template&lt;class T , class  = std::enable_if_t&lt;std::is_base_of&lt;Model, T&g
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="class_sql_condition.html">SqlCondition</a> &gt;&#160;</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="class_sql_condition.html">SqlCondition</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>conditions</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>orderBy</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::set&lt; std::string &gt;&#160;</td>
+          <td class="paramtype">const std::set&lt; std::string &gt; &amp;&#160;</td>
           <td class="paramname"><em>columns</em>&#160;</td>
         </tr>
         <tr>
@@ -536,7 +799,7 @@ template&lt;class T , class  = std::enable_if_t&lt;std::is_base_of&lt;Model, T&g
 
 <p>Reads rows from the table represented by model and returns the result as a vector. </p>
 <p >Conditions, sorting, and projection can be specified with the parameters, but are optional. Returns all rows and columns of the table, unsorted, if no optional parameters are given.</p>
-<p >Used only by <a class="el" href="class_d_b_helper.html#a3fbfdc09681135fd77908252e5567695" title="Reads rows from the table represented by model and returns the result as a vector.">DBHelper::selectWhere()</a>. Its purpose is to keep most of the implementation of <a class="el" href="class_d_b_helper.html#a3fbfdc09681135fd77908252e5567695" title="Reads rows from the table represented by model and returns the result as a vector.">DBHelper::selectWhere()</a> (a template function) outside of the header file.</p>
+<p >Used only by <a class="el" href="class_d_b_helper.html#ad7f11a99ef8f32accf91aa7e33ecc116" title="Reads rows from the table represented by model and returns the result as a vector.">DBHelper::selectWhere()</a>. Its purpose is to keep most of the implementation of <a class="el" href="class_d_b_helper.html#ad7f11a99ef8f32accf91aa7e33ecc116" title="Reads rows from the table represented by model and returns the result as a vector.">DBHelper::selectWhere()</a> (a template function) outside of the header file.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">model</td><td>Used to determine the table name, column names and types, and to cast the results. </td></tr>
@@ -577,8 +840,8 @@ template&lt;class T , class  = std::enable_if_t&lt;std::is_base_of&lt;Model, T&g
 
 </div>
 </div>
-<a id="a3a5893cbc2cbf6a358498979078e923d" name="a3a5893cbc2cbf6a358498979078e923d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a5893cbc2cbf6a358498979078e923d">&#9670;&#160;</a></span>updateWhere()</h2>
+<a id="a1cca4cb6dc7e089d25ff07b76fe8c5e4" name="a1cca4cb6dc7e089d25ff07b76fe8c5e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cca4cb6dc7e089d25ff07b76fe8c5e4">&#9670;&#160;</a></span>updateWhere()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -592,13 +855,13 @@ template&lt;class T , class  = std::enable_if_t&lt;std::is_base_of&lt;Model, T&g
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="class_sql_condition.html">SqlCondition</a> &gt;&#160;</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="class_sql_condition.html">SqlCondition</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>conditions</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::set&lt; std::string &gt;&#160;</td>
+          <td class="paramtype">const std::set&lt; std::string &gt; &amp;&#160;</td>
           <td class="paramname"><em>columns</em>&#160;</td>
         </tr>
         <tr>
