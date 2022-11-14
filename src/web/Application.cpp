@@ -41,6 +41,10 @@ void Application::handleInternalPath(const std::string &internalPath)
     {
         body = root()->addNew<OrderListPage>();
     }
+    else if (internalPath == "/sales")
+    {
+        body = root()->addNew<SalesPage>();
+    }
     else if (internalPath == "/inventory")
     {
         body = root()->addNew<Wt::WText>("Temp Inventory Page");

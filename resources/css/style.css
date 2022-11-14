@@ -131,13 +131,16 @@ body {
     padding: 1em;
 }
 
-.list>div {
+.list > div {
     flex: 2;
     min-width: 40em;
 }
 
-.list::before,
-.list::after {
+.list.list-wide > div {
+    min-width: 60em;
+}
+
+.list::before, .list::after {
     content: "";
     flex: 1;
 }
@@ -152,7 +155,7 @@ body {
     line-height: 2em;
 }
 
-div.list-item-removed>.list-item {
+div.list-item-removed > .list-item {
     transform: translateX(20em);
     opacity: 0;
     transition: transform 0.5s, opacity 0.4s;
@@ -167,7 +170,7 @@ div.list-item-removed>.list-item {
     font-weight: bold;
 }
 
-.list-item>.list-item-header button {
+.list-item > .list-item-header button {
     all: unset;
     background-color: var(--colour-dark-gray);
     border-top: 0.1em solid;
@@ -179,18 +182,18 @@ div.list-item-removed>.list-item {
     cursor: pointer;
 }
 
-.list-item>.list-item-header button:hover {
+.list-item > .list-item-header button:hover {
     background-color: var(--colour-dark-blue);
 }
 
-.list-item>.list-item-header button img {
+.list-item > .list-item-header button img {
     display: inline-block;
     height: 1.2em;
     margin-right: 0.3em;
     vertical-align: middle;
 }
 
-.list-item>div:nth-child(n+2) {
+.list-item > div:nth-child(n+2) {
     margin-top: 0.5em;
 }
 
@@ -199,13 +202,13 @@ div.list-item-removed>.list-item {
     flex-direction: row;
 }
 
-.panel-wrapper>div {
+.panel-wrapper > div {
     flex: 1;
     border-radius: 0.5em;
     background-color: var(--colour-dark-gray);
 }
 
-.panel-wrapper>div>div:first-child {
+.panel-wrapper > div > div:first-child {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -213,12 +216,12 @@ div.list-item-removed>.list-item {
     cursor: pointer;
 }
 
-.panel-wrapper>div>div:nth-child(n+2) {
+.panel-wrapper > div > div:nth-child(n+2) {
     border-top: 0.2em solid var(--colour-light-gray);
     padding: 0em 1em;
 }
 
-.panel-wrapper>div>div:first-child::after {
+.panel-wrapper > div > div:first-child::after {
     content: "";
     background-image: url("../images/chevron.png");
     background-size: 1em;
@@ -230,7 +233,7 @@ div.list-item-removed>.list-item {
     transition: 0.2s ease-in-out;
 }
 
-.panel-wrapper>div.panel-expanded>div:first-child::after {
+.panel-wrapper > div.panel-expanded > div:first-child::after {
     -webkit-transform: scale(1, -1);
     transform: scale(1, -1);
 }

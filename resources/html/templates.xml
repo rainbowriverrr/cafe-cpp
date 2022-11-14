@@ -12,10 +12,13 @@
             <span class="navbar-item" id="navbar-item-orders">
                 ${a-orders}
             </span>
+            <span class="navbar-item" id="navbar-item-sales">
+                ${a-sales}
+            </span> 
             <span class="navbar-item" id="navbar-item-inventory">
                 ${a-inventory}
             </span>
-            <span class="navbar-spacer"></span>
+           <span class="navbar-spacer"></span>
             <span class="navbar-item" id="navbar-item-login">
                 ${a-login}
             </span>
@@ -54,6 +57,16 @@
     <message id="order-list-empty">
         <div class="list-item">
             <span>There are no orders.</span>
+        </div>
+    </message>
+    <message id="sales-chart">
+        <div>
+            <div class="list-item">
+                <div class="list-item-header">
+                    <span>Total Sales Over Time</span>
+                </div>
+                ${chart}
+            </div>
         </div>
     </message>
 </messages>

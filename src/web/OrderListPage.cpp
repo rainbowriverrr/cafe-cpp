@@ -8,12 +8,12 @@
 
 OrderListPage::OrderListPage()
 {
-    // The orders not marked as complete.
-    std::vector<OrderMaster> orders = DBHelper::getInstance().selectWhere(OrderMaster(), { SqlCondition("isComplete", "=", 0) }, "OrderDate");
-    
     addStyleClass("list");
     
     listWidget = addNew<WContainerWidget>();
+    
+    // The orders not marked as complete.
+    std::vector<OrderMaster> orders = DBHelper::getInstance().selectWhere(OrderMaster(), { SqlCondition("isComplete", "=", 0) }, "OrderDate");
     
     if (orders.empty())
     {

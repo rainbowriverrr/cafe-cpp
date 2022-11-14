@@ -21,6 +21,9 @@ NavbarWidget::NavbarWidget()
     Wt::WLink linkOrders = Wt::WLink(Wt::LinkType::InternalPath, "/orders");
     navbarTemplate->bindWidget("a-orders", std::make_unique<Wt::WAnchor>(linkOrders, "orders"));
     
+    Wt::WLink linkSales = Wt::WLink(Wt::LinkType::InternalPath, "/sales");
+    navbarTemplate->bindWidget("a-sales", std::make_unique<Wt::WAnchor>(linkSales, "sales"));
+    
     Wt::WLink linkInventory = Wt::WLink(Wt::LinkType::InternalPath, "/inventory");
     navbarTemplate->bindWidget("a-inventory", std::make_unique<Wt::WAnchor>(linkInventory, "inventory"));
     

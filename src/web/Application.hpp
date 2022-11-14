@@ -14,13 +14,10 @@
 #include <string>
 #include <vector>
 
-#include "DBHelper.hpp"
-#include "IOHelper.hpp"
-#include "MenuItem.hpp"
-#include "MenuPage.hpp"
 #include "NavbarWidget.hpp"
+#include "MenuPage.hpp"
 #include "OrderListPage.hpp"
-#include "OrderMaster.hpp"
+#include "SalesPage.hpp"
 
 /**
  * Class representing the Wt Application (the web server).
