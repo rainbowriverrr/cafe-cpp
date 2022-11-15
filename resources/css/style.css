@@ -257,3 +257,17 @@ div.list-item-removed > .list-item {
 .table-order-details tbody tr:last-child {
     border-top: 0.1em solid;
 }
+
+.chart-legend {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.chart-legend > div > span {
+    font-size: small;
+}
+
+.chart-legend > div > span:first-child {
+    font-family: var(--font-family-bold);
+}

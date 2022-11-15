@@ -65,7 +65,10 @@
                 <div class="list-item-header">
                     <span>Total Sales Over Time</span>
                 </div>
-                ${chart}
+                <div class="flex-row">
+                    ${chart}
+                    ${legend}
+                </div>
             </div>
         </div>
     </message>

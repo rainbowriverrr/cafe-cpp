@@ -6,6 +6,7 @@
 #define SalesPage_hpp
 
 #include <vector>
+#include <algorithm>
 
 #include <Wt/WTemplate.h>
 #include <Wt/Chart/WCartesianChart.h>
@@ -14,7 +15,10 @@
 #include <Wt/WDate.h>
 #include <Wt/WFont.h>
 #include <Wt/Chart/WChartPalette.h>
+#include <Wt/WText.h>
+#include <Wt/WCssDecorationStyle.h>
 
+#include "ChartPalette.hpp"
 #include "DBHelper.hpp"
 #include "SqlCondition.hpp"
 #include "OrderMaster.hpp"
@@ -32,7 +36,18 @@ public:
     SalesPage();
     ~SalesPage();
 private:
-    void updateModel(Wt::WAbstractItemModel *model, int numDays, std::vector<std::string> menuItems);
+    
+    int numDaysToChart;
+    
+    std::vector<std::string> menuItemsToChart;
+    
+    Wt::Chart::WCartesianChart *chart;
+    
+    std::unique_ptr<Wt::Chart::WCartesianChart> createChartWidget(std::shared_ptr<Wt::WStandardItemModel> model);
+    
+    std::unique_ptr<Wt::WContainerWidget> createLegendWidget();
+    
+    void updateModel(Wt::WAbstractItemModel *model);
 };
 
 #endif /* SalesPage_hpp */
