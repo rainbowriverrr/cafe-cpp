@@ -1,7 +1,8 @@
-INSERT INTO MenuItem VALUES ("Coffee",2.29);
-INSERT INTO MenuItem VALUES ("Latte",3.00);
-INSERT INTO MenuItem VALUES ("Cappuccino",3.00);
-INSERT INTO MenuItem VALUES ("Cookie",1.49);
+INSERT INTO MenuItem VALUES ("Undefined Symbol",2.29, "Blonde Roast");
+INSERT INTO MenuItem VALUES ("Memory Leak",3.00, "Medium Roast");
+INSERT INTO MenuItem VALUES ("Segmentation Fault",3.00, "Dark Roast");
+INSERT INTO MenuItem VALUES ("GNUppuccino",3.49, "Cappuccino");
+INSERT INTO MenuItem VALUES ("Stack Overflow",10.49, "Big Fat Hamburger");
 
 INSERT INTO OrderMaster VALUES (NULL,"Bob","2022-11-08 10:22:00",0);
 INSERT INTO OrderMaster VALUES (NULL,"Alice","2022-11-08 10:23:10",0);

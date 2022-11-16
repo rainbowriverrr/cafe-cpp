@@ -5,3 +5,4 @@ target
 Main
 TestDBHelper
 sql/data.db
+run.sh

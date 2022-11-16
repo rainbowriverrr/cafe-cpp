@@ -14,7 +14,8 @@ CREATE TABLE IF NOT EXISTS OrderDetail (
 
 CREATE TABLE IF NOT EXISTS MenuItem (
     name TEXT NOT NULL PRIMARY KEY,
-    price REAL NOT NULL
+    price REAL NOT NULL,
+    description TEXT NOT NULL
 );
 
 CREATE VIEW IF NOT EXISTS vOrderDetail AS

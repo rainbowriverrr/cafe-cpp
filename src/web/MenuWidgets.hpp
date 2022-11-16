@@ -13,18 +13,19 @@
 #include <Wt/WTemplate.h>
 #include <Wt/WText.h>
 
+#include <iomanip>
+#include <iostream>
 #include <string>
 
 class MenuItemWidget : public Wt::WTemplate {
    public:
-    MenuItemWidget(const std::string &name, const std::string &price, const std::string &description);
+    MenuItemWidget(const std::string &name, const double &price, const std::string &description);
     Wt::WPushButton *getCartPtr();
 
    private:
     Wt::WText *name_;
     Wt::WText *price_;
     Wt::WText *description_;
-    Wt::WLineEdit *quantity_;
     Wt::WPushButton *cartButton_;
 };
 

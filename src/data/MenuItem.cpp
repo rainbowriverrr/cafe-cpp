@@ -6,10 +6,11 @@
 
 #include "MenuItem.hpp"
 
-MenuItem::MenuItem(std::string name, double price)
+MenuItem::MenuItem(std::string name, double price, std::string description)
 {
     this->name = name;
     this->price = price;
+    this->description = description;
 }
 
 MenuItem::~MenuItem()
@@ -27,9 +28,19 @@ double MenuItem::getPrice()
     return price;
 }
 
-void MenuItem::setPrice(double price)
+std::string MenuItem::getDescription()
 {
+    return description;
+}
+
+
+void MenuItem::setPrice(double price) {
     this->price = price;
+}
+
+void MenuItem::setDescription(std::string description)
+{
+    this->description = description;
 }
 
 
@@ -40,7 +51,7 @@ std::string MenuItem::tableName() const
 
 std::vector<std::string> MenuItem::columns() const
 {
-    return { "name", "price" };
+    return { "name", "price", "description" };
 }
 
 std::set<std::string> MenuItem::keys() const
@@ -58,6 +69,7 @@ std::map<std::string, std::any> MenuItem::toMap() const
     std::map<std::string, std::any> mMap;
     mMap[columns()[0]] = name;
     mMap[columns()[1]] = price;
+    mMap[columns()[2]] = description;
     
     return mMap;
 }
@@ -66,6 +78,8 @@ Model * MenuItem::fromMap(std::map<std::string, std::any> mMap) const
 {
     std::string mName = std::any_cast<std::string>(mMap[columns()[0]]);
     double mPrice = std::any_cast<double>(mMap[columns()[1]]);
-    MenuItem *model = new MenuItem(mName, mPrice);
+    std::string mDescription = std::any_cast<std::string>(mMap[columns()[2]]);
+    
+    MenuItem *model = new MenuItem(mName, mPrice, mDescription);
     return model;
 }

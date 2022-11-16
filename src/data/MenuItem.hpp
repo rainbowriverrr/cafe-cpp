@@ -5,13 +5,14 @@
 #ifndef MenuItem_hpp
 #define MenuItem_hpp
 
-#include <string>
 #include <map>
+#include <string>
 
 #include "Model.hpp"
 
 /**
- * Class representing a row of the MenuItem table.
+ * @brief Class representing a row of the MenuItem table.
+ *
  * @author Julian Koksal
  * @date 2022-09-25
  */
@@ -19,41 +20,63 @@ class MenuItem : public Model
 {
 public:
     /**
-     * Constructor creates a MenuItem with the given values.
+     * @brief Constructor creates a MenuItem with name, price, and description.
+     *
      * @param name The name of the MenuItem.
      * @param price The price of the MenuItem.
+     * @param description The description of the MenuItem.
      */
-    MenuItem(std::string name = "", double price = 0);
-    
+    MenuItem(std::string name = "", double price = 0, std::string description = "");
+
     /**
-     * Destructor.
+     * @brief Destructor.
      */
     ~MenuItem();
-    
+
     /**
-     * Gets the name.
+     * @brief Gets the name.
+     *
      * @return name
      */
     std::string getName();
-    
+
     /**
-     * Gets the price.
+     * @brief Gets the price.
+     *
      * @return price
      */
     double getPrice();
     
     /**
-     * Sets the price.
+     * @brief Gets the description.
+     *
+     * @return description
+     */
+    std::string getDescription();
+
+    /**
+     * @brief Sets the price.
+     * 
      * @param price The new price.
      */
     void setPrice(double price);
+
+    /**
+     * @brief Sets the description of the item
+     *
+     * @param description The new description.
+     */
+    void setDescription(std::string description);
     
 private:
     /** The name of the MenuItem. */
     std::string name;
-    
+
     /** The price of the MenuItem. */
     double price;
+    
+    /** The description of the menu item*/
+    std::string description;
     
     virtual std::string tableName() const override;
     virtual std::vector<std::string> columns() const override;
