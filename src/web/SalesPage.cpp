@@ -13,17 +13,47 @@ SalesPage::SalesPage()
     
     Wt::WTemplate *salesTemplate = addNew<Wt::WTemplate>(tr("sales-chart"));
     
-    numDaysToChart = 7;
+    numDaysToChart = 366;
     menuItemsToChart = { "Coffee", "Latte", "Cookie" };
     
-    int numSeries = (int)menuItemsToChart.size() + 1;
-    std::shared_ptr<Wt::WStandardItemModel> model = std::make_shared<Wt::WStandardItemModel>(numDaysToChart, numSeries + 1);
+    int numMenuItems = (int)DBHelper::getInstance().selectWhere(MenuItem()).size();
+    std::shared_ptr<Wt::WStandardItemModel> model = std::make_shared<Wt::WStandardItemModel>(numDaysToChart, numMenuItems + 1);
     
     chart = salesTemplate->bindWidget("chart", createChartWidget(model));
+    Wt::WContainerWidget *legend = salesTemplate->bindWidget("legend", createLegendWidget());
+    
+    Wt::WPushButton *btnMenuItem = salesTemplate->bindWidget("btn-menu-item", std::make_unique<Wt::WPushButton>("Select menu items..."));
+    
+    Wt::WDialog *dialogMenuItem = addChild(std::make_unique<Wt::WDialog>());
+    dialogMenuItem->setTitleBarEnabled(false);
+    dialogMenuItem->setModal(false);
+    dialogMenuItem->setMovable(false);
+    Wt::WContainerWidget *dialogContents = dialogMenuItem->contents();
+    dialogContents->addStyleClass("flex-column");
+    dialogContents->setWidth(btnMenuItem->width());
+    
+    std::vector<MenuItem> menu = DBHelper::getInstance().selectWhere(MenuItem(), {}, "name");
+    for (std::vector<MenuItem>::iterator it = menu.begin(); it != menu.end(); it++)
+    {
+        Wt::WContainerWidget *row = dialogContents->addNew<Wt::WContainerWidget>();
+        row->addStyleClass("flex-row");
+        row->addNew<Wt::WCheckBox>();
+        row->addNew<Wt::WText>("&nbsp;" + it->getName());
+    }
+    
+    btnMenuItem->clicked().connect([this, dialogMenuItem, btnMenuItem] {
+        if (dialogMenuItem->isVisible())
+        {
+            dialogMenuItem->hide();
+        }
+        else
+        {
+            dialogMenuItem->show();
+            dialogMenuItem->positionAt(btnMenuItem);
+        }
+    });
     
     updateModel(model.get());
-    
-    Wt::WContainerWidget *legend = salesTemplate->bindWidget("legend", createLegendWidget());
 }
 
 SalesPage::~SalesPage()
@@ -57,7 +87,7 @@ std::unique_ptr<Wt::Chart::WCartesianChart> SalesPage::createChartWidget(std::sh
     chart->setPlotAreaPadding(50, Wt::Side::Left | Wt::Side::Bottom | Wt::Side::Right);
     chart->resize("45em", "30em");
     chart->setPalette(std::make_shared<ChartPalette>());
-    chart->setZoomEnabled();
+    //chart->setZoomEnabled();
     chart->setPanEnabled();
     
     // Axes
@@ -70,8 +100,11 @@ std::unique_ptr<Wt::Chart::WCartesianChart> SalesPage::createChartWidget(std::sh
     xAxis.setTitleFont(fontBold);
     xAxis.setLabelFormat("yyyy-MM-dd");
     xAxis.setLabelFont(fontSmall);
+    xAxis.setLabelInterval(7);
     xAxis.setScale(Wt::Chart::AxisScale::Date);
     xAxis.setRange(Wt::WDate::currentDate().toJulianDay() - numDaysToChart, Wt::WDate::currentDate().toJulianDay() - 1);
+    xAxis.setZoomRange(Wt::WDate::currentDate().toJulianDay() - 6, Wt::WDate::currentDate().toJulianDay() - 1);
+    xAxis.setMinimumZoomRange(6);
     
     // y axis
     Wt::Chart::WAxis &yAxis = chart->axis(Wt::Chart::Axis::Y);
@@ -133,75 +166,68 @@ std::unique_ptr<Wt::WContainerWidget> SalesPage::createLegendWidget()
 
 void SalesPage::updateModel(Wt::WAbstractItemModel *model)
 {
+    // Set headers
     model->setHeaderData(1, std::string("All menu items"));
-    
     for (int i = 0; i < menuItemsToChart.size(); i++)
     {
         model->setHeaderData(i + 2, menuItemsToChart[i]);
     }
     
-    double maxValue = 10;
+    // Set values
+    double maxValue = 10; // The highest value, used to determine the range of the y-axis.
+    // Iterates from yesterday to numDaysToChart days ago.
     for (int daysAgo = 1; daysAgo <= numDaysToChart; daysAgo++)
     {
         Wt::WDate day = Wt::WDate::currentDate().addDays(daysAgo * -1);
-        std::string start = day.toString("yyyy-MM-dd").toUTF8() + " 00:00:00.000";
-        std::string end = day.addDays(1).toString("yyyy-MM-dd").toUTF8() + " 00:00:00.000";
+        std::string start = day.toString("yyyy-MM-dd").toUTF8() + " 00:00:00.000"; // The start of the day.
+        std::string end = day.addDays(1).toString("yyyy-MM-dd").toUTF8() + " 00:00:00.000"; // The start of the next day.
         
-        model->setData(numDaysToChart - daysAgo, 0, day);
-        
-        double totalSales = 0;
+        model->setData(numDaysToChart - daysAgo, 0, day); // Sets the first column (x-axis).
         
         std::vector<OrderMaster> orders = DBHelper::getInstance().selectWhere(OrderMaster(), {
             SqlCondition("orderDate", ">=", start),
             SqlCondition("orderDate", "<", end),
             SqlCondition("isComplete", "=", true)
         });
-        for (std::vector<OrderMaster>::iterator itOrders = orders.begin(); itOrders != orders.end(); itOrders++)
-        {
-            std::vector<SqlCondition> conditions = {
-                SqlCondition("orderNumber", "=", itOrders->getOrderNumber())
-            };
-            
-            std::vector<vOrderDetail> details = DBHelper::getInstance().selectWhere(vOrderDetail(), conditions);
-            for (std::vector<vOrderDetail>::iterator itDetails = details.begin(); itDetails != details.end(); itDetails++)
-            {
-                totalSales += itDetails->getTotal();
-            }
-        }
         
-        model->setData(numDaysToChart - daysAgo, 1, totalSales);
-        
-        if (totalSales > maxValue)
-        {
-            maxValue = totalSales;
-        }
+        double totalSalesAllMenuItems = getTotalSalesFromOrders(orders);
+        model->setData(numDaysToChart - daysAgo, 1, totalSalesAllMenuItems);
         
         for (int iMenu = 0; iMenu < menuItemsToChart.size(); iMenu++)
         {
-            totalSales = 0;
-            
-            orders = DBHelper::getInstance().selectWhere(OrderMaster(), {
-                SqlCondition("orderDate", ">=", start),
-                SqlCondition("orderDate", "<", end),
-                SqlCondition("isComplete", "=", true)
-            });
-            for (std::vector<OrderMaster>::iterator itOrders = orders.begin(); itOrders != orders.end(); itOrders++)
-            {
-                std::vector<SqlCondition> conditions = {
-                    SqlCondition("orderNumber", "=", itOrders->getOrderNumber()),
-                    SqlCondition("menuItemName", "=", menuItemsToChart[iMenu])
-                };
-                
-                std::vector<vOrderDetail> details = DBHelper::getInstance().selectWhere(vOrderDetail(), conditions);
-                for (std::vector<vOrderDetail>::iterator itDetails = details.begin(); itDetails != details.end(); itDetails++)
-                {
-                    totalSales += itDetails->getTotal();
-                }
-            }
-            
+            double totalSales = getTotalSalesFromOrders(orders, menuItemsToChart[iMenu]);
             model->setData(numDaysToChart - daysAgo, iMenu + 2, totalSales);
+        }
+        
+        if (totalSalesAllMenuItems > maxValue)
+        {
+            maxValue = totalSalesAllMenuItems;
         }
     }
     
     chart->axis(Wt::Chart::Axis::Y).setRange(0, maxValue * 1.1);
+}
+
+double SalesPage::getTotalSalesFromOrders(std::vector<OrderMaster> orders, std::string menuItem)
+{
+    double totalSales = 0;
+    
+    for (std::vector<OrderMaster>::iterator itOrders = orders.begin(); itOrders != orders.end(); itOrders++)
+    {
+        std::vector<SqlCondition> conditions = {
+            SqlCondition("orderNumber", "=", itOrders->getOrderNumber())
+        };
+        if (!menuItem.empty())
+        {
+            conditions.push_back(SqlCondition("menuItemName", "=", menuItem));
+        }
+        
+        std::vector<vOrderDetail> details = DBHelper::getInstance().selectWhere(vOrderDetail(), conditions);
+        for (std::vector<vOrderDetail>::iterator itDetails = details.begin(); itDetails != details.end(); itDetails++)
+        {
+            totalSales += itDetails->getTotal();
+        }
+    }
+    
+    return totalSales;
 }

@@ -17,12 +17,16 @@
 #include <Wt/Chart/WChartPalette.h>
 #include <Wt/WText.h>
 #include <Wt/WCssDecorationStyle.h>
+#include <Wt/WDialog.h>
+#include <Wt/WPushButton.h>
+#include <Wt/WCheckBox.h>
 
 #include "ChartPalette.hpp"
 #include "DBHelper.hpp"
 #include "SqlCondition.hpp"
 #include "OrderMaster.hpp"
 #include "vOrderDetail.hpp"
+#include "MenuItem.hpp"
 
 /**
  * @brief Class representing the sales page widget.
@@ -48,6 +52,8 @@ private:
     std::unique_ptr<Wt::WContainerWidget> createLegendWidget();
     
     void updateModel(Wt::WAbstractItemModel *model);
+    
+    double getTotalSalesFromOrders(std::vector<OrderMaster> orders, std::string menuItem = "");
 };
 
 #endif /* SalesPage_hpp */
