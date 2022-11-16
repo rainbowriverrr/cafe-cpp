@@ -67,7 +67,11 @@
                     ${btn-menu-item}
                 </div>
                 <div class="flex-row">
-                    ${chart}
+                    <span class="y-axis-title">Total Sales ($)</span>
+                    <div class="flex-column">
+                        ${chart}
+                        <span class="x-axis-title">Date</span>
+                    </div>
                     ${legend}
                 </div>
             </div>

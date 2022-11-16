@@ -258,10 +258,33 @@ div.list-item-removed > .list-item {
     border-top: 0.1em solid;
 }
 
+.x-axis-title {
+    align-self: stretch;
+    text-align: center;
+    line-height: 1em;
+}
+
+.y-axis-title {
+    transform: rotate(-90deg) translateY(-5em);
+    align-self: center;
+    position: absolute;
+}
+
 .chart-legend {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-self: center;
+    background-color: var(--colour-dark-gray);
+    border-radius: 0.5em;
+    flex: 1;
+    padding: 0.5em 0.5em;
+    line-height: 1.5em;
+}
+
+.chart-legend > div {
+    display: flex;
+    flex-direction: row;
 }
 
 .chart-legend > div > span {
@@ -270,4 +293,38 @@ div.list-item-removed > .list-item {
 
 .chart-legend > div > span:first-child {
     font-family: var(--font-family-bold);
+}
+
+.list-item-header button.sales-select-menu-btn {
+    width: 15em;
+}
+
+.sales-dialog {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em 0.25em;
+    background-color: var(--colour-dark-gray);
+    border: 0.1em solid white;
+    border-radius: 0em 0em 0.5em 0.5em;
+    width: 15.5em;
+}
+
+.sales-dialog > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 0.4em;
+    padding: 0em 0.25em;
+}
+
+.sales-dialog > div:hover {
+    background-color: var(--colour-dark-blue);
+}
+
+.sales-dialog > div:nth-child(n+2) {
+    margin-top: 0.5em;
+}
+
+.sales-dialog > div span {
+    margin-left: 0.5em;
 }

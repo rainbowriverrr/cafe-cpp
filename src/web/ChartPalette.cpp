@@ -16,7 +16,7 @@ std::vector<Wt::WColor> ChartPalette::colours = {
     Wt::WColor(255, 128, 0),  // orange
     Wt::WColor(128, 0, 255),  // purple
     Wt::WColor(0, 128, 255),  // light blue
-    Wt::WColor(255, 128, 128) // pale orange/pink
+    Wt::WColor(0, 100, 0)     // dark green
 };
 
 ChartPalette::ChartPalette()
@@ -36,7 +36,9 @@ Wt::WColor ChartPalette::getColour(int index)
 
 Wt::WPen ChartPalette::borderPen(int index) const
 {
-    return Wt::WPen(Wt::PenStyle::None);
+    Wt::WPen pen = Wt::WPen(Wt::PenStyle::None);
+    
+    return pen;
 }
 
 Wt::WBrush ChartPalette::brush(int index) const

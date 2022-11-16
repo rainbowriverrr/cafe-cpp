@@ -6,6 +6,7 @@
 #define SalesPage_hpp
 
 #include <vector>
+#include <set>
 #include <algorithm>
 
 #include <Wt/WTemplate.h>
@@ -43,17 +44,39 @@ private:
     
     int numDaysToChart;
     
-    std::vector<std::string> menuItemsToChart;
+    std::vector<MenuItem> menu;
+    
+    std::set<std::string> menuItemsToChart;
+    
+    Wt::WTemplate *salesTemplate;
     
     Wt::Chart::WCartesianChart *chart;
+    
+    Wt::WContainerWidget *legend;
+    
+    Wt::WDialog *dialog;
+    
+    Wt::WPushButton *btnOpenDialog;
     
     std::unique_ptr<Wt::Chart::WCartesianChart> createChartWidget(std::shared_ptr<Wt::WStandardItemModel> model);
     
     std::unique_ptr<Wt::WContainerWidget> createLegendWidget();
     
+    std::unique_ptr<Wt::WContainerWidget> createLegendItemWidget(std::string menuItemName, Wt::WColor colour);
+    
+    std::unique_ptr<Wt::WDialog> createDialogWidget();
+    
+    std::unique_ptr<Wt::WContainerWidget> createDialogItemWidget(std::string menuItemName);
+    
+    std::unique_ptr<Wt::WPushButton> createBtnOpenDialogWidget();
+    
+    void onBtnOpenDialogClick();
+    
     void updateModel(Wt::WAbstractItemModel *model);
     
-    double getTotalSalesFromOrders(std::vector<OrderMaster> orders, std::string menuItem = "");
+    double getTotalSalesFromOrders(std::vector<OrderMaster> orders, std::string menuItemName = "");
+    
+    void showSeries();
 };
 
 #endif /* SalesPage_hpp */
