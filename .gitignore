@@ -6,3 +6,4 @@ target
 Main
 TestDBHelper
 resources/data.db
+run.sh

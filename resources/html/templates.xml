@@ -12,22 +12,15 @@
         </div>
     </message>
     <message id="menu-item">
-        <div class="page page-order-list flex-row font-regular">
-        <div class="font-regular w-order-list-item">
-            <div>
-                <h3 class="menu-title">${name}</h3>
-            </div>
-            <div>
-                <p class="menu-text">${description}</p>
-            </div>
-            <div>
-                <p class="menu-price">${price}</p>
-            </div>
-            <div>
-                <p class="menu-quantity">${quantity-box}</p>
-            </div>
-            <div>${cart-button}</div>
-        </div>
+        <div class="list-item">
+                <div class="list-item-header">
+                    <span class="colour-cyan">${name}</span>
+                    ${cart-button}
+                </div>
+                <div class="menu-description">
+                    <span>${description}</span>
+                    <span>${price}</span>
+                </div>
         </div>
     </message>
     <message id="order-list-item">
