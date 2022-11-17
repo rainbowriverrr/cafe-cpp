@@ -1,12 +1,12 @@
 //
-//  ChartPalette.cpp
+//  CustomChartPalette.cpp
 //
 //  Created by Julian Koksal on 2022-11-14.
 //
 
-#include "ChartPalette.hpp"
+#include "CustomChartPalette.hpp"
 
-std::vector<Wt::WColor> ChartPalette::colours = {
+std::vector<Wt::WColor> CustomChartPalette::colours = {
     Wt::WColor(230, 0, 230),  // ANSI bright magenta
     Wt::WColor(0, 230, 230),  // ANSI bright cyan
     Wt::WColor(230, 0, 0),    // ANSI bright red
@@ -19,41 +19,41 @@ std::vector<Wt::WColor> ChartPalette::colours = {
     Wt::WColor(0, 100, 0)     // dark green
 };
 
-ChartPalette::ChartPalette()
+CustomChartPalette::CustomChartPalette()
 {
     
 }
 
-ChartPalette::~ChartPalette()
+CustomChartPalette::~CustomChartPalette()
 {
     
 }
 
-Wt::WColor ChartPalette::getColour(int index)
+Wt::WColor CustomChartPalette::getColour(int index)
 {
     return colours[index % colours.size()];
 }
 
-Wt::WPen ChartPalette::borderPen(int index) const
+Wt::WPen CustomChartPalette::borderPen(int index) const
 {
     Wt::WPen pen = Wt::WPen(Wt::PenStyle::None);
     
     return pen;
 }
 
-Wt::WBrush ChartPalette::brush(int index) const
+Wt::WBrush CustomChartPalette::brush(int index) const
 {
     Wt::WBrush brush = Wt::WBrush(getColour(index));
     
     return brush;
 }
 
-Wt::WColor ChartPalette::fontColor(int index) const
+Wt::WColor CustomChartPalette::fontColor(int index) const
 {
     return Wt::WColor(255, 255, 255);
 }
 
-Wt::WPen ChartPalette::strokePen(int index) const
+Wt::WPen CustomChartPalette::strokePen(int index) const
 {
     Wt::WPen pen = Wt::WPen(getColour(index));
     pen.setWidth(2);

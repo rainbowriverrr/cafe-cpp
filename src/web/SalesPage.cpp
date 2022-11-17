@@ -11,7 +11,7 @@ SalesPage::SalesPage()
     addStyleClass("list");
     addStyleClass("list-wide");
     
-    salesTemplate = addNew<Wt::WTemplate>(tr("sales-chart"));
+    Wt::WTemplate *salesTemplate = addNew<Wt::WTemplate>(tr("sales-chart"));
     
     numDaysToChart = 366;
     menuItemsToChart = { "All menu items" };
@@ -19,16 +19,18 @@ SalesPage::SalesPage()
     
     std::shared_ptr<Wt::WStandardItemModel> model = std::make_shared<Wt::WStandardItemModel>(numDaysToChart, menu.size() + 2);
     
-    chart = salesTemplate->bindWidget("chart", createChartWidget(model));
-    legend = salesTemplate->bindWidget("legend", createLegendWidget());
+    Wt::Chart::WCartesianChart *chart = salesTemplate->bindWidget("chart", createChartWidget(model));
+    Wt::WContainerWidget *legend = salesTemplate->bindWidget("legend", createLegendWidget());
     
-    dialog = addChild(createDialogWidget());
+    Wt::WDialog *dialog = addChild(createDialogWidget(chart, salesTemplate));
     
-    btnOpenDialog = salesTemplate->bindWidget("btn-menu-item", createBtnOpenDialogWidget());
-    btnOpenDialog->clicked().connect(this, &SalesPage::onBtnOpenDialogClick);
+    Wt::WPushButton *btnOpenDialog = salesTemplate->bindWidget("btn-menu-item", createBtnOpenDialogWidget());
+    btnOpenDialog->clicked().connect([this, dialog, btnOpenDialog] {
+        onBtnOpenDialogClick(dialog, btnOpenDialog);
+    });
     
     updateModel(model.get());
-    showSeries();
+    showSeries(chart, salesTemplate);
 }
 
 SalesPage::~SalesPage()
@@ -63,16 +65,16 @@ std::unique_ptr<Wt::Chart::WCartesianChart> SalesPage::createChartWidget(std::sh
     chart->setPlotAreaPadding(70, Wt::Side::Left);
     chart->setPlotAreaPadding(35, Wt::Side::Right);
     chart->resize("42em", "30em");
-    chart->setPalette(std::make_shared<ChartPalette>());
+    chart->setPalette(std::make_shared<CustomChartPalette>());
     chart->setPanEnabled();
     
     // x axis
     chart->setXSeriesColumn(0);
     Wt::Chart::WAxis &xAxis = chart->axis(Wt::Chart::Axis::X);
+    xAxis.setScale(Wt::Chart::AxisScale::Date);
     xAxis.setLabelFormat("yyyy-MM-dd");
     xAxis.setLabelFont(fontSmall);
     xAxis.setLabelInterval(7);
-    xAxis.setScale(Wt::Chart::AxisScale::Date);
     xAxis.setRange(Wt::WDate::currentDate().toJulianDay() - numDaysToChart, Wt::WDate::currentDate().toJulianDay() - 1);
     xAxis.setZoomRange(Wt::WDate::currentDate().toJulianDay() - 10, Wt::WDate::currentDate().toJulianDay() - 1);
     xAxis.setMaximumZoomRange(10);
@@ -85,10 +87,13 @@ std::unique_ptr<Wt::Chart::WCartesianChart> SalesPage::createChartWidget(std::sh
     yAxis.setGridLinesPen(Wt::WPen(colourLightGray));
     
     // Series
+    
+    // Creates the series for "All menu items"
     std::unique_ptr<Wt::Chart::WDataSeries> seriesAll = std::make_unique<Wt::Chart::WDataSeries>(1, Wt::Chart::SeriesType::Line);
     seriesAll->setMarker(Wt::Chart::MarkerType::Circle);
     chart->addSeries(std::move(seriesAll));
     
+    // Iterates the menu and creates a series for each menu item.
     int col = 2;
     for (std::vector<MenuItem>::iterator it = menu.begin(); it != menu.end(); it++)
     {
@@ -106,6 +111,7 @@ std::unique_ptr<Wt::WContainerWidget> SalesPage::createLegendWidget()
 {
     std::unique_ptr<Wt::WContainerWidget> legend = std::make_unique<Wt::WContainerWidget>();
     
+    // If no series are selected then no legend is shown.
     if (menuItemsToChart.empty())
     {
         return legend;
@@ -115,7 +121,7 @@ std::unique_ptr<Wt::WContainerWidget> SalesPage::createLegendWidget()
     
     if (menuItemsToChart.count("All menu items"))
     {
-        legend->addWidget(createLegendItemWidget("All menu items", ChartPalette::getColour(0)));
+        legend->addWidget(createLegendItemWidget("All menu items", CustomChartPalette::getColour(0)));
     }
     
     int i = 1;
@@ -123,7 +129,7 @@ std::unique_ptr<Wt::WContainerWidget> SalesPage::createLegendWidget()
     {
         if (menuItemsToChart.count(it->getName()))
         {
-            legend->addWidget(createLegendItemWidget(it->getName(), ChartPalette::getColour(i)));
+            legend->addWidget(createLegendItemWidget(it->getName(), CustomChartPalette::getColour(i)));
         }
         i++;
     }
@@ -147,36 +153,37 @@ std::unique_ptr<Wt::WContainerWidget> SalesPage::createLegendItemWidget(std::str
     return legendItem;
 }
 
-std::unique_ptr<Wt::WDialog> SalesPage::createDialogWidget()
+std::unique_ptr<Wt::WDialog> SalesPage::createDialogWidget(Wt::Chart::WCartesianChart *chart, Wt::WTemplate *salesTemplate)
 {
     std::unique_ptr<Wt::WDialog> dialog = std::make_unique<Wt::WDialog>();
     dialog->setTitleBarEnabled(false);
     dialog->setModal(false);
     dialog->setMovable(false);
+    
     Wt::WContainerWidget *dialogContents = dialog->contents();
     dialogContents->addStyleClass("sales-dialog");
     
-    dialogContents->addWidget(createDialogItemWidget("All menu items"));
+    dialogContents->addWidget(createDialogItemWidget(chart, salesTemplate, "All menu items"));
     for (std::vector<MenuItem>::iterator it = menu.begin(); it != menu.end(); it++)
     {
-        dialogContents->addWidget(createDialogItemWidget(it->getName()));
+        dialogContents->addWidget(createDialogItemWidget(chart, salesTemplate, it->getName()));
     }
     
     return dialog;
 }
 
-std::unique_ptr<Wt::WContainerWidget> SalesPage::createDialogItemWidget(std::string menuItemName)
+std::unique_ptr<Wt::WContainerWidget> SalesPage::createDialogItemWidget(Wt::Chart::WCartesianChart *chart, Wt::WTemplate *salesTemplate, std::string menuItemName)
 {
     std::unique_ptr<Wt::WContainerWidget> item = std::make_unique<Wt::WContainerWidget>();
     
     Wt::WCheckBox *checkbox = item->addNew<Wt::WCheckBox>();
-    checkbox->checked().connect([this, menuItemName] {
+    checkbox->checked().connect([this, chart, salesTemplate, menuItemName] {
         menuItemsToChart.insert(menuItemName);
-        showSeries();
+        showSeries(chart, salesTemplate);
     });
-    checkbox->unChecked().connect([this, menuItemName] {
+    checkbox->unChecked().connect([this, chart, salesTemplate, menuItemName] {
         menuItemsToChart.erase(menuItemName);
-        showSeries();
+        showSeries(chart, salesTemplate);
     });
     
     if (menuItemsToChart.count(menuItemName))
@@ -197,7 +204,7 @@ std::unique_ptr<Wt::WPushButton> SalesPage::createBtnOpenDialogWidget()
     return btn;
 }
 
-void SalesPage::onBtnOpenDialogClick()
+void SalesPage::onBtnOpenDialogClick(Wt::WDialog *dialog, Wt::WPushButton *btnOpenDialog)
 {
     if (dialog->isVisible())
     {
@@ -212,8 +219,6 @@ void SalesPage::onBtnOpenDialogClick()
 
 void SalesPage::updateModel(Wt::WAbstractItemModel *model)
 {
-    // Set values
-    double maxValue = 10; // The highest value, used to determine the range of the y-axis.
     // Iterates from yesterday to numDaysToChart days ago.
     for (int daysAgo = 1; daysAgo <= numDaysToChart; daysAgo++)
     {
@@ -232,22 +237,25 @@ void SalesPage::updateModel(Wt::WAbstractItemModel *model)
         double totalSalesAllMenuItems = getTotalSalesFromOrders(orders);
         model->setData(numDaysToChart - daysAgo, 1, totalSalesAllMenuItems);
         
+        if (totalSalesAllMenuItems > maxValuesOfSeries["All menu items"])
+        {
+            maxValuesOfSeries["All menu items"] = totalSalesAllMenuItems;
+        }
+        
         int col = 2;
         for (std::vector<MenuItem>::iterator it = menu.begin(); it != menu.end(); it++)
         {
             double totalSales = getTotalSalesFromOrders(orders, it->getName());
             model->setData(numDaysToChart - daysAgo, col, totalSales);
             
+            if (totalSales > maxValuesOfSeries[it->getName()])
+            {
+                maxValuesOfSeries[it->getName()] = totalSales;
+            }
+            
             col++;
         }
-        
-        if (totalSalesAllMenuItems > maxValue)
-        {
-            maxValue = totalSalesAllMenuItems;
-        }
     }
-    
-    chart->axis(Wt::Chart::Axis::Y).setRange(0, maxValue * 1.1);
 }
 
 double SalesPage::getTotalSalesFromOrders(std::vector<OrderMaster> orders, std::string menuItemName)
@@ -274,7 +282,7 @@ double SalesPage::getTotalSalesFromOrders(std::vector<OrderMaster> orders, std::
     return totalSales;
 }
 
-void SalesPage::showSeries()
+void SalesPage::showSeries(Wt::Chart::WCartesianChart *chart, Wt::WTemplate *salesTemplate)
 {
     chart->series(1).setHidden(!menuItemsToChart.count("All menu items"));
     
@@ -287,5 +295,36 @@ void SalesPage::showSeries()
     chart->update();
     
     salesTemplate->removeWidget("legend");
-    legend = salesTemplate->bindWidget("legend", createLegendWidget());
+    salesTemplate->bindWidget("legend", createLegendWidget());
+    
+    setChartYAxisRange(chart);
+}
+
+void SalesPage::setChartYAxisRange(Wt::Chart::WCartesianChart *chart)
+{
+    std::shared_ptr<Wt::Chart::WAbstractChartModel> model = chart->model();
+    
+    if (menuItemsToChart.count("All menu items"))
+    {
+        chart->axis(Wt::Chart::Axis::Y).setRange(0, std::max(10.0, maxValuesOfSeries["All menu items"] * 1.1));
+        return;
+    }
+    
+    double maxValue = 0;
+    
+    int col = 2;
+    for (std::vector<MenuItem>::iterator it = menu.begin(); it != menu.end(); it++)
+    {
+        if (menuItemsToChart.count(it->getName()))
+        {
+            double maxValueThisSeries = maxValuesOfSeries[it->getName()];
+            if (maxValueThisSeries > maxValue)
+            {
+                maxValue = maxValueThisSeries;
+            }
+        }
+    }
+    
+    Wt::Chart::WAxis &yAxis = chart->axis(Wt::Chart::Axis::Y);
+    yAxis.setRange(0, std::max(10.0, maxValue * 1.1));
 }

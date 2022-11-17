@@ -1,5 +1,14 @@
 <?xml version = "1.0" encoding = "UTF-8" ?>
 <messages>
+    <message id="loading-indicator">
+        <div class="loading-overlay"></div>
+        <div class="loading-indicator">
+            <div>
+                <img src="resources/images/logo.png" alt="logo" />
+            </div>
+            <span>Loading...</span>
+        </div>
+    </message>
     <message id="navbar">
         <nav class="navbar">
             <span class="navbar-item navbar-item-active" 

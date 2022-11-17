@@ -8,6 +8,8 @@
 Application::Application(const Wt::WEnvironment &env) : Wt::WApplication(env)
 {
     setTitle("Cafe C++");
+    
+    setLoadingIndicator(std::make_unique<CustomLoadingIndicator>());
 
     useStyleSheet("resources/css/style.css");
     messageResourceBundle().use("resources/html/templates");

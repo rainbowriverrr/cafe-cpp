@@ -4,5 +4,6 @@ target
 /web
 Main
 TestDBHelper
+TestDataGenerator
 sql/data.db
 run.sh

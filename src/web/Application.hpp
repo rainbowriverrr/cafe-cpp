@@ -14,6 +14,7 @@
 #include <string>
 #include <vector>
 
+#include "CustomLoadingIndicator.hpp"
 #include "NavbarWidget.hpp"
 #include "MenuPage.hpp"
 #include "OrderListPage.hpp"
