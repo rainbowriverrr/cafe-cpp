@@ -4,9 +4,18 @@
 //  Created by Julian Koksal on 2022-11-16.
 //
 
-#include "TestDataGenerator.hpp"
+#include <string>
+#include <vector>
+#include <cmath>
 
-void TestDataGenerator::generateOrders()
+#include <Wt/WDateTime.h>
+#include <Wt/WRandom.h>
+
+#include "DBHelper.hpp"
+#include "OrderMaster.hpp"
+#include "OrderDetail.hpp"
+
+void generateOrders()
 {
     const DBHelper &db = DBHelper::getInstance();
     
@@ -35,12 +44,7 @@ void TestDataGenerator::generateOrders()
     }
 }
 
-TestDataGenerator::TestDataGenerator()
+int main(int argc, const char *argv[])
 {
-    
-}
-
-TestDataGenerator::~TestDataGenerator()
-{
-    
+    generateOrders();
 }
