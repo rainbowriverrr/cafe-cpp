@@ -1,12 +1,12 @@
 CREATE TABLE IF NOT EXISTS OrderMaster (
-    orderNumber INTEGER PRIMARY KEY,
+    orderNumber INTEGER NOT NULL PRIMARY KEY,
     orderedBy TEXT NOT NULL,
     orderDate TEXT NOT NULL,
     isComplete INTEGER NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS OrderDetail (
-    orderDetailID INTEGER PRIMARY KEY,
+    orderDetailID INTEGER NOT NULL PRIMARY KEY,
     orderNumber INTEGER NOT NULL,
     menuItemName TEXT NOT NULL,
     quantity INTEGER NOT NULL
@@ -28,3 +28,15 @@ CREATE VIEW IF NOT EXISTS vOrderDetail AS
     FROM OrderDetail AS od
     LEFT OUTER JOIN MenuItem AS m ON m.name = od.menuItemName;
 
+CREATE TABLE InventoryItem (
+    itemID INTEGER NOT NULL PRIMARY KEY,
+    itemName TEXT NOT NULL,
+    quantity INTEGER NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS MenuItemIngredient (
+    menuItemName TEXT NOT NULL,
+    inventoryItemID TEXT NOT NULL,
+    quantity INTEGER NOT NULL,
+    PRIMARY KEY (menuItemName,inventoryItemID)
+);
