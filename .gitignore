@@ -6,3 +6,5 @@ Main
 TestDBHelper
 sql/data.db
 run.sh
+resources/data.db
+TestDBHelper.out
