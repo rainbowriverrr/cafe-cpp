@@ -27,7 +27,7 @@ void generateOrders()
         "Undefined Symbol", "Undefined Symbol", "Undefined Symbol", "Undefined Symbol"
     };
     
-    int daysToGenerate = 366;
+    int daysToGenerate = 367;
     for (int daysAgo = 1; daysAgo <= daysToGenerate; daysAgo++)
     {
         Wt::WDateTime day = Wt::WDateTime::currentDateTime().addDays(daysAgo * -1);

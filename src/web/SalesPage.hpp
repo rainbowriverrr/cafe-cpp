@@ -16,17 +16,21 @@
 #include <Wt/WTableView.h>
 #include <Wt/WDate.h>
 #include <Wt/WFont.h>
+#include <Wt/WPen.h>
+#include <Wt/WBrush.h>
 #include <Wt/WText.h>
 #include <Wt/WCssDecorationStyle.h>
 #include <Wt/WDialog.h>
 #include <Wt/WPushButton.h>
+#include <Wt/WButtonGroup.h>
+#include <Wt/WRadioButton.h>
 #include <Wt/WCheckBox.h>
 
-#include "CustomChartPalette.hpp"
 #include "DBHelper.hpp"
 #include "SqlCondition.hpp"
 #include "OrderMaster.hpp"
 #include "vOrderDetail.hpp"
+#include "vOrderSales.hpp"
 #include "MenuItem.hpp"
 
 /**
@@ -50,13 +54,20 @@ public:
     
     /**
      * @brief Destructor.
+     *
+     * Does nothing.
      */
     ~SalesPage();
 private:
     /**
      * @brief The number of days that will be charted. Default 366.
      */
-    int numDaysToChart;
+    static const int NUM_DAYS_TO_CHART;
+    
+    /**
+     * @brief Palette that the chart will use to colour the different series.
+     */
+    static const std::vector<Wt::WColor> COLOUR_PALETTE;
     
     /**
      * @brief The menu as retreived from the database.
@@ -69,9 +80,19 @@ private:
     std::set<std::string> menuItemsToChart;
     
     /**
+     * @brief The selected ID of the revenue-quanity button group. 0 is revenue, 1 is quantity.
+     */
+    int selectedIDRevQty;
+    
+    /**
      * @brief Maps menu item names to the maximum value of its data series. Used to determine the chart y-axis range.
      */
-    std::map<std::string, double> maxValuesOfSeries;
+    std::map<std::string, double> maxSeriesRevenue;
+    
+    /**
+     * @brief Maps menu item names to the maximum value of its data series. Used to determine the chart y-axis range.
+     */
+    std::map<std::string, int> maxSeriesQuantity;
     
     /**
      * @brief Creates and returns the chart widget.
@@ -102,10 +123,24 @@ private:
     std::unique_ptr<Wt::WContainerWidget> createLegendItemWidget(std::string menuItemName, Wt::WColor colour);
     
     /**
+     * @brief Creates and returns the revenue-quantity button group widget.
+     *
+     * Contains two radio buttons, lablled Rev($) and Qty(#), used to switch which value is plotted by the chart.
+     *
+     * @param chart the chart widget
+     * @param salesTemplate the page template widget
+     * @param yAxisTitle the y-axis title text widget
+     * @return a unique ptr to the container widget that holds the button group
+     */
+    std::unique_ptr<Wt::WContainerWidget> createBtnGroupRevQty(Wt::Chart::WCartesianChart *chart, Wt::WTemplate *salesTemplate, Wt::WText *yAxisTitle);
+    
+    /**
      * @brief Creates and returns the dialog widget.
      *
      * Has a column of dialog item widgets.
      *
+     * @param chart the chart widget
+     * @param salesTemplate the page template widget
      * @return a unique ptr to the dialog widget that was created
      */
     std::unique_ptr<Wt::WDialog> createDialogWidget(Wt::Chart::WCartesianChart *chart, Wt::WTemplate *salesTemplate);
@@ -116,6 +151,8 @@ private:
      * Each dialog item is a checkbox with a label, where the label is the name of the menu item.
      * Used to show/hide series on the chart.
      *
+     * @param chart the chart widget
+     * @param salesTemplate the page template widget
      * @param menuItemName the name of the menu item, used for the label
      * @return a unique ptr to the dialog item widget that was created
      */
@@ -134,6 +171,9 @@ private:
      * @brief Event handler for the open dialog button.
      *
      * Shows/hides the dialog.
+     *
+     * @param dialog the dialog widget
+     * @param btnOpenDialog the open dialog button widget
      */
     void onBtnOpenDialogClick(Wt::WDialog *dialog, Wt::WPushButton *btnOpenDialog);
     
@@ -149,23 +189,28 @@ private:
     void updateModel(Wt::WAbstractItemModel *model);
     
     /**
-     * @brief Iterates orders and gets the total revenue for the given menu item, or for all items if menuItemName is empty.
-     *
-     * @param orders the orders to get the total revenue of
-     * @param menuItemName the name of the menu item to get the revenue of, or empty for all menu items
-     * @return the total revenue
-     */
-    double getTotalSalesFromOrders(std::vector<OrderMaster> orders, std::string menuItemName = "");
-    
-    /**
      * @brief Shows/hides the chart series and associated legend items based on menuItemsToChart.
+     *
+     * @param chart the chart widget
+     * @param salesTemplate the page template widget
      */
     void showSeries(Wt::Chart::WCartesianChart *chart, Wt::WTemplate *salesTemplate);
     
     /**
-     * @brief Sets the range of the chart y-axis to be from 0 to 1.1 times the highest value of the series that are currently visible.
+     * @brief Sets the range of the chart y-axis to fit the data.
+     *
+     * The range is set to be from 0 to 1.1 times the highest value of the series that are currently visible.
+     *
+     * @param chart the chart widget
      */
     void setChartYAxisRange(Wt::Chart::WCartesianChart *chart);
+    
+    /**
+     * @brief Sets the y-axis title based on selectedIDRevQty.
+     *
+     * @param yAxisTitle the y-axis title text widget
+     */
+    void setYAxisTitle(Wt::WText *yAxisTitle);
 };
 
 #endif /* SalesPage_hpp */

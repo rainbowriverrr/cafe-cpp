@@ -28,3 +28,26 @@ CREATE VIEW IF NOT EXISTS vOrderDetail AS
     FROM OrderDetail AS od
     LEFT OUTER JOIN MenuItem AS m ON m.name = od.menuItemName;
 
+CREATE VIEW IF NOT EXISTS vOrderSales AS
+    SELECT DATETIME(DATE(om.orderDate)) AS salesDate,
+        vod.menuItemName,
+        SUM(vod.quantity) AS totalQuantity,
+        SUM(vod.total) AS totalRevenue,
+        0 AS isAllMenuItems
+    FROM vOrderDetail AS vod
+    LEFT OUTER JOIN OrderMaster AS om ON om.orderNumber=vod.orderNumber
+    WHERE om.isComplete = 1
+    GROUP BY salesDate,menuItemName
+    UNION
+        SELECT DATETIME(DATE(om2.orderDate)) AS salesDate,
+            'All menu items' AS menuItemName,
+            SUM(vod2.quantity) AS totalQuantity,
+            SUM(vod2.total) AS totalRevenue,
+            1 AS isAllMenuItems
+        FROM vOrderDetail AS vod2
+        LEFT OUTER JOIN OrderMaster AS om2
+            ON om2.orderNumber=vod2.orderNumber
+        WHERE om2.isComplete = 1
+        GROUP BY salesDate
+    ORDER BY salesDate,isAllMenuItems DESC,menuItemName;
+

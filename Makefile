@@ -21,7 +21,7 @@ main: $(basename $(notdir $(MAIN)))
 
 $(basename $(notdir $(MAIN))): $(filter-out $(TESTS),$(OBJ))
 	$(CXX) $(CXXFLAGS) $^ -o $@ $(LDLIBS)
-	@ $(MAKE) dbtestdata
+#	@ $(MAKE) dbtestdata
 
 tests: $(basename $(notdir $(TESTS)))
 

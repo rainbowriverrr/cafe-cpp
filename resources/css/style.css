@@ -294,9 +294,9 @@ div.list-item-removed > .list-item {
 }
 
 .y-axis-title {
-    transform: rotate(-90deg) translateY(-5em);
+    transform: scale(-1, -1);
+    writing-mode: vertical-lr;
     align-self: center;
-    position: absolute;
 }
 
 .chart-legend {
@@ -357,3 +357,37 @@ div.list-item-removed > .list-item {
 .sales-dialog > div span {
     margin-left: 0.5em;
 }
+
+.sales-btn-group-rev-qty {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 12em;
+    background-color: var(--colour-dark-gray);
+    border-radius: 0.5em 0.5em 0em 0em;
+    border-top: 0.1em solid;
+    border-left: 0.1em solid;
+    border-right: 0.1em solid;
+}
+
+.sales-btn-group-rev-qty label {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 1;
+}
+
+.sales-btn-group-rev-qty label:first-child {
+    border-radius: 0.5em 0em 0em 0em;
+}
+
+.sales-btn-group-rev-qty label:last-child {
+    border-radius: 0em 0.5em 0em 0em;
+}
+
+.sales-btn-group-rev-qty label:hover {
+    background-color: var(--colour-dark-blue);
+}
+

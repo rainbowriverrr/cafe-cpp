@@ -4,7 +4,8 @@
         <div class="loading-overlay"></div>
         <div class="loading-indicator">
             <div>
-                <img src="resources/images/logo.png" alt="logo" />
+                <img src="resources/images/loading.gif"
+                    alt="loading animation" />
             </div>
             <span>Loading...</span>
         </div>
@@ -73,10 +74,11 @@
             <div class="list-item">
                 <div class="list-item-header">
                     <span>Total Sales Over Time</span>
+                    ${btn-group-rev-qty}
                     ${btn-menu-item}
                 </div>
                 <div class="flex-row">
-                    <span class="y-axis-title">Total Sales ($)</span>
+                    ${y-axis-title}
                     <div class="flex-column">
                         ${chart}
                         <span class="x-axis-title">Date</span>

@@ -110,8 +110,8 @@ INSERT INTO OrderMaster VALUES (NULL,'Bob',datetime('now','localtime','-3 minute
 INSERT INTO OrderMaster VALUES (NULL,'Alice',datetime('now','localtime','-1 minutes'),0);
 INSERT INTO OrderMaster VALUES (NULL,'Bill',datetime('now','localtime'),0);
 
-INSERT INTO OrderDetail VALUES (NULL,31,'Undefined Symbol',2);
-INSERT INTO OrderDetail VALUES (NULL,31,'GNUppuccino',1);
-INSERT INTO OrderDetail VALUES (NULL,32,'Memory Leak',1);
-INSERT INTO OrderDetail VALUES (NULL,33,'Memory Leak',3);
-INSERT INTO OrderDetail VALUES (NULL,33,'Stack Overflow',3);
+INSERT INTO OrderDetail VALUES (NULL,1,'Undefined Symbol',2);
+INSERT INTO OrderDetail VALUES (NULL,1,'GNUppuccino',1);
+INSERT INTO OrderDetail VALUES (NULL,2,'Memory Leak',1);
+INSERT INTO OrderDetail VALUES (NULL,3,'Memory Leak',3);
+INSERT INTO OrderDetail VALUES (NULL,3,'Stack Overflow',3);
