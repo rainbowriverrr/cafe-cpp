@@ -28,10 +28,9 @@
 
 #include "DBHelper.hpp"
 #include "SqlCondition.hpp"
-#include "OrderMaster.hpp"
-#include "vOrderDetail.hpp"
 #include "vOrderSales.hpp"
 #include "MenuItem.hpp"
+#include "Page.hpp"
 
 /**
  * @brief Class representing the sales page widget.
@@ -42,7 +41,7 @@
  * @author Julian Koksal
  * @date 2022-11-13
  */
-class SalesPage : public Wt::WContainerWidget
+class SalesPage : public Page
 {
 public:
     /**
@@ -175,7 +174,7 @@ private:
      * @param dialog the dialog widget
      * @param btnOpenDialog the open dialog button widget
      */
-    void onBtnOpenDialogClick(Wt::WDialog *dialog, Wt::WPushButton *btnOpenDialog);
+    static void onBtnOpenDialogClick(Wt::WDialog *dialog, Wt::WPushButton *btnOpenDialog);
     
     /**
      * @brief Updates the given model with order sales data from the database.

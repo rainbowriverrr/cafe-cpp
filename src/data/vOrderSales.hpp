@@ -13,35 +13,97 @@
 /**
  * @brief Represents the vOrderSales view in the database.
  *
+ * Aggregates the orders for each day and each menu item to get the total quantity and revenue.
+ *
  * @author Julian Koksal
  * @date 2022-11-19
  */
 class vOrderSales : public Model
 {
 public:
+    /**
+     * @brief Constructor.
+     *
+     * Creates an object initialized with the given values.
+     *
+     * @param salesDate the value to initialize salesDate with
+     * @param menuItemName the value to initialize menuItemName with
+     * @param totalQuantity the value to initialize totalQuantity with
+     * @param totalRevenue the value to initialize totalRevenue with
+     * @param isAllMenuItems the value to initialize isAllMenuItems with
+     */
     vOrderSales(std::string salesDate = "", std::string menuItemName = "", int totalQuantity = 0, double totalRevenue = 0, bool isAllMenuItems = 0);
 
+    /**
+     * @brief Destructor.
+     *
+     * Does nothing.
+     */
     ~vOrderSales();
     
+    /**
+     * @brief Gets salesDate.
+     *
+     * @return salesDate
+     */
     std::string getSalesDate();
     
+    /**
+     * @brief Gets menuItemName.
+     *
+     * @return menuItemName
+     */
     std::string getMenuItemName();
     
+    /**
+     * @brief Gets totalQuantity.
+     *
+     * @return totalQuantity
+     */
     int getTotalQuantity();
     
+    /**
+     * @brief Gets totalRevenue.
+     *
+     * @return totalRevenue
+     */
     double getTotalRevenue();
     
+    /**
+     * @brief Gets isAllMenuItems.
+     *
+     * @return isAllMenuItems
+     */
     bool getIsAllMenuItems();
 
 private:
+    /**
+     * @brief The date of the aggregated orders.
+     */
     std::string salesDate;
     
+    /**
+     * @brief The menu items of the aggregated orders.
+     *
+     * Can also be "All menu items", representing the total of all menu items.
+     */
     std::string menuItemName;
     
+    /**
+     * @brief The total quantity sold of the menu item for the salesDate.
+     */
     int totalQuantity;
     
+    /**
+     * @brief The total revenue of the menu item for the salesDate.
+     */
     double totalRevenue;
     
+    /**
+     * @brief Is this row the "All menu items" row.
+     *
+     * Used only in the ORDER BY clause to put "All menu items" first before individual menu items.
+     */
     bool isAllMenuItems;
     
     virtual std::string tableName() const override;

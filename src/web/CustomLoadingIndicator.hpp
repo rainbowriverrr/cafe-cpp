@@ -24,12 +24,16 @@ class CustomLoadingIndicator : public Wt::WLoadingIndicator
 {
 public:
     /**
-     * @brief Constructor. Creates the widget.
+     * @brief Constructor.
+     *
+     * Creates the widget.
      */
     CustomLoadingIndicator();
     
     /**
-     * @brief Destructor. Does nothing.
+     * @brief Destructor.
+     *
+     * Does nothing.
      */
     ~CustomLoadingIndicator();
     

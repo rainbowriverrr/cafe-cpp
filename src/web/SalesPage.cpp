@@ -53,7 +53,7 @@ SalesPage::SalesPage()
     
     // "Select menu items..." button.
     Wt::WPushButton *btnOpenDialog = salesTemplate->bindWidget("btn-menu-item", createBtnOpenDialogWidget());
-    btnOpenDialog->clicked().connect([this, dialog, btnOpenDialog] {
+    btnOpenDialog->clicked().connect([dialog, btnOpenDialog] {
         onBtnOpenDialogClick(dialog, btnOpenDialog);
     });
     

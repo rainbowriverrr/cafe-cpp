@@ -11,7 +11,8 @@
 #include "Model.hpp"
 
 /**
- * Class representing a row of the OrderMaster table.
+ * @brief Class representing a row of the OrderMaster table.
+ *
  * @author Julian Koksal
  * @date 2022-11-07
  */
@@ -19,7 +20,10 @@ class OrderMaster : public Model
 {
 public:
     /**
-     * Constructor creates a OrderMaster object initialized with the given values.
+     * @brief Constructor.
+     *
+     * Creates a OrderMaster object initialized with the given values.
+     *
      * @param orderNumber The order number (primary key).
      * @param orderedBy Name of the customer of who placed the order.
      * @param orderDate The date and time of the order.
@@ -28,58 +32,74 @@ public:
     OrderMaster(int orderNumber = 0, std::string orderedBy = "", std::string orderDate = "", bool isComplete = 0);
     
     /**
-     * Destructor.
+     * @brief Destructor.
+     *
+     * Does nothing.
      */
     ~OrderMaster();
     
     /**
-     * Gets the order number.
+     * @brief Gets the order number.
+     *
      * @return orderNumber
      */
     int getOrderNumber();
     
     /**
-     * Gets orderedBy.
+     * @brief Gets orderedBy.
+     *
      * @return orderedBy
      */
     std::string getOrderedBy();
     
     /**
-     * Gets the order date.
+     * @brief Gets the order date.
+     *
      * @return orderDate
      */
     std::string getOrderDate();
     bool getIsComplete();
     
     /**
-     * Sets orderedBy.
+     * @brief Sets orderedBy.
+     *
      * @param val The new value.
      */
     void setOrderedBy(std::string val);
     
     /**
-     * Sets orderDate.
+     * @brief Sets orderDate.
+     *
      * @param val The new value.
      */
     void setOrderDate(std::string val);
     
     /**
-     * Sets isComplete.
+     * @brief Sets isComplete.
+     *
      * @param val The new value.
      */
     void setIsComplete(bool val);
     
 private:
-    /** The order number (primary key). */
+    /**
+     * @brief The order number (primary key).
+     */
     int orderNumber;
     
-    /** Name of the customer of who placed the order. */
+    /**
+     * @brief Name of the customer of who placed the order.
+     */
     std::string orderedBy;
     
-    /** The date and time of the order. */
+    /**
+     * @brief The date and time of the order.
+     */
     std::string orderDate;
     
-    /** Is the order completed. */
+    /**
+     * @brief Is the order completed.
+     */
     bool isComplete;
     
     virtual std::string tableName() const override;

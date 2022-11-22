@@ -15,7 +15,12 @@
 #include "OrderMaster.hpp"
 #include "OrderDetail.hpp"
 
-void generateOrders()
+/**
+ * @brief Generates completed orders for the past year.
+ *
+ * The order details are mostly random, but increase over time and certain menu items are weighted more than others.
+ */
+void generatePastOrders()
 {
     const DBHelper &db = DBHelper::getInstance();
     
@@ -44,7 +49,10 @@ void generateOrders()
     }
 }
 
+/**
+ * @brief Runs the data generation functions.
+ */
 int main(int argc, const char *argv[])
 {
-    generateOrders();
+    generatePastOrders();
 }
