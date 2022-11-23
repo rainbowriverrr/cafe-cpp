@@ -1,8 +1,20 @@
-//
-//  LoginPage.cpp
-//  GroupProject
-//
-//  Created by Alex Mihas on 2022-11-20.
-//
+/*
+    Author : Alex Mihas
+    Date   : 2022/11/20
+*/
 
-#include <stdio.h>
+#include "LoginPage.hpp"
+
+LoginPage::LoginPage() {
+    Wt::WContainerWidget *listWidget;
+    
+    listWidget = addNew<WContainerWidget>();
+    
+    listWidget->addNew<Wt::WTemplate>(tr("login-page"));
+    
+    
+    //Wt::WApplication::instance()->setInternalPath("/login", true);
+}
+
+LoginPage::~LoginPage() {
+}

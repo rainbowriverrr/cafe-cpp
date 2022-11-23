@@ -56,4 +56,22 @@
             <span>There are no orders.</span>
         </div>
     </message>
+    <message id="login-page">
+        <br></br>
+        <span>Please enter your username and password below.</span>
+        
+        <br></br> <br></br>
+        
+        <form>
+            <label for = "username" > Username:</label>
+            <br></br>
+            <input type = "text" name = "username" > </input>
+            <br></br><br></br>
+            <label for = "userPassword" > Password:</label>
+            <br></br>
+            <input type = "password" name = "userPassword" > </input>
+            <br></br><br></br>
+            <input type="submit" value="Log In"> </input>
+        </form>
+    </message>
 </messages>

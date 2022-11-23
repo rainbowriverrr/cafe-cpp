@@ -16,6 +16,7 @@
 
 #include "DBHelper.hpp"
 #include "IOHelper.hpp"
+#include "LoginPage.hpp"
 #include "MenuItem.hpp"
 #include "MenuPage.hpp"
 #include "NavbarWidget.hpp"
