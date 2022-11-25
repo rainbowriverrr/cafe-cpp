@@ -5,7 +5,15 @@
 #ifndef Authenticator_hpp
 #define Authenticator_hpp
 
+#include <iomanip>
+#include <iostream>
+#include <string>
+#include <unordered_map>
+#include <sstream>
+
+
 #include "DBhelper.hpp"
+#include "Admin.hpp"
 
 class Authenticator {
 public:
@@ -26,6 +34,9 @@ private:
     int minChars;
     bool isLoggedIn;
     bool CheckCredentials (std::string username, std::string password);
+    const DBHelper &db = DBHelper::getInstance();
+    std::hash<std::string> hasher;
+    std::vector<Admin> admin;
 
 
 };
