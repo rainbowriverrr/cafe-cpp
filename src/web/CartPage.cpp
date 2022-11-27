@@ -25,6 +25,7 @@ CartPage::CartPage() {
 
     for (std::vector<OrderDetail>::iterator it = orderDetails.begin(); it != orderDetails.end(); it++) {
         std::string itemName = it->getMenuItemName();
+        int orderID = it->getOrderDetailID();
         int quantity = it->getQuantity();
         conditions = {SqlCondition("name", "=", itemName)};
         double itemPrice = DBHelper::getInstance().selectWhere(MenuItem(), conditions)[0].getPrice();
@@ -32,22 +33,40 @@ CartPage::CartPage() {
 
         CartWidget *cartWidget = page->addWidget(std::make_unique<CartWidget>(itemName, itemPrice, quantity));
 
-        auto addQuantity = [this, cartWidget] {
+        auto addQuantity = [this, cartWidget, orderID] {
             cartWidget->updateQuantity(cartWidget->getQuantity() + 1);
             cartWidget->updateTotal();
+
+            std::vector<SqlCondition> conditions = {SqlCondition("orderDetailID", "=", orderID)};
+            std::vector<OrderDetail> orderDetails = DBHelper::getInstance().selectWhere(OrderDetail(), conditions);
+            OrderDetail orderDetail = orderDetails[0];
+            orderDetail.setQuantity(orderDetail.getQuantity() + 1);
+            DBHelper::getInstance().update(orderDetail);
         };
 
-        auto subtractQuantity = [this, cartWidget] {
+        auto subtractQuantity = [this, cartWidget, orderID] {
+            std::vector<SqlCondition> conditions = {SqlCondition("orderDetailID", "=", orderID)};
+            std::vector<OrderDetail> orderDetails = DBHelper::getInstance().selectWhere(OrderDetail(), conditions);
+            OrderDetail orderDetail = orderDetails[0];
+
             if (cartWidget->getQuantity() > 1) {
                 cartWidget->updateQuantity(cartWidget->getQuantity() - 1);
                 cartWidget->updateTotal();
+
+                orderDetail.setQuantity(orderDetail.getQuantity() - 1);
+                DBHelper::getInstance().update(orderDetail);
             } else {
                 cartWidget->removeFromParent();
+                DBHelper::getInstance().destroy(orderDetail);
             }
         };
 
-        auto removeItem = [this, cartWidget] {
+        auto removeItem = [this, cartWidget, orderID] {
             cartWidget->removeFromParent();
+            std::vector<SqlCondition> conditions = {SqlCondition("orderDetailID", "=", orderID)};
+            std::vector<OrderDetail> orderDetails = DBHelper::getInstance().selectWhere(OrderDetail(), conditions);
+            OrderDetail orderDetail = orderDetails[0];
+            DBHelper::getInstance().destroy(orderDetail);
         };
 
         cartWidget->getAddPtr()->clicked().connect(addQuantity);
