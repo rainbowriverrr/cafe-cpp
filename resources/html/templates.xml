@@ -24,6 +24,22 @@
             </span>
         </nav>
     </message>
+    
+    <message id = "simpleForm-template">
+        <span>test</span>
+        <div class="row">
+          <div class="col-auto pe-0">
+            ${name}
+          </div>
+          <div class="col-auto">
+            ${button}
+          </div>
+          <div class="col-auto">
+            ${out class='form-control-plaintext'}
+          </div>
+        </div>
+    </message>
+    
     <message id="menu-item">
         <div class="list-item">
                 <div class="list-item-header">
@@ -36,6 +52,7 @@
                 </div>
         </div>
     </message>
+    
     <message id="order-list-item">
         <div class="list-item">
             <div class="list-item-header">
