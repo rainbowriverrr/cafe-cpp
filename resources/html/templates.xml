@@ -26,10 +26,12 @@
     </message>
     
     <message id = "simpleForm-template">
-        <span>test</span>
         <div class="row">
           <div class="col-auto pe-0">
-            ${name}
+            ${user-name}
+          </div>
+          <div type="password" class="col-auto pe-0">
+            ${user-password}
           </div>
           <div class="col-auto">
             ${button}
