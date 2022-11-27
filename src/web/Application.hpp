@@ -14,6 +14,7 @@
 #include <string>
 #include <vector>
 
+#include "CartPage.hpp"
 #include "DBHelper.hpp"
 #include "IOHelper.hpp"
 #include "MenuItem.hpp"
@@ -49,7 +50,7 @@ class Application : public Wt::WApplication {
    private:
     /** The navbar widget. */
     NavbarWidget *navbar;
-    
+
     /** The body page widget. */
     Wt::WWidget *body;
 };

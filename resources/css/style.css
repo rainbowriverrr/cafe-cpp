@@ -51,9 +51,9 @@
     flex: 1;
 }
 
-.menu-description {
+.list-description {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: space-between;
 }
 

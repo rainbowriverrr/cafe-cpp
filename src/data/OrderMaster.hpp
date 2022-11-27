@@ -78,6 +78,18 @@ class OrderMaster : public Model {
      */
     void setIsComplete(bool val);
 
+    /**
+     * @brief Gets the session ID.
+     * @return sessionID
+     */
+    std::string getSessionID();
+
+    /**
+     * @brief Sets the session ID.
+     * @param val The new value.
+     */
+    void setSessionID(std::string val);
+
    private:
     /** The order number (primary key). */
     int orderNumber;
@@ -90,6 +102,9 @@ class OrderMaster : public Model {
 
     /** Is the order completed. */
     bool isComplete;
+
+    /** The session ID of the user. */
+    std::string sessionID;
 
     virtual std::string tableName() const override;
     virtual std::vector<std::string> columns() const override;

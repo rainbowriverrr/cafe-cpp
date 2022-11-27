@@ -10,8 +10,15 @@
 #include <Wt/WContainerWidget.h>
 #include <Wt/WPushButton.h>
 
+#include <string>
+
+#include "CartWidget.hpp"
+#include "DBHelper.hpp"
+#include "MenuItem.hpp"
+#include "Model.hpp"
 #include "OrderDetail.hpp"
 #include "OrderMaster.hpp"
+#include "SqlCondition.hpp"
 
 class CartPage : public Wt::WContainerWidget {
    public:
@@ -26,6 +33,6 @@ class CartPage : public Wt::WContainerWidget {
      *
      */
     ~CartPage();
-}
+};
 
 #endif
