@@ -3,7 +3,8 @@ CREATE TABLE IF NOT EXISTS OrderMaster (
     orderedBy TEXT NOT NULL,
     orderDate TEXT NOT NULL,
     isComplete INTEGER NOT NULL,
-    sessionID TEXT NOT NULL
+    sessionID TEXT NOT NULL,
+    status TEXT NOT NULL
 );
 CREATE TABLE IF NOT EXISTS OrderDetail (
     orderDetailID INTEGER NOT NULL PRIMARY KEY,

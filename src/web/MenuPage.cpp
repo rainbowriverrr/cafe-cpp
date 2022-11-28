@@ -24,10 +24,11 @@ MenuPage::MenuPage() {
             std::cout << formattedDate << std::endl;
 
             std::vector<SqlCondition> conditions = {SqlCondition("sessionID", "=", sessionID)};
+            conditions.push_back(SqlCondition("status", "=", "cart"));
             std::vector<OrderMaster> orderMasters = DBHelper::getInstance().selectWhere(OrderMaster(), conditions);
             long orderNum = 0;
             if (orderMasters.size() == 0) {
-                OrderMaster orderMast = OrderMaster(0, "test", formattedDate, 0, sessionID);
+                OrderMaster orderMast = OrderMaster(0, "test", formattedDate, 0, sessionID, "cart");
                 orderNum = DBHelper::getInstance().insert(orderMast);
             } else {
                 orderNum = orderMasters[0].getOrderNumber();

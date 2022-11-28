@@ -29,10 +29,23 @@ class CartPage : public Wt::WContainerWidget {
     CartPage();
 
     /**
+     * @brief get cartTotal pointer
+     *
+     */
+    CartTotal *getCartTotalPtr();
+
+    /**
      * @brief Destroy the Cart Page object
      *
      */
     ~CartPage();
+
+   private:
+    /**
+     * @brief CartTotal widget
+     *
+     */
+    CartTotal *cartTotal;
 };
 
 #endif

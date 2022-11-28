@@ -34,7 +34,7 @@ class OrderMaster : public Model {
      * @param isComplete Is the order completed.
      * @param sessionID The session ID of the user.
      */
-    OrderMaster(int orderNumber, std::string orderedBy, std::string orderDate, bool isComplete, std::string sessionID);
+    OrderMaster(int orderNumber, std::string orderedBy, std::string orderDate, bool isComplete, std::string sessionID, std::string status);
 
     /**
      * Destructor.
@@ -58,6 +58,20 @@ class OrderMaster : public Model {
      * @return orderDate
      */
     std::string getOrderDate();
+
+    /**
+     * @brief Gets the session ID.
+     * @return sessionID
+     */
+    std::string getSessionID();
+
+    /**
+     * @brief Get the status of the order.
+     *
+     * @return std::string
+     */
+    std::string getStatus();
+
     bool getIsComplete();
 
     /**
@@ -79,16 +93,16 @@ class OrderMaster : public Model {
     void setIsComplete(bool val);
 
     /**
-     * @brief Gets the session ID.
-     * @return sessionID
-     */
-    std::string getSessionID();
-
-    /**
      * @brief Sets the session ID.
      * @param val The new value.
      */
     void setSessionID(std::string val);
+
+    /**
+     * @brief Sets the status of the order.
+     * @param val The new value.
+     */
+    void setStatus(std::string val);
 
    private:
     /** The order number (primary key). */
@@ -105,6 +119,9 @@ class OrderMaster : public Model {
 
     /** The session ID of the user. */
     std::string sessionID;
+
+    /** The status of the Order, can be "cart", or "ordered"*/
+    std::string status;
 
     virtual std::string tableName() const override;
     virtual std::vector<std::string> columns() const override;

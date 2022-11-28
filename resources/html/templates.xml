@@ -55,6 +55,17 @@
             </div>
         </div>
     </message>
+    <message id="cart-total">
+        <div class="list-item">
+            <div class="list-item-header">
+                <span class="colour-cyan">Total</span>
+                ${order-button}
+            </div>
+            <div class="list-description">
+                <span>${total}</span>
+            </div>
+        </div>
+    </message>
     <message id="order-list-item">
         <div class="list-item">
             <div class="list-item-header">

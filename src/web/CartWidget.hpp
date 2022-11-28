@@ -76,4 +76,19 @@ class CartWidget : public Wt::WTemplate {
     Wt::WText *total_;
 };
 
+class CartTotal : public Wt::WTemplate {
+   public:
+    CartTotal(double);
+    void addToTotal(double);
+    void subFromTotal(double);
+    Wt::WPushButton *getCheckoutPtr();
+    ~CartTotal();
+
+   private:
+    void updateTotal();
+    double dtotal;
+    Wt::WText *total_;
+    Wt::WPushButton *checkoutButton_;
+};
+
 #endif

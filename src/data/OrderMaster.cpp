@@ -12,14 +12,16 @@ OrderMaster::OrderMaster(int orderNumber, std::string orderedBy, std::string ord
     this->orderDate = orderDate;
     this->isComplete = isComplete;
     this->sessionID = "";
+    this->status = "cart";
 }
 
-OrderMaster::OrderMaster(int orderNumber, std::string orderedBy, std::string orderDate, bool isComplete, std::string sessionID) {
+OrderMaster::OrderMaster(int orderNumber, std::string orderedBy, std::string orderDate, bool isComplete, std::string sessionID, std::string status = "cart") {
     this->orderNumber = orderNumber;
     this->orderedBy = orderedBy;
     this->orderDate = orderDate;
     this->isComplete = isComplete;
     this->sessionID = sessionID;
+    this->status = status;
 }
 
 OrderMaster::~OrderMaster() {}
@@ -38,6 +40,10 @@ std::string OrderMaster::getOrderDate() {
 
 std::string OrderMaster::getSessionID() {
     return sessionID;
+}
+
+std::string OrderMaster::getStatus() {
+    return status;
 }
 
 bool OrderMaster::getIsComplete() {
@@ -60,12 +66,16 @@ void OrderMaster::setSessionID(std::string val) {
     sessionID = val;
 }
 
+void OrderMaster::setStatus(std::string val) {
+    status = val;
+}
+
 std::string OrderMaster::tableName() const {
     return "OrderMaster";
 }
 
 std::vector<std::string> OrderMaster::columns() const {
-    return {"orderNumber", "orderedBy", "orderDate", "isComplete", "sessionID"};
+    return {"orderNumber", "orderedBy", "orderDate", "isComplete", "sessionID", "status"};
 }
 
 std::set<std::string> OrderMaster::keys() const {
@@ -83,6 +93,7 @@ std::map<std::string, std::any> OrderMaster::toMap() const {
     mMap[columns()[2]] = orderDate;
     mMap[columns()[3]] = isComplete;
     mMap[columns()[4]] = sessionID;
+    mMap[columns()[5]] = status;
 
     return mMap;
 }
@@ -93,7 +104,8 @@ Model *OrderMaster::fromMap(std::map<std::string, std::any> mMap) const {
     std::string mOrderDate = std::any_cast<std::string>(mMap[columns()[2]]);
     bool mIsComplete = std::any_cast<int>(mMap[columns()[3]]);
     std::string mSessionID = std::any_cast<std::string>(mMap[columns()[4]]);
+    std::string mStatus = std::any_cast<std::string>(mMap[columns()[5]]);
 
-    OrderMaster *model = new OrderMaster(mOrderNumber, mOrderedBy, mOrderDate, mIsComplete, mSessionID);
+    OrderMaster *model = new OrderMaster(mOrderNumber, mOrderedBy, mOrderDate, mIsComplete, mSessionID, mStatus);
     return model;
 }

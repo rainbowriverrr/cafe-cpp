@@ -47,7 +47,7 @@ void CartWidget::updateTotal() {
     std::stringstream ss;
     ss << std::fixed << std::setprecision(2) << dtotal;
     totalString = ss.str();
-    total_->setText("Total = $" + totalString);
+    total_->setText("Subtotal = $" + totalString);
 }
 
 Wt::WPushButton *CartWidget::getRemovePtr() {
@@ -75,4 +75,38 @@ double CartWidget::getTotal() {
 
 double CartWidget::getPrice() {
     return dprice;
+}
+
+CartTotal::CartTotal(double total) : Wt::WTemplate(Wt::WString::tr("cart-total")) {
+    dtotal = total;
+    total_ = bindNew<Wt::WText>("total");
+    updateTotal();
+
+    checkoutButton_ = bindNew<Wt::WPushButton>("order-button");
+    checkoutButton_->setText("Order Now!");
+}
+
+Wt::WPushButton *CartTotal::getCheckoutPtr() {
+    return checkoutButton_;
+}
+
+void CartTotal::addToTotal(double total) {
+    dtotal += total;
+    updateTotal();
+}
+
+void CartTotal::subFromTotal(double total) {
+    dtotal -= total;
+    updateTotal();
+}
+
+void CartTotal::updateTotal() {
+    std::string totalString;
+    std::stringstream ss;
+    ss << std::fixed << std::setprecision(2) << dtotal;
+    totalString = ss.str();
+    total_->setText("Total = $" + totalString);
+}
+
+CartTotal::~CartTotal() {
 }
