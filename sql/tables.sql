@@ -69,3 +69,8 @@ CREATE TABLE IF NOT EXISTS MenuItemIngredient (
     quantity INTEGER NOT NULL,
     PRIMARY KEY (menuItemName,inventoryItemID)
 );
+
+CREATE TABLE IF NOT EXISTS Admin (
+    userName TEXT NOT NULL PRIMARY KEY,
+    password TEXT NOT NULL
+);

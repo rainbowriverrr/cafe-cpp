@@ -50,7 +50,6 @@ int main(int argc, const char *argv[])
     MenuItem m7 = MenuItem("Breakfast Combo", 9.99);
 
     // --- INSERT into database ---
-
     db.insert(m1);
     db.insert(m2);
     db.insert(m3);

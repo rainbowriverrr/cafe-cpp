@@ -9,6 +9,7 @@ INSERT INTO OrderMaster VALUES (NULL,'Bob',datetime('now','localtime','-3 minute
 INSERT INTO OrderMaster VALUES (NULL,'Alice',datetime('now','localtime','-1 minutes','-10 days'),1);
 INSERT INTO OrderMaster VALUES (NULL,'Bill',datetime('now','localtime','-10 days'),1);
 
+<<<<<<< HEAD
 INSERT INTO OrderDetail VALUES (NULL,1,'Undefined Symbol',20);
 INSERT INTO OrderDetail VALUES (NULL,1,'GNUppuccino',20);
 INSERT INTO OrderDetail VALUES (NULL,2,'Memory Leak',30);

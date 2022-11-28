@@ -8,7 +8,6 @@ _MAIN = Main.cpp
 MAIN = $(subst src/,target/,$(subst .cpp,.o,$(wildcard src/*/$(_MAIN))))
 TESTS = $(subst src/,target/,$(subst .cpp,.o,$(wildcard src/tests/*.cpp)))
 OBJ = $(subst src/,target/,$(subst .cpp,.o,$(wildcard src/*/*.cpp)))
-
 MKDIR_P = @ mkdir -p $(@D)
 
 # SPECIAL TARGETS
