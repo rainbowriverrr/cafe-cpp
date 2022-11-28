@@ -11,23 +11,25 @@ OBJ = $(subst src/,target/,$(subst .cpp,.o,$(wildcard src/*/*.cpp)))
 
 MKDIR_P = @ mkdir -p $(@D)
 
+# SPECIAL TARGETS
+
 .SECONDARY: $(OBJ)
 
-.PHONY: clean cleanout cleanobj cleandb dbtables dbtestdata
+.PHONY: main tests clean cleanout cleanobj cleandb dbreset dbtables dbtestdata
 
 # EXECUTABLES
 
-main: $(basename $(notdir $(MAIN)))
+all: main tests
+
+main: $(basename $(notdir $(MAIN))) dbtables
 
 $(basename $(notdir $(MAIN))): $(filter-out $(TESTS),$(OBJ))
 	$(CXX) $(CXXFLAGS) $^ -o $@ $(LDLIBS)
-	@ $(MAKE) dbtestdata
 
-tests: $(basename $(notdir $(TESTS)))
+tests: $(basename $(notdir $(TESTS))) dbtables
 
 %: $(filter-out $(MAIN) $(TESTS),$(OBJ)) target/tests/%.o
 	$(CXX) $(CXXFLAGS) $^ -o $@ $(LDLIBS)
-	@ $(MAKE) dbtables
 
 # OBJECTS
 
@@ -39,7 +41,9 @@ target/%.o: src/%.cpp
 
 # PHONY
 
-dbtables: cleandb
+dbreset: cleandb dbtables
+
+dbtables:
 	sqlite3 sql/data.db < sql/tables.sql
 
 dbtestdata: dbtables

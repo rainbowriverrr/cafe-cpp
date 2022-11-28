@@ -20,7 +20,9 @@ class MenuItem : public Model
 {
 public:
     /**
-     * @brief Constructor creates a MenuItem with name, price, and description.
+     * @brief Constructor.
+     *
+     * Creates an object with name, price, and description.
      *
      * @param name The name of the MenuItem.
      * @param price The price of the MenuItem.
@@ -30,6 +32,8 @@ public:
 
     /**
      * @brief Destructor.
+     *
+     * Does nothing.
      */
     ~MenuItem();
 
