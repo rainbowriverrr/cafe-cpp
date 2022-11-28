@@ -16,6 +16,11 @@
 #include <Wt/WString.h>
 #include <Wt/WFlags.h>
 #include <Wt/WAnimation.h>
+#include <Wt/WLineEdit.h>
+#include <Wt/WPushButton.h>
+#include <Wt/WTemplate.h>
+#include <Wt/WText.h>
+#include <Wt/WRadioButton.h>
 
 #include <ctime>
 #include <string>

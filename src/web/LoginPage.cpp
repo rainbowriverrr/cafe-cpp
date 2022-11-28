@@ -4,41 +4,31 @@
 */
 
 #include "LoginPage.hpp"
-#include <Wt/WLineEdit.h>
-#include <Wt/WPushButton.h>
-#include <Wt/WTemplate.h>
-#include <Wt/WText.h>
-#include <Wt/WContainerWidget.h>
-#include <Wt/WRadioButton.h>
 
 LoginPage::LoginPage() {
     
     
-    auto text
+    auto instructionsText
       = addNew<Wt::WText>("<p>Please enter your username and password.</p>");
     
+    auto pageElements = addNew<Wt::WTemplate>(Wt::WString::tr("login-template"));
     
-    auto result = addNew<Wt::WTemplate>(Wt::WString::tr("simpleForm-template"));
+    auto usernameField = pageElements->bindWidget("user-name", std::make_unique<Wt::WLineEdit>());
+    usernameField->setPlaceholderText("Enter username");
     
+    auto passwordField = pageElements->bindWidget("user-password", std::make_unique<Wt::WLineEdit>());
+    passwordField->setPlaceholderText("Enter password");
     
-    auto username = result->bindWidget("user-name", std::make_unique<Wt::WLineEdit>());
-    username->setPlaceholderText("username");
+    auto logInButton = pageElements->bindWidget("login-button", std::make_unique<Wt::WPushButton>("Log In"));
     
-    auto password = result->bindWidget("user-password", std::make_unique<Wt::WLineEdit>());
-    password->setPlaceholderText("password");
-    
-    auto button = result->bindWidget("button", std::make_unique<Wt::WPushButton>("Log In"));
-    
-    auto out = result->bindWidget("out", std::make_unique<Wt::WText>());
-    
+    auto outputWhenButtonClicked = pageElements->bindWidget("out", std::make_unique<Wt::WText>());
 
-    
-    
-
-    button->clicked().connect([=] {
-        out->setText("Your username is " + username->text() + ". Your password is " + password->text());
+    logInButton->clicked().connect([=] {
+        outputWhenButtonClicked->setText("Your username is " + usernameField->text() + ". Your password is " + passwordField->text());
         
-        // authenticate
+        // authenticate method goes here
+        // the username is usernameField->text()
+        // the password is passwordField->text()
     });
 }
 
