@@ -21,8 +21,6 @@ public:
 
     std::string getPassword();
 
-    bool authenticateAdmin (std::string userName, std::string password);
-
 private:
     std::string userName;
     std::string password;

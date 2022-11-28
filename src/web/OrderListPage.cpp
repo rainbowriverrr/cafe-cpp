@@ -13,7 +13,7 @@ OrderListPage::OrderListPage()
     Wt::WContainerWidget *listContainer = addNew<WContainerWidget>();
     
     // The orders not marked as complete.
-    std::vector<OrderMaster> orders = DBHelper::getInstance().selectWhere(OrderMaster(), { SqlCondition("isComplete", "=", 0) }, "OrderDate");
+    std::vector<OrderMaster> orders = DBHelper::getInstance().selectWhere(OrderMaster(), { SqlCondition("status", "=", "ordered") }, "OrderDate");
     
     if (orders.empty())
     {
@@ -37,10 +37,10 @@ void OrderListPage::onCompleteOrderBtnClicked(Wt::WTemplate *listItem, Wt::WCont
     listItem->addStyleClass("list-item-removed");
     // Doesn't work. Using CSS transitions and javascript instead.
     //itemTemplate->animateHide(Wt::WAnimation(Wt::AnimationEffect::SlideInFromLeft | Wt::AnimationEffect::Fade, Wt::TimingFunction::Ease, 500));
-    order.setIsComplete(true);
+    order.setStatus("complete");
     DBHelper::getInstance().update(order);
     
-    if (DBHelper::getInstance().selectWhere(OrderMaster(), { SqlCondition("isComplete", "=", 0) }).empty())
+    if (DBHelper::getInstance().selectWhere(OrderMaster(), { SqlCondition("status", "=", "ordered") }).empty())
     {
         listContainer->addNew<Wt::WTemplate>(tr("order-list-empty"));
     }
@@ -62,9 +62,8 @@ std::unique_ptr<Wt::WTemplate> OrderListPage::createListItemWidget(Wt::WContaine
 {
     std::unique_ptr<Wt::WTemplate> item = std::make_unique<Wt::WTemplate>(tr("order-list-item"));
     
-    bool isLoggedIn = true;
-    // bool isLoggedIn = Application::instance().authenticator().isLoggedIn();
     
+    bool isLoggedIn = ((Application *)Application::instance())->getAuth()->IsLoggedIn();
     // Complete order button
     if (isLoggedIn)
     {

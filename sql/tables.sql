@@ -2,7 +2,8 @@ CREATE TABLE IF NOT EXISTS OrderMaster (
     orderNumber INTEGER NOT NULL PRIMARY KEY,
     orderedBy TEXT NOT NULL,
     orderDate TEXT NOT NULL,
-    isComplete INTEGER NOT NULL
+    status TEXT NOT NULL,
+    sessionID TEXT NOT NULL
 );
 
 CREATE INDEX IF NOT EXISTS OrderDate ON OrderMaster(orderDate);
@@ -55,9 +56,9 @@ CREATE VIEW IF NOT EXISTS vOrderSales AS
         INNER JOIN MenuItem AS m2 ON m2.name=od2.menuItemName
         INNER JOIN OrderMaster AS om2
             ON om2.orderNumber=od2.orderNumber
-        GROUP BY salesDate        
+        GROUP BY salesDate;
 
-CREATE TABLE InventoryItem (
+CREATE TABLE IF NOT EXISTS InventoryItem (
     itemID INTEGER NOT NULL PRIMARY KEY,
     itemName TEXT NOT NULL,
     quantity INTEGER NOT NULL

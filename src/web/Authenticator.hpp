@@ -11,8 +11,8 @@
 #include <unordered_map>
 #include <sstream>
 
-
-#include "DBhelper.hpp"
+#include "Application.hpp"
+#include "DBHelper.hpp"
 #include "Admin.hpp"
 
 class Authenticator {
@@ -31,10 +31,8 @@ public:
     void LogIn(std::string username, std::string password);
 
 private:
-    int minChars;
     bool isLoggedIn;
     bool CheckCredentials (std::string username, std::string password);
-    const DBHelper &db = DBHelper::getInstance();
     std::hash<std::string> hasher;
     std::vector<Admin> admin;
 

@@ -23,9 +23,7 @@ const std::vector<Wt::WColor> SalesPage::COLOUR_PALETTE = {
 
 SalesPage::SalesPage()
 {
-    bool isLoggedIn = true;
-    // bool isLoggedIn = Application::instance().authenticator().isLoggedIn();
-
+    bool isLoggedIn = ((Application *)Application::instance())->getAuth()->IsLoggedIn();
     if (!isLoggedIn)
     {
         return;

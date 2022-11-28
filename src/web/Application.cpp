@@ -16,6 +16,8 @@ Application::Application(const Wt::WEnvironment &env) : Wt::WApplication(env)
 
     internalPathChanged().connect(this, &Application::handleInternalPath);
     
+    auth = new Authenticator();
+    
     navbar = root()->addNew<NavbarWidget>();
     body = root()->addNew<HomePage>();
     
@@ -24,7 +26,7 @@ Application::Application(const Wt::WEnvironment &env) : Wt::WApplication(env)
 
 Application::~Application()
 {
-    
+    delete auth;
 }
 
 void Application::handleInternalPath(const std::string &internalPath)
@@ -53,7 +55,7 @@ void Application::handleInternalPath(const std::string &internalPath)
     }
     else if (internalPath == "/cart")
     {
-        body = root()->addNew<Wt::WText>("Temp Cart Page");
+        body = root()->addNew<CartPage>();
     }
     else if (internalPath == "/create-user")
     {
@@ -73,4 +75,20 @@ void Application::handleInternalPath(const std::string &internalPath)
     doJavaScript("const items = document.getElementsByClassName('navbar-item');"
                  "for (const item of items) item.classList.remove('navbar-item-active');"
                  "document.getElementById('navbar-item-" + internalPath.substr(1) + "').classList.add('navbar-item-active');");
+}
+
+Authenticator * Application::getAuth()
+{
+    return auth;
+}
+
+void Application::reset()
+{
+    root()->removeWidget(navbar);
+    root()->removeWidget(body);
+    
+    navbar = root()->addNew<NavbarWidget>();
+    body = root()->addNew<HomePage>();
+    
+    setInternalPath("/home", false);
 }

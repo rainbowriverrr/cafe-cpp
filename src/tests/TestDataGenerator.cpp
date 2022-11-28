@@ -12,6 +12,7 @@
 #include <random>
 #include <iostream>
 
+#include "Authenticator.hpp"
 #include "DBHelper.hpp"
 #include "MenuItem.hpp"
 #include "OrderMaster.hpp"
@@ -106,7 +107,7 @@ void generatePastOrders(std::tm *localTm, std::mt19937 &rng, std::vector<MenuIte
     for (int daysAgo = 1; daysAgo <= daysToGenerate; ++daysAgo)
     {
         time.tm_mday = time.tm_mday - 1;
-        int orderNumber = (int)db.insert(OrderMaster(0, "Bob", formatDateTime(time), 1));
+        int orderNumber = (int)db.insert(OrderMaster(0, "Bob", formatDateTime(time), "complete"));
         int daysSinceStart = daysToGenerate - daysAgo + 1;
         
         std::uniform_int_distribution<int> distr(2, 5 + (daysSinceStart / 20));
@@ -146,7 +147,7 @@ void generateCurrentOrders(std::tm *localTm, std::mt19937 &rng, std::vector<Menu
     
     printProgress(0);
 
-    order = OrderMaster(0, "Dave", formatDateTime(time), 0);
+    order = OrderMaster(0, "Dave", formatDateTime(time), "ordered");
     orderNumber = (int)db.insert(order);
     d1 = OrderDetail(0, orderNumber, "Brunc.h Special", 1);
     d2 = OrderDetail(0, orderNumber, "Segmentation Fault (Dark Roast)", 1);
@@ -155,14 +156,14 @@ void generateCurrentOrders(std::tm *localTm, std::mt19937 &rng, std::vector<Menu
     time.tm_sec = time.tm_sec - (10 + distr(rng));
     printProgress(0.25);
     
-    order = OrderMaster(0, "Carol", formatDateTime(time), 0);
+    order = OrderMaster(0, "Carol", formatDateTime(time), "ordered");
     orderNumber = (int)db.insert(order);
     d1 = OrderDetail(0, orderNumber, "GNUppuccino", 2);
     db.insert(d1);
     time.tm_sec = time.tm_sec - (10 + distr(rng));
     printProgress(0.50);
     
-    order = OrderMaster(0, "Bob", formatDateTime(time), 0);
+    order = OrderMaster(0, "Bob", formatDateTime(time), "ordered");
     orderNumber = (int)db.insert(order);
     d1 = OrderDetail(0, orderNumber, "Undefined Symbol (Blond Roast)", 2);
     d2 = OrderDetail(0, orderNumber, "Memory Leak (Medium Roast)", 2);
@@ -173,7 +174,7 @@ void generateCurrentOrders(std::tm *localTm, std::mt19937 &rng, std::vector<Menu
     time.tm_sec = time.tm_sec - (10 + distr(rng));
     printProgress(0.75);
     
-    order = OrderMaster(0, "Alice", formatDateTime(time), 0);
+    order = OrderMaster(0, "Alice", formatDateTime(time), "ordered");
     orderNumber = (int)db.insert(order);
     d1 = OrderDetail(0, orderNumber, "Segmentation Fault (Dark Roast)", 1);
     d2 = OrderDetail(0, orderNumber, "Stack Overflow", 1);
@@ -183,6 +184,14 @@ void generateCurrentOrders(std::tm *localTm, std::mt19937 &rng, std::vector<Menu
     printProgress(1.00);
 
     std::cout << std::endl << "Complete!" << std::endl;
+}
+
+/**
+ * @brief Generates the first admin with username "admin", password "cafec++"
+ */
+void generateAdmin()
+{
+    Authenticator().CreateNewAdmin("admin", "cafec++12345");
 }
 
 /**
@@ -205,4 +214,6 @@ int main(int argc, const char *argv[])
     generatePastOrders(localTm, rng, menu);
     
     generateCurrentOrders(localTm, rng, menu);
+    
+    generateAdmin();
 }

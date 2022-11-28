@@ -10,16 +10,14 @@ NavbarWidget::NavbarWidget()
 {
     addStyleClass("sticky-top");
     
-    bool isLoggedIn = true;
-    // bool isLoggedIn = Application::instance().authenticator().isLoggedIn();
-    
+    bool isLoggedIn = ((Application *)Application::instance())->getAuth()->IsLoggedIn();
     if (isLoggedIn)
     {
-        Wt::WTemplate *navTemplate = addWidget(createAdminNavbarWidget());
+        addWidget(createAdminNavbarWidget());
     }
     else
     {
-        Wt::WTemplate *navTemplate = addWidget(createCustomerNavbarWidget());
+        addWidget(createCustomerNavbarWidget());
     }
 }
 
@@ -38,7 +36,11 @@ std::unique_ptr<Wt::WTemplate> NavbarWidget::createCustomerNavbarWidget()
     navTemplate->bindWidget("a-cart", std::make_unique<Wt::WAnchor>(linkCart, std::make_unique<Wt::WImage>("resources/images/cart.png")));
     
     Wt::WLink linkLogin = Wt::WLink(Wt::LinkType::InternalPath, "/login");
-    navTemplate->bindWidget("a-login", std::make_unique<Wt::WAnchor>(linkLogin, "login"));
+    Wt::WAnchor *loginAnchor = navTemplate->bindWidget("a-login", std::make_unique<Wt::WAnchor>(linkLogin, "login"));
+    // DEBUG. TO BE REPLACED BY LOGIN PAGE.
+    loginAnchor->clicked().connect([] {
+        ((Application *)Application::instance())->getAuth()->LogIn("admin", "cafec++12345");
+    });
     
     return navTemplate;
 }
@@ -61,7 +63,7 @@ std::unique_ptr<Wt::WTemplate> NavbarWidget::createAdminNavbarWidget()
     Wt::WLink linkHome = Wt::WLink(Wt::LinkType::InternalPath, "/home");
     Wt::WAnchor *logoutAnchor = navTemplate->bindWidget("a-logout", std::make_unique<Wt::WAnchor>(linkHome, "logout"));
     logoutAnchor->clicked().connect([] {
-        // Authenticator::getInstance().logOut();
+        ((Application *)Application::instance())->getAuth()->LogOut();
     });
     
     return navTemplate;

@@ -5,7 +5,7 @@
 #include "Authenticator.hpp"
 
 Authenticator::Authenticator() {
-
+    this->isLoggedIn = false;
 }
 
 Authenticator::~Authenticator() {
@@ -23,12 +23,23 @@ bool Authenticator::CreateNewAdmin(std::string username, std::string password) {
 
     Admin newAdmin = Admin(username, password);
 
-    db.insert(newAdmin);
+    DBHelper::getInstance().insert(newAdmin);
+    
+    return true;
 }
 
 void Authenticator::LogIn(std::string username, std::string password) {
     isLoggedIn = CheckCredentials(username, password);
+    
+    ((Application *)Application::instance())->reset();
 }
+
+void Authenticator::LogOut() {
+    isLoggedIn = false;
+    
+    ((Application *)Application::instance())->reset();
+}
+
 
 bool Authenticator::CheckCredentials(std::string username, std::string password) {
     if (password.length()<9){
@@ -40,8 +51,8 @@ bool Authenticator::CheckCredentials(std::string username, std::string password)
     int hashPass = static_cast<int>(hash);
     std::string hashPassString = std::to_string(hashPass);
 
-    admin = db.selectWhere (Admin(), {SqlCondition("userName", "=", username), SqlCondition("password", "=", password)});
-
+    admin = DBHelper::getInstance().selectWhere (Admin(), {SqlCondition("userName", "=", username), SqlCondition("password", "=", password)});
+    
     if (admin.size()==1){
         return true;
     }

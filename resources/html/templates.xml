@@ -101,10 +101,40 @@
                     <span class="colour-cyan">${name}</span>
                     ${cart-button}
                 </div>
-                <div class="menu-description">
-                    <span>${description}</span>
+                <div class="list-description">
                     <span>${price}</span>
+                    <span>${description}</span>
                 </div>
+        </div>
+    </message>
+    <message id="cart-item">
+        <div class="list-item">
+            <div class="list-item-header">
+                <span class="colour-cyan">${name}</span>
+                ${remove-button}
+            </div>
+            <div class="list-description">
+                <span>${price}</span>
+                <span>Amnt: ${quantity}</span>
+            </div>
+            <div class="list-description">
+                <span>${total}</span>
+                <div class="cart-button-row">
+                    ${add-button}
+                    ${subtract-button}
+                </div>
+            </div>
+        </div>
+    </message>
+    <message id="cart-total">
+        <div class="list-item">
+            <div class="list-item-header">
+                <span class="colour-cyan">Total</span>
+                ${order-button}
+            </div>
+            <div class="list-description">
+                <span>${total}</span>
+            </div>
         </div>
     </message>
     <message id="order-list-item">

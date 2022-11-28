@@ -10,6 +10,8 @@
 #include <Wt/WAnchor.h>
 #include <Wt/WImage.h>
 
+#include "Application.hpp"
+
 /**
  * @brief Class representing the navbar widget.
  *

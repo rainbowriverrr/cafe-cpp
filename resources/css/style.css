@@ -49,10 +49,14 @@
     flex: 1;
 }
 
-.menu-description {
+.list-description {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: space-between;
+}
+
+.list-description > span:first-child {
+    margin-left: 1em;
 }
 
 .sticky-top {

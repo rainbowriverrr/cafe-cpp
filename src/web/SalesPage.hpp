@@ -26,6 +26,7 @@
 #include <Wt/WRadioButton.h>
 #include <Wt/WCheckBox.h>
 
+#include "Application.hpp"
 #include "DBHelper.hpp"
 #include "SqlCondition.hpp"
 #include "vOrderSales.hpp"
