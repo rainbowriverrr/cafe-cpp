@@ -22,6 +22,7 @@
 #include "OrderMaster.hpp"
 #include "vOrderDetail.hpp"
 #include "Page.hpp"
+#include "Application.hpp"
 
 /**
  * @brief Class representing the order list page widget.

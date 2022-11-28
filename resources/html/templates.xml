@@ -10,7 +10,28 @@
             <span>Loading...</span>
         </div>
     </message>
-    <message id="navbar">
+    <message id="navbar-customer">
+        <nav class="navbar">
+            <span class="navbar-item navbar-item-active" 
+                id="navbar-item-home">
+                ${a-home}
+            </span>
+            <span class="navbar-item" id="navbar-item-menu">
+                ${a-menu}
+            </span>
+            <span class="navbar-item" id="navbar-item-orders">
+                ${a-orders}
+            </span>
+           <span class="navbar-spacer"></span>
+            <span class="navbar-item" id="navbar-item-login">
+                ${a-login}
+            </span>
+            <span class="navbar-item" id="navbar-item-cart">
+                ${a-cart}
+            </span>
+        </nav> 
+    </message>
+    <message id="navbar-admin">
         <nav class="navbar">
             <span class="navbar-item navbar-item-active" 
                 id="navbar-item-home">
@@ -28,14 +49,51 @@
             <span class="navbar-item" id="navbar-item-inventory">
                 ${a-inventory}
             </span>
-           <span class="navbar-spacer"></span>
-            <span class="navbar-item" id="navbar-item-login">
-                ${a-login}
+            <span class="navbar-spacer"></span>
+            <span class="navbar-item" id="navbar-item-create-user">
+                ${a-create-user}
             </span>
-            <span class="navbar-item" id="navbar-item-cart">
-                ${a-cart}
+            <span class="navbar-item" id="navbar-item-logout">
+                ${a-logout}
             </span>
         </nav>
+    </message>
+    <message id="home-page">
+        <div class="list list-wide"><div>
+            <div class="list-item">
+                <div class="home-item">
+                    <img src="resources/images/logo.png" />
+                    <div>
+                        <div class="list-item-header">
+                            <span>Welcome to Cafe C++!</span>
+                        </div>
+                        <p>Since 1985, we have been serving premium coffee and breakfast.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="list-item">
+                <div class="home-item home-item-right">
+                    <div>
+                        <div class="list-item-header">
+                            <span>Coffee with Class</span>
+                        </div>
+                        <p>Our top quality, whole bean coffee is ground and brewed fresh to order. Choose from our three famous blends of 100% arabica, fair trade coffee.</p>
+                    </div>
+                    <img src="resources/images/coffee.png" />
+                </div>
+            </div>
+            <div class="list-item">
+                <div class="home-item">
+                    <img src="resources/images/latte.png" />
+                    <div>
+                        <div class="list-item-header">
+                            <span>High-level Service</span>
+                        </div>
+                        <p>Order online and skip the line!</p>
+                    </div>
+                </div>
+            </div>
+        </div></div>
     </message>
     <message id="menu-item">
         <div class="list-item">
@@ -52,7 +110,7 @@
     <message id="order-list-item">
         <div class="list-item">
             <div class="list-item-header">
-                <span class="colour-cyan">Order #${txt-ordernum}</span>
+                <span class="colour-cyan">${txt-ordernum}</span>
                 ${btn-complete}
             </div>
             <div class="flex-row">

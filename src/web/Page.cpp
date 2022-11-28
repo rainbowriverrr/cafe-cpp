@@ -6,9 +6,19 @@
 
 #include "Page.hpp"
 
-const Wt::WString Page::formatPrice(const double &price)
+Page::Page()
+{
+    
+}
+
+Page::~Page()
+{
+    
+}
+
+std::string Page::formatPrice(const double &price)
 {
     std::ostringstream ss;
     ss << std::setprecision(2) << std::fixed << "$ " << price;
-    return Wt::WString(ss.str());
+    return ss.str();
 }

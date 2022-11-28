@@ -23,6 +23,14 @@ const std::vector<Wt::WColor> SalesPage::COLOUR_PALETTE = {
 
 SalesPage::SalesPage()
 {
+    bool isLoggedIn = true;
+    // bool isLoggedIn = Application::instance().authenticator().isLoggedIn();
+
+    if (!isLoggedIn)
+    {
+        return;
+    }
+    
     // Loads HTML template and CSS styles.
     addStyleClass("list");
     addStyleClass("list-wide");
@@ -309,17 +317,39 @@ void SalesPage::updateModel(Wt::WAbstractItemModel *model)
     {
         Wt::WDate day = Wt::WDate::currentDate().addDays(daysAgo * -1);
         std::string dayStr = day.toString("yyyy-MM-dd").toUTF8() + " 00:00:00";
-        
         int daySeq = NUM_DAYS_TO_CHART - daysAgo;
         
         model->setData(daySeq, 0, day); // Sets the first column (x-axis).
         
-        std::vector<vOrderSales> sales = DBHelper::getInstance().selectWhere(vOrderSales(), { SqlCondition("salesDate", "=", dayStr), });
+        std::vector<vOrderSales> sales = DBHelper::getInstance().selectWhere(vOrderSales(), { SqlCondition("salesDate", "=", dayStr), },
+                                                                             "isAllMenuItems DESC, menuItemName");
         
         int col = 1;
+        // If sales is empty, set all values for the day to 0.
+        if (sales.empty())
+        {
+            for (col = 1; col < menu.size() + 2; ++col)
+            {
+                model->setData(daySeq, col, 0.0);
+                model->setData(daySeq, col + (int)menu.size() + 1, 0);
+            }
+        }
         for (std::vector<vOrderSales>::iterator it = sales.begin(); it != sales.end(); ++it)
         {
             std::string menuItemName = it->getMenuItemName();
+            
+            // If a menu item had 0 sales for the day it will not be in the sales vector.
+            // Set the column for that menu item to 0 and move on to the next column.
+            if (col != 1)
+            {
+                while (menuItemName != menu[col - 2].getName())
+                {
+                    model->setData(daySeq, col, 0.0);
+                    model->setData(daySeq, col + (int)menu.size() + 1, 0);
+                    ++col;
+                }
+            }
+            
             double totalRevenue = it->getTotalRevenue();
             int totalQuantity = it->getTotalQuantity();
             

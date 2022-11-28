@@ -111,6 +111,7 @@ body {
     width: 100%;
     background-color: var(--colour-light-gray);
     font-family: var(--font-family-bold);
+    outline: 0.2em solid var(--colour-dark-gray);
 }
 
 .navbar-spacer {
@@ -226,6 +227,28 @@ div.list-item-removed > .list-item {
     margin-top: 0.5em;
 }
 
+.home-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.home-item > img {
+    height: 10em;
+    padding: 1em 2em 1em 0em;
+    filter: drop-shadow(var(--colour-dark-gray) 0.2em 0.2em 0.4em);
+}
+
+.home-item-right > img {
+    padding: 1em 0em 1em 2em;
+}
+
+.home-item > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
 .panel-wrapper {
     display: flex;
     flex-direction: row;
@@ -272,7 +295,7 @@ div.list-item-removed > .list-item {
 }
 
 .table-order-details thead tr th:first-child {
-    width: 35%;
+    width: 40%;
 }
 
 .table-order-details tbody tr td {
@@ -356,6 +379,12 @@ div.list-item-removed > .list-item {
 
 .sales-dialog > div span {
     margin-left: 0.5em;
+    flex: 1;
+}
+
+.sales-dialog > div span > label {
+    display: inline-block;
+    width: 100%;
 }
 
 .sales-btn-group-rev-qty {

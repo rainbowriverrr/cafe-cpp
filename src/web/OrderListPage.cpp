@@ -62,26 +62,53 @@ std::unique_ptr<Wt::WTemplate> OrderListPage::createListItemWidget(Wt::WContaine
 {
     std::unique_ptr<Wt::WTemplate> item = std::make_unique<Wt::WTemplate>(tr("order-list-item"));
     
+    bool isLoggedIn = true;
+    // bool isLoggedIn = Application::instance().authenticator().isLoggedIn();
+    
     // Complete order button
-    
-    Wt::WPushButton *completeBtn = item->bindWidget("btn-complete", std::make_unique<Wt::WPushButton>("Complete Order"));
-    completeBtn->setIcon("resources/images/check_circle.png");
-    
-    Wt::WTemplate *itemRawPtr = item.get();
-    completeBtn->clicked().connect([itemRawPtr, listContainer, order] { onCompleteOrderBtnClicked(itemRawPtr, listContainer, order); });
-    
-    // Not a great solution, but Wt animations are bugged and do not seem to work on any browser.
-    doJavaScript(item->jsRef() + ".firstElementChild.addEventListener('transitionend', (e) => {"
-                 + "if (e.target == " + item->jsRef() + ".firstElementChild) " + item->jsRef()
-                 + ".style.display = 'none' });");
+    if (isLoggedIn)
+    {
+        Wt::WPushButton *completeBtn = item->bindWidget("btn-complete", std::make_unique<Wt::WPushButton>("Complete Order"));
+        completeBtn->setIcon("resources/images/check_circle.png");
+        
+        Wt::WTemplate *itemRawPtr = item.get();
+        completeBtn->clicked().connect([itemRawPtr, listContainer, order] { onCompleteOrderBtnClicked(itemRawPtr, listContainer, order); });
+        
+        // Not a great solution, but Wt animations are bugged and do not seem to work on any browser.
+        doJavaScript(item->jsRef() + ".firstElementChild.addEventListener('transitionend', (e) => {"
+                     + "if (e.target == " + item->jsRef() + ".firstElementChild) " + item->jsRef()
+                     + ".style.display = 'none' });");
+    }
+    else
+    {
+        item->bindWidget("btn-complete", std::make_unique<Wt::WContainerWidget>());
+    }
     
     // Binding text
-    item->bindWidget("txt-ordernum", std::make_unique<Wt::WText>((std::to_string(order.getOrderNumber()))));
+    std::string orderNumberStr = std::to_string(order.getOrderNumber());
+    // Only the last 2 digits are displayed since order numbers can get very large and it is unlikely to have more than 100 orders at once.
+    if (orderNumberStr.length() > 2)
+    {
+        orderNumberStr = orderNumberStr.substr(orderNumberStr.length() - 2);
+        if (orderNumberStr[0] == '0')
+        {
+            orderNumberStr = orderNumberStr.substr(1);
+        }
+    }
+    
+    item->bindWidget("txt-ordernum", std::make_unique<Wt::WText>("Order #" + orderNumberStr));
     item->bindWidget("txt-orderedby", std::make_unique<Wt::WText>(order.getOrderedBy()));
     item->bindWidget("txt-orderdate", std::make_unique<Wt::WText>(order.getOrderDate().substr(0, 19)));
     
     // View items panel
-    Wt::WPanel *panelOrderDetails = item->bindWidget("panel-orderdetails", createDetailsPanelWidget(order.getOrderNumber()));
+    if (isLoggedIn)
+    {
+        Wt::WPanel *panelOrderDetails = item->bindWidget("panel-orderdetails", createDetailsPanelWidget(order.getOrderNumber()));
+    }
+    else
+    {
+        item->bindWidget("panel-orderdetails", std::make_unique<Wt::WContainerWidget>());
+    }
     
     return item;
 }

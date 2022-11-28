@@ -7,6 +7,7 @@
 
 #include <sstream>
 #include <iomanip>
+#include <string>
 
 #include <Wt/WContainerWidget.h>
 
@@ -22,6 +23,20 @@ class Page : public Wt::WContainerWidget
 {
 public:
     /**
+     * @brief Destructor.
+     *
+     * Does nothing.
+     */
+    virtual ~Page();
+protected:
+    /**
+     * @brief Constructor.
+     *
+     * Protected because Page is not intended to be initialized, only extended.
+     */
+    Page();
+    
+    /**
      * @brief Formats the given price double as a string.
      *
      * e.g. 2.290000 -> "$ 2.29"
@@ -29,7 +44,7 @@ public:
      * @param price the price as a double
      * @return the price formatted as a string
      */
-    static const Wt::WString formatPrice(const double &price);
+    static std::string formatPrice(const double &price);
 };
 
 #endif /* Page_hpp */

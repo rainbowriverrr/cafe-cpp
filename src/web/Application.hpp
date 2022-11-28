@@ -16,6 +16,7 @@
 
 #include "CustomLoadingIndicator.hpp"
 #include "NavbarWidget.hpp"
+#include "HomePage.hpp"
 #include "MenuPage.hpp"
 #include "OrderListPage.hpp"
 #include "SalesPage.hpp"

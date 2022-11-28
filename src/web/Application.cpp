@@ -17,7 +17,7 @@ Application::Application(const Wt::WEnvironment &env) : Wt::WApplication(env)
     internalPathChanged().connect(this, &Application::handleInternalPath);
     
     navbar = root()->addNew<NavbarWidget>();
-    body = root()->addNew<Wt::WText>("Home Page");
+    body = root()->addNew<HomePage>();
     
     setInternalPath("/home", false);
 }
@@ -33,7 +33,7 @@ void Application::handleInternalPath(const std::string &internalPath)
     
     if (internalPath == "/home")
     {
-        body = root()->addNew<Wt::WText>("Temp Home Page");
+        body = root()->addNew<HomePage>();
     }
     else if (internalPath == "/menu")
     {
@@ -54,6 +54,10 @@ void Application::handleInternalPath(const std::string &internalPath)
     else if (internalPath == "/cart")
     {
         body = root()->addNew<Wt::WText>("Temp Cart Page");
+    }
+    else if (internalPath == "/create-user")
+    {
+        body = root()->addNew<Wt::WText>("Temp Create User Page");
     }
     else if (internalPath == "/login")
     {
