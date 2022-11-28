@@ -16,15 +16,10 @@ bool Authenticator::IsLoggedIn() {
     return isLoggedIn;
 }
 
-void Authenticator::CreateNewAdmin(std::string username, std::string password) {
+bool Authenticator::CreateNewAdmin(std::string username, std::string password) {
     size_t hash = hasher(password);
 
-    if (hash> INT_MAX){
-        throw std::overflow_error("the password is too large");
-    }
-
-    int hashPass = static_cast<int> (hash);
-    std::string hashPassString = std::to_string(hashPass);
+    std::string hashPassString = std::to_string(hash);
 
     Admin newAdmin = Admin(username, password);
 
@@ -36,6 +31,10 @@ void Authenticator::LogIn(std::string username, std::string password) {
 }
 
 bool Authenticator::CheckCredentials(std::string username, std::string password) {
+    if (password.length()<9){
+        return false;
+    }
+
     size_t hash = hasher(password);
 
     int hashPass = static_cast<int>(hash);

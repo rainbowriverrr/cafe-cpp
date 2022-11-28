@@ -24,7 +24,7 @@ public:
 
     bool IsLoggedIn ();
 
-    void CreateNewAdmin (std:: string username, std::string password);
+    bool CreateNewAdmin (std:: string username, std::string password);
 
     void LogOut();
 

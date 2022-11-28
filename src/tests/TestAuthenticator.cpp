@@ -13,20 +13,26 @@
 int main (int argc, const char *argv[]){
     const DBHelper &db = DBHelper::getInstance();
 
-    Admin a1 = Admin("Sharon", "Nikritin");
-    Admin a2 = Admin("Julian", "Koksal");
-    Admin a3 = Admin("River", "Wang");
-    Admin a4 = Admin("Alex", "Mias");
-    Admin a5 = Admin("Daniel", "McGar");
-
-
-    db.insert(a1);
-    db.insert(a2);
-    db.insert(a3);
-    db.insert(a4);
-    db.insert(a5);
-
     Authenticator auth;
-    auth.CreateNewAdmin("Sharon", "Nikritin");
+    //Test with proper password
+    auth.CreateNewAdmin("Sharon", "WaterBottle");
+    auth.LogIn("Sharon", "WaterBottle");
+
+    bool test = auth.IsLoggedIn();
+    printf("Proper Password: %d\n", test);
+
+    Authenticator auth1;
+    //Test with to0 short password
+    bool test1 = auth1.CreateNewAdmin("River", "Ocean");
+    printf("Too short password: %d\n", test1);
+
+    Authenticator auth2;
+    //Test with wrong password
+    auth2.CreateNewAdmin("Dimitri", "hello12345");
+    auth2.LogIn("Dimitri", "hello1234");
+
+    bool test2 = auth2.IsLoggedIn();
+
+    printf("Wrong Password: %d\n", test2);
 
 }
