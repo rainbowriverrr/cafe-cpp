@@ -1,6 +1,7 @@
-//
-// Created by Sharon Nikritin on 2022-11-07.
-//
+/**
+ * @brief represents a row of order detail in the SQL database
+ * @author Sharon Nikritin
+ */
 
 #ifndef OrderDetail_hpp
 #define OrderDetail_hpp
@@ -13,30 +14,81 @@
 class OrderDetail : public Model
 {
 public:
+    /**
+     * @brief constructor of an OrderDetail object - including its ID, number and menuItemName and quantity
+     * @param orderDetailID - int OrderDetail's ID
+     * @param orderNumber - int OrderDetail's number
+     * @param menuItemName - string OrderDetail's name
+     * @param quantity - int OrderDetail's quantity
+     */
     OrderDetail(int orderDetailID = 0, int orderNumber = 0, std::string menuItemName = "", int quantity = 0);
 
+    /**
+     * @brief destructor of the order detail
+     */
     ~OrderDetail();
-    
+
+    /**
+     * @brief accessor method of the order ID
+     * @return orderdetailID - int unique orderID
+     */
     int getOrderDetailID();
 
+    /**
+     * @brief accessor method of the order number
+     * @return orderNumber - int
+     */
     int getOrderNumber();
 
+    /**
+     * @brief accessor method of the of the menu item name
+     * @return menuItemName - string
+     */
     std::string getMenuItemName();
 
+    /**
+     * @brief accessor method of the menu item quantity
+     * @return quantity - int
+     */
     int getQuantity();
 
+    /**
+     * @brief modifier method of the order number
+     * @param orderNumber - int the order number associated to that order
+     */
     void setOrderNumber(int orderNumber);
 
+    /**
+     * @brief modifier method to modify the item's name
+     * @param menuItemName - string the item names in order
+     */
     void setMenuItemName (std::string menuItemName);
 
+    /**
+     * @brief modified method to modify the quantity of item's
+     * @param quantity - int the quantity of menu item's in the order
+     */
     void setQuantity(int quantity);
 
 private:
+    /**
+     * @brief order ID - int
+     */
     int orderDetailID;
+    /**
+     * @brief order number - int
+     */
     int orderNumber;
+    /**
+     * @brief menu item in order name - string
+     */
     std::string menuItemName;
+    /**
+     * @brief quantity of menu item in order - int
+     */
     int quantity;
 
+    /** override virtual method of the model to set up the new table name, columns, keys, toMap, etc*/
     virtual std::string tableName() const override;
     virtual std::vector<std::string> columns() const override;
     virtual std::set<std::string> keys() const override;

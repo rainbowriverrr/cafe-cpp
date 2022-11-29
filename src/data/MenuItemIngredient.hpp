@@ -1,6 +1,7 @@
-//
-// Created by Sharon Nikritin on 2022-11-07.
-//
+/**
+ * @brief represents a row of the MenuItemIngredient table in the SQL database
+ * @author Sharon Nikritin
+ */
 
 #ifndef menuItemIngredient_hpp
 #define menuItemIngredient_hpp
@@ -13,27 +14,70 @@
 class MenuItemIngredient : public Model
 {
 public:
+    /**
+     * @brief constructor to create a MenuItemIngredient object
+     * @param menuItemName - string the menu items name
+     * @param inventoryItemID - int unique ID of the menu item
+     * @param quantity - int quantity of the menu item
+     */
     MenuItemIngredient(std::string menuItemName = "", int inventoryItemID = 0, int quantity = 0);
 
+    /**
+     * @brief destructor of the menu item ingredient
+     */
     ~MenuItemIngredient();
 
+    /**
+     * @brief accessor methods for the item name
+     * @return itemName - string
+     */
     std::string getMenuItemName();
 
+    /**
+     * @brief accessor methods for the itemID
+     * @return itemID - int
+     */
     int getInventoryItemID();
 
+    /**
+     * @brief accessor methods for the quantity
+     * @return quantity - int
+     */
     int getQuantity();
 
+    /**
+     * @brief modifier method for the name
+     * @param menuItemName - string representing menu item name
+     */
     void setMenuItemName(std::string menuItemName);
 
+    /**
+     * @brief modifier method for the item ID
+     * @param inventoryItemID - int representing the item ID
+     */
     void setInventoryItemID (int inventoryItemID);
 
+    /**
+     * @brief modifier method for the quantity
+     * @param quantity - int representing the quantity of the menu items
+     */
     void setQuantity (int quantity);
 
 private:
+    /**
+     * @brief the menu item's name
+     */
     std::string menuItemName;
+    /**
+     * @brief the menu item's name
+     */
     int inventoryItemID;
+    /**
+     * @brief the menu item's quantity in stock
+     */
     int quantity;
 
+    /** override virtual method of the model to set up the new table name, columns, keys, toMap, etc*/
     virtual std::string tableName() const override;
     virtual std::vector<std::string> columns() const override;
     virtual std::set<std::string> keys() const override;

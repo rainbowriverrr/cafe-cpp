@@ -21,10 +21,6 @@ std::string Admin::getUserName() {
     return userName;
 }
 
-bool Admin::authenticateAdmin(std::string userName, std::string password) {
-
-}
-
 std::string Admin::tableName() const {
     return "Admin";
 }
