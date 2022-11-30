@@ -23,7 +23,7 @@ MenuItemWidget::MenuItemWidget(const std::string &name, const double &price, con
     priceString = ss.str();
 
     name_ = bindWidget("name", std::make_unique<Wt::WText>(name));
-    price_ = bindWidget("price", std::make_unique<Wt::WText>("$" + priceString));
+    price_ = bindWidget("price", std::make_unique<Wt::WText>("$ " + priceString));
     description_ = bindWidget("description", std::make_unique<Wt::WText>(description));
 
     if (isLoggedIn) {
