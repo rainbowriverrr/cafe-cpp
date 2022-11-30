@@ -23,5 +23,7 @@ var searchData=
   ['setyaxistitle_20',['setYAxisTitle',['../class_sales_page.html#a27d0420759e25872bcb58f10e975521f',1,'SalesPage']]],
   ['showseries_21',['showSeries',['../class_sales_page.html#ab9c56b6f57730c813ef0b63c09ca70f4',1,'SalesPage']]],
   ['sqlcondition_22',['SqlCondition',['../class_sql_condition.html',1,'SqlCondition'],['../class_sql_condition.html#af4bc58103b1eaff66691b59a9db9fe58',1,'SqlCondition::SqlCondition(std::string field, std::string op, bool value)'],['../class_sql_condition.html#aea4778bc1c965be57acd43ee4a405c11',1,'SqlCondition::SqlCondition(std::string field, std::string op, int value)'],['../class_sql_condition.html#a6b5ff18622d15ae3d99732a09ddb1fba',1,'SqlCondition::SqlCondition(std::string field, std::string op, double value)'],['../class_sql_condition.html#a02b3033b493fb34a4d369ee65ba96c85',1,'SqlCondition::SqlCondition(std::string field, std::string op, std::string value)'],['../class_sql_condition.html#a22fc7d51901c1ae220d3d1ccf6fe1d84',1,'SqlCondition::SqlCondition(std::string field, std::string op, const char *value)'],['../class_sql_condition.html#a60862adc9bdcca2206ebf724c5994908',1,'SqlCondition::SqlCondition(std::string field, std::string op, std::vector&lt; std::string &gt; value)']]],
-  ['status_23',['status',['../class_order_master.html#a7a718f5844deb8e1f0c79ae86f09c7c1',1,'OrderMaster']]]
+  ['status_23',['status',['../class_order_master.html#a7a718f5844deb8e1f0c79ae86f09c7c1',1,'OrderMaster']]],
+  ['subfromtotal_24',['subFromTotal',['../class_cart_total.html#a521d807766114e743a749f6ce3e9b29e',1,'CartTotal']]],
+  ['subtractbutton_5f_25',['subtractButton_',['../class_cart_widget.html#a501e136b16126fd64ee48f286c4e53d2',1,'CartWidget']]]
 ];

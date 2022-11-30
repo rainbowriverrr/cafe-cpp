@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['total_0',['total',['../classv_order_detail.html#aa4d45d021636ca0de45e2fb288198e3a',1,'vOrderDetail']]],
-  ['totalquantity_1',['totalQuantity',['../classv_order_sales.html#a8d191946e8c6849d16ffbef144cefafd',1,'vOrderSales']]],
-  ['totalrevenue_2',['totalRevenue',['../classv_order_sales.html#ab7365bc440cb6d43528689aa67b5f57b',1,'vOrderSales']]]
+  ['salesdate_0',['salesDate',['../classv_order_sales.html#aac196a77e4d9e9e1145bd2e21cce6fa5',1,'vOrderSales']]],
+  ['selectedidrevqty_1',['selectedIDRevQty',['../class_sales_page.html#ad60b39e502803595269f9d93587f6139',1,'SalesPage']]],
+  ['sessionid_2',['sessionID',['../class_order_master.html#a0680583c0e8e72e4ac16c9c92ba82029',1,'OrderMaster']]],
+  ['status_3',['status',['../class_order_master.html#a7a718f5844deb8e1f0c79ae86f09c7c1',1,'OrderMaster']]],
+  ['subtractbutton_5f_4',['subtractButton_',['../class_cart_widget.html#a501e136b16126fd64ee48f286c4e53d2',1,'CartWidget']]]
 ];

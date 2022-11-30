@@ -9,42 +9,159 @@ Inheritance diagram for Cart\+Total\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_cart_total_a43923969154c76525ff6d1f34f661386}\label{class_cart_total_a43923969154c76525ff6d1f34f661386}} 
-{\bfseries Cart\+Total} (double)
-\item 
-\mbox{\Hypertarget{class_cart_total_a4ba425068bef8fadf137d1032bf23b7b}\label{class_cart_total_a4ba425068bef8fadf137d1032bf23b7b}} 
-void {\bfseries add\+To\+Total} (double)
-\item 
-\mbox{\Hypertarget{class_cart_total_a521d807766114e743a749f6ce3e9b29e}\label{class_cart_total_a521d807766114e743a749f6ce3e9b29e}} 
-void {\bfseries sub\+From\+Total} (double)
-\item 
-\mbox{\Hypertarget{class_cart_total_ae21578ae2f65c2bf65b48c578a6fc358}\label{class_cart_total_ae21578ae2f65c2bf65b48c578a6fc358}} 
-std\+::string {\bfseries get\+Name} ()
-\item 
-\mbox{\Hypertarget{class_cart_total_a3c7673604f0f8f4f3f60d7d7e304de13}\label{class_cart_total_a3c7673604f0f8f4f3f60d7d7e304de13}} 
-Wt\+::\+WPush\+Button $\ast$ {\bfseries get\+Checkout\+Ptr} ()
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_cart_total_a43923969154c76525ff6d1f34f661386}{Cart\+Total}} (double)
+\begin{DoxyCompactList}\small\item\em Construct a new Cart Total object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cart_total_a4ba425068bef8fadf137d1032bf23b7b}{add\+To\+Total}} (double)
+\begin{DoxyCompactList}\small\item\em adds to the total price \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cart_total_a521d807766114e743a749f6ce3e9b29e}{sub\+From\+Total}} (double)
+\begin{DoxyCompactList}\small\item\em subtracts from the total price \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_cart_total_ae21578ae2f65c2bf65b48c578a6fc358}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of the item. \end{DoxyCompactList}\item 
+Wt\+::\+WPush\+Button $\ast$ \mbox{\hyperlink{class_cart_total_a3c7673604f0f8f4f3f60d7d7e304de13}{get\+Checkout\+Ptr}} ()
+\begin{DoxyCompactList}\small\item\em Get the Checkout Ptr object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_cart_total_ad7cd3f3609452e5cc191250ffa50bd31}{$\sim$\+Cart\+Total}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the Cart Total object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_cart_total_ad87aa60216f622522c1a07cbf3cb082b}\label{class_cart_total_ad87aa60216f622522c1a07cbf3cb082b}} 
-void {\bfseries update\+Total} ()
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_cart_total_ad87aa60216f622522c1a07cbf3cb082b}{update\+Total}} ()
+\begin{DoxyCompactList}\small\item\em updates the total price (wrapper) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_cart_total_a347b090bb673823053218606cf642dac}\label{class_cart_total_a347b090bb673823053218606cf642dac}} 
-double {\bfseries dtotal}
-\item 
-\mbox{\Hypertarget{class_cart_total_aca32d06f0cdb8db7e1de80a85ed0d504}\label{class_cart_total_aca32d06f0cdb8db7e1de80a85ed0d504}} 
-Wt\+::\+WText $\ast$ {\bfseries total\+\_\+}
-\item 
-\mbox{\Hypertarget{class_cart_total_a71697fd48dbdd8acafe7b9c0a4b206fd}\label{class_cart_total_a71697fd48dbdd8acafe7b9c0a4b206fd}} 
-Wt\+::\+WLine\+Edit $\ast$ {\bfseries name\+Edit\+\_\+}
-\item 
+double \mbox{\hyperlink{class_cart_total_a347b090bb673823053218606cf642dac}{dtotal}}
+\begin{DoxyCompactList}\small\item\em double representing the total price \end{DoxyCompactList}\item 
+Wt\+::\+WText $\ast$ \mbox{\hyperlink{class_cart_total_aca32d06f0cdb8db7e1de80a85ed0d504}{total\+\_\+}}
+\begin{DoxyCompactList}\small\item\em WText representing the total price. \end{DoxyCompactList}\item 
+Wt\+::\+WLine\+Edit $\ast$ \mbox{\hyperlink{class_cart_total_a71697fd48dbdd8acafe7b9c0a4b206fd}{name\+Edit\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Line\+Edit Widget for user name input. \end{DoxyCompactList}\item 
+Wt\+::\+WPush\+Button $\ast$ \mbox{\hyperlink{class_cart_total_a04773a0ae47057e1627fc64462e0ec84}{checkout\+Button\+\_\+}}
+\begin{DoxyCompactList}\small\item\em WPush\+Button representing the checkout button. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_cart_total_a43923969154c76525ff6d1f34f661386}\label{class_cart_total_a43923969154c76525ff6d1f34f661386}} 
+\index{CartTotal@{CartTotal}!CartTotal@{CartTotal}}
+\index{CartTotal@{CartTotal}!CartTotal@{CartTotal}}
+\doxysubsubsection{\texorpdfstring{CartTotal()}{CartTotal()}}
+{\footnotesize\ttfamily Cart\+Total\+::\+Cart\+Total (\begin{DoxyParamCaption}\item[{double}]{total }\end{DoxyParamCaption})}
+
+
+
+Construct a new Cart Total object. 
+
+\mbox{\Hypertarget{class_cart_total_ad7cd3f3609452e5cc191250ffa50bd31}\label{class_cart_total_ad7cd3f3609452e5cc191250ffa50bd31}} 
+\index{CartTotal@{CartTotal}!````~CartTotal@{$\sim$CartTotal}}
+\index{````~CartTotal@{$\sim$CartTotal}!CartTotal@{CartTotal}}
+\doxysubsubsection{\texorpdfstring{$\sim$CartTotal()}{~CartTotal()}}
+{\footnotesize\ttfamily Cart\+Total\+::$\sim$\+Cart\+Total (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the Cart Total object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_cart_total_a4ba425068bef8fadf137d1032bf23b7b}\label{class_cart_total_a4ba425068bef8fadf137d1032bf23b7b}} 
+\index{CartTotal@{CartTotal}!addToTotal@{addToTotal}}
+\index{addToTotal@{addToTotal}!CartTotal@{CartTotal}}
+\doxysubsubsection{\texorpdfstring{addToTotal()}{addToTotal()}}
+{\footnotesize\ttfamily void Cart\+Total\+::add\+To\+Total (\begin{DoxyParamCaption}\item[{double}]{total }\end{DoxyParamCaption})}
+
+
+
+adds to the total price 
+
+\mbox{\Hypertarget{class_cart_total_a3c7673604f0f8f4f3f60d7d7e304de13}\label{class_cart_total_a3c7673604f0f8f4f3f60d7d7e304de13}} 
+\index{CartTotal@{CartTotal}!getCheckoutPtr@{getCheckoutPtr}}
+\index{getCheckoutPtr@{getCheckoutPtr}!CartTotal@{CartTotal}}
+\doxysubsubsection{\texorpdfstring{getCheckoutPtr()}{getCheckoutPtr()}}
+{\footnotesize\ttfamily Wt\+::\+WPush\+Button $\ast$ Cart\+Total\+::get\+Checkout\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Checkout Ptr object. 
+
+\begin{DoxyReturn}{Returns}
+Wt\+::\+WPush\+Button$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_cart_total_ae21578ae2f65c2bf65b48c578a6fc358}\label{class_cart_total_ae21578ae2f65c2bf65b48c578a6fc358}} 
+\index{CartTotal@{CartTotal}!getName@{getName}}
+\index{getName@{getName}!CartTotal@{CartTotal}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Cart\+Total\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the name of the item. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_cart_total_a521d807766114e743a749f6ce3e9b29e}\label{class_cart_total_a521d807766114e743a749f6ce3e9b29e}} 
+\index{CartTotal@{CartTotal}!subFromTotal@{subFromTotal}}
+\index{subFromTotal@{subFromTotal}!CartTotal@{CartTotal}}
+\doxysubsubsection{\texorpdfstring{subFromTotal()}{subFromTotal()}}
+{\footnotesize\ttfamily void Cart\+Total\+::sub\+From\+Total (\begin{DoxyParamCaption}\item[{double}]{total }\end{DoxyParamCaption})}
+
+
+
+subtracts from the total price 
+
+\mbox{\Hypertarget{class_cart_total_ad87aa60216f622522c1a07cbf3cb082b}\label{class_cart_total_ad87aa60216f622522c1a07cbf3cb082b}} 
+\index{CartTotal@{CartTotal}!updateTotal@{updateTotal}}
+\index{updateTotal@{updateTotal}!CartTotal@{CartTotal}}
+\doxysubsubsection{\texorpdfstring{updateTotal()}{updateTotal()}}
+{\footnotesize\ttfamily void Cart\+Total\+::update\+Total (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+updates the total price (wrapper) 
+
+
+
+\doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{class_cart_total_a04773a0ae47057e1627fc64462e0ec84}\label{class_cart_total_a04773a0ae47057e1627fc64462e0ec84}} 
-Wt\+::\+WPush\+Button $\ast$ {\bfseries checkout\+Button\+\_\+}
-\end{DoxyCompactItemize}
+\index{CartTotal@{CartTotal}!checkoutButton\_@{checkoutButton\_}}
+\index{checkoutButton\_@{checkoutButton\_}!CartTotal@{CartTotal}}
+\doxysubsubsection{\texorpdfstring{checkoutButton\_}{checkoutButton\_}}
+{\footnotesize\ttfamily Wt\+::\+WPush\+Button$\ast$ Cart\+Total\+::checkout\+Button\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+WPush\+Button representing the checkout button. 
+
+\mbox{\Hypertarget{class_cart_total_a347b090bb673823053218606cf642dac}\label{class_cart_total_a347b090bb673823053218606cf642dac}} 
+\index{CartTotal@{CartTotal}!dtotal@{dtotal}}
+\index{dtotal@{dtotal}!CartTotal@{CartTotal}}
+\doxysubsubsection{\texorpdfstring{dtotal}{dtotal}}
+{\footnotesize\ttfamily double Cart\+Total\+::dtotal\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+double representing the total price 
+
+\mbox{\Hypertarget{class_cart_total_a71697fd48dbdd8acafe7b9c0a4b206fd}\label{class_cart_total_a71697fd48dbdd8acafe7b9c0a4b206fd}} 
+\index{CartTotal@{CartTotal}!nameEdit\_@{nameEdit\_}}
+\index{nameEdit\_@{nameEdit\_}!CartTotal@{CartTotal}}
+\doxysubsubsection{\texorpdfstring{nameEdit\_}{nameEdit\_}}
+{\footnotesize\ttfamily Wt\+::\+WLine\+Edit$\ast$ Cart\+Total\+::name\+Edit\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Line\+Edit Widget for user name input. 
+
+\mbox{\Hypertarget{class_cart_total_aca32d06f0cdb8db7e1de80a85ed0d504}\label{class_cart_total_aca32d06f0cdb8db7e1de80a85ed0d504}} 
+\index{CartTotal@{CartTotal}!total\_@{total\_}}
+\index{total\_@{total\_}!CartTotal@{CartTotal}}
+\doxysubsubsection{\texorpdfstring{total\_}{total\_}}
+{\footnotesize\ttfamily Wt\+::\+WText$\ast$ Cart\+Total\+::total\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+WText representing the total price. 
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

@@ -9,27 +9,93 @@ Inheritance diagram for Menu\+Item\+Widget\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_menu_item_widget_ab2e5724067d7ff543394c679eafe6477}\label{class_menu_item_widget_ab2e5724067d7ff543394c679eafe6477}} 
-{\bfseries Menu\+Item\+Widget} (const std\+::string \&name, const double \&price, const std\+::string \&description)
-\item 
-\mbox{\Hypertarget{class_menu_item_widget_a1aaff5359d1ae69a433c6b1c92c5de9c}\label{class_menu_item_widget_a1aaff5359d1ae69a433c6b1c92c5de9c}} 
-Wt\+::\+WPush\+Button $\ast$ {\bfseries get\+Cart\+Ptr} ()
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_menu_item_widget_ab2e5724067d7ff543394c679eafe6477}{Menu\+Item\+Widget}} (const std\+::string \&name, const double \&price, const std\+::string \&description)
+\begin{DoxyCompactList}\small\item\em Construct a new Menu Item Widget object. \end{DoxyCompactList}\item 
+Wt\+::\+WPush\+Button $\ast$ \mbox{\hyperlink{class_menu_item_widget_a1aaff5359d1ae69a433c6b1c92c5de9c}{get\+Cart\+Ptr}} ()
+\begin{DoxyCompactList}\small\item\em Get the Cart Ptr object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_menu_item_widget_a7e68b00e34dee3ef8d0a768e36043e63}\label{class_menu_item_widget_a7e68b00e34dee3ef8d0a768e36043e63}} 
-Wt\+::\+WText $\ast$ {\bfseries name\+\_\+}
-\item 
+Wt\+::\+WText $\ast$ \mbox{\hyperlink{class_menu_item_widget_a7e68b00e34dee3ef8d0a768e36043e63}{name\+\_\+}}
+\begin{DoxyCompactList}\small\item\em WText widget representing the name of a menu item. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_menu_item_widget_af01b2ead3a136565c56a191d8eaec8b7}\label{class_menu_item_widget_af01b2ead3a136565c56a191d8eaec8b7}} 
 Wt\+::\+WText $\ast$ {\bfseries price\+\_\+}
-\item 
-\mbox{\Hypertarget{class_menu_item_widget_a88a55e473de1be5b1ba0971728082ccc}\label{class_menu_item_widget_a88a55e473de1be5b1ba0971728082ccc}} 
-Wt\+::\+WText $\ast$ {\bfseries description\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em WText widget representing the price of a menu item. \end{DoxyCompactList}\item 
+Wt\+::\+WText $\ast$ \mbox{\hyperlink{class_menu_item_widget_a88a55e473de1be5b1ba0971728082ccc}{description\+\_\+}}
+\begin{DoxyCompactList}\small\item\em WText widget representing a menu item\textquotesingle{}s description. \end{DoxyCompactList}\item 
+Wt\+::\+WPush\+Button $\ast$ \mbox{\hyperlink{class_menu_item_widget_a3d2ba63db97e1cc3824d5fe2cf844026}{cart\+Button\+\_\+}}
+\begin{DoxyCompactList}\small\item\em WPush\+Button representing the button pushed for a user to add to cart, can be replaced with a button to perform administrative actions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_menu_item_widget_ab2e5724067d7ff543394c679eafe6477}\label{class_menu_item_widget_ab2e5724067d7ff543394c679eafe6477}} 
+\index{MenuItemWidget@{MenuItemWidget}!MenuItemWidget@{MenuItemWidget}}
+\index{MenuItemWidget@{MenuItemWidget}!MenuItemWidget@{MenuItemWidget}}
+\doxysubsubsection{\texorpdfstring{MenuItemWidget()}{MenuItemWidget()}}
+{\footnotesize\ttfamily Menu\+Item\+Widget\+::\+Menu\+Item\+Widget (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const double \&}]{price,  }\item[{const std\+::string \&}]{description }\end{DoxyParamCaption})}
+
+
+
+Construct a new Menu Item Widget object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+{\em price} & \\
+\hline
+{\em description} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_menu_item_widget_a1aaff5359d1ae69a433c6b1c92c5de9c}\label{class_menu_item_widget_a1aaff5359d1ae69a433c6b1c92c5de9c}} 
+\index{MenuItemWidget@{MenuItemWidget}!getCartPtr@{getCartPtr}}
+\index{getCartPtr@{getCartPtr}!MenuItemWidget@{MenuItemWidget}}
+\doxysubsubsection{\texorpdfstring{getCartPtr()}{getCartPtr()}}
+{\footnotesize\ttfamily Wt\+::\+WPush\+Button $\ast$ Menu\+Item\+Widget\+::get\+Cart\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Cart Ptr object. 
+
+\begin{DoxyReturn}{Returns}
+Wt\+::\+WPush\+Button$\ast$ 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{class_menu_item_widget_a3d2ba63db97e1cc3824d5fe2cf844026}\label{class_menu_item_widget_a3d2ba63db97e1cc3824d5fe2cf844026}} 
-Wt\+::\+WPush\+Button $\ast$ {\bfseries cart\+Button\+\_\+}
-\end{DoxyCompactItemize}
+\index{MenuItemWidget@{MenuItemWidget}!cartButton\_@{cartButton\_}}
+\index{cartButton\_@{cartButton\_}!MenuItemWidget@{MenuItemWidget}}
+\doxysubsubsection{\texorpdfstring{cartButton\_}{cartButton\_}}
+{\footnotesize\ttfamily Wt\+::\+WPush\+Button$\ast$ Menu\+Item\+Widget\+::cart\+Button\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+WPush\+Button representing the button pushed for a user to add to cart, can be replaced with a button to perform administrative actions. 
+
+\mbox{\Hypertarget{class_menu_item_widget_a88a55e473de1be5b1ba0971728082ccc}\label{class_menu_item_widget_a88a55e473de1be5b1ba0971728082ccc}} 
+\index{MenuItemWidget@{MenuItemWidget}!description\_@{description\_}}
+\index{description\_@{description\_}!MenuItemWidget@{MenuItemWidget}}
+\doxysubsubsection{\texorpdfstring{description\_}{description\_}}
+{\footnotesize\ttfamily Wt\+::\+WText$\ast$ Menu\+Item\+Widget\+::description\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+WText widget representing a menu item\textquotesingle{}s description. 
+
+\mbox{\Hypertarget{class_menu_item_widget_a7e68b00e34dee3ef8d0a768e36043e63}\label{class_menu_item_widget_a7e68b00e34dee3ef8d0a768e36043e63}} 
+\index{MenuItemWidget@{MenuItemWidget}!name\_@{name\_}}
+\index{name\_@{name\_}!MenuItemWidget@{MenuItemWidget}}
+\doxysubsubsection{\texorpdfstring{name\_}{name\_}}
+{\footnotesize\ttfamily Wt\+::\+WText$\ast$ Menu\+Item\+Widget\+::name\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+WText widget representing the name of a menu item. 
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

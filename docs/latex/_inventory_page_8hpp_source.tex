@@ -1,0 +1,46 @@
+\hypertarget{_inventory_page_8hpp_source}{}\doxysection{Inventory\+Page.\+hpp}
+\label{_inventory_page_8hpp_source}\index{src/web/InventoryPage.hpp@{src/web/InventoryPage.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{    Author : Daniel McGarr}}
+\DoxyCodeLine{3 \textcolor{comment}{    Date   : 2022/11/22}}
+\DoxyCodeLine{4 \textcolor{comment}{*/}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef InventoryPage\_h}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define InventoryPage\_h}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <Wt/WContainerWidget.h>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <Wt/WTemplate.h>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <Wt/WPanel.h>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <Wt/WTable.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <Wt/WPushButton.h>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <Wt/WLink.h>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <Wt/WText.h>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <Wt/WString.h>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <Wt/WFlags.h>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <Wt/WAnimation.h>}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}DBHelper.hpp"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}OrderMaster.hpp"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}vOrderDetail.hpp"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}Page.hpp"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}Application.hpp"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}InventoryItem.hpp"{}}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{class }\mbox{\hyperlink{class_inventory_page}{InventoryPage}} : \textcolor{keyword}{public} Wt::WContainerWidget \{}
+\DoxyCodeLine{30    \textcolor{keyword}{public}:}
+\DoxyCodeLine{35     \mbox{\hyperlink{class_inventory_page_aeb60bfcf91d3a34ceaa3332345793763}{InventoryPage}}();}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{41     \mbox{\hyperlink{class_inventory_page_acf7147f12c62723f21dbcd91cb9b41c6}{\string~InventoryPage}}();}
+\DoxyCodeLine{42     }
+\DoxyCodeLine{43     std::unique\_ptr<Wt::WTemplate> createListItemWidget(Wt::WContainerWidget *inventoryListContainer, \mbox{\hyperlink{class_inventory_item}{InventoryItem}} inv);}
+\DoxyCodeLine{44     }
+\DoxyCodeLine{45     \textcolor{keywordtype}{void} onUpdateInventoryBtnClicked(Wt::WTemplate *listItem, Wt::WContainerWidget *inventoryListContainer, \mbox{\hyperlink{class_inventory_item}{InventoryItem}} item, Wt::WLineEdit* \textcolor{keyword}{const} qty);}
+\DoxyCodeLine{46 \};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
