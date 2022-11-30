@@ -63,7 +63,6 @@ int main(int argc, const char *argv[])
     std::vector<MenuItem> menu;
 
     menu = db.selectWhere(MenuItem());
-
     printMenu(menu, "Full Menu, unsorted:");
 
     // These may be in a different order than the query above, even though both are unsorted.

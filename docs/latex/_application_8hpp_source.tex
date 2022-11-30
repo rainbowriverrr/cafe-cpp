@@ -11,35 +11,46 @@
 \DoxyCodeLine{7 }
 \DoxyCodeLine{8 \textcolor{preprocessor}{\#include <Wt/WApplication.h>}}
 \DoxyCodeLine{9 \textcolor{preprocessor}{\#include <Wt/WContainerWidget.h>}}
-\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <Wt/WStackedWidget.h>}}
-\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <Wt/WString.h>}}
-\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <Wt/WText.h>}}
-\DoxyCodeLine{13 }
-\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <string>}}
-\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>}}
-\DoxyCodeLine{16 }
-\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}DBHelper.hpp"{}}}
-\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}IOHelper.hpp"{}}}
-\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}MenuItem.hpp"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <Wt/WString.h>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <Wt/WText.h>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}Authenticator.hpp"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}CustomLoadingIndicator.hpp"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}NavbarWidget.hpp"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}HomePage.hpp"{}}}
 \DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}MenuPage.hpp"{}}}
-\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}NavbarWidget.hpp"{}}}
-\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}OrderListPage.hpp"{}}}
-\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}OrderMaster.hpp"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}OrderListPage.hpp"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}SalesPage.hpp"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}CartPage.hpp"{}}}
 \DoxyCodeLine{24 }
-\DoxyCodeLine{30 \textcolor{keyword}{class }\mbox{\hyperlink{class_application}{Application}} : \textcolor{keyword}{public} Wt::WApplication \{}
-\DoxyCodeLine{31    \textcolor{keyword}{public}:}
-\DoxyCodeLine{35     \mbox{\hyperlink{class_application}{Application}}(\textcolor{keyword}{const} Wt::WEnvironment \&env);}
-\DoxyCodeLine{36 }
-\DoxyCodeLine{40     \mbox{\hyperlink{class_application_a748bca84fefb9c12661cfaa2f623748d}{\string~Application}}();}
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{class_authenticator}{Authenticator}};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{class }\mbox{\hyperlink{class_navbar_widget}{NavbarWidget}};}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{34 \textcolor{keyword}{class }\mbox{\hyperlink{class_application}{Application}} : \textcolor{keyword}{public} Wt::WApplication}
+\DoxyCodeLine{35 \{}
+\DoxyCodeLine{36 \textcolor{keyword}{public}:}
+\DoxyCodeLine{40     \mbox{\hyperlink{class_application}{Application}}(\textcolor{keyword}{const} Wt::WEnvironment \&env);}
 \DoxyCodeLine{41 }
-\DoxyCodeLine{47     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_application_aa0444cdf3c0c3edc290fdb4c75fe2202}{handleInternalPath}}(\textcolor{keyword}{const} std::string \&internalPath);}
-\DoxyCodeLine{48 }
-\DoxyCodeLine{49    \textcolor{keyword}{private}:}
-\DoxyCodeLine{51     \mbox{\hyperlink{class_navbar_widget}{NavbarWidget}} *\mbox{\hyperlink{class_application_ae13ee8d0f12871864d9481a909214159}{navbar}};}
-\DoxyCodeLine{52     }
-\DoxyCodeLine{54     Wt::WWidget *\mbox{\hyperlink{class_application_affad32f749f259158cd4d1d1531bd004}{body}};}
-\DoxyCodeLine{55 \};}
-\DoxyCodeLine{56 }
-\DoxyCodeLine{57 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{45     \mbox{\hyperlink{class_application_a748bca84fefb9c12661cfaa2f623748d}{\string~Application}}();}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{52     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_application_aa0444cdf3c0c3edc290fdb4c75fe2202}{handleInternalPath}}(\textcolor{keyword}{const} std::string \&internalPath);}
+\DoxyCodeLine{53     }
+\DoxyCodeLine{59     \mbox{\hyperlink{class_authenticator}{Authenticator}} * \mbox{\hyperlink{class_application_a5dd5d754692ce4d89ef6f8ba28d081aa}{getAuth}}();}
+\DoxyCodeLine{60     }
+\DoxyCodeLine{66     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_application_a64cf04bb716e294a675fd2f87ec1c7d8}{reset}}();}
+\DoxyCodeLine{67     }
+\DoxyCodeLine{68 \textcolor{keyword}{private}:}
+\DoxyCodeLine{72     \mbox{\hyperlink{class_authenticator}{Authenticator}} *\mbox{\hyperlink{class_application_ab9a6f383295f51c8b70d1b5b002d043b}{auth}};}
+\DoxyCodeLine{73     }
+\DoxyCodeLine{75     \mbox{\hyperlink{class_navbar_widget}{NavbarWidget}} *\mbox{\hyperlink{class_application_ae13ee8d0f12871864d9481a909214159}{navbar}};}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{78     Wt::WWidget *\mbox{\hyperlink{class_application_affad32f749f259158cd4d1d1531bd004}{body}};}
+\DoxyCodeLine{79 \};}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

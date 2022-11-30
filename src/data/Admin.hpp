@@ -1,5 +1,5 @@
 //
-// Created by Sharon Nikritin on 2022-11-18.
+//  Admin.hpp
 //
 
 #ifndef Admin_hpp
@@ -10,21 +10,48 @@
 
 #include "Model.hpp"
 
-
+/**
+ * @brief represents a row of the admin table in the database
+ * @author Sharon Nikritin
+ */
 class Admin : public Model{
 public:
+    /**
+     * @brief constructor - create an admin object with an username and password
+     * @param userName - string admins username
+     * @param password - string admins password
+     */
     Admin(std::string userName="", std::string password="");
 
+    /**
+     * @brief destructor
+     */
     ~Admin();
 
+    /**
+     * @brief accessor - gets the username
+     * @return userName - string admins usernmae
+     */
     std::string getUserName();
 
+    /**
+     * @brief accessor - gets the password
+     * @return password - string admins password
+     */
     std::string getPassword();
 
+
 private:
+    /**
+     * @brief username of the admin
+     */
     std::string userName;
+    /**
+     * @brief password of the admin
+     */
     std::string password;
 
+    /** override virtual method of the model to set up the new table name, columns, keys, toMap, etc*/
     virtual std::string tableName() const override;
     virtual std::vector<std::string> columns() const override;
     virtual std::set<std::string> keys() const override;

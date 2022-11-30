@@ -2,6 +2,11 @@
 \label{class_order_master}\index{OrderMaster@{OrderMaster}}
 
 
+Class representing a row of the \mbox{\hyperlink{class_order_master}{Order\+Master}} table.  
+
+
+
+
 {\ttfamily \#include $<$Order\+Master.\+hpp$>$}
 
 Inheritance diagram for Order\+Master\+:\begin{figure}[H]
@@ -13,25 +18,28 @@ Inheritance diagram for Order\+Master\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_order_master_ab48f399d31e75d7e8999a2cf52211956}{Order\+Master}} (int \mbox{\hyperlink{class_order_master_a76a523ff9de17f7ce0287b8271856ec6}{order\+Number}}=0, std\+::string \mbox{\hyperlink{class_order_master_a50daa427815b406d8559545519435ffa}{ordered\+By}}=\char`\"{}\char`\"{}, std\+::string \mbox{\hyperlink{class_order_master_a8a107fa761d68ba658278b5e5411c361}{order\+Date}}=\char`\"{}\char`\"{}, bool \mbox{\hyperlink{class_order_master_aa391932e6754868168415eb707cf8bfb}{is\+Complete}}=0)
-\item 
+\mbox{\hyperlink{class_order_master_a140f6b83b653e0faae13c5f076dfbb83}{Order\+Master}} (int \mbox{\hyperlink{class_order_master_a76a523ff9de17f7ce0287b8271856ec6}{order\+Number}}=0, std\+::string \mbox{\hyperlink{class_order_master_a50daa427815b406d8559545519435ffa}{ordered\+By}}=\char`\"{}\char`\"{}, std\+::string \mbox{\hyperlink{class_order_master_a8a107fa761d68ba658278b5e5411c361}{order\+Date}}=\char`\"{}\char`\"{}, std\+::string \mbox{\hyperlink{class_order_master_a7a718f5844deb8e1f0c79ae86f09c7c1}{status}}=\char`\"{}\char`\"{}, std\+::string \mbox{\hyperlink{class_order_master_a0680583c0e8e72e4ac16c9c92ba82029}{session\+ID}}=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_order_master_ab29983277b16d2a24a819d71d1af1783}{$\sim$\+Order\+Master}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_order_master_a44a1068fcd2aae8eb13a9aef5ad3f71d}{get\+Order\+Number}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Gets the order number. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{class_order_master_a8d42923360484793627f42223660ee39}{get\+Ordered\+By}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Gets ordered\+By. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{class_order_master_ad8f6603a3f4722619c717cf0073f9d58}{get\+Order\+Date}} ()
-\item 
-\mbox{\Hypertarget{class_order_master_a56de6e179b2c53d5473875f0db695e92}\label{class_order_master_a56de6e179b2c53d5473875f0db695e92}} 
-bool {\bfseries get\+Is\+Complete} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Gets the order date. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_order_master_ab319632bcb3af26c9c83e9f174ab08d6}{get\+Session\+ID}} ()
+\begin{DoxyCompactList}\small\item\em Gets the session ID. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_order_master_af83bc3a013e1bfecb411184f8c86ea07}{get\+Status}} ()
+\begin{DoxyCompactList}\small\item\em Get the status of the order. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_order_master_ae1d60f757c75790c7cceefdb75af5749}{set\+Ordered\+By}} (std\+::string val)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets ordered\+By. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_order_master_ad40e1a59af6e33398cadc68e91235369}{set\+Order\+Date}} (std\+::string val)
-\item 
-void \mbox{\hyperlink{class_order_master_ae4293fcc4cfbec67b3c298b0b5f3cb8e}{set\+Is\+Complete}} (bool val)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Sets order\+Date. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_order_master_aa2b46a23ed982f7a60a04bc82d314999}{set\+Status}} (std\+::string val)
+\begin{DoxyCompactList}\small\item\em Sets the status of the order. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_order_master_ae4f443ce4946ceb491fc4e80c53a341d}{set\+Session\+ID}} (std\+::string val)
+\begin{DoxyCompactList}\small\item\em Sets the session ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -50,18 +58,26 @@ virtual \mbox{\hyperlink{class_model}{Model}} $\ast$ \mbox{\hyperlink{class_orde
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{class_order_master_a76a523ff9de17f7ce0287b8271856ec6}{order\+Number}}
-\item 
-std\+::string \mbox{\hyperlink{class_order_master_a50daa427815b406d8559545519435ffa}{ordered\+By}}
-\item 
-std\+::string \mbox{\hyperlink{class_order_master_a8a107fa761d68ba658278b5e5411c361}{order\+Date}}
-\item 
-bool \mbox{\hyperlink{class_order_master_aa391932e6754868168415eb707cf8bfb}{is\+Complete}}
+\mbox{\Hypertarget{class_order_master_a76a523ff9de17f7ce0287b8271856ec6}\label{class_order_master_a76a523ff9de17f7ce0287b8271856ec6}} 
+int {\bfseries order\+Number}
+\begin{DoxyCompactList}\small\item\em The order number (primary key). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_order_master_a50daa427815b406d8559545519435ffa}\label{class_order_master_a50daa427815b406d8559545519435ffa}} 
+std\+::string {\bfseries ordered\+By}
+\begin{DoxyCompactList}\small\item\em Name of the customer of who placed the order. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_order_master_a8a107fa761d68ba658278b5e5411c361}\label{class_order_master_a8a107fa761d68ba658278b5e5411c361}} 
+std\+::string {\bfseries order\+Date}
+\begin{DoxyCompactList}\small\item\em The date and time of the order. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_order_master_a7a718f5844deb8e1f0c79ae86f09c7c1}\label{class_order_master_a7a718f5844deb8e1f0c79ae86f09c7c1}} 
+std\+::string {\bfseries status}
+\begin{DoxyCompactList}\small\item\em The status of the Order, can be \char`\"{}cart\char`\"{}, \char`\"{}ordered\char`\"{}, or \char`\"{}complete\char`\"{}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_order_master_a0680583c0e8e72e4ac16c9c92ba82029}{session\+ID}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Class representing a row of the \mbox{\hyperlink{class_order_master}{Order\+Master}} table. \begin{DoxyAuthor}{Author}
+Class representing a row of the \mbox{\hyperlink{class_order_master}{Order\+Master}} table. 
+
+\begin{DoxyAuthor}{Author}
 Julian Koksal 
 \end{DoxyAuthor}
 \begin{DoxyDate}{Date}
@@ -70,13 +86,19 @@ Julian Koksal
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_order_master_ab48f399d31e75d7e8999a2cf52211956}\label{class_order_master_ab48f399d31e75d7e8999a2cf52211956}} 
+\mbox{\Hypertarget{class_order_master_a140f6b83b653e0faae13c5f076dfbb83}\label{class_order_master_a140f6b83b653e0faae13c5f076dfbb83}} 
 \index{OrderMaster@{OrderMaster}!OrderMaster@{OrderMaster}}
 \index{OrderMaster@{OrderMaster}!OrderMaster@{OrderMaster}}
 \doxysubsubsection{\texorpdfstring{OrderMaster()}{OrderMaster()}}
-{\footnotesize\ttfamily Order\+Master\+::\+Order\+Master (\begin{DoxyParamCaption}\item[{int}]{order\+Number = {\ttfamily 0},  }\item[{std\+::string}]{ordered\+By = {\ttfamily \char`\"{}\char`\"{}},  }\item[{std\+::string}]{order\+Date = {\ttfamily \char`\"{}\char`\"{}},  }\item[{bool}]{is\+Complete = {\ttfamily 0} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Order\+Master\+::\+Order\+Master (\begin{DoxyParamCaption}\item[{int}]{order\+Number = {\ttfamily 0},  }\item[{std\+::string}]{ordered\+By = {\ttfamily \char`\"{}\char`\"{}},  }\item[{std\+::string}]{order\+Date = {\ttfamily \char`\"{}\char`\"{}},  }\item[{std\+::string}]{status = {\ttfamily \char`\"{}\char`\"{}},  }\item[{std\+::string}]{session\+ID = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
 
-Constructor creates a \mbox{\hyperlink{class_order_master}{Order\+Master}} object initialized with the given values. 
+
+
+Constructor. 
+
+Creates a \mbox{\hyperlink{class_order_master}{Order\+Master}} object initialized with the given values.
+
+
 \begin{DoxyParams}{Parameters}
 {\em order\+Number} & The order number (primary key). \\
 \hline
@@ -84,7 +106,9 @@ Constructor creates a \mbox{\hyperlink{class_order_master}{Order\+Master}} objec
 \hline
 {\em order\+Date} & The date and time of the order. \\
 \hline
-{\em is\+Complete} & Is the order completed. \\
+{\em status} & Status of the order, can be \char`\"{}cart\char`\"{}, \char`\"{}ordered\char`\"{}, or \char`\"{}complete\char`\"{}. \\
+\hline
+{\em session\+ID} & Session ID of the user, used for orders in the cart \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_order_master_ab29983277b16d2a24a819d71d1af1783}\label{class_order_master_ab29983277b16d2a24a819d71d1af1783}} 
@@ -93,7 +117,11 @@ Constructor creates a \mbox{\hyperlink{class_order_master}{Order\+Master}} objec
 \doxysubsubsection{\texorpdfstring{$\sim$OrderMaster()}{~OrderMaster()}}
 {\footnotesize\ttfamily Order\+Master\+::$\sim$\+Order\+Master (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
 Destructor. 
+
+Does nothing. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_order_master_ad33e6f8ed27a8c3fe553722de49bd7be}\label{class_order_master_ad33e6f8ed27a8c3fe553722de49bd7be}} 
@@ -151,7 +179,11 @@ Implements \mbox{\hyperlink{class_model_a374adf0b008ef2c644e022a2c849f897}{Model
 \doxysubsubsection{\texorpdfstring{getOrderDate()}{getOrderDate()}}
 {\footnotesize\ttfamily std\+::string Order\+Master\+::get\+Order\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Gets the order date. \begin{DoxyReturn}{Returns}
+
+
+Gets the order date. 
+
+\begin{DoxyReturn}{Returns}
 order\+Date 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_order_master_a8d42923360484793627f42223660ee39}\label{class_order_master_a8d42923360484793627f42223660ee39}} 
@@ -160,7 +192,11 @@ order\+Date
 \doxysubsubsection{\texorpdfstring{getOrderedBy()}{getOrderedBy()}}
 {\footnotesize\ttfamily std\+::string Order\+Master\+::get\+Ordered\+By (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Gets ordered\+By. \begin{DoxyReturn}{Returns}
+
+
+Gets ordered\+By. 
+
+\begin{DoxyReturn}{Returns}
 ordered\+By 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_order_master_a44a1068fcd2aae8eb13a9aef5ad3f71d}\label{class_order_master_a44a1068fcd2aae8eb13a9aef5ad3f71d}} 
@@ -169,8 +205,38 @@ ordered\+By
 \doxysubsubsection{\texorpdfstring{getOrderNumber()}{getOrderNumber()}}
 {\footnotesize\ttfamily int Order\+Master\+::get\+Order\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Gets the order number. \begin{DoxyReturn}{Returns}
+
+
+Gets the order number. 
+
+\begin{DoxyReturn}{Returns}
 order\+Number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_order_master_ab319632bcb3af26c9c83e9f174ab08d6}\label{class_order_master_ab319632bcb3af26c9c83e9f174ab08d6}} 
+\index{OrderMaster@{OrderMaster}!getSessionID@{getSessionID}}
+\index{getSessionID@{getSessionID}!OrderMaster@{OrderMaster}}
+\doxysubsubsection{\texorpdfstring{getSessionID()}{getSessionID()}}
+{\footnotesize\ttfamily std\+::string Order\+Master\+::get\+Session\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the session ID. 
+
+\begin{DoxyReturn}{Returns}
+session\+ID 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_order_master_af83bc3a013e1bfecb411184f8c86ea07}\label{class_order_master_af83bc3a013e1bfecb411184f8c86ea07}} 
+\index{OrderMaster@{OrderMaster}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!OrderMaster@{OrderMaster}}
+\doxysubsubsection{\texorpdfstring{getStatus()}{getStatus()}}
+{\footnotesize\ttfamily std\+::string Order\+Master\+::get\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the status of the order. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_order_master_a18857bd417d2283a87da09e546bec721}\label{class_order_master_a18857bd417d2283a87da09e546bec721}} 
 \index{OrderMaster@{OrderMaster}!isAutoGeneratedKey@{isAutoGeneratedKey}}
@@ -218,24 +284,17 @@ vector of primary keys
 
 Implements \mbox{\hyperlink{class_model_a6df15ae2b38971e9a0b562cf046991e2}{Model}}.
 
-\mbox{\Hypertarget{class_order_master_ae4293fcc4cfbec67b3c298b0b5f3cb8e}\label{class_order_master_ae4293fcc4cfbec67b3c298b0b5f3cb8e}} 
-\index{OrderMaster@{OrderMaster}!setIsComplete@{setIsComplete}}
-\index{setIsComplete@{setIsComplete}!OrderMaster@{OrderMaster}}
-\doxysubsubsection{\texorpdfstring{setIsComplete()}{setIsComplete()}}
-{\footnotesize\ttfamily void Order\+Master\+::set\+Is\+Complete (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})}
-
-Sets is\+Complete. 
-\begin{DoxyParams}{Parameters}
-{\em val} & The new value. \\
-\hline
-\end{DoxyParams}
 \mbox{\Hypertarget{class_order_master_ad40e1a59af6e33398cadc68e91235369}\label{class_order_master_ad40e1a59af6e33398cadc68e91235369}} 
 \index{OrderMaster@{OrderMaster}!setOrderDate@{setOrderDate}}
 \index{setOrderDate@{setOrderDate}!OrderMaster@{OrderMaster}}
 \doxysubsubsection{\texorpdfstring{setOrderDate()}{setOrderDate()}}
 {\footnotesize\ttfamily void Order\+Master\+::set\+Order\+Date (\begin{DoxyParamCaption}\item[{std\+::string}]{val }\end{DoxyParamCaption})}
 
+
+
 Sets order\+Date. 
+
+
 \begin{DoxyParams}{Parameters}
 {\em val} & The new value. \\
 \hline
@@ -246,7 +305,41 @@ Sets order\+Date.
 \doxysubsubsection{\texorpdfstring{setOrderedBy()}{setOrderedBy()}}
 {\footnotesize\ttfamily void Order\+Master\+::set\+Ordered\+By (\begin{DoxyParamCaption}\item[{std\+::string}]{val }\end{DoxyParamCaption})}
 
+
+
 Sets ordered\+By. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & The new value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_order_master_ae4f443ce4946ceb491fc4e80c53a341d}\label{class_order_master_ae4f443ce4946ceb491fc4e80c53a341d}} 
+\index{OrderMaster@{OrderMaster}!setSessionID@{setSessionID}}
+\index{setSessionID@{setSessionID}!OrderMaster@{OrderMaster}}
+\doxysubsubsection{\texorpdfstring{setSessionID()}{setSessionID()}}
+{\footnotesize\ttfamily void Order\+Master\+::set\+Session\+ID (\begin{DoxyParamCaption}\item[{std\+::string}]{val }\end{DoxyParamCaption})}
+
+
+
+Sets the session ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & The new value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_order_master_aa2b46a23ed982f7a60a04bc82d314999}\label{class_order_master_aa2b46a23ed982f7a60a04bc82d314999}} 
+\index{OrderMaster@{OrderMaster}!setStatus@{setStatus}}
+\index{setStatus@{setStatus}!OrderMaster@{OrderMaster}}
+\doxysubsubsection{\texorpdfstring{setStatus()}{setStatus()}}
+{\footnotesize\ttfamily void Order\+Master\+::set\+Status (\begin{DoxyParamCaption}\item[{std\+::string}]{val }\end{DoxyParamCaption})}
+
+
+
+Sets the status of the order. 
+
+
 \begin{DoxyParams}{Parameters}
 {\em val} & The new value. \\
 \hline
@@ -296,31 +389,13 @@ Implements \mbox{\hyperlink{class_model_aba5aa6aee8243a03a6d0bc1335503e5f}{Model
 
 
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{class_order_master_aa391932e6754868168415eb707cf8bfb}\label{class_order_master_aa391932e6754868168415eb707cf8bfb}} 
-\index{OrderMaster@{OrderMaster}!isComplete@{isComplete}}
-\index{isComplete@{isComplete}!OrderMaster@{OrderMaster}}
-\doxysubsubsection{\texorpdfstring{isComplete}{isComplete}}
-{\footnotesize\ttfamily bool Order\+Master\+::is\+Complete\hspace{0.3cm}{\ttfamily [private]}}
+\mbox{\Hypertarget{class_order_master_a0680583c0e8e72e4ac16c9c92ba82029}\label{class_order_master_a0680583c0e8e72e4ac16c9c92ba82029}} 
+\index{OrderMaster@{OrderMaster}!sessionID@{sessionID}}
+\index{sessionID@{sessionID}!OrderMaster@{OrderMaster}}
+\doxysubsubsection{\texorpdfstring{sessionID}{sessionID}}
+{\footnotesize\ttfamily std\+::string Order\+Master\+::session\+ID\hspace{0.3cm}{\ttfamily [private]}}
 
-Is the order completed. \mbox{\Hypertarget{class_order_master_a8a107fa761d68ba658278b5e5411c361}\label{class_order_master_a8a107fa761d68ba658278b5e5411c361}} 
-\index{OrderMaster@{OrderMaster}!orderDate@{orderDate}}
-\index{orderDate@{orderDate}!OrderMaster@{OrderMaster}}
-\doxysubsubsection{\texorpdfstring{orderDate}{orderDate}}
-{\footnotesize\ttfamily std\+::string Order\+Master\+::order\+Date\hspace{0.3cm}{\ttfamily [private]}}
-
-The date and time of the order. \mbox{\Hypertarget{class_order_master_a50daa427815b406d8559545519435ffa}\label{class_order_master_a50daa427815b406d8559545519435ffa}} 
-\index{OrderMaster@{OrderMaster}!orderedBy@{orderedBy}}
-\index{orderedBy@{orderedBy}!OrderMaster@{OrderMaster}}
-\doxysubsubsection{\texorpdfstring{orderedBy}{orderedBy}}
-{\footnotesize\ttfamily std\+::string Order\+Master\+::ordered\+By\hspace{0.3cm}{\ttfamily [private]}}
-
-Name of the customer of who placed the order. \mbox{\Hypertarget{class_order_master_a76a523ff9de17f7ce0287b8271856ec6}\label{class_order_master_a76a523ff9de17f7ce0287b8271856ec6}} 
-\index{OrderMaster@{OrderMaster}!orderNumber@{orderNumber}}
-\index{orderNumber@{orderNumber}!OrderMaster@{OrderMaster}}
-\doxysubsubsection{\texorpdfstring{orderNumber}{orderNumber}}
-{\footnotesize\ttfamily int Order\+Master\+::order\+Number\hspace{0.3cm}{\ttfamily [private]}}
-
-The order number (primary key). 
+The session ID of the user. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

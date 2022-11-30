@@ -10,40 +10,44 @@
 \DoxyCodeLine{6 \textcolor{preprocessor}{\#define OrderListPage\_hpp}}
 \DoxyCodeLine{7 }
 \DoxyCodeLine{8 \textcolor{preprocessor}{\#include <string>}}
-\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <sstream>}}
-\DoxyCodeLine{10 }
-\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <Wt/WContainerWidget.h>}}
-\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <Wt/WTemplate.h>}}
-\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <Wt/WPanel.h>}}
-\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <Wt/WTable.h>}}
-\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <Wt/WPushButton.h>}}
-\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <Wt/WLink.h>}}
-\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <Wt/WText.h>}}
-\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <Wt/WString.h>}}
-\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <Wt/WFlags.h>}}
-\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <Wt/WAnimation.h>}}
-\DoxyCodeLine{21 }
-\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}DBHelper.hpp"{}}}
-\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}IOHelper.hpp"{}}}
-\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}OrderMaster.hpp"{}}}
-\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}vOrderDetail.hpp"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <Wt/WContainerWidget.h>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <Wt/WTemplate.h>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <Wt/WPanel.h>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <Wt/WTable.h>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <Wt/WPushButton.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <Wt/WLink.h>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <Wt/WText.h>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <Wt/WString.h>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <Wt/WFlags.h>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <Wt/WAnimation.h>}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}DBHelper.hpp"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}OrderMaster.hpp"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}vOrderDetail.hpp"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}Page.hpp"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}Application.hpp"{}}}
 \DoxyCodeLine{26 }
-\DoxyCodeLine{32 \textcolor{keyword}{class }\mbox{\hyperlink{class_order_list_page}{OrderListPage}} : \textcolor{keyword}{public} Wt::WContainerWidget}
-\DoxyCodeLine{33 \{}
-\DoxyCodeLine{34 \textcolor{keyword}{public}:}
-\DoxyCodeLine{38     \mbox{\hyperlink{class_order_list_page_a1fb43f2cc9b91fec3384e846f086fba2}{OrderListPage}}();}
-\DoxyCodeLine{39     }
-\DoxyCodeLine{43     \mbox{\hyperlink{class_order_list_page_a98451d915aec4dfc7ebe596f3da74676}{\string~OrderListPage}}();}
-\DoxyCodeLine{44     }
-\DoxyCodeLine{45     \textcolor{keywordtype}{void} onCompleteOrderBtnClicked(Wt::WTemplate *itemTemplate, \mbox{\hyperlink{class_order_master}{OrderMaster}} order);}
+\DoxyCodeLine{37 \textcolor{keyword}{class }\mbox{\hyperlink{class_order_list_page}{OrderListPage}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_page}{Page}}}
+\DoxyCodeLine{38 \{}
+\DoxyCodeLine{39 \textcolor{keyword}{public}:}
+\DoxyCodeLine{45     \mbox{\hyperlink{class_order_list_page_a1fb43f2cc9b91fec3384e846f086fba2}{OrderListPage}}();}
 \DoxyCodeLine{46     }
-\DoxyCodeLine{52     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_order_list_page_a21f9db3ec9eb6bf679ac213294309331}{onPanelOrderDetailsExpanded}}(Wt::WPanel *panel);}
+\DoxyCodeLine{52     \mbox{\hyperlink{class_order_list_page_a98451d915aec4dfc7ebe596f3da74676}{\string~OrderListPage}}();}
 \DoxyCodeLine{53     }
-\DoxyCodeLine{59     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_order_list_page_a1a00ae2c4905377065cd110ec0ce2841}{onPanelOrderDetailsCollapsed}}(Wt::WPanel *panel);}
-\DoxyCodeLine{60 \textcolor{keyword}{private}:}
-\DoxyCodeLine{61     Wt::WContainerWidget *listWidget;}
-\DoxyCodeLine{62 \};}
-\DoxyCodeLine{63 }
-\DoxyCodeLine{64 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* OrderListPage\_hpp */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{63     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_order_list_page_aba785f02d9f078c063d6fd7a7f477d5a}{onCompleteOrderBtnClicked}}(Wt::WTemplate *listItem, Wt::WContainerWidget *listContainer, \mbox{\hyperlink{class_order_master}{OrderMaster}} order);}
+\DoxyCodeLine{64     }
+\DoxyCodeLine{72     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_order_list_page_a21f9db3ec9eb6bf679ac213294309331}{onPanelOrderDetailsExpanded}}(Wt::WPanel *panel);}
+\DoxyCodeLine{73     }
+\DoxyCodeLine{81     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_order_list_page_a1a00ae2c4905377065cd110ec0ce2841}{onPanelOrderDetailsCollapsed}}(Wt::WPanel *panel);}
+\DoxyCodeLine{82 \textcolor{keyword}{private}:}
+\DoxyCodeLine{94     std::unique\_ptr<Wt::WTemplate> \mbox{\hyperlink{class_order_list_page_a6b58ff5dfcb15af7b74a876986e8e0d5}{createListItemWidget}}(Wt::WContainerWidget *listContainer, \mbox{\hyperlink{class_order_master}{OrderMaster}} order);}
+\DoxyCodeLine{95     }
+\DoxyCodeLine{104     std::unique\_ptr<Wt::WPanel> \mbox{\hyperlink{class_order_list_page_a0755a9a7f49237bed5a89978a0d2b5ac}{createDetailsPanelWidget}}(\textcolor{keywordtype}{int} orderNumber);}
+\DoxyCodeLine{105     }
+\DoxyCodeLine{115     std::unique\_ptr<Wt::WTable> \mbox{\hyperlink{class_order_list_page_a5de922d6ecaaa744ff950d1b6c67839d}{createDetailsTableWidget}}(\textcolor{keywordtype}{int} orderNumber);}
+\DoxyCodeLine{116 \};}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* OrderListPage\_hpp */}\textcolor{preprocessor}{}}
 
 \end{DoxyCode}

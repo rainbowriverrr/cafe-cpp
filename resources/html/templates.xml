@@ -46,9 +46,9 @@
             <span class="navbar-item" id="navbar-item-sales">
                 ${a-sales}
             </span> 
-            <span class="navbar-item" id="navbar-item-inventory">
+            <!--<span class="navbar-item" id="navbar-item-inventory">
                 ${a-inventory}
-            </span>
+            </span>-->
             <span class="navbar-spacer"></span>
             <span class="navbar-item" id="navbar-item-create-user">
                 ${a-create-user}
@@ -172,6 +172,28 @@
                         <span class="x-axis-title">Date</span>
                     </div>
                     ${legend}
+                </div>
+            </div>
+        </div>
+    </message>
+    <message id = "login-template">
+        <div class="list-item">
+            <div class="list-item-header list-item-header-center">
+                <span>Login</span>
+            </div>
+            <div class="login-form">
+                <span>Please enter your username and password.</span>
+                <div>
+                    ${user-name}
+                </div>
+                <div>
+                    ${user-password}
+                </div>
+                <div>
+                    ${login-button}
+                </div>
+                <div>
+                    ${out class='form-control-plaintext'}
                 </div>
             </div>
         </div>

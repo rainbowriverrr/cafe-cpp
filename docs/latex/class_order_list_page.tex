@@ -12,33 +12,41 @@ Class representing the order list page widget.
 Inheritance diagram for Order\+List\+Page\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_order_list_page}
+\includegraphics[height=3.000000cm]{class_order_list_page}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_order_list_page_a1fb43f2cc9b91fec3384e846f086fba2}{Order\+List\+Page}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_order_list_page_a98451d915aec4dfc7ebe596f3da74676}{$\sim$\+Order\+List\+Page}} ()
-\item 
-\mbox{\Hypertarget{class_order_list_page_a379efd30c01d71223583d3857618816b}\label{class_order_list_page_a379efd30c01d71223583d3857618816b}} 
-void {\bfseries on\+Complete\+Order\+Btn\+Clicked} (Wt\+::\+WTemplate $\ast$item\+Template, \mbox{\hyperlink{class_order_master}{Order\+Master}} order)
-\item 
-void \mbox{\hyperlink{class_order_list_page_a21f9db3ec9eb6bf679ac213294309331}{on\+Panel\+Order\+Details\+Expanded}} (Wt\+::\+WPanel $\ast$panel)
-\begin{DoxyCompactList}\small\item\em Event handler for when the order details panel is expanded. Changes the text and plays the animation. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_order_list_page_a1a00ae2c4905377065cd110ec0ce2841}{on\+Panel\+Order\+Details\+Collapsed}} (Wt\+::\+WPanel $\ast$panel)
-\begin{DoxyCompactList}\small\item\em Event handler for when the order details panel is collapsed. Changes the text and plays the animation. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Attributes}
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_order_list_page_a8f7499ab0bcd8e2d8302a3897350c47c}\label{class_order_list_page_a8f7499ab0bcd8e2d8302a3897350c47c}} 
-Wt\+::\+WContainer\+Widget $\ast$ {\bfseries list\+Widget}
-\end{DoxyCompactItemize}
+static void \mbox{\hyperlink{class_order_list_page_aba785f02d9f078c063d6fd7a7f477d5a}{on\+Complete\+Order\+Btn\+Clicked}} (Wt\+::\+WTemplate $\ast$list\+Item, Wt\+::\+WContainer\+Widget $\ast$list\+Container, \mbox{\hyperlink{class_order_master}{Order\+Master}} order)
+\begin{DoxyCompactList}\small\item\em Event handler for when the complete order button is clicked. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_order_list_page_a21f9db3ec9eb6bf679ac213294309331}{on\+Panel\+Order\+Details\+Expanded}} (Wt\+::\+WPanel $\ast$panel)
+\begin{DoxyCompactList}\small\item\em Event handler for when the order details panel is expanded. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_order_list_page_a1a00ae2c4905377065cd110ec0ce2841}{on\+Panel\+Order\+Details\+Collapsed}} (Wt\+::\+WPanel $\ast$panel)
+\begin{DoxyCompactList}\small\item\em Event handler for when the order details panel is collapsed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ Wt\+::\+WTemplate $>$ \mbox{\hyperlink{class_order_list_page_a6b58ff5dfcb15af7b74a876986e8e0d5}{create\+List\+Item\+Widget}} (Wt\+::\+WContainer\+Widget $\ast$list\+Container, \mbox{\hyperlink{class_order_master}{Order\+Master}} order)
+\begin{DoxyCompactList}\small\item\em Creates and returns the list item widget and its contents. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ Wt\+::\+WPanel $>$ \mbox{\hyperlink{class_order_list_page_a0755a9a7f49237bed5a89978a0d2b5ac}{create\+Details\+Panel\+Widget}} (int order\+Number)
+\begin{DoxyCompactList}\small\item\em Creates and returns the order details dropdown panel widget. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ Wt\+::\+WTable $>$ \mbox{\hyperlink{class_order_list_page_a5de922d6ecaaa744ff950d1b6c67839d}{create\+Details\+Table\+Widget}} (int order\+Number)
+\begin{DoxyCompactList}\small\item\em Creates and returns the order details table that is contained in the panel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
 
 
 \doxysubsection{Detailed Description}
 Class representing the order list page widget. 
+
+Displays a list of the active orders (not in progress or completed). To customers, the list only shows the order number, name, and date. To admins, the list also shows the order details and a complete button for each order.
 
 \begin{DoxyAuthor}{Author}
 Julian Koksal 
@@ -55,24 +63,117 @@ Julian Koksal
 \doxysubsubsection{\texorpdfstring{OrderListPage()}{OrderListPage()}}
 {\footnotesize\ttfamily Order\+List\+Page\+::\+Order\+List\+Page (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Constructor. \mbox{\Hypertarget{class_order_list_page_a98451d915aec4dfc7ebe596f3da74676}\label{class_order_list_page_a98451d915aec4dfc7ebe596f3da74676}} 
+
+
+Constructor. 
+
+Creates the page widget and all of its contents. \mbox{\Hypertarget{class_order_list_page_a98451d915aec4dfc7ebe596f3da74676}\label{class_order_list_page_a98451d915aec4dfc7ebe596f3da74676}} 
 \index{OrderListPage@{OrderListPage}!````~OrderListPage@{$\sim$OrderListPage}}
 \index{````~OrderListPage@{$\sim$OrderListPage}!OrderListPage@{OrderListPage}}
 \doxysubsubsection{\texorpdfstring{$\sim$OrderListPage()}{~OrderListPage()}}
 {\footnotesize\ttfamily Order\+List\+Page\+::$\sim$\+Order\+List\+Page (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
 Destructor. 
 
+Does nothing. 
+
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_order_list_page_a0755a9a7f49237bed5a89978a0d2b5ac}\label{class_order_list_page_a0755a9a7f49237bed5a89978a0d2b5ac}} 
+\index{OrderListPage@{OrderListPage}!createDetailsPanelWidget@{createDetailsPanelWidget}}
+\index{createDetailsPanelWidget@{createDetailsPanelWidget}!OrderListPage@{OrderListPage}}
+\doxysubsubsection{\texorpdfstring{createDetailsPanelWidget()}{createDetailsPanelWidget()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ Wt\+::\+WPanel $>$ Order\+List\+Page\+::create\+Details\+Panel\+Widget (\begin{DoxyParamCaption}\item[{int}]{order\+Number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates and returns the order details dropdown panel widget. 
+
+One of these widgets is put into the list item widget for each order.
+
+
+\begin{DoxyParams}{Parameters}
+{\em order\+Number} & the order number of the order that the list item represents \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a unique ptr to the panel widget that was created 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_order_list_page_a5de922d6ecaaa744ff950d1b6c67839d}\label{class_order_list_page_a5de922d6ecaaa744ff950d1b6c67839d}} 
+\index{OrderListPage@{OrderListPage}!createDetailsTableWidget@{createDetailsTableWidget}}
+\index{createDetailsTableWidget@{createDetailsTableWidget}!OrderListPage@{OrderListPage}}
+\doxysubsubsection{\texorpdfstring{createDetailsTableWidget()}{createDetailsTableWidget()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ Wt\+::\+WTable $>$ Order\+List\+Page\+::create\+Details\+Table\+Widget (\begin{DoxyParamCaption}\item[{int}]{order\+Number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates and returns the order details table that is contained in the panel. 
+
+Shows a table of the order items, including their name, price, quantity, and total. The last row of the table shows the total price for the whole order.
+
+
+\begin{DoxyParams}{Parameters}
+{\em order\+Number} & the order number of the details to show in the table \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a unique ptr to the table widget that was created 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_order_list_page_a6b58ff5dfcb15af7b74a876986e8e0d5}\label{class_order_list_page_a6b58ff5dfcb15af7b74a876986e8e0d5}} 
+\index{OrderListPage@{OrderListPage}!createListItemWidget@{createListItemWidget}}
+\index{createListItemWidget@{createListItemWidget}!OrderListPage@{OrderListPage}}
+\doxysubsubsection{\texorpdfstring{createListItemWidget()}{createListItemWidget()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ Wt\+::\+WTemplate $>$ Order\+List\+Page\+::create\+List\+Item\+Widget (\begin{DoxyParamCaption}\item[{Wt\+::\+WContainer\+Widget $\ast$}]{list\+Container,  }\item[{\mbox{\hyperlink{class_order_master}{Order\+Master}}}]{order }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates and returns the list item widget and its contents. 
+
+Represents one order in the list. Shows the order number, name, and date to customers. Also shows the order details and complete button to admins.
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Container} & the list widget \\
+\hline
+{\em order} & the order that the list item represents \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a unique ptr to the list item widget that was created 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_order_list_page_aba785f02d9f078c063d6fd7a7f477d5a}\label{class_order_list_page_aba785f02d9f078c063d6fd7a7f477d5a}} 
+\index{OrderListPage@{OrderListPage}!onCompleteOrderBtnClicked@{onCompleteOrderBtnClicked}}
+\index{onCompleteOrderBtnClicked@{onCompleteOrderBtnClicked}!OrderListPage@{OrderListPage}}
+\doxysubsubsection{\texorpdfstring{onCompleteOrderBtnClicked()}{onCompleteOrderBtnClicked()}}
+{\footnotesize\ttfamily void Order\+List\+Page\+::on\+Complete\+Order\+Btn\+Clicked (\begin{DoxyParamCaption}\item[{Wt\+::\+WTemplate $\ast$}]{list\+Item,  }\item[{Wt\+::\+WContainer\+Widget $\ast$}]{list\+Container,  }\item[{\mbox{\hyperlink{class_order_master}{Order\+Master}}}]{order }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Event handler for when the complete order button is clicked. 
+
+Updates the order to complete and hides the list item with an animation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Item} & the list item template widget \\
+\hline
+{\em list\+Container} & the list widget \\
+\hline
+{\em order} & the order that the list item represents \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_order_list_page_a1a00ae2c4905377065cd110ec0ce2841}\label{class_order_list_page_a1a00ae2c4905377065cd110ec0ce2841}} 
 \index{OrderListPage@{OrderListPage}!onPanelOrderDetailsCollapsed@{onPanelOrderDetailsCollapsed}}
 \index{onPanelOrderDetailsCollapsed@{onPanelOrderDetailsCollapsed}!OrderListPage@{OrderListPage}}
 \doxysubsubsection{\texorpdfstring{onPanelOrderDetailsCollapsed()}{onPanelOrderDetailsCollapsed()}}
-{\footnotesize\ttfamily void Order\+List\+Page\+::on\+Panel\+Order\+Details\+Collapsed (\begin{DoxyParamCaption}\item[{Wt\+::\+WPanel $\ast$}]{panel }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Order\+List\+Page\+::on\+Panel\+Order\+Details\+Collapsed (\begin{DoxyParamCaption}\item[{Wt\+::\+WPanel $\ast$}]{panel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
-Event handler for when the order details panel is collapsed. Changes the text and plays the animation. 
+Event handler for when the order details panel is collapsed. 
+
+Changes the text and plays the animation.
 
 
 \begin{DoxyParams}{Parameters}
@@ -83,11 +184,13 @@ Event handler for when the order details panel is collapsed. Changes the text an
 \index{OrderListPage@{OrderListPage}!onPanelOrderDetailsExpanded@{onPanelOrderDetailsExpanded}}
 \index{onPanelOrderDetailsExpanded@{onPanelOrderDetailsExpanded}!OrderListPage@{OrderListPage}}
 \doxysubsubsection{\texorpdfstring{onPanelOrderDetailsExpanded()}{onPanelOrderDetailsExpanded()}}
-{\footnotesize\ttfamily void Order\+List\+Page\+::on\+Panel\+Order\+Details\+Expanded (\begin{DoxyParamCaption}\item[{Wt\+::\+WPanel $\ast$}]{panel }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Order\+List\+Page\+::on\+Panel\+Order\+Details\+Expanded (\begin{DoxyParamCaption}\item[{Wt\+::\+WPanel $\ast$}]{panel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
-Event handler for when the order details panel is expanded. Changes the text and plays the animation. 
+Event handler for when the order details panel is expanded. 
+
+Changes the text and plays the animation.
 
 
 \begin{DoxyParams}{Parameters}

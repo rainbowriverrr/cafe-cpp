@@ -1,0 +1,69 @@
+\hypertarget{_cart_widget_8hpp_source}{}\doxysection{Cart\+Widget.\+hpp}
+\label{_cart_widget_8hpp_source}\index{src/web/CartWidget.hpp@{src/web/CartWidget.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{    Author : River Wang}}
+\DoxyCodeLine{3 \textcolor{comment}{    Date   : 2022/11/19}}
+\DoxyCodeLine{4 \textcolor{comment}{*/}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef CartWidget\_hpp}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define CartWidget\_hpp}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <Wt/WPushButton.h>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <Wt/WTemplate.h>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <Wt/WText.h>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{class_cart_widget}{CartWidget}} : \textcolor{keyword}{public} Wt::WTemplate \{}
+\DoxyCodeLine{18    \textcolor{keyword}{public}:}
+\DoxyCodeLine{23     \mbox{\hyperlink{class_cart_widget}{CartWidget}}(std::string, \textcolor{keywordtype}{double}, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{29     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_cart_widget_a2fe6c4147fab62d5e1671b446a48f041}{updateQuantity}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{35     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_cart_widget_a67a25e7592dbf9da3187b3ad0c0a8bbb}{updateTotal}}();}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{42     Wt::WPushButton *\mbox{\hyperlink{class_cart_widget_acb236d5cc4a33a1ebc4df3e5babf2098}{getRemovePtr}}();}
+\DoxyCodeLine{48     Wt::WPushButton *\mbox{\hyperlink{class_cart_widget_a09fb3a5d7c002c157bfef65d5a569d42}{getAddPtr}}();}
+\DoxyCodeLine{54     Wt::WPushButton *\mbox{\hyperlink{class_cart_widget_a86d4f65c55304bd63bdd5f1e61d3981b}{getSubtractPtr}}();}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{60     \mbox{\hyperlink{class_cart_widget_a38211cb0ff9ed8da8aaad0a42ed4d83a}{\string~CartWidget}}();}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \textcolor{keywordtype}{int} getQuantity();}
+\DoxyCodeLine{63     \textcolor{keywordtype}{double} getTotal();}
+\DoxyCodeLine{64     \textcolor{keywordtype}{double} getPrice();}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66    \textcolor{keyword}{private}:}
+\DoxyCodeLine{67     \textcolor{keywordtype}{int} iquantity;}
+\DoxyCodeLine{68     \textcolor{keywordtype}{double} dtotal;}
+\DoxyCodeLine{69     \textcolor{keywordtype}{double} dprice;}
+\DoxyCodeLine{70     Wt::WText *name\_;}
+\DoxyCodeLine{71     Wt::WText *price\_;}
+\DoxyCodeLine{72     Wt::WText *quantity\_;}
+\DoxyCodeLine{73     Wt::WPushButton *removeButton\_;}
+\DoxyCodeLine{74     Wt::WPushButton *addButton\_;}
+\DoxyCodeLine{75     Wt::WPushButton *subtractButton\_;}
+\DoxyCodeLine{76     Wt::WText *total\_;}
+\DoxyCodeLine{77 \};}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{keyword}{class }\mbox{\hyperlink{class_cart_total}{CartTotal}} : \textcolor{keyword}{public} Wt::WTemplate \{}
+\DoxyCodeLine{80    \textcolor{keyword}{public}:}
+\DoxyCodeLine{81     \mbox{\hyperlink{class_cart_total}{CartTotal}}(\textcolor{keywordtype}{double});}
+\DoxyCodeLine{82     \textcolor{keywordtype}{void} addToTotal(\textcolor{keywordtype}{double});}
+\DoxyCodeLine{83     \textcolor{keywordtype}{void} subFromTotal(\textcolor{keywordtype}{double});}
+\DoxyCodeLine{84     Wt::WPushButton *getCheckoutPtr();}
+\DoxyCodeLine{85     \mbox{\hyperlink{class_cart_total}{\string~CartTotal}}();}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87    \textcolor{keyword}{private}:}
+\DoxyCodeLine{88     \textcolor{keywordtype}{void} updateTotal();}
+\DoxyCodeLine{89     \textcolor{keywordtype}{double} dtotal;}
+\DoxyCodeLine{90     Wt::WText *total\_;}
+\DoxyCodeLine{91     Wt::WPushButton *checkoutButton\_;}
+\DoxyCodeLine{92 \};}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

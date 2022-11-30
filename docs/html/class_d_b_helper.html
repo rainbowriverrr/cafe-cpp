@@ -135,11 +135,11 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a12277429c2214720af2dfab737ac21fe"><td class="memItemLeft" align="right" valign="top">sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b_helper.html#a12277429c2214720af2dfab737ac21fe">prepareStatement</a> (const std::string &amp;query, const std::string &amp;queryType) const</td></tr>
 <tr class="memdesc:a12277429c2214720af2dfab737ac21fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepares a sqlite3 statement from the given query.  <a href="class_d_b_helper.html#a12277429c2214720af2dfab737ac21fe">More...</a><br /></td></tr>
 <tr class="separator:a12277429c2214720af2dfab737ac21fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a257cd82872e03e74858fc80c60ff996d"><td class="memItemLeft" align="right" valign="top"><a id="a257cd82872e03e74858fc80c60ff996d" name="a257cd82872e03e74858fc80c60ff996d"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>generateWhereClauseFromConditions</b> (const std::vector&lt; <a class="el" href="class_sql_condition.html">SqlCondition</a> &gt; &amp;conditions) const</td></tr>
+<tr class="memitem:a257cd82872e03e74858fc80c60ff996d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b_helper.html#a257cd82872e03e74858fc80c60ff996d">generateWhereClauseFromConditions</a> (const std::vector&lt; <a class="el" href="class_sql_condition.html">SqlCondition</a> &gt; &amp;conditions) const</td></tr>
+<tr class="memdesc:a257cd82872e03e74858fc80c60ff996d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates the WHERE clause of a query from a vector of <a class="el" href="class_sql_condition.html" title="Class representing a condition in the WHERE clause of a SQL query.">SqlCondition</a> objects.  <a href="class_d_b_helper.html#a257cd82872e03e74858fc80c60ff996d">More...</a><br /></td></tr>
 <tr class="separator:a257cd82872e03e74858fc80c60ff996d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9686986bb04948d9c843bb98260758a7"><td class="memItemLeft" align="right" valign="top"><a id="a9686986bb04948d9c843bb98260758a7" name="a9686986bb04948d9c843bb98260758a7"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>generateWhereClauseFromKeys</b> (const std::vector&lt; std::string &gt; &amp;keys) const</td></tr>
+<tr class="memitem:a9686986bb04948d9c843bb98260758a7"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b_helper.html#a9686986bb04948d9c843bb98260758a7">generateWhereClauseFromKeys</a> (const std::vector&lt; std::string &gt; &amp;keys) const</td></tr>
+<tr class="memdesc:a9686986bb04948d9c843bb98260758a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates the WHERE clause of a query from a vector of key column names.  <a href="class_d_b_helper.html#a9686986bb04948d9c843bb98260758a7">More...</a><br /></td></tr>
 <tr class="separator:a9686986bb04948d9c843bb98260758a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a343726ad40336cbe56fc8c77425196ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b_helper.html#a343726ad40336cbe56fc8c77425196ec">bindStatementColumns</a> (sqlite3_stmt *statement, const <a class="el" href="class_model.html">Model</a> &amp;model, const std::vector&lt; std::string &gt; &amp;columns, int &amp;index, const std::string &amp;queryType) const</td></tr>
 <tr class="memdesc:a343726ad40336cbe56fc8c77425196ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterates the columns vector and binds the corresponding value in the model to the statement, starting at index.  <a href="class_d_b_helper.html#a343726ad40336cbe56fc8c77425196ec">More...</a><br /></td></tr>
@@ -527,6 +527,76 @@ static const <a class="el" href="class_d_b_helper.html">DBHelper</a> *&#160;</td
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a257cd82872e03e74858fc80c60ff996d" name="a257cd82872e03e74858fc80c60ff996d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a257cd82872e03e74858fc80c60ff996d">&#9670;&#160;</a></span>generateWhereClauseFromConditions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string DBHelper::generateWhereClauseFromConditions </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="class_sql_condition.html">SqlCondition</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>conditions</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Generates the WHERE clause of a query from a vector of <a class="el" href="class_sql_condition.html" title="Class representing a condition in the WHERE clause of a SQL query.">SqlCondition</a> objects. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conditions</td><td>iterated to generate the WHERE clause </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the WHERE clause of a query </dd></dl>
+
+</div>
+</div>
+<a id="a9686986bb04948d9c843bb98260758a7" name="a9686986bb04948d9c843bb98260758a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9686986bb04948d9c843bb98260758a7">&#9670;&#160;</a></span>generateWhereClauseFromKeys()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string DBHelper::generateWhereClauseFromKeys </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>keys</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Generates the WHERE clause of a query from a vector of key column names. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">keys</td><td>iterated to generate the WHERE clause </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the WHERE clause of a query </dd></dl>
 
 </div>
 </div>

@@ -24,8 +24,8 @@ Group 8:
 If these libraries are not installed in the default path, you may need to
 add the g++ "-L" option to the variable "LDLIBS" in the Makefile.
 
-To make all:
-  make all
+To build all:
+  make
 
 To build the web server:
   make main

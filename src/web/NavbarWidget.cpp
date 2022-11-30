@@ -36,11 +36,7 @@ std::unique_ptr<Wt::WTemplate> NavbarWidget::createCustomerNavbarWidget()
     navTemplate->bindWidget("a-cart", std::make_unique<Wt::WAnchor>(linkCart, std::make_unique<Wt::WImage>("resources/images/cart.png")));
     
     Wt::WLink linkLogin = Wt::WLink(Wt::LinkType::InternalPath, "/login");
-    Wt::WAnchor *loginAnchor = navTemplate->bindWidget("a-login", std::make_unique<Wt::WAnchor>(linkLogin, "login"));
-    // DEBUG. TO BE REPLACED BY LOGIN PAGE.
-    loginAnchor->clicked().connect([] {
-        ((Application *)Application::instance())->getAuth()->LogIn("admin", "cafec++12345");
-    });
+    navTemplate->bindWidget("a-login", std::make_unique<Wt::WAnchor>(linkLogin, "login"));
     
     return navTemplate;
 }
@@ -54,8 +50,8 @@ std::unique_ptr<Wt::WTemplate> NavbarWidget::createAdminNavbarWidget()
     Wt::WLink linkSales = Wt::WLink(Wt::LinkType::InternalPath, "/sales");
     navTemplate->bindWidget("a-sales", std::make_unique<Wt::WAnchor>(linkSales, "sales"));
     
-    Wt::WLink linkInventory = Wt::WLink(Wt::LinkType::InternalPath, "/inventory");
-    navTemplate->bindWidget("a-inventory", std::make_unique<Wt::WAnchor>(linkInventory, "inventory"));
+//    Wt::WLink linkInventory = Wt::WLink(Wt::LinkType::InternalPath, "/inventory");
+//    navTemplate->bindWidget("a-inventory", std::make_unique<Wt::WAnchor>(linkInventory, "inventory"));
     
     Wt::WLink linkCreateUser = Wt::WLink(Wt::LinkType::InternalPath, "/create-user");
     navTemplate->bindWidget("a-create-user", std::make_unique<Wt::WAnchor>(linkCreateUser, "create user"));
@@ -63,7 +59,9 @@ std::unique_ptr<Wt::WTemplate> NavbarWidget::createAdminNavbarWidget()
     Wt::WLink linkHome = Wt::WLink(Wt::LinkType::InternalPath, "/home");
     Wt::WAnchor *logoutAnchor = navTemplate->bindWidget("a-logout", std::make_unique<Wt::WAnchor>(linkHome, "logout"));
     logoutAnchor->clicked().connect([] {
-        ((Application *)Application::instance())->getAuth()->LogOut();
+        Application *app = (Application *)Application::instance();
+        app->getAuth()->LogOut();
+        app->reset();
     });
     
     return navTemplate;

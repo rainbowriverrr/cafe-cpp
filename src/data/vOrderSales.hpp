@@ -11,7 +11,7 @@
 #include "Model.hpp"
 
 /**
- * @brief Represents the vOrderSales view in the database.
+ * @brief Class representing a row of the vOrderSales view.
  *
  * Aggregates the orders for each day and each menu item to get the total quantity and revenue.
  *

@@ -66,7 +66,7 @@ std::vector<MenuItem> generateMenuItems()
     const DBHelper &db = DBHelper::getInstance();
     
     std::vector<MenuItem> menu = {
-        MenuItem("Undefined Symbol (Blond Roast)", 2.29, "Light bodied and smooth, with notes of berry and vanilla."),
+        MenuItem("Undefined Symbol (Blonde Roast)", 2.29, "Light bodied and smooth, with notes of berry and vanilla."),
         MenuItem("Memory Leak (Medium Roast)", 2.49, "Rich and velvety. Our signature blend."),
         MenuItem("Segmentation Fault (Dark Roast)", 2.49, "Bold flavour, with notes of dark chocolate and cinnamon."),
         MenuItem("GNUppuccino", 3.49, "Smooth espresso topped with steamed milk and foam."),
@@ -165,7 +165,7 @@ void generateCurrentOrders(std::tm *localTm, std::mt19937 &rng, std::vector<Menu
     
     order = OrderMaster(0, "Bob", formatDateTime(time), "ordered");
     orderNumber = (int)db.insert(order);
-    d1 = OrderDetail(0, orderNumber, "Undefined Symbol (Blond Roast)", 2);
+    d1 = OrderDetail(0, orderNumber, "Undefined Symbol (Blonde Roast)", 2);
     d2 = OrderDetail(0, orderNumber, "Memory Leak (Medium Roast)", 2);
     d3 = OrderDetail(0, orderNumber, "std::onut", 3);
     db.insert(d1);
@@ -191,7 +191,7 @@ void generateCurrentOrders(std::tm *localTm, std::mt19937 &rng, std::vector<Menu
  */
 void generateAdmin()
 {
-    Authenticator().CreateNewAdmin("admin", "cafec++12345");
+    Authenticator().CreateNewAdmin("admin", "testing123");
 }
 
 /**

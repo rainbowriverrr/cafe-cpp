@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['db_0',['db',['../class_d_b_helper.html#a5aab1ba1c548557b2b19760baf5ce525',1,'DBHelper']]]
+  ['body_0',['body',['../class_application.html#affad32f749f259158cd4d1d1531bd004',1,'Application']]]
 ];

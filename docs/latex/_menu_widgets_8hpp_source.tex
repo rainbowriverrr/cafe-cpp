@@ -17,21 +17,22 @@
 \DoxyCodeLine{13 \textcolor{preprocessor}{\#include <Wt/WTemplate.h>}}
 \DoxyCodeLine{14 \textcolor{preprocessor}{\#include <Wt/WText.h>}}
 \DoxyCodeLine{15 }
-\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <string>}}
-\DoxyCodeLine{17 }
-\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{class_menu_item_widget}{MenuItemWidget}} : \textcolor{keyword}{public} Wt::WTemplate \{}
-\DoxyCodeLine{19    \textcolor{keyword}{public}:}
-\DoxyCodeLine{20     \mbox{\hyperlink{class_menu_item_widget}{MenuItemWidget}}(\textcolor{keyword}{const} std::string \&name, \textcolor{keyword}{const} std::string \&price, \textcolor{keyword}{const} std::string \&description);}
-\DoxyCodeLine{21     Wt::WPushButton *getCartPtr();}
-\DoxyCodeLine{22 }
-\DoxyCodeLine{23    \textcolor{keyword}{private}:}
-\DoxyCodeLine{24     Wt::WText *name\_;}
-\DoxyCodeLine{25     Wt::WText *price\_;}
-\DoxyCodeLine{26     Wt::WText *description\_;}
-\DoxyCodeLine{27     Wt::WLineEdit *quantity\_;}
-\DoxyCodeLine{28     Wt::WPushButton *cartButton\_;}
-\DoxyCodeLine{29 \};}
-\DoxyCodeLine{30 }
-\DoxyCodeLine{31 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{class_menu_item_widget}{MenuItemWidget}} : \textcolor{keyword}{public} Wt::WTemplate \{}
+\DoxyCodeLine{21    \textcolor{keyword}{public}:}
+\DoxyCodeLine{22     \mbox{\hyperlink{class_menu_item_widget}{MenuItemWidget}}(\textcolor{keyword}{const} std::string \&name, \textcolor{keyword}{const} \textcolor{keywordtype}{double} \&price, \textcolor{keyword}{const} std::string \&description);}
+\DoxyCodeLine{23     Wt::WPushButton *getCartPtr();}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25    \textcolor{keyword}{private}:}
+\DoxyCodeLine{26     Wt::WText *name\_;}
+\DoxyCodeLine{27     Wt::WText *price\_;}
+\DoxyCodeLine{28     Wt::WText *description\_;}
+\DoxyCodeLine{29     Wt::WPushButton *cartButton\_;}
+\DoxyCodeLine{30 \};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

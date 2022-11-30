@@ -1,9 +1,27 @@
 var searchData=
 [
-  ['getinstance_0',['getInstance',['../class_d_b_helper.html#ad205c287b83371638430e41eef9d3719',1,'DBHelper']]],
-  ['getname_1',['getName',['../class_menu_item.html#a1500747998ce2503d0b576e4c3e60101',1,'MenuItem']]],
-  ['getorderdate_2',['getOrderDate',['../class_order_master.html#ad8f6603a3f4722619c717cf0073f9d58',1,'OrderMaster']]],
-  ['getorderedby_3',['getOrderedBy',['../class_order_master.html#a8d42923360484793627f42223660ee39',1,'OrderMaster']]],
-  ['getordernumber_4',['getOrderNumber',['../class_order_master.html#a44a1068fcd2aae8eb13a9aef5ad3f71d',1,'OrderMaster']]],
-  ['getprice_5',['getPrice',['../class_menu_item.html#a5b9bbfe9c37ff669a5e3b21c171e28a0',1,'MenuItem']]]
+  ['generatewhereclausefromconditions_0',['generateWhereClauseFromConditions',['../class_d_b_helper.html#a257cd82872e03e74858fc80c60ff996d',1,'DBHelper']]],
+  ['generatewhereclausefromkeys_1',['generateWhereClauseFromKeys',['../class_d_b_helper.html#a9686986bb04948d9c843bb98260758a7',1,'DBHelper']]],
+  ['getaddptr_2',['getAddPtr',['../class_cart_widget.html#a09fb3a5d7c002c157bfef65d5a569d42',1,'CartWidget']]],
+  ['getauth_3',['getAuth',['../class_application.html#a5dd5d754692ce4d89ef6f8ba28d081aa',1,'Application']]],
+  ['getcarttotalptr_4',['getCartTotalPtr',['../class_cart_page.html#a3823228065a38c8844ac9b8045cc3c46',1,'CartPage']]],
+  ['getdescription_5',['getDescription',['../class_menu_item.html#aa2b7c74dc5087c4ff172853c7516518f',1,'MenuItem']]],
+  ['getinstance_6',['getInstance',['../class_d_b_helper.html#ad205c287b83371638430e41eef9d3719',1,'DBHelper']]],
+  ['getisallmenuitems_7',['getIsAllMenuItems',['../classv_order_sales.html#a2fe839493b7ad9e18f9893dcdbac0d52',1,'vOrderSales']]],
+  ['getmenuitemname_8',['getMenuItemName',['../classv_order_detail.html#af2ce8d69798862ca1f9c8008c0298615',1,'vOrderDetail::getMenuItemName()'],['../classv_order_sales.html#a5101724c63bb01254ea347f865e0d902',1,'vOrderSales::getMenuItemName()']]],
+  ['getname_9',['getName',['../class_menu_item.html#a1500747998ce2503d0b576e4c3e60101',1,'MenuItem']]],
+  ['getorderdate_10',['getOrderDate',['../class_order_master.html#ad8f6603a3f4722619c717cf0073f9d58',1,'OrderMaster']]],
+  ['getorderdetailid_11',['getOrderDetailID',['../classv_order_detail.html#a015732e789eef5f181bcb52f59daade5',1,'vOrderDetail']]],
+  ['getorderedby_12',['getOrderedBy',['../class_order_master.html#a8d42923360484793627f42223660ee39',1,'OrderMaster']]],
+  ['getordernumber_13',['getOrderNumber',['../class_order_master.html#a44a1068fcd2aae8eb13a9aef5ad3f71d',1,'OrderMaster::getOrderNumber()'],['../classv_order_detail.html#ac5c3f4fa620ebbf3dd39467e7c8f7a5f',1,'vOrderDetail::getOrderNumber()']]],
+  ['getprice_14',['getPrice',['../class_menu_item.html#a5b9bbfe9c37ff669a5e3b21c171e28a0',1,'MenuItem::getPrice()'],['../classv_order_detail.html#ad6e62d6a445225dc47d25525b48a8241',1,'vOrderDetail::getPrice()']]],
+  ['getquantity_15',['getQuantity',['../classv_order_detail.html#ace6aa0d2dad9b2a1febcd6e806ca0a8b',1,'vOrderDetail']]],
+  ['getremoveptr_16',['getRemovePtr',['../class_cart_widget.html#acb236d5cc4a33a1ebc4df3e5babf2098',1,'CartWidget']]],
+  ['getsalesdate_17',['getSalesDate',['../classv_order_sales.html#af22ef6e4fcc6bdce712db4e9144321a9',1,'vOrderSales']]],
+  ['getsessionid_18',['getSessionID',['../class_order_master.html#ab319632bcb3af26c9c83e9f174ab08d6',1,'OrderMaster']]],
+  ['getstatus_19',['getStatus',['../class_order_master.html#af83bc3a013e1bfecb411184f8c86ea07',1,'OrderMaster']]],
+  ['getsubtractptr_20',['getSubtractPtr',['../class_cart_widget.html#a86d4f65c55304bd63bdd5f1e61d3981b',1,'CartWidget']]],
+  ['gettotal_21',['getTotal',['../classv_order_detail.html#a8ac68ca612bd0350537b97d5f958339c',1,'vOrderDetail']]],
+  ['gettotalquantity_22',['getTotalQuantity',['../classv_order_sales.html#af698c3960f83398275b038d2bf1ea72b',1,'vOrderSales']]],
+  ['gettotalrevenue_23',['getTotalRevenue',['../classv_order_sales.html#a0fab5ea8aa1c84e823f01b5b191a4b61',1,'vOrderSales']]]
 ];

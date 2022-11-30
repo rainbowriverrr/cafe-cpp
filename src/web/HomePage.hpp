@@ -5,8 +5,9 @@
 #ifndef HomePage_hpp
 #define HomePage_hpp
 
-#include <Wt/WContainerWidget.h>
 #include <Wt/WTemplate.h>
+
+#include "Page.hpp"
 
 /**
  * @brief Class representing the home page.
@@ -14,7 +15,7 @@
  * @author Julian Koksal
  * @date 2022-11-28
  */
-class HomePage : public Wt::WContainerWidget
+class HomePage : public Page
 {
 public:
     /**

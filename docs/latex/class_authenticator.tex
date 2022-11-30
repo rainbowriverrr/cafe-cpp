@@ -1,0 +1,41 @@
+\hypertarget{class_authenticator}{}\doxysection{Authenticator Class Reference}
+\label{class_authenticator}\index{Authenticator@{Authenticator}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_authenticator_a075aa91dee3e8b09d556fef68dc143ae}\label{class_authenticator_a075aa91dee3e8b09d556fef68dc143ae}} 
+bool {\bfseries Is\+Logged\+In} ()
+\item 
+\mbox{\Hypertarget{class_authenticator_a9e592c3fcfdbc724ac3e549c45b60fd4}\label{class_authenticator_a9e592c3fcfdbc724ac3e549c45b60fd4}} 
+bool {\bfseries Create\+New\+Admin} (std\+::string username, std\+::string password)
+\item 
+\mbox{\Hypertarget{class_authenticator_a818a923b6f874ebe47c33f1d9699dcc4}\label{class_authenticator_a818a923b6f874ebe47c33f1d9699dcc4}} 
+void {\bfseries Log\+Out} ()
+\item 
+\mbox{\Hypertarget{class_authenticator_a861b83d416ec745b80b49a00ac853fdf}\label{class_authenticator_a861b83d416ec745b80b49a00ac853fdf}} 
+void {\bfseries Log\+In} (std\+::string username, std\+::string password)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_authenticator_aca9d04749ed43ccfafb08cb58ae23bcd}\label{class_authenticator_aca9d04749ed43ccfafb08cb58ae23bcd}} 
+bool {\bfseries Check\+Credentials} (std\+::string username, std\+::string password)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_authenticator_a0f442bd94566c1b05e6946dcf4ddda29}\label{class_authenticator_a0f442bd94566c1b05e6946dcf4ddda29}} 
+bool {\bfseries is\+Logged\+In}
+\item 
+\mbox{\Hypertarget{class_authenticator_a168b4606f063b593d7e458c81b860210}\label{class_authenticator_a168b4606f063b593d7e458c81b860210}} 
+std\+::hash$<$ std\+::string $>$ {\bfseries hasher}
+\item 
+\mbox{\Hypertarget{class_authenticator_a6b6ace74a47bf50607505f56d860e1c0}\label{class_authenticator_a6b6ace74a47bf50607505f56d860e1c0}} 
+std\+::vector$<$ \mbox{\hyperlink{class_admin}{Admin}} $>$ {\bfseries admin}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/web/Authenticator.\+hpp\item 
+src/web/Authenticator.\+cpp\end{DoxyCompactItemize}

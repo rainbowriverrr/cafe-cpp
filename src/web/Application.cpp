@@ -63,7 +63,7 @@ void Application::handleInternalPath(const std::string &internalPath)
     }
     else if (internalPath == "/login")
     {
-        body = root()->addNew<Wt::WText>("Temp Login Page");
+        body = root()->addNew<LoginPage>();
     }
     else
     {

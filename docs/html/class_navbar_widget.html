@@ -73,10 +73,14 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="class_navbar_widget-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">NavbarWidget Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class representing the navbar widget.  
+ <a href="class_navbar_widget.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_navbar_widget_8hpp_source.html">NavbarWidget.hpp</a>&gt;</code></p>
 <div class="dynheader">
@@ -89,12 +93,28 @@ Inheritance diagram for NavbarWidget:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a27168065232e8a998509b2c786c5fa45"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_navbar_widget.html#a27168065232e8a998509b2c786c5fa45">NavbarWidget</a> ()</td></tr>
+<tr class="memdesc:a27168065232e8a998509b2c786c5fa45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="class_navbar_widget.html#a27168065232e8a998509b2c786c5fa45">More...</a><br /></td></tr>
 <tr class="separator:a27168065232e8a998509b2c786c5fa45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91cdf1233d924151ce1b9f8507e96a7f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_navbar_widget.html#a91cdf1233d924151ce1b9f8507e96a7f">~NavbarWidget</a> ()</td></tr>
+<tr class="memdesc:a91cdf1233d924151ce1b9f8507e96a7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="class_navbar_widget.html#a91cdf1233d924151ce1b9f8507e96a7f">More...</a><br /></td></tr>
 <tr class="separator:a91cdf1233d924151ce1b9f8507e96a7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ac322a30f43880d82ddd8ce2c91f5896f"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; Wt::WTemplate &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_navbar_widget.html#ac322a30f43880d82ddd8ce2c91f5896f">createCustomerNavbarWidget</a> ()</td></tr>
+<tr class="memdesc:ac322a30f43880d82ddd8ce2c91f5896f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and returns the navbar widget as it appears to customers (not logged in).  <a href="class_navbar_widget.html#ac322a30f43880d82ddd8ce2c91f5896f">More...</a><br /></td></tr>
+<tr class="separator:ac322a30f43880d82ddd8ce2c91f5896f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10237b178ace5fcd9f3ca4d2df81559b"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; Wt::WTemplate &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_navbar_widget.html#a10237b178ace5fcd9f3ca4d2df81559b">createAdminNavbarWidget</a> ()</td></tr>
+<tr class="memdesc:a10237b178ace5fcd9f3ca4d2df81559b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and returns the navbar widget as it appears to administrators (logged in).  <a href="class_navbar_widget.html#a10237b178ace5fcd9f3ca4d2df81559b">More...</a><br /></td></tr>
+<tr class="separator:a10237b178ace5fcd9f3ca4d2df81559b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3fce084e46dcaa15ef9b2f663db3cd6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_navbar_widget.html#ae3fce084e46dcaa15ef9b2f663db3cd6">bindCommonNavbarAnchors</a> (Wt::WTemplate *navTemplate)</td></tr>
+<tr class="memdesc:ae3fce084e46dcaa15ef9b2f663db3cd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds the anchor widgets that are common to both the customer navbar and admin navbar.  <a href="class_navbar_widget.html#ae3fce084e46dcaa15ef9b2f663db3cd6">More...</a><br /></td></tr>
+<tr class="separator:ae3fce084e46dcaa15ef9b2f663db3cd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Class representing the navbar widget. </p><dl class="section author"><dt>Author</dt><dd>Julian Koksal </dd></dl>
+<div class="textblock"><p >Class representing the navbar widget. </p>
+<p >Displays a navigation bar at the top of the page with button links to each page of the website. Different links are displayed depending on if the user is logged in or not.</p>
+<dl class="section author"><dt>Author</dt><dd>Julian Koksal </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2022-11-07 </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a27168065232e8a998509b2c786c5fa45" name="a27168065232e8a998509b2c786c5fa45"></a>
@@ -111,7 +131,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Constructor. </p>
+
+<p>Constructor. </p>
+<p >Creates the widget and its contents. </p>
 
 </div>
 </div>
@@ -129,7 +151,103 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Destructor. </p>
+
+<p>Destructor. </p>
+<p >Does nothing. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae3fce084e46dcaa15ef9b2f663db3cd6" name="ae3fce084e46dcaa15ef9b2f663db3cd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3fce084e46dcaa15ef9b2f663db3cd6">&#9670;&#160;</a></span>bindCommonNavbarAnchors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NavbarWidget::bindCommonNavbarAnchors </td>
+          <td>(</td>
+          <td class="paramtype">Wt::WTemplate *&#160;</td>
+          <td class="paramname"><em>navTemplate</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Binds the anchor widgets that are common to both the customer navbar and admin navbar. </p>
+<p >Binds the anchor to the home, menu, and orders pages.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">navTemplate</td><td>the navbar template to bind the anchors to </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a10237b178ace5fcd9f3ca4d2df81559b" name="a10237b178ace5fcd9f3ca4d2df81559b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10237b178ace5fcd9f3ca4d2df81559b">&#9670;&#160;</a></span>createAdminNavbarWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; Wt::WTemplate &gt; NavbarWidget::createAdminNavbarWidget </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates and returns the navbar widget as it appears to administrators (logged in). </p>
+<p >Has links to the home, menu, orders, sales, inventory, and create account pages, and a link to log out.</p>
+<dl class="section return"><dt>Returns</dt><dd>unique ptr to the widget that was created </dd></dl>
+
+</div>
+</div>
+<a id="ac322a30f43880d82ddd8ce2c91f5896f" name="ac322a30f43880d82ddd8ce2c91f5896f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac322a30f43880d82ddd8ce2c91f5896f">&#9670;&#160;</a></span>createCustomerNavbarWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; Wt::WTemplate &gt; NavbarWidget::createCustomerNavbarWidget </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates and returns the navbar widget as it appears to customers (not logged in). </p>
+<p >Has links to the home, menu, orders, login, and cart pages.</p>
+<dl class="section return"><dt>Returns</dt><dd>unique ptr to the widget that was created </dd></dl>
 
 </div>
 </div>

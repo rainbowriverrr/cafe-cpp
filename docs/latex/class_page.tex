@@ -1,0 +1,97 @@
+\hypertarget{class_page}{}\doxysection{Page Class Reference}
+\label{class_page}\index{Page@{Page}}
+
+
+Base class extended by the page widgets.  
+
+
+
+
+{\ttfamily \#include $<$Page.\+hpp$>$}
+
+Inheritance diagram for Page\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_page}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_page_a2341fff1cc032ab6528874175e7dd841}{$\sim$\+Page}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_page_a9a7cc22d5459498ce638c54ae966c79b}{Page}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{class_page_a6321e401468b7da673bc935f310bbb3d}{format\+Price}} (const double \&price)
+\begin{DoxyCompactList}\small\item\em Formats the given price double as a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class extended by the page widgets. 
+
+Implements common methods that are useful across multiple pages.
+
+\begin{DoxyAuthor}{Author}
+Julian Koksal 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2022-\/11-\/22 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_page_a2341fff1cc032ab6528874175e7dd841}\label{class_page_a2341fff1cc032ab6528874175e7dd841}} 
+\index{Page@{Page}!````~Page@{$\sim$Page}}
+\index{````~Page@{$\sim$Page}!Page@{Page}}
+\doxysubsubsection{\texorpdfstring{$\sim$Page()}{~Page()}}
+{\footnotesize\ttfamily Page\+::$\sim$\+Page (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+Does nothing. \mbox{\Hypertarget{class_page_a9a7cc22d5459498ce638c54ae966c79b}\label{class_page_a9a7cc22d5459498ce638c54ae966c79b}} 
+\index{Page@{Page}!Page@{Page}}
+\index{Page@{Page}!Page@{Page}}
+\doxysubsubsection{\texorpdfstring{Page()}{Page()}}
+{\footnotesize\ttfamily Page\+::\+Page (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Constructor. 
+
+Protected because \mbox{\hyperlink{class_page}{Page}} is not intended to be initialized, only extended. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_page_a6321e401468b7da673bc935f310bbb3d}\label{class_page_a6321e401468b7da673bc935f310bbb3d}} 
+\index{Page@{Page}!formatPrice@{formatPrice}}
+\index{formatPrice@{formatPrice}!Page@{Page}}
+\doxysubsubsection{\texorpdfstring{formatPrice()}{formatPrice()}}
+{\footnotesize\ttfamily std\+::string Page\+::format\+Price (\begin{DoxyParamCaption}\item[{const double \&}]{price }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Formats the given price double as a string. 
+
+e.\+g. 2.\+290000 -\/\texorpdfstring{$>$}{>} \char`\"{}\$ 2.\+29\char`\"{}
+
+
+\begin{DoxyParams}{Parameters}
+{\em price} & the price as a double \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the price formatted as a string 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/web/Page.\+hpp\item 
+src/web/Page.\+cpp\end{DoxyCompactItemize}

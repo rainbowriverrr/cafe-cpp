@@ -1,0 +1,350 @@
+\hypertarget{classv_order_sales}{}\doxysection{v\+Order\+Sales Class Reference}
+\label{classv_order_sales}\index{vOrderSales@{vOrderSales}}
+
+
+Represents the \mbox{\hyperlink{classv_order_sales}{v\+Order\+Sales}} view in the database.  
+
+
+
+
+{\ttfamily \#include $<$v\+Order\+Sales.\+hpp$>$}
+
+Inheritance diagram for v\+Order\+Sales\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classv_order_sales}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classv_order_sales_a012c2b1c35b4589b1f84cfe395c92973}{v\+Order\+Sales}} (std\+::string \mbox{\hyperlink{classv_order_sales_aac196a77e4d9e9e1145bd2e21cce6fa5}{sales\+Date}}=\char`\"{}\char`\"{}, std\+::string \mbox{\hyperlink{classv_order_sales_a504661c3047e9864157d0a218f4817a0}{menu\+Item\+Name}}=\char`\"{}\char`\"{}, int \mbox{\hyperlink{classv_order_sales_a8d191946e8c6849d16ffbef144cefafd}{total\+Quantity}}=0, double \mbox{\hyperlink{classv_order_sales_ab7365bc440cb6d43528689aa67b5f57b}{total\+Revenue}}=0, bool \mbox{\hyperlink{classv_order_sales_ad3b786915de5707688a12f8a507f65c9}{is\+All\+Menu\+Items}}=0)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classv_order_sales_a7c4e2f2f07c2cff1d3a4cb6b2cfe5674}{$\sim$v\+Order\+Sales}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classv_order_sales_af22ef6e4fcc6bdce712db4e9144321a9}{get\+Sales\+Date}} ()
+\begin{DoxyCompactList}\small\item\em Gets sales\+Date. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classv_order_sales_a5101724c63bb01254ea347f865e0d902}{get\+Menu\+Item\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Gets menu\+Item\+Name. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classv_order_sales_af698c3960f83398275b038d2bf1ea72b}{get\+Total\+Quantity}} ()
+\begin{DoxyCompactList}\small\item\em Gets total\+Quantity. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classv_order_sales_a0fab5ea8aa1c84e823f01b5b191a4b61}{get\+Total\+Revenue}} ()
+\begin{DoxyCompactList}\small\item\em Gets total\+Revenue. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classv_order_sales_a2fe839493b7ad9e18f9893dcdbac0d52}{get\+Is\+All\+Menu\+Items}} ()
+\begin{DoxyCompactList}\small\item\em Gets is\+All\+Menu\+Items. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::string \mbox{\hyperlink{classv_order_sales_a13a56c40a2fa4130e97549853f17d919}{table\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the name of the SQL table that this model represents. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classv_order_sales_a6f2c49b93d952e68c93469e2f7ca545d}{columns}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the column names of the SQL table, in the correct order. \end{DoxyCompactList}\item 
+virtual std\+::set$<$ std\+::string $>$ \mbox{\hyperlink{classv_order_sales_a8c6fa7be4c0cae3360ea3296c1149045}{keys}} () const override
+\begin{DoxyCompactList}\small\item\em Return the column name(s) of the primary key(s) of the SQL table. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classv_order_sales_a3354fa990932355b0e1e3d929ca1d834}{is\+Auto\+Generated\+Key}} () const override
+\begin{DoxyCompactList}\small\item\em Return true if the primary key is of type INTEGER and should have a unique value automatically chosen when inserting, false otherwise. \end{DoxyCompactList}\item 
+virtual std\+::map$<$ std\+::string, std\+::any $>$ \mbox{\hyperlink{classv_order_sales_af36264ea69b7121944956c6314a8b640}{to\+Map}} () const override
+\begin{DoxyCompactList}\small\item\em Returns a map representation of this object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_model}{Model}} $\ast$ \mbox{\hyperlink{classv_order_sales_aee3b2802889b644b166261760acbdfec}{from\+Map}} (std\+::map$<$ std\+::string, std\+::any $>$ m\+Map) const override
+\begin{DoxyCompactList}\small\item\em Returns a pointer to a new object with member variables initialized according to m\+Map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classv_order_sales_aac196a77e4d9e9e1145bd2e21cce6fa5}\label{classv_order_sales_aac196a77e4d9e9e1145bd2e21cce6fa5}} 
+std\+::string {\bfseries sales\+Date}
+\begin{DoxyCompactList}\small\item\em The date of the aggregated orders. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classv_order_sales_a504661c3047e9864157d0a218f4817a0}{menu\+Item\+Name}}
+\begin{DoxyCompactList}\small\item\em The menu items of the aggregated orders. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classv_order_sales_a8d191946e8c6849d16ffbef144cefafd}\label{classv_order_sales_a8d191946e8c6849d16ffbef144cefafd}} 
+int {\bfseries total\+Quantity}
+\begin{DoxyCompactList}\small\item\em The total quantity sold of the menu item for the sales\+Date. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classv_order_sales_ab7365bc440cb6d43528689aa67b5f57b}\label{classv_order_sales_ab7365bc440cb6d43528689aa67b5f57b}} 
+double {\bfseries total\+Revenue}
+\begin{DoxyCompactList}\small\item\em The total revenue of the menu item for the sales\+Date. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classv_order_sales_ad3b786915de5707688a12f8a507f65c9}{is\+All\+Menu\+Items}}
+\begin{DoxyCompactList}\small\item\em Is this row the \char`\"{}\+All menu items\char`\"{} row. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the \mbox{\hyperlink{classv_order_sales}{v\+Order\+Sales}} view in the database. 
+
+Aggregates the orders for each day and each menu item to get the total quantity and revenue.
+
+\begin{DoxyAuthor}{Author}
+Julian Koksal 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2022-\/11-\/19 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classv_order_sales_a012c2b1c35b4589b1f84cfe395c92973}\label{classv_order_sales_a012c2b1c35b4589b1f84cfe395c92973}} 
+\index{vOrderSales@{vOrderSales}!vOrderSales@{vOrderSales}}
+\index{vOrderSales@{vOrderSales}!vOrderSales@{vOrderSales}}
+\doxysubsubsection{\texorpdfstring{vOrderSales()}{vOrderSales()}}
+{\footnotesize\ttfamily v\+Order\+Sales\+::v\+Order\+Sales (\begin{DoxyParamCaption}\item[{std\+::string}]{sales\+Date = {\ttfamily \char`\"{}\char`\"{}},  }\item[{std\+::string}]{menu\+Item\+Name = {\ttfamily \char`\"{}\char`\"{}},  }\item[{int}]{total\+Quantity = {\ttfamily 0},  }\item[{double}]{total\+Revenue = {\ttfamily 0},  }\item[{bool}]{is\+All\+Menu\+Items = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Creates an object initialized with the given values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sales\+Date} & the value to initialize sales\+Date with \\
+\hline
+{\em menu\+Item\+Name} & the value to initialize menu\+Item\+Name with \\
+\hline
+{\em total\+Quantity} & the value to initialize total\+Quantity with \\
+\hline
+{\em total\+Revenue} & the value to initialize total\+Revenue with \\
+\hline
+{\em is\+All\+Menu\+Items} & the value to initialize is\+All\+Menu\+Items with \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classv_order_sales_a7c4e2f2f07c2cff1d3a4cb6b2cfe5674}\label{classv_order_sales_a7c4e2f2f07c2cff1d3a4cb6b2cfe5674}} 
+\index{vOrderSales@{vOrderSales}!````~vOrderSales@{$\sim$vOrderSales}}
+\index{````~vOrderSales@{$\sim$vOrderSales}!vOrderSales@{vOrderSales}}
+\doxysubsubsection{\texorpdfstring{$\sim$vOrderSales()}{~vOrderSales()}}
+{\footnotesize\ttfamily v\+Order\+Sales\+::$\sim$v\+Order\+Sales (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+Does nothing. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classv_order_sales_a6f2c49b93d952e68c93469e2f7ca545d}\label{classv_order_sales_a6f2c49b93d952e68c93469e2f7ca545d}} 
+\index{vOrderSales@{vOrderSales}!columns@{columns}}
+\index{columns@{columns}!vOrderSales@{vOrderSales}}
+\doxysubsubsection{\texorpdfstring{columns()}{columns()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ v\+Order\+Sales\+::columns (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Returns the column names of the SQL table, in the correct order. 
+
+The order of the vector should be the same as the order of the columns in the SQL table.
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}}. When implemented in a subclass, it should always return the same value for that class.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+vector of column names 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_aa4ca2ad0ac6188800cb560626b9c731d}{Model}}.
+
+\mbox{\Hypertarget{classv_order_sales_aee3b2802889b644b166261760acbdfec}\label{classv_order_sales_aee3b2802889b644b166261760acbdfec}} 
+\index{vOrderSales@{vOrderSales}!fromMap@{fromMap}}
+\index{fromMap@{fromMap}!vOrderSales@{vOrderSales}}
+\doxysubsubsection{\texorpdfstring{fromMap()}{fromMap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_model}{Model}} $\ast$ v\+Order\+Sales\+::from\+Map (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, std\+::any $>$}]{m\+Map }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Returns a pointer to a new object with member variables initialized according to m\+Map. 
+
+This is essentially the inverse of \mbox{\hyperlink{classv_order_sales_af36264ea69b7121944956c6314a8b640}{to\+Map()}}. m\+Map should be a map as described there.
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}} to create an object from the SQLite3 API results.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em m\+Map} & a map representation of the object, as created by a call to \mbox{\hyperlink{classv_order_sales_af36264ea69b7121944956c6314a8b640}{to\+Map()}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the new model 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_a374adf0b008ef2c644e022a2c849f897}{Model}}.
+
+\mbox{\Hypertarget{classv_order_sales_a2fe839493b7ad9e18f9893dcdbac0d52}\label{classv_order_sales_a2fe839493b7ad9e18f9893dcdbac0d52}} 
+\index{vOrderSales@{vOrderSales}!getIsAllMenuItems@{getIsAllMenuItems}}
+\index{getIsAllMenuItems@{getIsAllMenuItems}!vOrderSales@{vOrderSales}}
+\doxysubsubsection{\texorpdfstring{getIsAllMenuItems()}{getIsAllMenuItems()}}
+{\footnotesize\ttfamily bool v\+Order\+Sales\+::get\+Is\+All\+Menu\+Items (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets is\+All\+Menu\+Items. 
+
+\begin{DoxyReturn}{Returns}
+is\+All\+Menu\+Items 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classv_order_sales_a5101724c63bb01254ea347f865e0d902}\label{classv_order_sales_a5101724c63bb01254ea347f865e0d902}} 
+\index{vOrderSales@{vOrderSales}!getMenuItemName@{getMenuItemName}}
+\index{getMenuItemName@{getMenuItemName}!vOrderSales@{vOrderSales}}
+\doxysubsubsection{\texorpdfstring{getMenuItemName()}{getMenuItemName()}}
+{\footnotesize\ttfamily std\+::string v\+Order\+Sales\+::get\+Menu\+Item\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets menu\+Item\+Name. 
+
+\begin{DoxyReturn}{Returns}
+menu\+Item\+Name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classv_order_sales_af22ef6e4fcc6bdce712db4e9144321a9}\label{classv_order_sales_af22ef6e4fcc6bdce712db4e9144321a9}} 
+\index{vOrderSales@{vOrderSales}!getSalesDate@{getSalesDate}}
+\index{getSalesDate@{getSalesDate}!vOrderSales@{vOrderSales}}
+\doxysubsubsection{\texorpdfstring{getSalesDate()}{getSalesDate()}}
+{\footnotesize\ttfamily std\+::string v\+Order\+Sales\+::get\+Sales\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets sales\+Date. 
+
+\begin{DoxyReturn}{Returns}
+sales\+Date 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classv_order_sales_af698c3960f83398275b038d2bf1ea72b}\label{classv_order_sales_af698c3960f83398275b038d2bf1ea72b}} 
+\index{vOrderSales@{vOrderSales}!getTotalQuantity@{getTotalQuantity}}
+\index{getTotalQuantity@{getTotalQuantity}!vOrderSales@{vOrderSales}}
+\doxysubsubsection{\texorpdfstring{getTotalQuantity()}{getTotalQuantity()}}
+{\footnotesize\ttfamily int v\+Order\+Sales\+::get\+Total\+Quantity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets total\+Quantity. 
+
+\begin{DoxyReturn}{Returns}
+total\+Quantity 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classv_order_sales_a0fab5ea8aa1c84e823f01b5b191a4b61}\label{classv_order_sales_a0fab5ea8aa1c84e823f01b5b191a4b61}} 
+\index{vOrderSales@{vOrderSales}!getTotalRevenue@{getTotalRevenue}}
+\index{getTotalRevenue@{getTotalRevenue}!vOrderSales@{vOrderSales}}
+\doxysubsubsection{\texorpdfstring{getTotalRevenue()}{getTotalRevenue()}}
+{\footnotesize\ttfamily double v\+Order\+Sales\+::get\+Total\+Revenue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets total\+Revenue. 
+
+\begin{DoxyReturn}{Returns}
+total\+Revenue 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classv_order_sales_a3354fa990932355b0e1e3d929ca1d834}\label{classv_order_sales_a3354fa990932355b0e1e3d929ca1d834}} 
+\index{vOrderSales@{vOrderSales}!isAutoGeneratedKey@{isAutoGeneratedKey}}
+\index{isAutoGeneratedKey@{isAutoGeneratedKey}!vOrderSales@{vOrderSales}}
+\doxysubsubsection{\texorpdfstring{isAutoGeneratedKey()}{isAutoGeneratedKey()}}
+{\footnotesize\ttfamily bool v\+Order\+Sales\+::is\+Auto\+Generated\+Key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Return true if the primary key is of type INTEGER and should have a unique value automatically chosen when inserting, false otherwise. 
+
+When calling DBHelper\+::insert(model), where model is an object that extends \mbox{\hyperlink{class_model}{Model}}, NULL will be used as the value of the primary key column. In place of NULL, SQLite3 will automatically choose the next highest integer as the key.
+
+For more details, see\+: \href{https://www.sqlite.org/lang_createtable.html\#rowid}{\texttt{ https\+://www.\+sqlite.\+org/lang\+\_\+createtable.\+html\#rowid}} \href{https://www.sqlite.org/autoinc.html}{\texttt{ https\+://www.\+sqlite.\+org/autoinc.\+html}}
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}}. When implemented in a subclass, it should always return the same value for that class.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+true if the key should be auto generated, false otherwise 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_a3b8a37c35da901d5d81f411f86e5fc0d}{Model}}.
+
+\mbox{\Hypertarget{classv_order_sales_a8c6fa7be4c0cae3360ea3296c1149045}\label{classv_order_sales_a8c6fa7be4c0cae3360ea3296c1149045}} 
+\index{vOrderSales@{vOrderSales}!keys@{keys}}
+\index{keys@{keys}!vOrderSales@{vOrderSales}}
+\doxysubsubsection{\texorpdfstring{keys()}{keys()}}
+{\footnotesize\ttfamily std\+::set$<$ std\+::string $>$ v\+Order\+Sales\+::keys (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Return the column name(s) of the primary key(s) of the SQL table. 
+
+Returns a subset of column names from \mbox{\hyperlink{classv_order_sales_a6f2c49b93d952e68c93469e2f7ca545d}{columns()}}, where those names are the PRIMARY KEY columns of the table.
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}}. When implemented in a subclass, it should always return the same value for that class.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+vector of primary keys 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_a6df15ae2b38971e9a0b562cf046991e2}{Model}}.
+
+\mbox{\Hypertarget{classv_order_sales_a13a56c40a2fa4130e97549853f17d919}\label{classv_order_sales_a13a56c40a2fa4130e97549853f17d919}} 
+\index{vOrderSales@{vOrderSales}!tableName@{tableName}}
+\index{tableName@{tableName}!vOrderSales@{vOrderSales}}
+\doxysubsubsection{\texorpdfstring{tableName()}{tableName()}}
+{\footnotesize\ttfamily std\+::string v\+Order\+Sales\+::table\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Returns the name of the SQL table that this model represents. 
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}}. When implemented in a subclass, it should always return the same value for that class.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+the table name 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_aa268944617c5b6bf53115243db0228b8}{Model}}.
+
+\mbox{\Hypertarget{classv_order_sales_af36264ea69b7121944956c6314a8b640}\label{classv_order_sales_af36264ea69b7121944956c6314a8b640}} 
+\index{vOrderSales@{vOrderSales}!toMap@{toMap}}
+\index{toMap@{toMap}!vOrderSales@{vOrderSales}}
+\doxysubsubsection{\texorpdfstring{toMap()}{toMap()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, std\+::any $>$ v\+Order\+Sales\+::to\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Returns a map representation of this object. 
+
+For each member variable of this object the map has a key value pair where the key is the name of the member variable and the value is the value of the member variable.
+
+\begin{DoxyNote}{Note}
+Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}} to iterate the member variables of this object.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+a map representation of this object 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_aba5aa6aee8243a03a6d0bc1335503e5f}{Model}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classv_order_sales_ad3b786915de5707688a12f8a507f65c9}\label{classv_order_sales_ad3b786915de5707688a12f8a507f65c9}} 
+\index{vOrderSales@{vOrderSales}!isAllMenuItems@{isAllMenuItems}}
+\index{isAllMenuItems@{isAllMenuItems}!vOrderSales@{vOrderSales}}
+\doxysubsubsection{\texorpdfstring{isAllMenuItems}{isAllMenuItems}}
+{\footnotesize\ttfamily bool v\+Order\+Sales\+::is\+All\+Menu\+Items\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Is this row the \char`\"{}\+All menu items\char`\"{} row. 
+
+Used only in the ORDER BY clause to put \char`\"{}\+All menu items\char`\"{} first before individual menu items. \mbox{\Hypertarget{classv_order_sales_a504661c3047e9864157d0a218f4817a0}\label{classv_order_sales_a504661c3047e9864157d0a218f4817a0}} 
+\index{vOrderSales@{vOrderSales}!menuItemName@{menuItemName}}
+\index{menuItemName@{menuItemName}!vOrderSales@{vOrderSales}}
+\doxysubsubsection{\texorpdfstring{menuItemName}{menuItemName}}
+{\footnotesize\ttfamily std\+::string v\+Order\+Sales\+::menu\+Item\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The menu items of the aggregated orders. 
+
+Can also be \char`\"{}\+All menu items\char`\"{}, representing the total of all menu items. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/data/v\+Order\+Sales.\+hpp\item 
+src/data/v\+Order\+Sales.\+cpp\end{DoxyCompactItemize}

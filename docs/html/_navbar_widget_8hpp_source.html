@@ -90,20 +90,29 @@ $(function() {
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;Wt/WAnchor.h&gt;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;Wt/WImage.h&gt;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;IOHelper.hpp&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;Application.hpp&quot;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_navbar_widget.html">   20</a></span><span class="keyword">class </span><a class="code hl_class" href="class_navbar_widget.html">NavbarWidget</a> : <span class="keyword">public</span> Wt::WContainerWidget</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>{</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_function" href="class_navbar_widget.html#a27168065232e8a998509b2c786c5fa45">NavbarWidget</a>();</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_function" href="class_navbar_widget.html#a91cdf1233d924151ce1b9f8507e96a7f">~NavbarWidget</a>();</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>};</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#endif </span><span class="comment">/* NavbarWidget_hpp */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aclass_navbar_widget_html"><div class="ttname"><a href="class_navbar_widget.html">NavbarWidget</a></div><div class="ttdef"><b>Definition:</b> NavbarWidget.hpp:21</div></div>
-<div class="ttc" id="aclass_navbar_widget_html_a27168065232e8a998509b2c786c5fa45"><div class="ttname"><a href="class_navbar_widget.html#a27168065232e8a998509b2c786c5fa45">NavbarWidget::NavbarWidget</a></div><div class="ttdeci">NavbarWidget()</div><div class="ttdef"><b>Definition:</b> NavbarWidget.cpp:9</div></div>
-<div class="ttc" id="aclass_navbar_widget_html_a91cdf1233d924151ce1b9f8507e96a7f"><div class="ttname"><a href="class_navbar_widget.html#a91cdf1233d924151ce1b9f8507e96a7f">NavbarWidget::~NavbarWidget</a></div><div class="ttdeci">~NavbarWidget()</div><div class="ttdef"><b>Definition:</b> NavbarWidget.cpp:34</div></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_navbar_widget.html">   24</a></span><span class="keyword">class </span><a class="code hl_class" href="class_navbar_widget.html">NavbarWidget</a> : <span class="keyword">public</span> Wt::WContainerWidget</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_function" href="class_navbar_widget.html#a27168065232e8a998509b2c786c5fa45">NavbarWidget</a>();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_function" href="class_navbar_widget.html#a91cdf1233d924151ce1b9f8507e96a7f">~NavbarWidget</a>();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    std::unique_ptr&lt;Wt::WTemplate&gt; <a class="code hl_function" href="class_navbar_widget.html#ac322a30f43880d82ddd8ce2c91f5896f">createCustomerNavbarWidget</a>();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    std::unique_ptr&lt;Wt::WTemplate&gt; <a class="code hl_function" href="class_navbar_widget.html#a10237b178ace5fcd9f3ca4d2df81559b">createAdminNavbarWidget</a>();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_navbar_widget.html#ae3fce084e46dcaa15ef9b2f663db3cd6">bindCommonNavbarAnchors</a>(Wt::WTemplate *navTemplate);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>};</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">#endif </span><span class="comment">/* NavbarWidget_hpp */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aclass_navbar_widget_html"><div class="ttname"><a href="class_navbar_widget.html">NavbarWidget</a></div><div class="ttdoc">Class representing the navbar widget.</div><div class="ttdef"><b>Definition:</b> NavbarWidget.hpp:25</div></div>
+<div class="ttc" id="aclass_navbar_widget_html_a10237b178ace5fcd9f3ca4d2df81559b"><div class="ttname"><a href="class_navbar_widget.html#a10237b178ace5fcd9f3ca4d2df81559b">NavbarWidget::createAdminNavbarWidget</a></div><div class="ttdeci">std::unique_ptr&lt; Wt::WTemplate &gt; createAdminNavbarWidget()</div><div class="ttdoc">Creates and returns the navbar widget as it appears to administrators (logged in).</div><div class="ttdef"><b>Definition:</b> NavbarWidget.cpp:48</div></div>
+<div class="ttc" id="aclass_navbar_widget_html_a27168065232e8a998509b2c786c5fa45"><div class="ttname"><a href="class_navbar_widget.html#a27168065232e8a998509b2c786c5fa45">NavbarWidget::NavbarWidget</a></div><div class="ttdeci">NavbarWidget()</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> NavbarWidget.cpp:9</div></div>
+<div class="ttc" id="aclass_navbar_widget_html_a91cdf1233d924151ce1b9f8507e96a7f"><div class="ttname"><a href="class_navbar_widget.html#a91cdf1233d924151ce1b9f8507e96a7f">NavbarWidget::~NavbarWidget</a></div><div class="ttdeci">~NavbarWidget()</div><div class="ttdoc">Destructor.</div><div class="ttdef"><b>Definition:</b> NavbarWidget.cpp:24</div></div>
+<div class="ttc" id="aclass_navbar_widget_html_ac322a30f43880d82ddd8ce2c91f5896f"><div class="ttname"><a href="class_navbar_widget.html#ac322a30f43880d82ddd8ce2c91f5896f">NavbarWidget::createCustomerNavbarWidget</a></div><div class="ttdeci">std::unique_ptr&lt; Wt::WTemplate &gt; createCustomerNavbarWidget()</div><div class="ttdoc">Creates and returns the navbar widget as it appears to customers (not logged in).</div><div class="ttdef"><b>Definition:</b> NavbarWidget.cpp:29</div></div>
+<div class="ttc" id="aclass_navbar_widget_html_ae3fce084e46dcaa15ef9b2f663db3cd6"><div class="ttname"><a href="class_navbar_widget.html#ae3fce084e46dcaa15ef9b2f663db3cd6">NavbarWidget::bindCommonNavbarAnchors</a></div><div class="ttdeci">void bindCommonNavbarAnchors(Wt::WTemplate *navTemplate)</div><div class="ttdoc">Binds the anchor widgets that are common to both the customer navbar and admin navbar.</div><div class="ttdef"><b>Definition:</b> NavbarWidget.cpp:72</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

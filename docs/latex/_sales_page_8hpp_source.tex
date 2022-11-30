@@ -1,0 +1,88 @@
+\hypertarget{_sales_page_8hpp_source}{}\doxysection{Sales\+Page.\+hpp}
+\label{_sales_page_8hpp_source}\index{src/web/SalesPage.hpp@{src/web/SalesPage.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{//  SalesPage.hpp}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef SalesPage\_hpp}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define SalesPage\_hpp}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <set>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <Wt/WTemplate.h>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <Wt/Chart/WCartesianChart.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <Wt/WStandardItemModel.h>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <Wt/WTableView.h>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <Wt/WDate.h>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <Wt/WFont.h>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <Wt/WPen.h>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <Wt/WBrush.h>}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <Wt/WText.h>}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <Wt/WCssDecorationStyle.h>}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <Wt/WDialog.h>}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <Wt/WPushButton.h>}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <Wt/WButtonGroup.h>}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include <Wt/WRadioButton.h>}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include <Wt/WCheckBox.h>}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}Application.hpp"{}}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}DBHelper.hpp"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}SqlCondition.hpp"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}vOrderSales.hpp"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}MenuItem.hpp"{}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include "{}Page.hpp"{}}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{45 \textcolor{keyword}{class }\mbox{\hyperlink{class_sales_page}{SalesPage}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_page}{Page}}}
+\DoxyCodeLine{46 \{}
+\DoxyCodeLine{47 \textcolor{keyword}{public}:}
+\DoxyCodeLine{53     \mbox{\hyperlink{class_sales_page_a2b23fb6316128b1530d48604d766558f}{SalesPage}}();}
+\DoxyCodeLine{54     }
+\DoxyCodeLine{60     \mbox{\hyperlink{class_sales_page_ac6fe1491e7349f96c96b857feea32801}{\string~SalesPage}}();}
+\DoxyCodeLine{61 \textcolor{keyword}{private}:}
+\DoxyCodeLine{65     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_sales_page_a221401348541cf8ba3b7873653668604}{NUM\_DAYS\_TO\_CHART}};}
+\DoxyCodeLine{66     }
+\DoxyCodeLine{70     \textcolor{keyword}{static} \textcolor{keyword}{const} std::vector<Wt::WColor> \mbox{\hyperlink{class_sales_page_a581e91b053f2c5a96ff5516c524c540a}{COLOUR\_PALETTE}};}
+\DoxyCodeLine{71     }
+\DoxyCodeLine{75     std::vector<MenuItem> \mbox{\hyperlink{class_sales_page_a0ec1dc37d36f4345e6bf1b627be72c8b}{menu}};}
+\DoxyCodeLine{76     }
+\DoxyCodeLine{80     std::set<std::string> \mbox{\hyperlink{class_sales_page_a6bfc9b1ea9a526e3afb7261aec732187}{menuItemsToChart}};}
+\DoxyCodeLine{81     }
+\DoxyCodeLine{85     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_sales_page_ad60b39e502803595269f9d93587f6139}{selectedIDRevQty}};}
+\DoxyCodeLine{86     }
+\DoxyCodeLine{90     std::map<std::string, double> \mbox{\hyperlink{class_sales_page_adafab38a67abb4f1f93fad17e6eb2918}{maxSeriesRevenue}};}
+\DoxyCodeLine{91     }
+\DoxyCodeLine{95     std::map<std::string, int> \mbox{\hyperlink{class_sales_page_a1a8138b6454186b85f1c3bd1e87572e1}{maxSeriesQuantity}};}
+\DoxyCodeLine{96     }
+\DoxyCodeLine{103     std::unique\_ptr<Wt::Chart::WCartesianChart> \mbox{\hyperlink{class_sales_page_aef012f9339ee896b0a2b310de958952e}{createChartWidget}}(std::shared\_ptr<Wt::WStandardItemModel> model);}
+\DoxyCodeLine{104     }
+\DoxyCodeLine{112     std::unique\_ptr<Wt::WContainerWidget> \mbox{\hyperlink{class_sales_page_ada4485ea978dfbc0ca7b2cc9ead3d5c3}{createLegendWidget}}();}
+\DoxyCodeLine{113     }
+\DoxyCodeLine{123     std::unique\_ptr<Wt::WContainerWidget> \mbox{\hyperlink{class_sales_page_a587cd9fdc09df2870c6f6d182be0ce7c}{createLegendItemWidget}}(std::string menuItemName, Wt::WColor colour);}
+\DoxyCodeLine{124     }
+\DoxyCodeLine{135     std::unique\_ptr<Wt::WContainerWidget> \mbox{\hyperlink{class_sales_page_ad1ebe49003ddf87eaffea49f7dc8b1b3}{createBtnGroupRevQty}}(Wt::Chart::WCartesianChart *chart, Wt::WTemplate *salesTemplate, Wt::WText *yAxisTitle);}
+\DoxyCodeLine{136     }
+\DoxyCodeLine{146     std::unique\_ptr<Wt::WDialog> \mbox{\hyperlink{class_sales_page_a7b525b441e37a1cc949050413b8993e4}{createDialogWidget}}(Wt::Chart::WCartesianChart *chart, Wt::WTemplate *salesTemplate);}
+\DoxyCodeLine{147     }
+\DoxyCodeLine{159     std::unique\_ptr<Wt::WContainerWidget> \mbox{\hyperlink{class_sales_page_a018b68111f80d0553b40c6c3fced17a0}{createDialogItemWidget}}(Wt::Chart::WCartesianChart *chart, Wt::WTemplate *salesTemplate, std::string menuItemName);}
+\DoxyCodeLine{160     }
+\DoxyCodeLine{168     std::unique\_ptr<Wt::WPushButton> \mbox{\hyperlink{class_sales_page_a7545691b98c181faacf10cee84d39729}{createBtnOpenDialogWidget}}();}
+\DoxyCodeLine{169     }
+\DoxyCodeLine{178     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sales_page_afe92d389d1eed582b6808f6e9b6edbe3}{onBtnOpenDialogClick}}(Wt::WDialog *dialog, Wt::WPushButton *btnOpenDialog);}
+\DoxyCodeLine{179     }
+\DoxyCodeLine{189     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sales_page_ae618ae4357f39df897bff04cd9e1d51e}{updateModel}}(Wt::WAbstractItemModel *model);}
+\DoxyCodeLine{190     }
+\DoxyCodeLine{197     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sales_page_ab9c56b6f57730c813ef0b63c09ca70f4}{showSeries}}(Wt::Chart::WCartesianChart *chart, Wt::WTemplate *salesTemplate);}
+\DoxyCodeLine{198     }
+\DoxyCodeLine{206     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sales_page_a306c97b19378744213be3dc25d4a6769}{setChartYAxisRange}}(Wt::Chart::WCartesianChart *chart);}
+\DoxyCodeLine{207     }
+\DoxyCodeLine{213     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sales_page_a27d0420759e25872bcb58f10e975521f}{setYAxisTitle}}(Wt::WText *yAxisTitle);}
+\DoxyCodeLine{214 \};}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SalesPage\_hpp */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

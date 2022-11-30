@@ -44,12 +44,10 @@ std\+::vector$<$ \mbox{\hyperlink{class_model}{Model}} $\ast$ $>$ \mbox{\hyperli
 \begin{DoxyCompactList}\small\item\em Reads rows from the table represented by model and returns the result as a vector. \end{DoxyCompactList}\item 
 sqlite3\+\_\+stmt $\ast$ \mbox{\hyperlink{class_d_b_helper_a12277429c2214720af2dfab737ac21fe}{prepare\+Statement}} (const std\+::string \&query, const std\+::string \&query\+Type) const
 \begin{DoxyCompactList}\small\item\em Prepares a sqlite3 statement from the given query. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_d_b_helper_a257cd82872e03e74858fc80c60ff996d}\label{class_d_b_helper_a257cd82872e03e74858fc80c60ff996d}} 
-std\+::string {\bfseries generate\+Where\+Clause\+From\+Conditions} (const std\+::vector$<$ \mbox{\hyperlink{class_sql_condition}{Sql\+Condition}} $>$ \&conditions) const
-\item 
-\mbox{\Hypertarget{class_d_b_helper_a9686986bb04948d9c843bb98260758a7}\label{class_d_b_helper_a9686986bb04948d9c843bb98260758a7}} 
-std\+::string {\bfseries generate\+Where\+Clause\+From\+Keys} (const std\+::vector$<$ std\+::string $>$ \&keys) const
-\item 
+std\+::string \mbox{\hyperlink{class_d_b_helper_a257cd82872e03e74858fc80c60ff996d}{generate\+Where\+Clause\+From\+Conditions}} (const std\+::vector$<$ \mbox{\hyperlink{class_sql_condition}{Sql\+Condition}} $>$ \&conditions) const
+\begin{DoxyCompactList}\small\item\em Generates the WHERE clause of a query from a vector of \mbox{\hyperlink{class_sql_condition}{Sql\+Condition}} objects. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_d_b_helper_a9686986bb04948d9c843bb98260758a7}{generate\+Where\+Clause\+From\+Keys}} (const std\+::vector$<$ std\+::string $>$ \&keys) const
+\begin{DoxyCompactList}\small\item\em Generates the WHERE clause of a query from a vector of key column names. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_d_b_helper_a343726ad40336cbe56fc8c77425196ec}{bind\+Statement\+Columns}} (sqlite3\+\_\+stmt $\ast$statement, const \mbox{\hyperlink{class_model}{Model}} \&model, const std\+::vector$<$ std\+::string $>$ \&columns, int \&index, const std\+::string \&query\+Type) const
 \begin{DoxyCompactList}\small\item\em Iterates the columns vector and binds the corresponding value in the model to the statement, starting at index. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_d_b_helper_af734d9bc780aecdcedf5a27e340422d0}{bind\+Statement\+Conditions}} (sqlite3\+\_\+stmt $\ast$statement, const std\+::vector$<$ \mbox{\hyperlink{class_sql_condition}{Sql\+Condition}} $>$ \&conditions, int \&index, const std\+::string \&query\+Type) const
@@ -237,6 +235,42 @@ Runs the destructor for statement, preventing resource leaks.
 {\em error\+Message} & the message to print if an error occurred when running the statement \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{class_d_b_helper_a257cd82872e03e74858fc80c60ff996d}\label{class_d_b_helper_a257cd82872e03e74858fc80c60ff996d}} 
+\index{DBHelper@{DBHelper}!generateWhereClauseFromConditions@{generateWhereClauseFromConditions}}
+\index{generateWhereClauseFromConditions@{generateWhereClauseFromConditions}!DBHelper@{DBHelper}}
+\doxysubsubsection{\texorpdfstring{generateWhereClauseFromConditions()}{generateWhereClauseFromConditions()}}
+{\footnotesize\ttfamily std\+::string DBHelper\+::generate\+Where\+Clause\+From\+Conditions (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_sql_condition}{Sql\+Condition}} $>$ \&}]{conditions }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Generates the WHERE clause of a query from a vector of \mbox{\hyperlink{class_sql_condition}{Sql\+Condition}} objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em conditions} & iterated to generate the WHERE clause \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the WHERE clause of a query 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_d_b_helper_a9686986bb04948d9c843bb98260758a7}\label{class_d_b_helper_a9686986bb04948d9c843bb98260758a7}} 
+\index{DBHelper@{DBHelper}!generateWhereClauseFromKeys@{generateWhereClauseFromKeys}}
+\index{generateWhereClauseFromKeys@{generateWhereClauseFromKeys}!DBHelper@{DBHelper}}
+\doxysubsubsection{\texorpdfstring{generateWhereClauseFromKeys()}{generateWhereClauseFromKeys()}}
+{\footnotesize\ttfamily std\+::string DBHelper\+::generate\+Where\+Clause\+From\+Keys (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{keys }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Generates the WHERE clause of a query from a vector of key column names. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em keys} & iterated to generate the WHERE clause \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the WHERE clause of a query 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_d_b_helper_ad205c287b83371638430e41eef9d3719}\label{class_d_b_helper_ad205c287b83371638430e41eef9d3719}} 
 \index{DBHelper@{DBHelper}!getInstance@{getInstance}}
 \index{getInstance@{getInstance}!DBHelper@{DBHelper}}

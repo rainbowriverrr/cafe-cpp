@@ -14,16 +14,22 @@
 \DoxyCodeLine{10 \textcolor{preprocessor}{\#include <Wt/WAnchor.h>}}
 \DoxyCodeLine{11 \textcolor{preprocessor}{\#include <Wt/WImage.h>}}
 \DoxyCodeLine{12 }
-\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}IOHelper.hpp"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}Application.hpp"{}}}
 \DoxyCodeLine{14 }
-\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{class_navbar_widget}{NavbarWidget}} : \textcolor{keyword}{public} Wt::WContainerWidget}
-\DoxyCodeLine{21 \{}
-\DoxyCodeLine{22 \textcolor{keyword}{public}:}
-\DoxyCodeLine{26     \mbox{\hyperlink{class_navbar_widget_a27168065232e8a998509b2c786c5fa45}{NavbarWidget}}();}
-\DoxyCodeLine{27     }
-\DoxyCodeLine{31     \mbox{\hyperlink{class_navbar_widget_a91cdf1233d924151ce1b9f8507e96a7f}{\string~NavbarWidget}}();}
-\DoxyCodeLine{32 \};}
-\DoxyCodeLine{33 }
-\DoxyCodeLine{34 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* NavbarWidget\_hpp */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{class_navbar_widget}{NavbarWidget}} : \textcolor{keyword}{public} Wt::WContainerWidget}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26 \textcolor{keyword}{public}:}
+\DoxyCodeLine{32     \mbox{\hyperlink{class_navbar_widget_a27168065232e8a998509b2c786c5fa45}{NavbarWidget}}();}
+\DoxyCodeLine{33     }
+\DoxyCodeLine{39     \mbox{\hyperlink{class_navbar_widget_a91cdf1233d924151ce1b9f8507e96a7f}{\string~NavbarWidget}}();}
+\DoxyCodeLine{40 \textcolor{keyword}{private}:}
+\DoxyCodeLine{48     std::unique\_ptr<Wt::WTemplate> \mbox{\hyperlink{class_navbar_widget_ac322a30f43880d82ddd8ce2c91f5896f}{createCustomerNavbarWidget}}();}
+\DoxyCodeLine{49     }
+\DoxyCodeLine{57     std::unique\_ptr<Wt::WTemplate> \mbox{\hyperlink{class_navbar_widget_a10237b178ace5fcd9f3ca4d2df81559b}{createAdminNavbarWidget}}();}
+\DoxyCodeLine{58     }
+\DoxyCodeLine{66     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_navbar_widget_ae3fce084e46dcaa15ef9b2f663db3cd6}{bindCommonNavbarAnchors}}(Wt::WTemplate *navTemplate);}
+\DoxyCodeLine{67 \};}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* NavbarWidget\_hpp */}\textcolor{preprocessor}{}}
 
 \end{DoxyCode}

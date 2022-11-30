@@ -2,6 +2,11 @@
 \label{class_navbar_widget}\index{NavbarWidget@{NavbarWidget}}
 
 
+Class representing the navbar widget.  
+
+
+
+
 {\ttfamily \#include $<$Navbar\+Widget.\+hpp$>$}
 
 Inheritance diagram for Navbar\+Widget\+:\begin{figure}[H]
@@ -14,13 +19,26 @@ Inheritance diagram for Navbar\+Widget\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_navbar_widget_a27168065232e8a998509b2c786c5fa45}{Navbar\+Widget}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_navbar_widget_a91cdf1233d924151ce1b9f8507e96a7f}{$\sim$\+Navbar\+Widget}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ Wt\+::\+WTemplate $>$ \mbox{\hyperlink{class_navbar_widget_ac322a30f43880d82ddd8ce2c91f5896f}{create\+Customer\+Navbar\+Widget}} ()
+\begin{DoxyCompactList}\small\item\em Creates and returns the navbar widget as it appears to customers (not logged in). \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ Wt\+::\+WTemplate $>$ \mbox{\hyperlink{class_navbar_widget_a10237b178ace5fcd9f3ca4d2df81559b}{create\+Admin\+Navbar\+Widget}} ()
+\begin{DoxyCompactList}\small\item\em Creates and returns the navbar widget as it appears to administrators (logged in). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_navbar_widget_ae3fce084e46dcaa15ef9b2f663db3cd6}{bind\+Common\+Navbar\+Anchors}} (Wt\+::\+WTemplate $\ast$nav\+Template)
+\begin{DoxyCompactList}\small\item\em Binds the anchor widgets that are common to both the customer navbar and admin navbar. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Class representing the navbar widget. \begin{DoxyAuthor}{Author}
+Class representing the navbar widget. 
+
+Displays a navigation bar at the top of the page with button links to each page of the website. Different links are displayed depending on if the user is logged in or not.
+
+\begin{DoxyAuthor}{Author}
 Julian Koksal 
 \end{DoxyAuthor}
 \begin{DoxyDate}{Date}
@@ -35,13 +53,71 @@ Julian Koksal
 \doxysubsubsection{\texorpdfstring{NavbarWidget()}{NavbarWidget()}}
 {\footnotesize\ttfamily Navbar\+Widget\+::\+Navbar\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Constructor. \mbox{\Hypertarget{class_navbar_widget_a91cdf1233d924151ce1b9f8507e96a7f}\label{class_navbar_widget_a91cdf1233d924151ce1b9f8507e96a7f}} 
+
+
+Constructor. 
+
+Creates the widget and its contents. \mbox{\Hypertarget{class_navbar_widget_a91cdf1233d924151ce1b9f8507e96a7f}\label{class_navbar_widget_a91cdf1233d924151ce1b9f8507e96a7f}} 
 \index{NavbarWidget@{NavbarWidget}!````~NavbarWidget@{$\sim$NavbarWidget}}
 \index{````~NavbarWidget@{$\sim$NavbarWidget}!NavbarWidget@{NavbarWidget}}
 \doxysubsubsection{\texorpdfstring{$\sim$NavbarWidget()}{~NavbarWidget()}}
 {\footnotesize\ttfamily Navbar\+Widget\+::$\sim$\+Navbar\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
 Destructor. 
+
+Does nothing. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_navbar_widget_ae3fce084e46dcaa15ef9b2f663db3cd6}\label{class_navbar_widget_ae3fce084e46dcaa15ef9b2f663db3cd6}} 
+\index{NavbarWidget@{NavbarWidget}!bindCommonNavbarAnchors@{bindCommonNavbarAnchors}}
+\index{bindCommonNavbarAnchors@{bindCommonNavbarAnchors}!NavbarWidget@{NavbarWidget}}
+\doxysubsubsection{\texorpdfstring{bindCommonNavbarAnchors()}{bindCommonNavbarAnchors()}}
+{\footnotesize\ttfamily void Navbar\+Widget\+::bind\+Common\+Navbar\+Anchors (\begin{DoxyParamCaption}\item[{Wt\+::\+WTemplate $\ast$}]{nav\+Template }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Binds the anchor widgets that are common to both the customer navbar and admin navbar. 
+
+Binds the anchor to the home, menu, and orders pages.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nav\+Template} & the navbar template to bind the anchors to \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_navbar_widget_a10237b178ace5fcd9f3ca4d2df81559b}\label{class_navbar_widget_a10237b178ace5fcd9f3ca4d2df81559b}} 
+\index{NavbarWidget@{NavbarWidget}!createAdminNavbarWidget@{createAdminNavbarWidget}}
+\index{createAdminNavbarWidget@{createAdminNavbarWidget}!NavbarWidget@{NavbarWidget}}
+\doxysubsubsection{\texorpdfstring{createAdminNavbarWidget()}{createAdminNavbarWidget()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ Wt\+::\+WTemplate $>$ Navbar\+Widget\+::create\+Admin\+Navbar\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates and returns the navbar widget as it appears to administrators (logged in). 
+
+Has links to the home, menu, orders, sales, inventory, and create account pages, and a link to log out.
+
+\begin{DoxyReturn}{Returns}
+unique ptr to the widget that was created 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_navbar_widget_ac322a30f43880d82ddd8ce2c91f5896f}\label{class_navbar_widget_ac322a30f43880d82ddd8ce2c91f5896f}} 
+\index{NavbarWidget@{NavbarWidget}!createCustomerNavbarWidget@{createCustomerNavbarWidget}}
+\index{createCustomerNavbarWidget@{createCustomerNavbarWidget}!NavbarWidget@{NavbarWidget}}
+\doxysubsubsection{\texorpdfstring{createCustomerNavbarWidget()}{createCustomerNavbarWidget()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ Wt\+::\+WTemplate $>$ Navbar\+Widget\+::create\+Customer\+Navbar\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates and returns the navbar widget as it appears to customers (not logged in). 
+
+Has links to the home, menu, orders, login, and cart pages.
+
+\begin{DoxyReturn}{Returns}
+unique ptr to the widget that was created 
+\end{DoxyReturn}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

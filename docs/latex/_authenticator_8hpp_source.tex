@@ -1,0 +1,49 @@
+\hypertarget{_authenticator_8hpp_source}{}\doxysection{Authenticator.\+hpp}
+\label{_authenticator_8hpp_source}\index{src/web/Authenticator.hpp@{src/web/Authenticator.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by Sharon Nikritin on 2022-\/11-\/17.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef Authenticator\_hpp}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define Authenticator\_hpp}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}Application.hpp"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}DBHelper.hpp"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}Admin.hpp"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{class_authenticator}{Authenticator}} \{}
+\DoxyCodeLine{19 \textcolor{keyword}{public}:}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     \mbox{\hyperlink{class_authenticator}{Authenticator}}();}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     \mbox{\hyperlink{class_authenticator}{\string~Authenticator}}();}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \textcolor{keywordtype}{bool} IsLoggedIn ();}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     \textcolor{keywordtype}{bool} CreateNewAdmin (std:: string username, std::string password);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{keywordtype}{void} LogOut();}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     \textcolor{keywordtype}{void} LogIn(std::string username, std::string password);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keyword}{private}:}
+\DoxyCodeLine{34     \textcolor{keywordtype}{bool} isLoggedIn;}
+\DoxyCodeLine{35     \textcolor{keywordtype}{bool} CheckCredentials (std::string username, std::string password);}
+\DoxyCodeLine{36     std::hash<std::string> hasher;}
+\DoxyCodeLine{37     std::vector<Admin> admin;}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//Authenicator.hpp}}
+
+\end{DoxyCode}

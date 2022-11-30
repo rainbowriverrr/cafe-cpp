@@ -2,6 +2,11 @@
 \label{class_menu_item}\index{MenuItem@{MenuItem}}
 
 
+Class representing a row of the \mbox{\hyperlink{class_menu_item}{Menu\+Item}} table.  
+
+
+
+
 {\ttfamily \#include $<$Menu\+Item.\+hpp$>$}
 
 Inheritance diagram for Menu\+Item\+:\begin{figure}[H]
@@ -13,16 +18,20 @@ Inheritance diagram for Menu\+Item\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_menu_item_a4bf1aac1d8a9bbea3107d6f6e94175b5}{Menu\+Item}} (std\+::string \mbox{\hyperlink{class_menu_item_a0e46de23f339da33aebb4b14ada546a7}{name}}=\char`\"{}\char`\"{}, double \mbox{\hyperlink{class_menu_item_a05ed0defbede1c8398b3f3a610c1c732}{price}}=0)
-\item 
+\mbox{\hyperlink{class_menu_item_ae8f86a4a9ceb1f3c1fcd9aa3ed18b9b2}{Menu\+Item}} (std\+::string \mbox{\hyperlink{class_menu_item_a0e46de23f339da33aebb4b14ada546a7}{name}}=\char`\"{}\char`\"{}, double \mbox{\hyperlink{class_menu_item_a05ed0defbede1c8398b3f3a610c1c732}{price}}=0, std\+::string \mbox{\hyperlink{class_menu_item_adb476bca2e942c3056ad279c0b1c0866}{description}}=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_menu_item_a41c6086a4d066256ecb7bfa715059ea2}{$\sim$\+Menu\+Item}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{class_menu_item_a1500747998ce2503d0b576e4c3e60101}{get\+Name}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Gets the name. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_menu_item_a5b9bbfe9c37ff669a5e3b21c171e28a0}{get\+Price}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Gets the price. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_menu_item_aa2b7c74dc5087c4ff172853c7516518f}{get\+Description}} ()
+\begin{DoxyCompactList}\small\item\em Gets the description. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_menu_item_ae2ebb751e94c46e5bbe32dc2f8003919}{set\+Price}} (double \mbox{\hyperlink{class_menu_item_a05ed0defbede1c8398b3f3a610c1c732}{price}})
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Sets the price. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_item_aa2e0e4a561897f3b72cd0155ef1ff1b9}{set\+Description}} (std\+::string \mbox{\hyperlink{class_menu_item_adb476bca2e942c3056ad279c0b1c0866}{description}})
+\begin{DoxyCompactList}\small\item\em Sets the description of the item. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -44,11 +53,15 @@ virtual \mbox{\hyperlink{class_model}{Model}} $\ast$ \mbox{\hyperlink{class_menu
 std\+::string \mbox{\hyperlink{class_menu_item_a0e46de23f339da33aebb4b14ada546a7}{name}}
 \item 
 double \mbox{\hyperlink{class_menu_item_a05ed0defbede1c8398b3f3a610c1c732}{price}}
+\item 
+std\+::string \mbox{\hyperlink{class_menu_item_adb476bca2e942c3056ad279c0b1c0866}{description}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Class representing a row of the \mbox{\hyperlink{class_menu_item}{Menu\+Item}} table. \begin{DoxyAuthor}{Author}
+Class representing a row of the \mbox{\hyperlink{class_menu_item}{Menu\+Item}} table. 
+
+\begin{DoxyAuthor}{Author}
 Julian Koksal 
 \end{DoxyAuthor}
 \begin{DoxyDate}{Date}
@@ -57,17 +70,25 @@ Julian Koksal
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_menu_item_a4bf1aac1d8a9bbea3107d6f6e94175b5}\label{class_menu_item_a4bf1aac1d8a9bbea3107d6f6e94175b5}} 
+\mbox{\Hypertarget{class_menu_item_ae8f86a4a9ceb1f3c1fcd9aa3ed18b9b2}\label{class_menu_item_ae8f86a4a9ceb1f3c1fcd9aa3ed18b9b2}} 
 \index{MenuItem@{MenuItem}!MenuItem@{MenuItem}}
 \index{MenuItem@{MenuItem}!MenuItem@{MenuItem}}
 \doxysubsubsection{\texorpdfstring{MenuItem()}{MenuItem()}}
-{\footnotesize\ttfamily Menu\+Item\+::\+Menu\+Item (\begin{DoxyParamCaption}\item[{std\+::string}]{name = {\ttfamily \char`\"{}\char`\"{}},  }\item[{double}]{price = {\ttfamily 0} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Menu\+Item\+::\+Menu\+Item (\begin{DoxyParamCaption}\item[{std\+::string}]{name = {\ttfamily \char`\"{}\char`\"{}},  }\item[{double}]{price = {\ttfamily 0},  }\item[{std\+::string}]{description = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
 
-Constructor creates a \mbox{\hyperlink{class_menu_item}{Menu\+Item}} with the given values. 
+
+
+Constructor. 
+
+Creates an object with name, price, and description.
+
+
 \begin{DoxyParams}{Parameters}
 {\em name} & The name of the \mbox{\hyperlink{class_menu_item}{Menu\+Item}}. \\
 \hline
 {\em price} & The price of the \mbox{\hyperlink{class_menu_item}{Menu\+Item}}. \\
+\hline
+{\em description} & The description of the \mbox{\hyperlink{class_menu_item}{Menu\+Item}}. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_menu_item_a41c6086a4d066256ecb7bfa715059ea2}\label{class_menu_item_a41c6086a4d066256ecb7bfa715059ea2}} 
@@ -76,7 +97,11 @@ Constructor creates a \mbox{\hyperlink{class_menu_item}{Menu\+Item}} with the gi
 \doxysubsubsection{\texorpdfstring{$\sim$MenuItem()}{~MenuItem()}}
 {\footnotesize\ttfamily Menu\+Item\+::$\sim$\+Menu\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
 Destructor. 
+
+Does nothing. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_menu_item_a3c472ad7c9a9289b8a0a8e6519022238}\label{class_menu_item_a3c472ad7c9a9289b8a0a8e6519022238}} 
@@ -128,13 +153,30 @@ pointer to the new model
 
 Implements \mbox{\hyperlink{class_model_a374adf0b008ef2c644e022a2c849f897}{Model}}.
 
+\mbox{\Hypertarget{class_menu_item_aa2b7c74dc5087c4ff172853c7516518f}\label{class_menu_item_aa2b7c74dc5087c4ff172853c7516518f}} 
+\index{MenuItem@{MenuItem}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily std\+::string Menu\+Item\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the description. 
+
+\begin{DoxyReturn}{Returns}
+description 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_menu_item_a1500747998ce2503d0b576e4c3e60101}\label{class_menu_item_a1500747998ce2503d0b576e4c3e60101}} 
 \index{MenuItem@{MenuItem}!getName@{getName}}
 \index{getName@{getName}!MenuItem@{MenuItem}}
 \doxysubsubsection{\texorpdfstring{getName()}{getName()}}
 {\footnotesize\ttfamily std\+::string Menu\+Item\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Gets the name. \begin{DoxyReturn}{Returns}
+
+
+Gets the name. 
+
+\begin{DoxyReturn}{Returns}
 name 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_menu_item_a5b9bbfe9c37ff669a5e3b21c171e28a0}\label{class_menu_item_a5b9bbfe9c37ff669a5e3b21c171e28a0}} 
@@ -143,7 +185,11 @@ name
 \doxysubsubsection{\texorpdfstring{getPrice()}{getPrice()}}
 {\footnotesize\ttfamily double Menu\+Item\+::get\+Price (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Gets the price. \begin{DoxyReturn}{Returns}
+
+
+Gets the price. 
+
+\begin{DoxyReturn}{Returns}
 price 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_menu_item_a8b19537273b6a08db1ea369a0d2bbadd}\label{class_menu_item_a8b19537273b6a08db1ea369a0d2bbadd}} 
@@ -192,13 +238,32 @@ vector of primary keys
 
 Implements \mbox{\hyperlink{class_model_a6df15ae2b38971e9a0b562cf046991e2}{Model}}.
 
+\mbox{\Hypertarget{class_menu_item_aa2e0e4a561897f3b72cd0155ef1ff1b9}\label{class_menu_item_aa2e0e4a561897f3b72cd0155ef1ff1b9}} 
+\index{MenuItem@{MenuItem}!setDescription@{setDescription}}
+\index{setDescription@{setDescription}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{setDescription()}{setDescription()}}
+{\footnotesize\ttfamily void Menu\+Item\+::set\+Description (\begin{DoxyParamCaption}\item[{std\+::string}]{description }\end{DoxyParamCaption})}
+
+
+
+Sets the description of the item. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em description} & The new description. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_menu_item_ae2ebb751e94c46e5bbe32dc2f8003919}\label{class_menu_item_ae2ebb751e94c46e5bbe32dc2f8003919}} 
 \index{MenuItem@{MenuItem}!setPrice@{setPrice}}
 \index{setPrice@{setPrice}!MenuItem@{MenuItem}}
 \doxysubsubsection{\texorpdfstring{setPrice()}{setPrice()}}
 {\footnotesize\ttfamily void Menu\+Item\+::set\+Price (\begin{DoxyParamCaption}\item[{double}]{price }\end{DoxyParamCaption})}
 
+
+
 Sets the price. 
+
+
 \begin{DoxyParams}{Parameters}
 {\em price} & The new price. \\
 \hline
@@ -248,7 +313,13 @@ Implements \mbox{\hyperlink{class_model_aba5aa6aee8243a03a6d0bc1335503e5f}{Model
 
 
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{class_menu_item_a0e46de23f339da33aebb4b14ada546a7}\label{class_menu_item_a0e46de23f339da33aebb4b14ada546a7}} 
+\mbox{\Hypertarget{class_menu_item_adb476bca2e942c3056ad279c0b1c0866}\label{class_menu_item_adb476bca2e942c3056ad279c0b1c0866}} 
+\index{MenuItem@{MenuItem}!description@{description}}
+\index{description@{description}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{description}{description}}
+{\footnotesize\ttfamily std\+::string Menu\+Item\+::description\hspace{0.3cm}{\ttfamily [private]}}
+
+The description of the menu item \mbox{\Hypertarget{class_menu_item_a0e46de23f339da33aebb4b14ada546a7}\label{class_menu_item_a0e46de23f339da33aebb4b14ada546a7}} 
 \index{MenuItem@{MenuItem}!name@{name}}
 \index{name@{name}!MenuItem@{MenuItem}}
 \doxysubsubsection{\texorpdfstring{name}{name}}

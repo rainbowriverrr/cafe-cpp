@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['instance_0',['instance',['../class_d_b_helper.html#a2f64ccbcbca80c1f6d1390a80c3d9c8d',1,'DBHelper']]],
-  ['iscomplete_1',['isComplete',['../class_order_master.html#aa391932e6754868168415eb707cf8bfb',1,'OrderMaster']]]
+  ['db_0',['db',['../class_d_b_helper.html#a5aab1ba1c548557b2b19760baf5ce525',1,'DBHelper']]],
+  ['description_1',['description',['../class_menu_item.html#adb476bca2e942c3056ad279c0b1c0866',1,'MenuItem']]]
 ];

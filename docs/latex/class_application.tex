@@ -18,10 +18,17 @@ Inheritance diagram for Application\+:\begin{figure}[H]
 \mbox{\hyperlink{class_application_a748bca84fefb9c12661cfaa2f623748d}{$\sim$\+Application}} ()
 \item 
 void \mbox{\hyperlink{class_application_aa0444cdf3c0c3edc290fdb4c75fe2202}{handle\+Internal\+Path}} (const std\+::string \&internal\+Path)
-\end{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_authenticator}{Authenticator}} $\ast$ \mbox{\hyperlink{class_application_a5dd5d754692ce4d89ef6f8ba28d081aa}{get\+Auth}} ()
+\begin{DoxyCompactList}\small\item\em Gets the authenticator for this session. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_application_a64cf04bb716e294a675fd2f87ec1c7d8}{reset}} ()
+\begin{DoxyCompactList}\small\item\em Recreates the navbar and redirects to the home page. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{class_application_ab9a6f383295f51c8b70d1b5b002d043b}\label{class_application_ab9a6f383295f51c8b70d1b5b002d043b}} 
+\mbox{\hyperlink{class_authenticator}{Authenticator}} $\ast$ {\bfseries auth}
+\begin{DoxyCompactList}\small\item\em The authenticator for this session. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_navbar_widget}{Navbar\+Widget}} $\ast$ \mbox{\hyperlink{class_application_ae13ee8d0f12871864d9481a909214159}{navbar}}
 \item 
 Wt\+::\+WWidget $\ast$ \mbox{\hyperlink{class_application_affad32f749f259158cd4d1d1531bd004}{body}}
@@ -53,6 +60,19 @@ Constructor. \mbox{\Hypertarget{class_application_a748bca84fefb9c12661cfaa2f6237
 Destructor. 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_application_a5dd5d754692ce4d89ef6f8ba28d081aa}\label{class_application_a5dd5d754692ce4d89ef6f8ba28d081aa}} 
+\index{Application@{Application}!getAuth@{getAuth}}
+\index{getAuth@{getAuth}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{getAuth()}{getAuth()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_authenticator}{Authenticator}} $\ast$ Application\+::get\+Auth (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the authenticator for this session. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_authenticator}{Authenticator}} reference 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_application_aa0444cdf3c0c3edc290fdb4c75fe2202}\label{class_application_aa0444cdf3c0c3edc290fdb4c75fe2202}} 
 \index{Application@{Application}!handleInternalPath@{handleInternalPath}}
 \index{handleInternalPath@{handleInternalPath}!Application@{Application}}
@@ -64,7 +84,17 @@ Event handler for when the internal path is changed. Sets the stack widget to th
 {\em internal\+Path} & The internal path that was changed to. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{class_application_a64cf04bb716e294a675fd2f87ec1c7d8}\label{class_application_a64cf04bb716e294a675fd2f87ec1c7d8}} 
+\index{Application@{Application}!reset@{reset}}
+\index{reset@{reset}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Application\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Recreates the navbar and redirects to the home page. 
+
+To be used after logging in or out. 
 
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{class_application_affad32f749f259158cd4d1d1531bd004}\label{class_application_affad32f749f259158cd4d1d1531bd004}} 

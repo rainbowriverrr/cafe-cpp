@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['name_0',['name',['../class_menu_item.html#a0e46de23f339da33aebb4b14ada546a7',1,'MenuItem']]],
-  ['navbar_1',['navbar',['../class_application.html#ae13ee8d0f12871864d9481a909214159',1,'Application']]]
+  ['field_0',['field',['../class_sql_condition.html#a367b652e05af4b92cbc11bc3f6ef2e49',1,'SqlCondition']]]
 ];

@@ -72,23 +72,23 @@
 \DoxyCodeLine{182     }
 \DoxyCodeLine{189     sqlite3\_stmt * \mbox{\hyperlink{class_d_b_helper_a12277429c2214720af2dfab737ac21fe}{prepareStatement}}(\textcolor{keyword}{const} std::string \&query, \textcolor{keyword}{const} std::string \&queryType) \textcolor{keyword}{const};}
 \DoxyCodeLine{190     }
-\DoxyCodeLine{191     std::string generateWhereClauseFromConditions(\textcolor{keyword}{const} std::vector<SqlCondition> \&conditions) \textcolor{keyword}{const};}
-\DoxyCodeLine{192     }
-\DoxyCodeLine{193     std::string generateWhereClauseFromKeys(\textcolor{keyword}{const} std::vector<std::string> \&keys) \textcolor{keyword}{const};}
-\DoxyCodeLine{194     }
-\DoxyCodeLine{206     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_d_b_helper_a343726ad40336cbe56fc8c77425196ec}{bindStatementColumns}}(sqlite3\_stmt *statement, \textcolor{keyword}{const} \mbox{\hyperlink{class_model}{Model}} \&model, \textcolor{keyword}{const} std::vector<std::string> \&columns, \textcolor{keywordtype}{int} \&index,}
-\DoxyCodeLine{207                        \textcolor{keyword}{const} std::string \&queryType) \textcolor{keyword}{const};}
-\DoxyCodeLine{208     }
-\DoxyCodeLine{219     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_d_b_helper_af734d9bc780aecdcedf5a27e340422d0}{bindStatementConditions}}(sqlite3\_stmt *statement, \textcolor{keyword}{const} std::vector<SqlCondition> \&conditions, \textcolor{keywordtype}{int} \&index,}
-\DoxyCodeLine{220                        \textcolor{keyword}{const} std::string \&queryType) \textcolor{keyword}{const};}
-\DoxyCodeLine{221     }
-\DoxyCodeLine{230     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_d_b_helper_a6f481236e2e9ea34f3629d860e50dece}{finalizeStatement}}(sqlite3\_stmt *statement, \textcolor{keyword}{const} std::string \&errorMessage) \textcolor{keyword}{const};}
-\DoxyCodeLine{231     }
-\DoxyCodeLine{237     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_d_b_helper_a3f5e15072ac9a617c2a401aefac5e5a9}{openDB}}();}
-\DoxyCodeLine{238     }
-\DoxyCodeLine{244     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_d_b_helper_acd7fadbcddf0a0bf6e623d930758feba}{closeDB}}();}
-\DoxyCodeLine{245 \};}
-\DoxyCodeLine{246 }
-\DoxyCodeLine{247 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* DBHelper\_hpp */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{197     std::string \mbox{\hyperlink{class_d_b_helper_a257cd82872e03e74858fc80c60ff996d}{generateWhereClauseFromConditions}}(\textcolor{keyword}{const} std::vector<SqlCondition> \&conditions) \textcolor{keyword}{const};}
+\DoxyCodeLine{198     }
+\DoxyCodeLine{205     std::string \mbox{\hyperlink{class_d_b_helper_a9686986bb04948d9c843bb98260758a7}{generateWhereClauseFromKeys}}(\textcolor{keyword}{const} std::vector<std::string> \&keys) \textcolor{keyword}{const};}
+\DoxyCodeLine{206     }
+\DoxyCodeLine{218     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_d_b_helper_a343726ad40336cbe56fc8c77425196ec}{bindStatementColumns}}(sqlite3\_stmt *statement, \textcolor{keyword}{const} \mbox{\hyperlink{class_model}{Model}} \&model, \textcolor{keyword}{const} std::vector<std::string> \&columns, \textcolor{keywordtype}{int} \&index,}
+\DoxyCodeLine{219                        \textcolor{keyword}{const} std::string \&queryType) \textcolor{keyword}{const};}
+\DoxyCodeLine{220     }
+\DoxyCodeLine{231     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_d_b_helper_af734d9bc780aecdcedf5a27e340422d0}{bindStatementConditions}}(sqlite3\_stmt *statement, \textcolor{keyword}{const} std::vector<SqlCondition> \&conditions, \textcolor{keywordtype}{int} \&index,}
+\DoxyCodeLine{232                        \textcolor{keyword}{const} std::string \&queryType) \textcolor{keyword}{const};}
+\DoxyCodeLine{233     }
+\DoxyCodeLine{242     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_d_b_helper_a6f481236e2e9ea34f3629d860e50dece}{finalizeStatement}}(sqlite3\_stmt *statement, \textcolor{keyword}{const} std::string \&errorMessage) \textcolor{keyword}{const};}
+\DoxyCodeLine{243     }
+\DoxyCodeLine{249     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_d_b_helper_a3f5e15072ac9a617c2a401aefac5e5a9}{openDB}}();}
+\DoxyCodeLine{250     }
+\DoxyCodeLine{256     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_d_b_helper_acd7fadbcddf0a0bf6e623d930758feba}{closeDB}}();}
+\DoxyCodeLine{257 \};}
+\DoxyCodeLine{258 }
+\DoxyCodeLine{259 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* DBHelper\_hpp */}\textcolor{preprocessor}{}}
 
 \end{DoxyCode}
