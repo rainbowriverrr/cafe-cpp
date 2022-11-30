@@ -13,6 +13,8 @@
 #include <ctime>
 #include <string>
 
+#include "Application.hpp"
+#include "Authenticator.hpp"
 #include "DBHelper.hpp"
 #include "MenuItem.hpp"
 #include "MenuWidgets.hpp"

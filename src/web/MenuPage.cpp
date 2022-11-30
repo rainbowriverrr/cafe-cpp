@@ -11,6 +11,28 @@ MenuPage::MenuPage() {
     addStyleClass("list");
 
     std::string sessionID = Wt::WApplication::instance()->sessionId();
+    bool isAdmin = ((Application *)Application::instance())->getAuth()->IsLoggedIn();
+    std::cout << "Is admin: " << isAdmin << std::endl;
+
+    // if the user is an admin, show the add item widget
+    if (isAdmin) {
+        AddItemWidget *addWidget = page->addWidget(std::make_unique<AddItemWidget>());
+        auto addItem = [this, addWidget] {
+            std::string name = addWidget->getName();
+            double price = addWidget->getPrice();
+            std::string description = addWidget->getDescription();
+
+            if (name == "" || price == 0 || description == "") {
+                return;
+            }
+
+            MenuItem newItem = MenuItem(name, price, description);
+            DBHelper::getInstance().insert(newItem);
+
+            ((Application *)Application::instance())->handleInternalPath("/menu");
+        };
+        addWidget->getAddItemPtr()->clicked().connect(addItem);
+    }
 
     for (std::vector<MenuItem>::iterator it = menuItems.begin(); it != menuItems.end(); it++) {
         std::string name = it->getName();
@@ -47,10 +69,27 @@ MenuPage::MenuPage() {
             }
         };
 
+        auto removeItem = [this, name] {
+            std::vector<SqlCondition> conditions = {SqlCondition("name", "=", name)};
+            std::vector<MenuItem> menuItems = DBHelper::getInstance().selectWhere(MenuItem(), conditions);
+            if (menuItems.size() == 0) {
+                return;
+            } else {
+                MenuItem menuItem = menuItems[0];
+                DBHelper::getInstance().destroy(menuItem);
+
+                ((Application *)Application::instance())->handleInternalPath("/menu");
+            }
+        };
+
         MenuItemWidget *itemWidget = page->addWidget(std::make_unique<MenuItemWidget>(name, price, description));
 
-        // gets pointer to cart button and connects it to the orderItem function
-        itemWidget->getCartPtr()->clicked().connect(orderItem);
+        // gets pointer to cart button and connects it to the orderItem lambda if user is not logged in, otherwise connects it to the removeItem lambda
+        if (isAdmin) {
+            itemWidget->getCartPtr()->clicked().connect(removeItem);
+        } else {
+            itemWidget->getCartPtr()->clicked().connect(orderItem);
+        }
     }
 }
 
