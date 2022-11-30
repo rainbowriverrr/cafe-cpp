@@ -37,6 +37,7 @@ CartPage::CartPage() {
         } else {
             OrderMaster currOrder = orderMasters[0];
             currOrder.setStatus("ordered");
+            currOrder.setOrderedBy(this->cartTotal->getName());
             DBHelper::getInstance().update(currOrder);
         }
         Wt::WApplication::instance()->setInternalPath("/orders", true);

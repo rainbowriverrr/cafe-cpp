@@ -95,6 +95,26 @@
             </div>
         </div></div>
     </message>
+    <message id="add-item">
+        <div class="list-item">
+            <div class="list-item-header">
+                <span class="colour-cyan">Add Menu Item</span>
+                ${add-item-button}
+            </div>
+            <div class="list-description">
+                <span>Item Price: ${price}</span>
+                <span>Item Name: ${name}</span>
+            </div>
+            <div class="list-description">
+                <span></span>
+                <span>Item Description:</span>
+            </div>
+            <div class="list-description">
+                <span></span>
+                <span>${description}</span>
+            </div>
+        </div>
+    </message>
     <message id="menu-item">
         <div class="list-item">
                 <div class="list-item-header">
@@ -134,6 +154,7 @@
             </div>
             <div class="list-description">
                 <span>${total}</span>
+                <span>Enter Name: ${name-edit}</span>
             </div>
         </div>
     </message>

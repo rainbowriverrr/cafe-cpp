@@ -6,6 +6,7 @@
 #ifndef CartWidget_hpp
 #define CartWidget_hpp
 
+#include <Wt/WLineEdit.h>
 #include <Wt/WPushButton.h>
 #include <Wt/WTemplate.h>
 #include <Wt/WText.h>
@@ -81,6 +82,7 @@ class CartTotal : public Wt::WTemplate {
     CartTotal(double);
     void addToTotal(double);
     void subFromTotal(double);
+    std::string getName();
     Wt::WPushButton *getCheckoutPtr();
     ~CartTotal();
 
@@ -88,6 +90,7 @@ class CartTotal : public Wt::WTemplate {
     void updateTotal();
     double dtotal;
     Wt::WText *total_;
+    Wt::WLineEdit *nameEdit_;
     Wt::WPushButton *checkoutButton_;
 };
 

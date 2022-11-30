@@ -83,11 +83,24 @@ CartTotal::CartTotal(double total) : Wt::WTemplate(Wt::WString::tr("cart-total")
     updateTotal();
 
     checkoutButton_ = bindNew<Wt::WPushButton>("order-button");
+    nameEdit_ = bindNew<Wt::WLineEdit>("name-edit");
+
     checkoutButton_->setText("Order Now!");
+    nameEdit_->setPlaceholderText("Enter your name");
 }
 
 Wt::WPushButton *CartTotal::getCheckoutPtr() {
     return checkoutButton_;
+}
+
+std::string CartTotal::getName() {
+    std::string nameStr = nameEdit_->text().toUTF8();
+
+    if (nameStr == "") {
+        nameStr = "Anonymous";
+    }
+
+    return nameStr;
 }
 
 void CartTotal::addToTotal(double total) {
