@@ -1,8 +1,3 @@
-/**
- * @brief represents a row of the MenuItemIngredient table in the SQL database
- * @author Sharon Nikritin
- */
-
 #ifndef menuItemIngredient_hpp
 #define menuItemIngredient_hpp
 
@@ -11,6 +6,10 @@
 
 #include "Model.hpp"
 
+/**
+ * @brief represents a row of the MenuItemIngredient table in the SQL database
+ * @author Sharon Nikritin
+ */
 class MenuItemIngredient : public Model
 {
 public:

@@ -1,8 +1,3 @@
-/**
- * @brief class that represents the inventory item
- * @author Sharon Nikritin
- */
-
 #ifndef InventoryItem_hpp
 #define InventoryItem_hpp
 
@@ -11,6 +6,10 @@
 
 #include "Model.hpp"
 
+/**
+ * @brief class that represents the inventory item
+ * @author Sharon Nikritin
+ */
 class InventoryItem: public Model
 {
 public:

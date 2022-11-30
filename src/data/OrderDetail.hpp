@@ -1,8 +1,3 @@
-/**
- * @brief represents a row of order detail in the SQL database
- * @author Sharon Nikritin
- */
-
 #ifndef OrderDetail_hpp
 #define OrderDetail_hpp
 
@@ -11,6 +6,10 @@
 
 #include "Model.hpp"
 
+/**
+ * @brief represents a row of order detail in the SQL database
+ * @author Sharon Nikritin
+ */
 class OrderDetail : public Model
 {
 public:
