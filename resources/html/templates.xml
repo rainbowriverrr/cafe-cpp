@@ -21,8 +21,8 @@
             </span>
             <span class="navbar-item" id="navbar-item-orders">
                 ${a-orders}
-            </span>
-           <span class="navbar-spacer"></span>
+            </span> 
+            <span class="navbar-spacer"></span>
             <span class="navbar-item" id="navbar-item-login">
                 ${a-login}
             </span>
@@ -203,6 +203,20 @@
                     </div>
                     ${legend}
                 </div>
+            </div>
+        </div>
+    </message>
+    <message id="inventory-page">
+    	<div>
+    	    <span>Welcome to Cafe C++ Inventory Management Tool!</span>    
+    	    <br />
+    	    <span>Inventory List:</span>
+    		<div class="inventory-item">
+                ${Item-ID}
+                ${Item-name}
+                ${Item-Quantity}
+                ${Update-field}
+                ${Update-btn}
             </div>
         </div>
     </message>

@@ -20,6 +20,7 @@
 #include "MenuPage.hpp"
 #include "OrderListPage.hpp"
 #include "SalesPage.hpp"
+#include "InventoryPage.hpp"
 #include "CartPage.hpp"
 #include "LoginPage.hpp"
 #include "CreateAdminPage.hpp"
