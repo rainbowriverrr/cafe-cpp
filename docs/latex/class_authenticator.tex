@@ -1,38 +1,139 @@
 \hypertarget{class_authenticator}{}\doxysection{Authenticator Class Reference}
 \label{class_authenticator}\index{Authenticator@{Authenticator}}
+
+
+can create a new admin object and put the admin into the database (username and a hashed password) can login as an exsiting admin that was already in database  
+
+
+
+
+{\ttfamily \#include $<$Authenticator.\+hpp$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_authenticator_a075aa91dee3e8b09d556fef68dc143ae}\label{class_authenticator_a075aa91dee3e8b09d556fef68dc143ae}} 
-bool {\bfseries Is\+Logged\+In} ()
-\item 
-\mbox{\Hypertarget{class_authenticator_a9e592c3fcfdbc724ac3e549c45b60fd4}\label{class_authenticator_a9e592c3fcfdbc724ac3e549c45b60fd4}} 
-bool {\bfseries Create\+New\+Admin} (std\+::string username, std\+::string password)
-\item 
+\mbox{\Hypertarget{class_authenticator_a50f5410cc0fb998ea4dbac9535e34e31}\label{class_authenticator_a50f5410cc0fb998ea4dbac9535e34e31}} 
+{\bfseries Authenticator} ()
+\begin{DoxyCompactList}\small\item\em constructor of authenticator does not take any parameters just creates an authenticator object that can later use authenticator methods \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_authenticator_a263931592546d936a91dcd891a1977a7}\label{class_authenticator_a263931592546d936a91dcd891a1977a7}} 
+{\bfseries $\sim$\+Authenticator} ()
+\begin{DoxyCompactList}\small\item\em destructor of authenticator \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_authenticator_a075aa91dee3e8b09d556fef68dc143ae}{Is\+Logged\+In}} ()
+\begin{DoxyCompactList}\small\item\em returns whether an authenticator has a an admin who has logged into the system as an admin \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_authenticator_a9e592c3fcfdbc724ac3e549c45b60fd4}{Create\+New\+Admin}} (std\+::string username, std\+::string password)
+\begin{DoxyCompactList}\small\item\em creates a new administrator and adds the new admin in the database if the password is larger than 9 characters \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_authenticator_a818a923b6f874ebe47c33f1d9699dcc4}\label{class_authenticator_a818a923b6f874ebe47c33f1d9699dcc4}} 
 void {\bfseries Log\+Out} ()
-\item 
-\mbox{\Hypertarget{class_authenticator_a861b83d416ec745b80b49a00ac853fdf}\label{class_authenticator_a861b83d416ec745b80b49a00ac853fdf}} 
-void {\bfseries Log\+In} (std\+::string username, std\+::string password)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em log out of current admin in the administrator \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_authenticator_a861b83d416ec745b80b49a00ac853fdf}{Log\+In}} (std\+::string username, std\+::string password)
+\begin{DoxyCompactList}\small\item\em stores a boolean that shows if username and password is correct and in database (using another method) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_authenticator_aca9d04749ed43ccfafb08cb58ae23bcd}\label{class_authenticator_aca9d04749ed43ccfafb08cb58ae23bcd}} 
-bool {\bfseries Check\+Credentials} (std\+::string username, std\+::string password)
-\end{DoxyCompactItemize}
+bool \mbox{\hyperlink{class_authenticator_aca9d04749ed43ccfafb08cb58ae23bcd}{Check\+Credentials}} (std\+::string username, std\+::string password)
+\begin{DoxyCompactList}\small\item\em private method that is used by other method that checks if the password and username match in the database \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{class_authenticator_a9e2dbf404593afbde5c6acb1ae14e46d}\label{class_authenticator_a9e2dbf404593afbde5c6acb1ae14e46d}} 
+int {\bfseries min\+Chars} = 9
+\begin{DoxyCompactList}\small\item\em minimum password length \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_authenticator_a0f442bd94566c1b05e6946dcf4ddda29}\label{class_authenticator_a0f442bd94566c1b05e6946dcf4ddda29}} 
 bool {\bfseries is\+Logged\+In}
-\item 
+\begin{DoxyCompactList}\small\item\em boolean that represents if a there is a current admin logged in \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_authenticator_a0bb091d09bde63f32766fad4546bebac}\label{class_authenticator_a0bb091d09bde63f32766fad4546bebac}} 
+const \mbox{\hyperlink{class_d_b_helper}{DBHelper}} \& {\bfseries db} = \mbox{\hyperlink{class_d_b_helper_ad205c287b83371638430e41eef9d3719}{DBHelper\+::get\+Instance}}()
+\begin{DoxyCompactList}\small\item\em Singleton instance of the db helper. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_authenticator_a168b4606f063b593d7e458c81b860210}\label{class_authenticator_a168b4606f063b593d7e458c81b860210}} 
 std\+::hash$<$ std\+::string $>$ {\bfseries hasher}
-\item 
+\begin{DoxyCompactList}\small\item\em hasher object to hash the users passwords \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_authenticator_a6b6ace74a47bf50607505f56d860e1c0}\label{class_authenticator_a6b6ace74a47bf50607505f56d860e1c0}} 
 std\+::vector$<$ \mbox{\hyperlink{class_admin}{Admin}} $>$ {\bfseries admin}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em vector of admins that will be returned by the check credentials method \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+can create a new admin object and put the admin into the database (username and a hashed password) can login as an exsiting admin that was already in database 
+
+\begin{DoxyAuthor}{Author}
+Sharon Nikritin 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2022-\/11-\/17 
+\end{DoxyDate}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_authenticator_aca9d04749ed43ccfafb08cb58ae23bcd}\label{class_authenticator_aca9d04749ed43ccfafb08cb58ae23bcd}} 
+\index{Authenticator@{Authenticator}!CheckCredentials@{CheckCredentials}}
+\index{CheckCredentials@{CheckCredentials}!Authenticator@{Authenticator}}
+\doxysubsubsection{\texorpdfstring{CheckCredentials()}{CheckCredentials()}}
+{\footnotesize\ttfamily bool Authenticator\+::\+Check\+Credentials (\begin{DoxyParamCaption}\item[{std\+::string}]{username,  }\item[{std\+::string}]{password }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+private method that is used by other method that checks if the password and username match in the database 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & -\/ string that represents the username of admin \\
+\hline
+{\em password} & -\/ string that represents the admins password \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool that will represent if the credentials match what is in the database 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_authenticator_a9e592c3fcfdbc724ac3e549c45b60fd4}\label{class_authenticator_a9e592c3fcfdbc724ac3e549c45b60fd4}} 
+\index{Authenticator@{Authenticator}!CreateNewAdmin@{CreateNewAdmin}}
+\index{CreateNewAdmin@{CreateNewAdmin}!Authenticator@{Authenticator}}
+\doxysubsubsection{\texorpdfstring{CreateNewAdmin()}{CreateNewAdmin()}}
+{\footnotesize\ttfamily bool Authenticator\+::\+Create\+New\+Admin (\begin{DoxyParamCaption}\item[{std\+::string}]{username,  }\item[{std\+::string}]{password }\end{DoxyParamCaption})}
+
+
+
+creates a new administrator and adds the new admin in the database if the password is larger than 9 characters 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & -\/ string that represents the admins wanted username \\
+\hline
+{\em password} & -\/ string that represents the admins password that they want to create \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool -\/ if the password of admin is larger than 9 then return true, else false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_authenticator_a075aa91dee3e8b09d556fef68dc143ae}\label{class_authenticator_a075aa91dee3e8b09d556fef68dc143ae}} 
+\index{Authenticator@{Authenticator}!IsLoggedIn@{IsLoggedIn}}
+\index{IsLoggedIn@{IsLoggedIn}!Authenticator@{Authenticator}}
+\doxysubsubsection{\texorpdfstring{IsLoggedIn()}{IsLoggedIn()}}
+{\footnotesize\ttfamily bool Authenticator\+::\+Is\+Logged\+In (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+returns whether an authenticator has a an admin who has logged into the system as an admin 
+
+\begin{DoxyReturn}{Returns}
+is\+Logged\+In -\/ bool that represents if a user is logged in 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_authenticator_a861b83d416ec745b80b49a00ac853fdf}\label{class_authenticator_a861b83d416ec745b80b49a00ac853fdf}} 
+\index{Authenticator@{Authenticator}!LogIn@{LogIn}}
+\index{LogIn@{LogIn}!Authenticator@{Authenticator}}
+\doxysubsubsection{\texorpdfstring{LogIn()}{LogIn()}}
+{\footnotesize\ttfamily void Authenticator\+::\+Log\+In (\begin{DoxyParamCaption}\item[{std\+::string}]{username,  }\item[{std\+::string}]{password }\end{DoxyParamCaption})}
+
+
+
+stores a boolean that shows if username and password is correct and in database (using another method) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & -\/ string that represents the admins username \\
+\hline
+{\em password} & -\/ string that represents the admins password \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

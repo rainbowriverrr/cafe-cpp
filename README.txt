@@ -68,6 +68,11 @@ To run the web server:
 
 Navigate to localhost:8080 using your web browser of choice.
 
+If TestDataGenerator has been run, an initial admin account will have been
+created with the following credentials:
+  username: admin
+  password: testing123
+
 Note:
   The site may not function correctly with a very outdated browser.
 

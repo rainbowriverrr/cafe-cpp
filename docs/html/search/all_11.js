@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['update_0',['update',['../class_d_b_helper.html#a5297f3d8509aa010ed2dc1ecccae8d25',1,'DBHelper']]],
-  ['updatemodel_1',['updateModel',['../class_sales_page.html#ae618ae4357f39df897bff04cd9e1d51e',1,'SalesPage']]],
-  ['updatequantity_2',['updateQuantity',['../class_cart_widget.html#a2fe6c4147fab62d5e1671b446a48f041',1,'CartWidget']]],
-  ['updatetotal_3',['updateTotal',['../class_cart_widget.html#a67a25e7592dbf9da3187b3ad0c0a8bbb',1,'CartWidget']]],
-  ['updatewhere_4',['updateWhere',['../class_d_b_helper.html#a1cca4cb6dc7e089d25ff07b76fe8c5e4',1,'DBHelper']]]
+  ['tablename_0',['tableName',['../class_admin.html#a402dddd859a3c9e8f4216546e2e5b1a5',1,'Admin::tableName()'],['../class_inventory_item.html#ad1fdf9707ad60caa01ebbde3e5443f0b',1,'InventoryItem::tableName()'],['../class_menu_item.html#a1e9569fb3673c3cd22d4b1a51a36094f',1,'MenuItem::tableName()'],['../class_menu_item_ingredient.html#abb690995e3d1290afa32910dba2ca137',1,'MenuItemIngredient::tableName()'],['../class_model.html#aa268944617c5b6bf53115243db0228b8',1,'Model::tableName()'],['../class_order_detail.html#a1b348e963275fe34b0083dd90cff7cda',1,'OrderDetail::tableName()'],['../class_order_master.html#a8e70f800b11ec64d768b9bfdc76d2c38',1,'OrderMaster::tableName()'],['../classv_order_detail.html#abd4c545e37e211b74c30a6c8623db53a',1,'vOrderDetail::tableName()'],['../classv_order_sales.html#a13a56c40a2fa4130e97549853f17d919',1,'vOrderSales::tableName()']]],
+  ['tomap_1',['toMap',['../class_admin.html#aaebccea2f4df607ed8bebe174c2504e0',1,'Admin::toMap()'],['../class_inventory_item.html#af3af00868364562f00379af9de5793f5',1,'InventoryItem::toMap()'],['../class_menu_item.html#a836e2263caaf6622f7626c9dc21fab7e',1,'MenuItem::toMap()'],['../class_menu_item_ingredient.html#a8593db1bdb15c22d8985c44b0da3f5be',1,'MenuItemIngredient::toMap()'],['../class_model.html#aba5aa6aee8243a03a6d0bc1335503e5f',1,'Model::toMap()'],['../class_order_detail.html#a6800e3a678b12f32a9759b3e0704065f',1,'OrderDetail::toMap()'],['../class_order_master.html#a601963a0b0342fd46723300820caab0e',1,'OrderMaster::toMap()'],['../classv_order_detail.html#af8ab8c313a06b6a050a58998af193364',1,'vOrderDetail::toMap()'],['../classv_order_sales.html#af36264ea69b7121944956c6314a8b640',1,'vOrderSales::toMap()']]],
+  ['total_2',['total',['../classv_order_detail.html#aa4d45d021636ca0de45e2fb288198e3a',1,'vOrderDetail']]],
+  ['totalquantity_3',['totalQuantity',['../classv_order_sales.html#a8d191946e8c6849d16ffbef144cefafd',1,'vOrderSales']]],
+  ['totalrevenue_4',['totalRevenue',['../classv_order_sales.html#ab7365bc440cb6d43528689aa67b5f57b',1,'vOrderSales']]]
 ];

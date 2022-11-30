@@ -3,7 +3,7 @@
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{comment}{//}}
-\DoxyCodeLine{2 \textcolor{comment}{// Created by Sharon Nikritin on 2022-\/11-\/17.}}
+\DoxyCodeLine{2 \textcolor{comment}{//  Authenticator.hpp}}
 \DoxyCodeLine{3 \textcolor{comment}{//}}
 \DoxyCodeLine{4 }
 \DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef Authenticator\_hpp}}
@@ -15,35 +15,38 @@
 \DoxyCodeLine{11 \textcolor{preprocessor}{\#include <unordered\_map>}}
 \DoxyCodeLine{12 \textcolor{preprocessor}{\#include <sstream>}}
 \DoxyCodeLine{13 }
-\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}Application.hpp"{}}}
-\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}DBHelper.hpp"{}}}
-\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}Admin.hpp"{}}}
-\DoxyCodeLine{17 }
-\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{class_authenticator}{Authenticator}} \{}
-\DoxyCodeLine{19 \textcolor{keyword}{public}:}
-\DoxyCodeLine{20 }
-\DoxyCodeLine{21     \mbox{\hyperlink{class_authenticator}{Authenticator}}();}
-\DoxyCodeLine{22 }
-\DoxyCodeLine{23     \mbox{\hyperlink{class_authenticator}{\string~Authenticator}}();}
-\DoxyCodeLine{24 }
-\DoxyCodeLine{25     \textcolor{keywordtype}{bool} IsLoggedIn ();}
-\DoxyCodeLine{26 }
-\DoxyCodeLine{27     \textcolor{keywordtype}{bool} CreateNewAdmin (std:: string username, std::string password);}
-\DoxyCodeLine{28 }
-\DoxyCodeLine{29     \textcolor{keywordtype}{void} LogOut();}
-\DoxyCodeLine{30 }
-\DoxyCodeLine{31     \textcolor{keywordtype}{void} LogIn(std::string username, std::string password);}
-\DoxyCodeLine{32 }
-\DoxyCodeLine{33 \textcolor{keyword}{private}:}
-\DoxyCodeLine{34     \textcolor{keywordtype}{bool} isLoggedIn;}
-\DoxyCodeLine{35     \textcolor{keywordtype}{bool} CheckCredentials (std::string username, std::string password);}
-\DoxyCodeLine{36     std::hash<std::string> hasher;}
-\DoxyCodeLine{37     std::vector<Admin> admin;}
-\DoxyCodeLine{38 }
-\DoxyCodeLine{39 }
-\DoxyCodeLine{40 \};}
-\DoxyCodeLine{41 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}DBHelper.hpp"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}Admin.hpp"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{class_authenticator}{Authenticator}} \{}
+\DoxyCodeLine{24 \textcolor{keyword}{public}:}
+\DoxyCodeLine{30     \mbox{\hyperlink{class_authenticator_a50f5410cc0fb998ea4dbac9535e34e31}{Authenticator}}();}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{35     \mbox{\hyperlink{class_authenticator_a263931592546d936a91dcd891a1977a7}{\string~Authenticator}}();}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{41     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_authenticator_a075aa91dee3e8b09d556fef68dc143ae}{IsLoggedIn}} ();}
 \DoxyCodeLine{42 }
-\DoxyCodeLine{43 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//Authenicator.hpp}}
+\DoxyCodeLine{49     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_authenticator_a9e592c3fcfdbc724ac3e549c45b60fd4}{CreateNewAdmin}} (std:: string username, std::string password);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{54     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_authenticator_a818a923b6f874ebe47c33f1d9699dcc4}{LogOut}}();}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{61     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_authenticator_a861b83d416ec745b80b49a00ac853fdf}{LogIn}}(std::string username, std::string password);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{keyword}{private}:}
+\DoxyCodeLine{67     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_authenticator_a9e2dbf404593afbde5c6acb1ae14e46d}{minChars}} = 9;}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{72     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_authenticator_a0f442bd94566c1b05e6946dcf4ddda29}{isLoggedIn}};}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{80     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_authenticator_aca9d04749ed43ccfafb08cb58ae23bcd}{CheckCredentials}} (std::string username, std::string password);}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{85     \textcolor{keyword}{const} \mbox{\hyperlink{class_d_b_helper}{DBHelper}} \&\mbox{\hyperlink{class_authenticator_a0bb091d09bde63f32766fad4546bebac}{db}} = \mbox{\hyperlink{class_d_b_helper_ad205c287b83371638430e41eef9d3719}{DBHelper::getInstance}}();}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{90     std::hash<std::string> \mbox{\hyperlink{class_authenticator_a168b4606f063b593d7e458c81b860210}{hasher}};}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{95     std::vector<Admin> \mbox{\hyperlink{class_authenticator_a6b6ace74a47bf50607505f56d860e1c0}{admin}};}
+\DoxyCodeLine{96 \};}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//Authenicator.hpp}}
 
 \end{DoxyCode}

@@ -11,7 +11,7 @@
 #include "Model.hpp"
 
 /**
- * Class representing a row of the vOrderDetail view.
+ * @brief Class representing a row of the vOrderDetail view.
  *
  * @author Julian Koksal
  * @date 2022-11-08

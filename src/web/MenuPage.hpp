@@ -21,6 +21,11 @@
 #include "OrderDetail.hpp"
 #include "OrderMaster.hpp"
 
+/**
+ * @brief Class representing the menu page.
+ *
+ * @author River Wang
+ */
 class MenuPage : public Wt::WContainerWidget {
    public:
     /**

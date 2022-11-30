@@ -29,7 +29,8 @@ class Authenticator;
 class NavbarWidget;
 
 /**
- * Class representing the Wt Application (the web server).
+ * @brief Class representing the Wt Application (the web server).
+ * 
  * @author River Wang
  * @date 2022-10-27
  */

@@ -79,7 +79,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Created by Sharon Nikritin on 2022-11-17.</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//  Authenticator.hpp</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef Authenticator_hpp</span></div>
@@ -91,37 +91,54 @@ $(function() {
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;sstream&gt;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;Application.hpp&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;DBHelper.hpp&quot;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;Admin.hpp&quot;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_authenticator.html">   18</a></span><span class="keyword">class </span><a class="code hl_class" href="class_authenticator.html">Authenticator</a> {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_class" href="class_authenticator.html">Authenticator</a>();</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_class" href="class_authenticator.html">~Authenticator</a>();</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">bool</span> IsLoggedIn ();</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">bool</span> CreateNewAdmin (std:: string username, std::string password);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">void</span> LogOut();</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">void</span> LogIn(std::string username, std::string password);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">bool</span> isLoggedIn;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">bool</span> CheckCredentials (std::string username, std::string password);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    std::hash&lt;std::string&gt; hasher;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    std::vector&lt;Admin&gt; admin;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>};</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;DBHelper.hpp&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;Admin.hpp&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_authenticator.html">   23</a></span><span class="keyword">class </span><a class="code hl_class" href="class_authenticator.html">Authenticator</a> {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <a class="code hl_function" href="class_authenticator.html#a50f5410cc0fb998ea4dbac9535e34e31">Authenticator</a>();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_function" href="class_authenticator.html#a263931592546d936a91dcd891a1977a7">~Authenticator</a>();</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_authenticator.html#a075aa91dee3e8b09d556fef68dc143ae">IsLoggedIn</a> ();</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#endif </span><span class="comment">//Authenicator.hpp</span></div>
-<div class="ttc" id="aclass_authenticator_html"><div class="ttname"><a href="class_authenticator.html">Authenticator</a></div><div class="ttdef"><b>Definition:</b> Authenticator.hpp:18</div></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_authenticator.html#a9e592c3fcfdbc724ac3e549c45b60fd4">CreateNewAdmin</a> (std:: string username, std::string password);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_authenticator.html#a818a923b6f874ebe47c33f1d9699dcc4">LogOut</a>();</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_authenticator.html#a861b83d416ec745b80b49a00ac853fdf">LogIn</a>(std::string username, std::string password);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="class_authenticator.html#a9e2dbf404593afbde5c6acb1ae14e46d">   67</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_authenticator.html#a9e2dbf404593afbde5c6acb1ae14e46d">minChars</a> = 9;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_authenticator.html#a0f442bd94566c1b05e6946dcf4ddda29">   72</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_authenticator.html#a0f442bd94566c1b05e6946dcf4ddda29">isLoggedIn</a>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_authenticator.html#aca9d04749ed43ccfafb08cb58ae23bcd">CheckCredentials</a> (std::string username, std::string password);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="class_authenticator.html#a0bb091d09bde63f32766fad4546bebac">   85</a></span>    <span class="keyword">const</span> <a class="code hl_class" href="class_d_b_helper.html">DBHelper</a> &amp;<a class="code hl_variable" href="class_authenticator.html#a0bb091d09bde63f32766fad4546bebac">db</a> = <a class="code hl_function" href="class_d_b_helper.html#ad205c287b83371638430e41eef9d3719">DBHelper::getInstance</a>();</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="class_authenticator.html#a168b4606f063b593d7e458c81b860210">   90</a></span>    std::hash&lt;std::string&gt; <a class="code hl_variable" href="class_authenticator.html#a168b4606f063b593d7e458c81b860210">hasher</a>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="class_authenticator.html#a6b6ace74a47bf50607505f56d860e1c0">   95</a></span>    std::vector&lt;Admin&gt; <a class="code hl_variable" href="class_authenticator.html#a6b6ace74a47bf50607505f56d860e1c0">admin</a>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>};</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="preprocessor">#endif </span><span class="comment">//Authenicator.hpp</span></div>
+<div class="ttc" id="aclass_authenticator_html"><div class="ttname"><a href="class_authenticator.html">Authenticator</a></div><div class="ttdoc">can create a new admin object and put the admin into the database (username and a hashed password) ca...</div><div class="ttdef"><b>Definition:</b> Authenticator.hpp:23</div></div>
+<div class="ttc" id="aclass_authenticator_html_a075aa91dee3e8b09d556fef68dc143ae"><div class="ttname"><a href="class_authenticator.html#a075aa91dee3e8b09d556fef68dc143ae">Authenticator::IsLoggedIn</a></div><div class="ttdeci">bool IsLoggedIn()</div><div class="ttdoc">returns whether an authenticator has a an admin who has logged into the system as an admin</div><div class="ttdef"><b>Definition:</b> Authenticator.cpp:12</div></div>
+<div class="ttc" id="aclass_authenticator_html_a0bb091d09bde63f32766fad4546bebac"><div class="ttname"><a href="class_authenticator.html#a0bb091d09bde63f32766fad4546bebac">Authenticator::db</a></div><div class="ttdeci">const DBHelper &amp; db</div><div class="ttdoc">Singleton instance of the db helper.</div><div class="ttdef"><b>Definition:</b> Authenticator.hpp:85</div></div>
+<div class="ttc" id="aclass_authenticator_html_a0f442bd94566c1b05e6946dcf4ddda29"><div class="ttname"><a href="class_authenticator.html#a0f442bd94566c1b05e6946dcf4ddda29">Authenticator::isLoggedIn</a></div><div class="ttdeci">bool isLoggedIn</div><div class="ttdoc">boolean that represents if a there is a current admin logged in</div><div class="ttdef"><b>Definition:</b> Authenticator.hpp:72</div></div>
+<div class="ttc" id="aclass_authenticator_html_a168b4606f063b593d7e458c81b860210"><div class="ttname"><a href="class_authenticator.html#a168b4606f063b593d7e458c81b860210">Authenticator::hasher</a></div><div class="ttdeci">std::hash&lt; std::string &gt; hasher</div><div class="ttdoc">hasher object to hash the users passwords</div><div class="ttdef"><b>Definition:</b> Authenticator.hpp:90</div></div>
+<div class="ttc" id="aclass_authenticator_html_a263931592546d936a91dcd891a1977a7"><div class="ttname"><a href="class_authenticator.html#a263931592546d936a91dcd891a1977a7">Authenticator::~Authenticator</a></div><div class="ttdeci">~Authenticator()</div><div class="ttdoc">destructor of authenticator</div><div class="ttdef"><b>Definition:</b> Authenticator.cpp:8</div></div>
+<div class="ttc" id="aclass_authenticator_html_a50f5410cc0fb998ea4dbac9535e34e31"><div class="ttname"><a href="class_authenticator.html#a50f5410cc0fb998ea4dbac9535e34e31">Authenticator::Authenticator</a></div><div class="ttdeci">Authenticator()</div><div class="ttdoc">constructor of authenticator does not take any parameters just creates an authenticator object that c...</div><div class="ttdef"><b>Definition:</b> Authenticator.cpp:4</div></div>
+<div class="ttc" id="aclass_authenticator_html_a6b6ace74a47bf50607505f56d860e1c0"><div class="ttname"><a href="class_authenticator.html#a6b6ace74a47bf50607505f56d860e1c0">Authenticator::admin</a></div><div class="ttdeci">std::vector&lt; Admin &gt; admin</div><div class="ttdoc">vector of admins that will be returned by the check credentials method</div><div class="ttdef"><b>Definition:</b> Authenticator.hpp:95</div></div>
+<div class="ttc" id="aclass_authenticator_html_a818a923b6f874ebe47c33f1d9699dcc4"><div class="ttname"><a href="class_authenticator.html#a818a923b6f874ebe47c33f1d9699dcc4">Authenticator::LogOut</a></div><div class="ttdeci">void LogOut()</div><div class="ttdoc">log out of current admin in the administrator</div><div class="ttdef"><b>Definition:</b> Authenticator.cpp:41</div></div>
+<div class="ttc" id="aclass_authenticator_html_a861b83d416ec745b80b49a00ac853fdf"><div class="ttname"><a href="class_authenticator.html#a861b83d416ec745b80b49a00ac853fdf">Authenticator::LogIn</a></div><div class="ttdeci">void LogIn(std::string username, std::string password)</div><div class="ttdoc">stores a boolean that shows if username and password is correct and in database (using another method...</div><div class="ttdef"><b>Definition:</b> Authenticator.cpp:37</div></div>
+<div class="ttc" id="aclass_authenticator_html_a9e2dbf404593afbde5c6acb1ae14e46d"><div class="ttname"><a href="class_authenticator.html#a9e2dbf404593afbde5c6acb1ae14e46d">Authenticator::minChars</a></div><div class="ttdeci">int minChars</div><div class="ttdoc">minimum password length</div><div class="ttdef"><b>Definition:</b> Authenticator.hpp:67</div></div>
+<div class="ttc" id="aclass_authenticator_html_a9e592c3fcfdbc724ac3e549c45b60fd4"><div class="ttname"><a href="class_authenticator.html#a9e592c3fcfdbc724ac3e549c45b60fd4">Authenticator::CreateNewAdmin</a></div><div class="ttdeci">bool CreateNewAdmin(std::string username, std::string password)</div><div class="ttdoc">creates a new administrator and adds the new admin in the database if the password is larger than 9 c...</div><div class="ttdef"><b>Definition:</b> Authenticator.cpp:16</div></div>
+<div class="ttc" id="aclass_authenticator_html_aca9d04749ed43ccfafb08cb58ae23bcd"><div class="ttname"><a href="class_authenticator.html#aca9d04749ed43ccfafb08cb58ae23bcd">Authenticator::CheckCredentials</a></div><div class="ttdeci">bool CheckCredentials(std::string username, std::string password)</div><div class="ttdoc">private method that is used by other method that checks if the password and username match in the dat...</div><div class="ttdef"><b>Definition:</b> Authenticator.cpp:45</div></div>
+<div class="ttc" id="aclass_d_b_helper_html"><div class="ttname"><a href="class_d_b_helper.html">DBHelper</a></div><div class="ttdoc">Data access layer class.</div><div class="ttdef"><b>Definition:</b> DBHelper.hpp:30</div></div>
+<div class="ttc" id="aclass_d_b_helper_html_ad205c287b83371638430e41eef9d3719"><div class="ttname"><a href="class_d_b_helper.html#ad205c287b83371638430e41eef9d3719">DBHelper::getInstance</a></div><div class="ttdeci">static const DBHelper &amp; getInstance()</div><div class="ttdoc">Gets the singleton instance of this class.</div><div class="ttdef"><b>Definition:</b> DBHelper.cpp:16</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

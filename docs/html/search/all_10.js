@@ -1,8 +1,27 @@
 var searchData=
 [
-  ['tablename_0',['tableName',['../class_admin.html#a402dddd859a3c9e8f4216546e2e5b1a5',1,'Admin::tableName()'],['../class_inventory_item.html#ad1fdf9707ad60caa01ebbde3e5443f0b',1,'InventoryItem::tableName()'],['../class_menu_item.html#a1e9569fb3673c3cd22d4b1a51a36094f',1,'MenuItem::tableName()'],['../class_menu_item_ingredient.html#abb690995e3d1290afa32910dba2ca137',1,'MenuItemIngredient::tableName()'],['../class_model.html#aa268944617c5b6bf53115243db0228b8',1,'Model::tableName()'],['../class_order_detail.html#a1b348e963275fe34b0083dd90cff7cda',1,'OrderDetail::tableName()'],['../class_order_master.html#a8e70f800b11ec64d768b9bfdc76d2c38',1,'OrderMaster::tableName()'],['../classv_order_detail.html#abd4c545e37e211b74c30a6c8623db53a',1,'vOrderDetail::tableName()'],['../classv_order_sales.html#a13a56c40a2fa4130e97549853f17d919',1,'vOrderSales::tableName()']]],
-  ['tomap_1',['toMap',['../class_admin.html#aaebccea2f4df607ed8bebe174c2504e0',1,'Admin::toMap()'],['../class_inventory_item.html#af3af00868364562f00379af9de5793f5',1,'InventoryItem::toMap()'],['../class_menu_item.html#a836e2263caaf6622f7626c9dc21fab7e',1,'MenuItem::toMap()'],['../class_menu_item_ingredient.html#a8593db1bdb15c22d8985c44b0da3f5be',1,'MenuItemIngredient::toMap()'],['../class_model.html#aba5aa6aee8243a03a6d0bc1335503e5f',1,'Model::toMap()'],['../class_order_detail.html#a6800e3a678b12f32a9759b3e0704065f',1,'OrderDetail::toMap()'],['../class_order_master.html#a601963a0b0342fd46723300820caab0e',1,'OrderMaster::toMap()'],['../classv_order_detail.html#af8ab8c313a06b6a050a58998af193364',1,'vOrderDetail::toMap()'],['../classv_order_sales.html#af36264ea69b7121944956c6314a8b640',1,'vOrderSales::toMap()']]],
-  ['total_2',['total',['../classv_order_detail.html#aa4d45d021636ca0de45e2fb288198e3a',1,'vOrderDetail']]],
-  ['totalquantity_3',['totalQuantity',['../classv_order_sales.html#a8d191946e8c6849d16ffbef144cefafd',1,'vOrderSales']]],
-  ['totalrevenue_4',['totalRevenue',['../classv_order_sales.html#ab7365bc440cb6d43528689aa67b5f57b',1,'vOrderSales']]]
+  ['salesdate_0',['salesDate',['../classv_order_sales.html#aac196a77e4d9e9e1145bd2e21cce6fa5',1,'vOrderSales']]],
+  ['salespage_1',['SalesPage',['../class_sales_page.html',1,'SalesPage'],['../class_sales_page.html#a2b23fb6316128b1530d48604d766558f',1,'SalesPage::SalesPage()']]],
+  ['selectedidrevqty_2',['selectedIDRevQty',['../class_sales_page.html#ad60b39e502803595269f9d93587f6139',1,'SalesPage']]],
+  ['selectwhere_3',['selectWhere',['../class_d_b_helper.html#ad7f11a99ef8f32accf91aa7e33ecc116',1,'DBHelper']]],
+  ['selectwherehelper_4',['selectWhereHelper',['../class_d_b_helper.html#a245e930cbc31bf52c71f8d8dbc441f56',1,'DBHelper']]],
+  ['sessionid_5',['sessionID',['../class_order_master.html#a0680583c0e8e72e4ac16c9c92ba82029',1,'OrderMaster']]],
+  ['setchartyaxisrange_6',['setChartYAxisRange',['../class_sales_page.html#a306c97b19378744213be3dc25d4a6769',1,'SalesPage']]],
+  ['setdescription_7',['setDescription',['../class_menu_item.html#aa2e0e4a561897f3b72cd0155ef1ff1b9',1,'MenuItem']]],
+  ['setinventoryitemid_8',['setInventoryItemID',['../class_menu_item_ingredient.html#a0b4844c63da353012d6c292e8b3836e6',1,'MenuItemIngredient']]],
+  ['setitemid_9',['setItemID',['../class_inventory_item.html#a56e76cdffc66fb342d290e953ca3c7f4',1,'InventoryItem']]],
+  ['setitemname_10',['setItemName',['../class_inventory_item.html#a38df0921c54f426a8d193060d34a9f59',1,'InventoryItem']]],
+  ['setmenuitemname_11',['setMenuItemName',['../class_menu_item_ingredient.html#a79d2501369968b21ce34c69eda0c26a1',1,'MenuItemIngredient::setMenuItemName()'],['../class_order_detail.html#a3dbb57b63566f52a4c17c12214e01569',1,'OrderDetail::setMenuItemName()']]],
+  ['setmessage_12',['setMessage',['../class_custom_loading_indicator.html#ae0680c6d9ec282a6cca7408ea8af162d',1,'CustomLoadingIndicator']]],
+  ['setorderdate_13',['setOrderDate',['../class_order_master.html#ad40e1a59af6e33398cadc68e91235369',1,'OrderMaster']]],
+  ['setorderedby_14',['setOrderedBy',['../class_order_master.html#ae1d60f757c75790c7cceefdb75af5749',1,'OrderMaster']]],
+  ['setordernumber_15',['setOrderNumber',['../class_order_detail.html#a15daa04d4a41ca6fca0b5adbae153e14',1,'OrderDetail']]],
+  ['setprice_16',['setPrice',['../class_menu_item.html#ae2ebb751e94c46e5bbe32dc2f8003919',1,'MenuItem']]],
+  ['setquantity_17',['setQuantity',['../class_inventory_item.html#ab792a4452e8e27a0b1a3615f71751cae',1,'InventoryItem::setQuantity()'],['../class_menu_item_ingredient.html#a3953d5652d775e5d11deeae752f7ec8d',1,'MenuItemIngredient::setQuantity()'],['../class_order_detail.html#a841ff9c6a9a17b0fde6ddd13b2f1da12',1,'OrderDetail::setQuantity()']]],
+  ['setsessionid_18',['setSessionID',['../class_order_master.html#ae4f443ce4946ceb491fc4e80c53a341d',1,'OrderMaster']]],
+  ['setstatus_19',['setStatus',['../class_order_master.html#aa2b46a23ed982f7a60a04bc82d314999',1,'OrderMaster']]],
+  ['setyaxistitle_20',['setYAxisTitle',['../class_sales_page.html#a27d0420759e25872bcb58f10e975521f',1,'SalesPage']]],
+  ['showseries_21',['showSeries',['../class_sales_page.html#ab9c56b6f57730c813ef0b63c09ca70f4',1,'SalesPage']]],
+  ['sqlcondition_22',['SqlCondition',['../class_sql_condition.html',1,'SqlCondition'],['../class_sql_condition.html#af4bc58103b1eaff66691b59a9db9fe58',1,'SqlCondition::SqlCondition(std::string field, std::string op, bool value)'],['../class_sql_condition.html#aea4778bc1c965be57acd43ee4a405c11',1,'SqlCondition::SqlCondition(std::string field, std::string op, int value)'],['../class_sql_condition.html#a6b5ff18622d15ae3d99732a09ddb1fba',1,'SqlCondition::SqlCondition(std::string field, std::string op, double value)'],['../class_sql_condition.html#a02b3033b493fb34a4d369ee65ba96c85',1,'SqlCondition::SqlCondition(std::string field, std::string op, std::string value)'],['../class_sql_condition.html#a22fc7d51901c1ae220d3d1ccf6fe1d84',1,'SqlCondition::SqlCondition(std::string field, std::string op, const char *value)'],['../class_sql_condition.html#a60862adc9bdcca2206ebf724c5994908',1,'SqlCondition::SqlCondition(std::string field, std::string op, std::vector&lt; std::string &gt; value)']]],
+  ['status_23',['status',['../class_order_master.html#a7a718f5844deb8e1f0c79ae86f09c7c1',1,'OrderMaster']]]
 ];

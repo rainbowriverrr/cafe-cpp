@@ -51,11 +51,11 @@
 
 .list-description {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     justify-content: space-between;
 }
 
-.list-description > span:first-child {
+.list-description > span:nth-child(n+2) {
     margin-left: 1em;
 }
 
@@ -71,6 +71,39 @@ body {
     color: white;
     font-family: var(--font-family-regular);
     min-width: 54em;
+}
+
+input[type="text"], input[type="password"], textarea {
+    font-size: large;
+    background-color: var(--colour-dark-gray);
+    color: white;
+    font-family: var(--font-family-regular);
+    flex: 1;
+    padding: 0.2em;
+}
+
+button {
+    all: unset;
+    background-color: var(--colour-dark-gray);
+    border-radius: 0.5em;
+    padding: 0em 0.5em;
+    font-family: var(--font-family-regular);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--colour-dark-blue);
+}
+
+.input-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.input-wrapper:nth-child(n+2) {
+    margin-left: 2em;
 }
 
 .loading-indicator {
@@ -209,19 +242,10 @@ div.list-item-removed > .list-item {
 }
 
 .list-item > .list-item-header button {
-    all: unset;
-    background-color: var(--colour-dark-gray);
     border-top: 0.1em solid;
     border-left: 0.1em solid;
     border-right: 0.1em solid;
     border-radius: 0.5em 0.5em 0em 0em;
-    padding: 0em 0.5em;
-    font-family: "SF Mono Regular", "Courier New", monospace;
-    cursor: pointer;
-}
-
-.list-item > .list-item-header button:hover {
-    background-color: var(--colour-dark-blue);
 }
 
 .list-item > .list-item-header button img {
@@ -434,30 +458,15 @@ div.list-item-removed > .list-item {
     align-items: center;
 }
 
+.login-form > * {
+    padding-top: 1em;
+}
+
 .login-form input {
-    font-size: large;
     width: 20em;
-    background-color: var(--colour-dark-gray);
-    color: white;
-    font-family: var(--font-family-regular);
-    padding: 0.2em;
 }
 
 .login-form button {
-    all: unset;
-    background-color: var(--colour-dark-gray);
-    border-radius: 0.5em;
-    padding: 0em 0.5em;
-    font-family: "SF Mono Regular", "Courier New", monospace;
-    cursor: pointer;
-    padding: 0em 1em;
-}
-
-.login-form button:hover {
-    background-color: var(--colour-dark-blue);
-}
-
-.login-form > * {
-    padding-top: 1em;
+    padding: 0em 2em;
 }
 

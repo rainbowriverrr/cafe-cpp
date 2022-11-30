@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['maxseriesquantity_0',['maxSeriesQuantity',['../class_sales_page.html#a1a8138b6454186b85f1c3bd1e87572e1',1,'SalesPage']]],
-  ['maxseriesrevenue_1',['maxSeriesRevenue',['../class_sales_page.html#adafab38a67abb4f1f93fad17e6eb2918',1,'SalesPage']]],
-  ['menu_2',['menu',['../class_sales_page.html#a0ec1dc37d36f4345e6bf1b627be72c8b',1,'SalesPage']]],
-  ['menuitemname_3',['menuItemName',['../classv_order_detail.html#a26ecc3ad60a0b741394d798ae398339d',1,'vOrderDetail::menuItemName()'],['../classv_order_sales.html#a504661c3047e9864157d0a218f4817a0',1,'vOrderSales::menuItemName()']]],
-  ['menuitemstochart_4',['menuItemsToChart',['../class_sales_page.html#a6bfc9b1ea9a526e3afb7261aec732187',1,'SalesPage']]]
+  ['instance_0',['instance',['../class_d_b_helper.html#a2f64ccbcbca80c1f6d1390a80c3d9c8d',1,'DBHelper']]],
+  ['inventoryitemid_1',['inventoryItemID',['../class_menu_item_ingredient.html#a132cbbd4e8a32d3643fd1ef865ee9b91',1,'MenuItemIngredient']]],
+  ['isallmenuitems_2',['isAllMenuItems',['../classv_order_sales.html#ad3b786915de5707688a12f8a507f65c9',1,'vOrderSales']]],
+  ['isloggedin_3',['isLoggedIn',['../class_authenticator.html#a0f442bd94566c1b05e6946dcf4ddda29',1,'Authenticator']]],
+  ['itemid_4',['itemID',['../class_inventory_item.html#a1956baa29d875ffd67563df0f7d307bf',1,'InventoryItem']]],
+  ['itemname_5',['itemName',['../class_inventory_item.html#a9fd1d5c42241a5826457b85ae96b6d3a',1,'InventoryItem']]]
 ];

@@ -101,30 +101,36 @@
                 <span class="colour-cyan">Add Menu Item</span>
                 ${add-item-button}
             </div>
-            <div class="list-description">
-                <span>Item Price: ${price}</span>
-                <span>Item Name: ${name}</span>
+            <div class="flex-row">
+                <div class="input-wrapper">
+                    <span>Item Price:</span>
+                    ${price}
+                </div>
+                <div class="input-wrapper">
+                    <span>Item Name:</span>
+                    ${name}
+                </div>
             </div>
-            <div class="list-description">
-                <span></span>
-                <span>Item Description:</span>
-            </div>
-            <div class="list-description">
-                <span></span>
-                <span>${description}</span>
+            <div class="flex-row">
+                <div class="input-wrapper">
+                    <span>Item Description:</span>
+                    <div class="flex-row">
+                        ${description}
+                    </div>
+                </div>
             </div>
         </div>
     </message>
     <message id="menu-item">
         <div class="list-item">
-                <div class="list-item-header">
-                    <span class="colour-cyan">${name}</span>
-                    ${cart-button}
-                </div>
-                <div class="list-description">
-                    <span>${price}</span>
-                    <span>${description}</span>
-                </div>
+            <div class="list-item-header">
+                <span class="colour-cyan">${name}</span>
+                ${cart-button}
+            </div>
+            <div class="list-description">
+                <span>${description}</span>
+                <span>${price}</span>
+            </div>
         </div>
     </message>
     <message id="cart-item">
@@ -134,15 +140,15 @@
                 ${remove-button}
             </div>
             <div class="list-description">
+                <span>Amount: ${quantity}</span>
                 <span>${price}</span>
-                <span>Amnt: ${quantity}</span>
             </div>
             <div class="list-description">
-                <span>${total}</span>
                 <div class="cart-button-row">
-                    ${add-button}
                     ${subtract-button}
+                    ${add-button}
                 </div>
+                <span>${total}</span>
             </div>
         </div>
     </message>
@@ -153,8 +159,11 @@
                 ${order-button}
             </div>
             <div class="list-description">
-                <span>${total}</span>
-                <span>Enter Name: ${name-edit}</span>
+                <div class="input-wrapper">
+                    <span>Enter Name:</span>
+                    ${name-edit}
+                </div>
+                ${total}
             </div>
         </div>
     </message>

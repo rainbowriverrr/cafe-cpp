@@ -1,5 +1,14 @@
 \hypertarget{class_menu_item_ingredient}{}\doxysection{Menu\+Item\+Ingredient Class Reference}
 \label{class_menu_item_ingredient}\index{MenuItemIngredient@{MenuItemIngredient}}
+
+
+represents a row of the \mbox{\hyperlink{class_menu_item_ingredient}{Menu\+Item\+Ingredient}} table in the SQL database  
+
+
+
+
+{\ttfamily \#include $<$Menu\+Item\+Ingredient.\+hpp$>$}
+
 Inheritance diagram for Menu\+Item\+Ingredient\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,32 +18,28 @@ Inheritance diagram for Menu\+Item\+Ingredient\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_menu_item_ingredient_a5d0f85e57999634406630cd2d4980c1f}\label{class_menu_item_ingredient_a5d0f85e57999634406630cd2d4980c1f}} 
-{\bfseries Menu\+Item\+Ingredient} (std\+::string menu\+Item\+Name=\char`\"{}\char`\"{}, int inventory\+Item\+ID=0, int quantity=0)
-\item 
-\mbox{\Hypertarget{class_menu_item_ingredient_a526217b935ac39069c966bc4e113083c}\label{class_menu_item_ingredient_a526217b935ac39069c966bc4e113083c}} 
-std\+::string {\bfseries get\+Menu\+Item\+Name} ()
-\item 
-\mbox{\Hypertarget{class_menu_item_ingredient_a00e2080b1554b817a0dfebae645066ba}\label{class_menu_item_ingredient_a00e2080b1554b817a0dfebae645066ba}} 
-int {\bfseries get\+Inventory\+Item\+ID} ()
-\item 
-\mbox{\Hypertarget{class_menu_item_ingredient_a77721888dfbce7758289e96ce50bb7ea}\label{class_menu_item_ingredient_a77721888dfbce7758289e96ce50bb7ea}} 
-int {\bfseries get\+Quantity} ()
-\item 
-\mbox{\Hypertarget{class_menu_item_ingredient_a79d2501369968b21ce34c69eda0c26a1}\label{class_menu_item_ingredient_a79d2501369968b21ce34c69eda0c26a1}} 
-void {\bfseries set\+Menu\+Item\+Name} (std\+::string menu\+Item\+Name)
-\item 
-\mbox{\Hypertarget{class_menu_item_ingredient_a0b4844c63da353012d6c292e8b3836e6}\label{class_menu_item_ingredient_a0b4844c63da353012d6c292e8b3836e6}} 
-void {\bfseries set\+Inventory\+Item\+ID} (int inventory\+Item\+ID)
-\item 
-\mbox{\Hypertarget{class_menu_item_ingredient_a3953d5652d775e5d11deeae752f7ec8d}\label{class_menu_item_ingredient_a3953d5652d775e5d11deeae752f7ec8d}} 
-void {\bfseries set\+Quantity} (int quantity)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_menu_item_ingredient_a5d0f85e57999634406630cd2d4980c1f}{Menu\+Item\+Ingredient}} (std\+::string \mbox{\hyperlink{class_menu_item_ingredient_a94116125b2f6c07630ae6ed8ae493597}{menu\+Item\+Name}}=\char`\"{}\char`\"{}, int \mbox{\hyperlink{class_menu_item_ingredient_a132cbbd4e8a32d3643fd1ef865ee9b91}{inventory\+Item\+ID}}=0, int \mbox{\hyperlink{class_menu_item_ingredient_aecd2df6d2297ed5621bff7463cb9aa1b}{quantity}}=0)
+\begin{DoxyCompactList}\small\item\em constructor to create a \mbox{\hyperlink{class_menu_item_ingredient}{Menu\+Item\+Ingredient}} object \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_menu_item_ingredient_a758bee0945f9044ea71e8f488f45be66}\label{class_menu_item_ingredient_a758bee0945f9044ea71e8f488f45be66}} 
+{\bfseries $\sim$\+Menu\+Item\+Ingredient} ()
+\begin{DoxyCompactList}\small\item\em destructor of the menu item ingredient \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_menu_item_ingredient_a526217b935ac39069c966bc4e113083c}{get\+Menu\+Item\+Name}} ()
+\begin{DoxyCompactList}\small\item\em accessor methods for the item name \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_menu_item_ingredient_a00e2080b1554b817a0dfebae645066ba}{get\+Inventory\+Item\+ID}} ()
+\begin{DoxyCompactList}\small\item\em accessor methods for the item\+ID \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_menu_item_ingredient_a77721888dfbce7758289e96ce50bb7ea}{get\+Quantity}} ()
+\begin{DoxyCompactList}\small\item\em accessor methods for the quantity \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_item_ingredient_a79d2501369968b21ce34c69eda0c26a1}{set\+Menu\+Item\+Name}} (std\+::string \mbox{\hyperlink{class_menu_item_ingredient_a94116125b2f6c07630ae6ed8ae493597}{menu\+Item\+Name}})
+\begin{DoxyCompactList}\small\item\em modifier method for the name \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_item_ingredient_a0b4844c63da353012d6c292e8b3836e6}{set\+Inventory\+Item\+ID}} (int \mbox{\hyperlink{class_menu_item_ingredient_a132cbbd4e8a32d3643fd1ef865ee9b91}{inventory\+Item\+ID}})
+\begin{DoxyCompactList}\small\item\em modifier method for the item ID \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_item_ingredient_a3953d5652d775e5d11deeae752f7ec8d}{set\+Quantity}} (int \mbox{\hyperlink{class_menu_item_ingredient_aecd2df6d2297ed5621bff7463cb9aa1b}{quantity}})
+\begin{DoxyCompactList}\small\item\em modifier method for the quantity \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 virtual std\+::string \mbox{\hyperlink{class_menu_item_ingredient_abb690995e3d1290afa32910dba2ca137}{table\+Name}} () const override
-\begin{DoxyCompactList}\small\item\em Returns the name of the SQL table that this model represents. \end{DoxyCompactList}\item 
+\item 
 virtual std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_menu_item_ingredient_a7128a6977ef139d3b82cce2d59d4a01c}{columns}} () const override
 \begin{DoxyCompactList}\small\item\em Returns the column names of the SQL table, in the correct order. \end{DoxyCompactList}\item 
 virtual std\+::set$<$ std\+::string $>$ \mbox{\hyperlink{class_menu_item_ingredient_af678ce176cc316bce0dd2ddda3a016fd}{keys}} () const override
@@ -50,13 +55,43 @@ virtual \mbox{\hyperlink{class_model}{Model}} $\ast$ \mbox{\hyperlink{class_menu
 \item 
 \mbox{\Hypertarget{class_menu_item_ingredient_a94116125b2f6c07630ae6ed8ae493597}\label{class_menu_item_ingredient_a94116125b2f6c07630ae6ed8ae493597}} 
 std\+::string {\bfseries menu\+Item\+Name}
-\item 
+\begin{DoxyCompactList}\small\item\em the menu item\textquotesingle{}s name \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_menu_item_ingredient_a132cbbd4e8a32d3643fd1ef865ee9b91}\label{class_menu_item_ingredient_a132cbbd4e8a32d3643fd1ef865ee9b91}} 
 int {\bfseries inventory\+Item\+ID}
-\item 
+\begin{DoxyCompactList}\small\item\em the menu item\textquotesingle{}s name \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_menu_item_ingredient_aecd2df6d2297ed5621bff7463cb9aa1b}\label{class_menu_item_ingredient_aecd2df6d2297ed5621bff7463cb9aa1b}} 
 int {\bfseries quantity}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em the menu item\textquotesingle{}s quantity in stock \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+represents a row of the \mbox{\hyperlink{class_menu_item_ingredient}{Menu\+Item\+Ingredient}} table in the SQL database 
+
+\begin{DoxyAuthor}{Author}
+Sharon Nikritin 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_menu_item_ingredient_a5d0f85e57999634406630cd2d4980c1f}\label{class_menu_item_ingredient_a5d0f85e57999634406630cd2d4980c1f}} 
+\index{MenuItemIngredient@{MenuItemIngredient}!MenuItemIngredient@{MenuItemIngredient}}
+\index{MenuItemIngredient@{MenuItemIngredient}!MenuItemIngredient@{MenuItemIngredient}}
+\doxysubsubsection{\texorpdfstring{MenuItemIngredient()}{MenuItemIngredient()}}
+{\footnotesize\ttfamily Menu\+Item\+Ingredient\+::\+Menu\+Item\+Ingredient (\begin{DoxyParamCaption}\item[{std\+::string}]{menu\+Item\+Name = {\ttfamily \char`\"{}\char`\"{}},  }\item[{int}]{inventory\+Item\+ID = {\ttfamily 0},  }\item[{int}]{quantity = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+constructor to create a \mbox{\hyperlink{class_menu_item_ingredient}{Menu\+Item\+Ingredient}} object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em menu\+Item\+Name} & -\/ string the menu items name \\
+\hline
+{\em inventory\+Item\+ID} & -\/ int unique ID of the menu item \\
+\hline
+{\em quantity} & -\/ int quantity of the menu item \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
@@ -109,6 +144,45 @@ pointer to the new model
 
 Implements \mbox{\hyperlink{class_model_a374adf0b008ef2c644e022a2c849f897}{Model}}.
 
+\mbox{\Hypertarget{class_menu_item_ingredient_a00e2080b1554b817a0dfebae645066ba}\label{class_menu_item_ingredient_a00e2080b1554b817a0dfebae645066ba}} 
+\index{MenuItemIngredient@{MenuItemIngredient}!getInventoryItemID@{getInventoryItemID}}
+\index{getInventoryItemID@{getInventoryItemID}!MenuItemIngredient@{MenuItemIngredient}}
+\doxysubsubsection{\texorpdfstring{getInventoryItemID()}{getInventoryItemID()}}
+{\footnotesize\ttfamily int Menu\+Item\+Ingredient\+::get\+Inventory\+Item\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+accessor methods for the item\+ID 
+
+\begin{DoxyReturn}{Returns}
+item\+ID -\/ int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_menu_item_ingredient_a526217b935ac39069c966bc4e113083c}\label{class_menu_item_ingredient_a526217b935ac39069c966bc4e113083c}} 
+\index{MenuItemIngredient@{MenuItemIngredient}!getMenuItemName@{getMenuItemName}}
+\index{getMenuItemName@{getMenuItemName}!MenuItemIngredient@{MenuItemIngredient}}
+\doxysubsubsection{\texorpdfstring{getMenuItemName()}{getMenuItemName()}}
+{\footnotesize\ttfamily std\+::string Menu\+Item\+Ingredient\+::get\+Menu\+Item\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+accessor methods for the item name 
+
+\begin{DoxyReturn}{Returns}
+item\+Name -\/ string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_menu_item_ingredient_a77721888dfbce7758289e96ce50bb7ea}\label{class_menu_item_ingredient_a77721888dfbce7758289e96ce50bb7ea}} 
+\index{MenuItemIngredient@{MenuItemIngredient}!getQuantity@{getQuantity}}
+\index{getQuantity@{getQuantity}!MenuItemIngredient@{MenuItemIngredient}}
+\doxysubsubsection{\texorpdfstring{getQuantity()}{getQuantity()}}
+{\footnotesize\ttfamily int Menu\+Item\+Ingredient\+::get\+Quantity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+accessor methods for the quantity 
+
+\begin{DoxyReturn}{Returns}
+quantity -\/ int 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_menu_item_ingredient_aabcd945cca5b09449efc180f423b8abe}\label{class_menu_item_ingredient_aabcd945cca5b09449efc180f423b8abe}} 
 \index{MenuItemIngredient@{MenuItemIngredient}!isAutoGeneratedKey@{isAutoGeneratedKey}}
 \index{isAutoGeneratedKey@{isAutoGeneratedKey}!MenuItemIngredient@{MenuItemIngredient}}
@@ -155,23 +229,58 @@ vector of primary keys
 
 Implements \mbox{\hyperlink{class_model_a6df15ae2b38971e9a0b562cf046991e2}{Model}}.
 
+\mbox{\Hypertarget{class_menu_item_ingredient_a0b4844c63da353012d6c292e8b3836e6}\label{class_menu_item_ingredient_a0b4844c63da353012d6c292e8b3836e6}} 
+\index{MenuItemIngredient@{MenuItemIngredient}!setInventoryItemID@{setInventoryItemID}}
+\index{setInventoryItemID@{setInventoryItemID}!MenuItemIngredient@{MenuItemIngredient}}
+\doxysubsubsection{\texorpdfstring{setInventoryItemID()}{setInventoryItemID()}}
+{\footnotesize\ttfamily void Menu\+Item\+Ingredient\+::set\+Inventory\+Item\+ID (\begin{DoxyParamCaption}\item[{int}]{inventory\+Item\+ID }\end{DoxyParamCaption})}
+
+
+
+modifier method for the item ID 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inventory\+Item\+ID} & -\/ int representing the item ID \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_menu_item_ingredient_a79d2501369968b21ce34c69eda0c26a1}\label{class_menu_item_ingredient_a79d2501369968b21ce34c69eda0c26a1}} 
+\index{MenuItemIngredient@{MenuItemIngredient}!setMenuItemName@{setMenuItemName}}
+\index{setMenuItemName@{setMenuItemName}!MenuItemIngredient@{MenuItemIngredient}}
+\doxysubsubsection{\texorpdfstring{setMenuItemName()}{setMenuItemName()}}
+{\footnotesize\ttfamily void Menu\+Item\+Ingredient\+::set\+Menu\+Item\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{menu\+Item\+Name }\end{DoxyParamCaption})}
+
+
+
+modifier method for the name 
+
+
+\begin{DoxyParams}{Parameters}
+{\em menu\+Item\+Name} & -\/ string representing menu item name \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_menu_item_ingredient_a3953d5652d775e5d11deeae752f7ec8d}\label{class_menu_item_ingredient_a3953d5652d775e5d11deeae752f7ec8d}} 
+\index{MenuItemIngredient@{MenuItemIngredient}!setQuantity@{setQuantity}}
+\index{setQuantity@{setQuantity}!MenuItemIngredient@{MenuItemIngredient}}
+\doxysubsubsection{\texorpdfstring{setQuantity()}{setQuantity()}}
+{\footnotesize\ttfamily void Menu\+Item\+Ingredient\+::set\+Quantity (\begin{DoxyParamCaption}\item[{int}]{quantity }\end{DoxyParamCaption})}
+
+
+
+modifier method for the quantity 
+
+
+\begin{DoxyParams}{Parameters}
+{\em quantity} & -\/ int representing the quantity of the menu items \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_menu_item_ingredient_abb690995e3d1290afa32910dba2ca137}\label{class_menu_item_ingredient_abb690995e3d1290afa32910dba2ca137}} 
 \index{MenuItemIngredient@{MenuItemIngredient}!tableName@{tableName}}
 \index{tableName@{tableName}!MenuItemIngredient@{MenuItemIngredient}}
 \doxysubsubsection{\texorpdfstring{tableName()}{tableName()}}
 {\footnotesize\ttfamily std\+::string Menu\+Item\+Ingredient\+::table\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
 
-
-
-Returns the name of the SQL table that this model represents. 
-
-\begin{DoxyNote}{Note}
-Used by \mbox{\hyperlink{class_d_b_helper}{DBHelper}}. When implemented in a subclass, it should always return the same value for that class.
-\end{DoxyNote}
-\begin{DoxyReturn}{Returns}
-the table name 
-\end{DoxyReturn}
-
+override virtual method of the model to set up the new table name, columns, keys, to\+Map, etc 
 
 Implements \mbox{\hyperlink{class_model_aa268944617c5b6bf53115243db0228b8}{Model}}.
 
