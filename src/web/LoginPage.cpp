@@ -7,6 +7,7 @@
 
 LoginPage::LoginPage() {
     
+    Authenticator authenticatorObject = Authenticator();
     
     auto instructionsText
       = addNew<Wt::WText>("<p>Please enter your username and password.</p>");
@@ -14,21 +15,29 @@ LoginPage::LoginPage() {
     auto pageElements = addNew<Wt::WTemplate>(Wt::WString::tr("login-template"));
     
     auto usernameField = pageElements->bindWidget("user-name", std::make_unique<Wt::WLineEdit>());
-    usernameField->setPlaceholderText("Enter username");
+    usernameField->setPlaceholderText("Username");
     
     auto passwordField = pageElements->bindWidget("user-password", std::make_unique<Wt::WLineEdit>());
-    passwordField->setPlaceholderText("Enter password");
+    passwordField->setPlaceholderText("Password");
     
     auto logInButton = pageElements->bindWidget("login-button", std::make_unique<Wt::WPushButton>("Log In"));
     
     auto outputWhenButtonClicked = pageElements->bindWidget("out", std::make_unique<Wt::WText>());
 
+    // this is the method that occurs when the "Log-In" button is pressed
     logInButton->clicked().connect([=] {
-        outputWhenButtonClicked->setText("Your username is " + usernameField->text() + ". Your password is " + passwordField->text());
+        // attempt to log-in with the credentials the user provided
+        authenticatorObject.LogIn(usernameField->text(), passwordField)
         
-        // authenticate method goes here
-        // the username is usernameField->text()
-        // the password is passwordField->text()
+        // check if we are logged in
+        if (authenticatorObject.isLoggedIn()) {
+            outputWhenButtonClicked->setText("You have successfully logged in.");
+        }
+        else {
+            outputWhenButtonClicked->setText("Error: Incorrect username and/or password");
+        }
+        
+  
     });
 }
 

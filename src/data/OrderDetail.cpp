@@ -1,7 +1,3 @@
-//
-// Created by Sharon Nikritin on 2022-11-07.
-//
-
 #include "OrderDetail.hpp"
 
 OrderDetail ::OrderDetail(int orderDetailID, int orderNumber, std::string menuItemName, int quantity) {

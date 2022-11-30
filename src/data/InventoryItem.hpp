@@ -1,6 +1,7 @@
-//
-// Created by Sharon Nikritin on 2022-11-07.
-//
+/**
+ * @brief class that represents the inventory item
+ * @author Sharon Nikritin
+ */
 
 #ifndef InventoryItem_hpp
 #define InventoryItem_hpp
@@ -13,27 +14,71 @@
 class InventoryItem: public Model
 {
 public:
+    /**
+     * @brief constructor - create an inventory item with its ID, name and quantity
+     * @param itemID - set to defualt of 0 represents the items unique ID
+     * @param itemName - the name of the item
+     * @param quantity - set to default of 0 represents the quantity of the item in stock
+     */
     InventoryItem(int itemID = 0, std::string itemName = "", int quantity = 0);
 
+    /**
+     * @brief destructor of inventory item
+     */
     ~InventoryItem();
 
+    /**
+     * @brief accessor method that returns the item ID
+     * @return itemID - int
+     */
     int getItemID();
 
+    /**
+     * @brief accessor method that returns the item name
+     * @return name - string item name
+     */
     std::string getItemName();
 
+    /**
+     * @brief accessor method that returns the quantity
+     * @return
+     */
     int getQuantity();
 
+    /**
+     * @brief modifier method that modifies the itemID
+     * @param itemID - int
+     */
     void setItemID(int itemID);
 
+    /**
+     * @brief modifier method that modifies the itemName
+     * @param itemName - string
+     */
     void setItemName (std::string itemName);
 
+
+    /**
+     * @brief modifier method that modifies the item quantity
+     * @param quantity - int
+     */
     void setQuantity (int quantity);
 
 private:
+    /**
+     * @brief ID of the item
+     */
     int itemID;
+    /**
+     * @brief name of the item
+     */
     std::string itemName;
+    /**
+     * @brief the quantity of the item
+     */
     int quantity;
 
+    /** override virtual method of the model to set up the new table name, columns, keys, toMap, etc*/
     virtual std::string tableName() const override;
     virtual std::vector<std::string> columns() const override;
     virtual std::set<std::string> keys() const override;

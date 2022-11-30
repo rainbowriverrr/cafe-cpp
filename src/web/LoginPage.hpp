@@ -6,21 +6,18 @@
 #ifndef LoginPage_h
 #define LoginPage_h
 
+#include "Authenticator.hpp"
 #include <Wt/WContainerWidget.h>
 #include <Wt/WTemplate.h>
 #include <Wt/WPanel.h>
-#include <Wt/WTable.h>
 #include <Wt/WPushButton.h>
 #include <Wt/WLink.h>
 #include <Wt/WText.h>
 #include <Wt/WString.h>
-#include <Wt/WFlags.h>
-#include <Wt/WAnimation.h>
 #include <Wt/WLineEdit.h>
 #include <Wt/WPushButton.h>
 #include <Wt/WTemplate.h>
 #include <Wt/WText.h>
-#include <Wt/WRadioButton.h>
 
 #include <ctime>
 #include <string>

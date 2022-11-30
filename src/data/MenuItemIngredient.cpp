@@ -1,6 +1,3 @@
-//
-// Created by Sharon Nikritin on 2022-11-07.
-//
 
 #include "MenuItemIngredient.hpp"
 

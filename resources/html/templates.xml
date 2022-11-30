@@ -27,10 +27,10 @@
     
     <message id = "login-template">
         <div class="row">
-          <div class="col-auto pe-0">
+          <div class="col-lg pe-0">
             ${user-name}
           </div>
-          <div type="password" class="col-auto pe-0">
+          <div class="col-auto pe-0">
             ${user-password}
           </div>
           <div class="col-auto">
@@ -40,6 +40,7 @@
             ${out class='form-control-plaintext'}
           </div>
         </div>
+
     </message>
     
     <message id="menu-item">
