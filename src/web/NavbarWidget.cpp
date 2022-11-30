@@ -38,6 +38,10 @@ std::unique_ptr<Wt::WTemplate> NavbarWidget::createCustomerNavbarWidget()
     Wt::WLink linkLogin = Wt::WLink(Wt::LinkType::InternalPath, "/login");
     Wt::WAnchor *loginAnchor = navTemplate->bindWidget("a-login", std::make_unique<Wt::WAnchor>(linkLogin, "login"));
     // DEBUG. TO BE REPLACED BY LOGIN PAGE.
+    
+    Wt::WLink linkInventory = Wt::WLink(Wt::LinkType::InternalPath, "/inventory");
+    navTemplate->bindWidget("a-inventory", std::make_unique<Wt::WAnchor>(linkInventory, "inventory"));
+    
     loginAnchor->clicked().connect([] {
         ((Application *)Application::instance())->getAuth()->LogIn("admin", "cafec++12345");
     });
@@ -53,9 +57,6 @@ std::unique_ptr<Wt::WTemplate> NavbarWidget::createAdminNavbarWidget()
     
     Wt::WLink linkSales = Wt::WLink(Wt::LinkType::InternalPath, "/sales");
     navTemplate->bindWidget("a-sales", std::make_unique<Wt::WAnchor>(linkSales, "sales"));
-    
-    Wt::WLink linkInventory = Wt::WLink(Wt::LinkType::InternalPath, "/inventory");
-    navTemplate->bindWidget("a-inventory", std::make_unique<Wt::WAnchor>(linkInventory, "inventory"));
     
     Wt::WLink linkCreateUser = Wt::WLink(Wt::LinkType::InternalPath, "/create-user");
     navTemplate->bindWidget("a-create-user", std::make_unique<Wt::WAnchor>(linkCreateUser, "create user"));
