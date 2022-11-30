@@ -179,7 +179,7 @@
     <message id = "login-template">
         <div class="list-item">
             <div class="list-item-header list-item-header-center">
-                <span>Login</span>
+                <span>Employee Login</span>
             </div>
             <div class="login-form">
                 <span>Please enter your username and password.</span>

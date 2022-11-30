@@ -1,5 +1,5 @@
 //
-// Created by Sharon Nikritin on 2022-11-17.
+//  Authenticator.hpp
 //
 
 #ifndef Authenticator_hpp
@@ -65,12 +65,12 @@ private:
      * @brief minimum password length
      */
     int minChars = 9;
-    
+
     /**
      * @brief boolean that represents if a there is a current admin logged in
      */
     bool isLoggedIn;
-    
+
     /**
      * @brief private method that is used by other method that checks if the password and username match in the database
      * @param username - string that represents the username of admin
@@ -78,23 +78,21 @@ private:
      * @return bool that will represent if the credentials match what is in the database
      */
     bool CheckCredentials (std::string username, std::string password);
-    
+
     /**
      * @brief Singleton instance of the db helper
      */
     const DBHelper &db = DBHelper::getInstance();
-    
+
     /**
      * @brief hasher object to hash the users passwords
      */
     std::hash<std::string> hasher;
-    
+
     /**
      * @brief vector of admins that will be returned by the check credentials method
      */
     std::vector<Admin> admin;
-
-
 };
 
 

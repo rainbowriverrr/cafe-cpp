@@ -22,6 +22,7 @@
 #include "SalesPage.hpp"
 #include "CartPage.hpp"
 #include "LoginPage.hpp"
+#include "CreateAdminPage.hpp"
 
 class Authenticator;
 

@@ -437,6 +437,10 @@ div.list-item-removed > .list-item {
 .login-form input {
     font-size: large;
     width: 20em;
+    background-color: var(--colour-dark-gray);
+    color: white;
+    font-family: var(--font-family-regular);
+    padding: 0.2em;
 }
 
 .login-form button {
@@ -446,9 +450,14 @@ div.list-item-removed > .list-item {
     padding: 0em 0.5em;
     font-family: "SF Mono Regular", "Courier New", monospace;
     cursor: pointer;
+    padding: 0em 1em;
 }
 
-.login-form > div {
+.login-form button:hover {
+    background-color: var(--colour-dark-blue);
+}
+
+.login-form > * {
     padding-top: 1em;
 }
 

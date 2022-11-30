@@ -49,17 +49,17 @@ void Application::handleInternalPath(const std::string &internalPath)
     {
         body = root()->addNew<SalesPage>();
     }
-    else if (internalPath == "/inventory")
-    {
-        body = root()->addNew<Wt::WText>("Temp Inventory Page");
-    }
+//    else if (internalPath == "/inventory")
+//    {
+//        body = root()->addNew<Wt::WText>("Temp Inventory Page");
+//    }
     else if (internalPath == "/cart")
     {
         body = root()->addNew<CartPage>();
     }
     else if (internalPath == "/create-user")
     {
-        body = root()->addNew<Wt::WText>("Temp Create User Page");
+        body = root()->addNew<CreateAdminPage>();
     }
     else if (internalPath == "/login")
     {

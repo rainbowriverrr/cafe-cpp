@@ -1,8 +1,5 @@
-//
-// Created by Sharon Nikritin on 2022-11-17.
-//
-
 #include "Authenticator.hpp"
+
 
 Authenticator::Authenticator() {
     this->isLoggedIn = false;
@@ -18,6 +15,10 @@ bool Authenticator::IsLoggedIn() {
 
 bool Authenticator::CreateNewAdmin(std::string username, std::string password) {
     if (password.length()<minChars){
+        return false;
+    }
+    if (!db.selectWhere(Admin(), {SqlCondition("username", "=", username)}).empty())
+    {
         return false;
     }
     

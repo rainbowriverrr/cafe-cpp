@@ -1,10 +1,9 @@
-/*
-    Author : Alex Mihas
-    Date   : 2022/11/20
-*/
+//
+//  CreateAdminPage.hpp
+//
 
-#ifndef LoginPage_h
-#define LoginPage_h
+#ifndef CreateAdminPage_hpp
+#define CreateAdminPage_hpp
 
 #include <Wt/WTemplate.h>
 #include <Wt/WPushButton.h>
@@ -21,23 +20,23 @@
 #include "Page.hpp"
 
 /**
- * @brief Class representing the login page.
+ * @brief Class representing the create admin page.
  *
  * @author Alex Mihas
  */
-class LoginPage : public Page {
+class CreateAdminPage : public Page {
    public:
     /**
-     * @brief Construct a new Login Page object
+     * @brief Construct a new Admin Page object
      *
      */
-    LoginPage();
+    CreateAdminPage();
 
     /**
-     * @brief Destroy the Login Page object
+     * @brief Destroy the Admin Page object
      *
      */
-    ~LoginPage();
+    ~CreateAdminPage();
 };
 
-#endif /* LoginPage_h */
+#endif /* CreateAdminPage_hpp */
