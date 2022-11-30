@@ -41,16 +41,16 @@ MenuPage::MenuPage() {
 
         auto orderItem = [this, name, sessionID] {
             time_t now = time(0);
-            tm *localTime = std::localtime(&now);
-            std::string formattedDate = std::to_string(localTime->tm_year + 1900) + "-" + std::to_string(localTime->tm_mon + 1) + "-" + std::to_string(localTime->tm_mday) + " " + std::to_string(localTime->tm_hour) + ":" + std::to_string(localTime->tm_min) + ":" + std::to_string(localTime->tm_sec);
-            std::cout << formattedDate << std::endl;
+            std::tm *ltm = localtime(&now);
+            char time_str[20];
+            std::strftime(time_str, 20, "%Y-%m-%d %H:%M:%S", ltm);
 
             std::vector<SqlCondition> conditions = {SqlCondition("sessionID", "=", sessionID)};
             conditions.push_back(SqlCondition("status", "=", "cart"));
             std::vector<OrderMaster> orderMasters = DBHelper::getInstance().selectWhere(OrderMaster(), conditions);
             long orderNum = 0;
             if (orderMasters.size() == 0) {
-                OrderMaster orderMast = OrderMaster(0, "test", formattedDate, "cart", sessionID);
+                OrderMaster orderMast = OrderMaster(0, "test", time_str, "cart", sessionID);
                 orderNum = DBHelper::getInstance().insert(orderMast);
             } else {
                 orderNum = orderMasters[0].getOrderNumber();
