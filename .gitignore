@@ -1,10 +1,10 @@
 .DS_Store
 .vscode
+.idea
 target
-/web
 Main
+TestDataGenerator
 TestDBHelper
+TestAuthenticator
 sql/data.db
 run.sh
-resources/data.db
-TestDBHelper.out

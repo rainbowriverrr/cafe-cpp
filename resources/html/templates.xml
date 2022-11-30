@@ -1,6 +1,40 @@
 <?xml version = "1.0" encoding = "UTF-8" ?>
 <messages>
-    <message id="navbar">
+    <message id="loading-indicator">
+        <div class="loading-overlay"></div>
+        <div class="loading-indicator">
+            <div>
+                <img src="resources/images/loading.gif"
+                    alt="loading animation" />
+            </div>
+            <span>Loading...</span>
+        </div>
+    </message>
+    <message id="navbar-customer">
+        <nav class="navbar">
+            <span class="navbar-item navbar-item-active" 
+                id="navbar-item-home">
+                ${a-home}
+            </span>
+            <span class="navbar-item" id="navbar-item-menu">
+                ${a-menu}
+            </span>
+            <span class="navbar-item" id="navbar-item-orders">
+                ${a-orders}
+            </span> 
+            <span class="navbar-item" id="navbar-item-inventory">
+                ${a-inventory}
+            </span>
+            <span class="navbar-spacer"></span>
+            <span class="navbar-item" id="navbar-item-login">
+                ${a-login}
+            </span>
+            <span class="navbar-item" id="navbar-item-cart">
+                ${a-cart}
+            </span>
+        </nav> 
+    </message>
+    <message id="navbar-admin">
         <nav class="navbar">
             <span class="navbar-item navbar-item-active" 
                 id="navbar-item-home">
@@ -12,17 +46,57 @@
             <span class="navbar-item" id="navbar-item-orders">
                 ${a-orders}
             </span>
+            <span class="navbar-item" id="navbar-item-sales">
+                ${a-sales}
+            </span> 
             <span class="navbar-item" id="navbar-item-inventory">
                 ${a-inventory}
             </span>
             <span class="navbar-spacer"></span>
-            <span class="navbar-item" id="navbar-item-login">
-                ${a-login}
+            <span class="navbar-item" id="navbar-item-create-user">
+                ${a-create-user}
             </span>
-            <span class="navbar-item" id="navbar-item-cart">
-                ${a-cart}
+            <span class="navbar-item" id="navbar-item-logout">
+                ${a-logout}
             </span>
         </nav>
+    </message>
+    <message id="home-page">
+        <div class="list list-wide"><div>
+            <div class="list-item">
+                <div class="home-item">
+                    <img src="resources/images/logo.png" />
+                    <div>
+                        <div class="list-item-header">
+                            <span>Welcome to Cafe C++!</span>
+                        </div>
+                        <p>Since 1985, we have been serving premium coffee and breakfast.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="list-item">
+                <div class="home-item home-item-right">
+                    <div>
+                        <div class="list-item-header">
+                            <span>Coffee with Class</span>
+                        </div>
+                        <p>Our top quality, whole bean coffee is ground and brewed fresh to order. Choose from our three famous blends of 100% arabica, fair trade coffee.</p>
+                    </div>
+                    <img src="resources/images/coffee.png" />
+                </div>
+            </div>
+            <div class="list-item">
+                <div class="home-item">
+                    <img src="resources/images/latte.png" />
+                    <div>
+                        <div class="list-item-header">
+                            <span>High-level Service</span>
+                        </div>
+                        <p>Order online and skip the line!</p>
+                    </div>
+                </div>
+            </div>
+        </div></div>
     </message>
     <message id="menu-item">
         <div class="list-item">
@@ -30,16 +104,46 @@
                     <span class="colour-cyan">${name}</span>
                     ${cart-button}
                 </div>
-                <div class="menu-description">
-                    <span>${description}</span>
+                <div class="list-description">
                     <span>${price}</span>
+                    <span>${description}</span>
                 </div>
+        </div>
+    </message>
+    <message id="cart-item">
+        <div class="list-item">
+            <div class="list-item-header">
+                <span class="colour-cyan">${name}</span>
+                ${remove-button}
+            </div>
+            <div class="list-description">
+                <span>${price}</span>
+                <span>Amnt: ${quantity}</span>
+            </div>
+            <div class="list-description">
+                <span>${total}</span>
+                <div class="cart-button-row">
+                    ${add-button}
+                    ${subtract-button}
+                </div>
+            </div>
+        </div>
+    </message>
+    <message id="cart-total">
+        <div class="list-item">
+            <div class="list-item-header">
+                <span class="colour-cyan">Total</span>
+                ${order-button}
+            </div>
+            <div class="list-description">
+                <span>${total}</span>
+            </div>
         </div>
     </message>
     <message id="order-list-item">
         <div class="list-item">
             <div class="list-item-header">
-                <span class="colour-cyan">Order #${txt-ordernum}</span>
+                <span class="colour-cyan">${txt-ordernum}</span>
                 ${btn-complete}
             </div>
             <div class="flex-row">
@@ -56,22 +160,38 @@
             <span>There are no orders.</span>
         </div>
     </message>
-    <message id="login-page">
-        <br></br>
-        <span>Please enter your username and password below.</span>
-        
-        <br></br> <br></br>
-        
-        <form>
-            <label for = "username" > Username:</label>
-            <br></br>
-            <input type = "text" name = "username" > </input>
-            <br></br><br></br>
-            <label for = "userPassword" > Password:</label>
-            <br></br>
-            <input type = "password" name = "userPassword" > </input>
-            <br></br><br></br>
-            <input type="submit" value="Log In"> </input>
-        </form>
+    <message id="sales-chart">
+        <div>
+            <div class="list-item">
+                <div class="list-item-header">
+                    <span>Total Sales Over Time</span>
+                    ${btn-group-rev-qty}
+                    ${btn-menu-item}
+                </div>
+                <div class="flex-row">
+                    ${y-axis-title}
+                    <div class="flex-column">
+                        ${chart}
+                        <span class="x-axis-title">Date</span>
+                    </div>
+                    ${legend}
+                </div>
+            </div>
+        </div>
+    </message>
+    <message id="inventory-page">
+    	</div>
+    	<span>Welcome to Cafe C++ Inventory Management Tool!</span>	
+        <br>
+        <span>Inventory List:</span>
+        	<div class="inventory-item">
+        		${Item-ID}
+        		${Item-name}
+        		${Item-Quantity}
+        		${Update-field}
+        		${Update-btn}
+        	</div>
+        </div>
+    </message>
     </message>
 </messages>

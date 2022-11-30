@@ -95,6 +95,8 @@ public:
     
     /**
      * @brief Destructor.
+     *
+     * Does nothing.
      */
     ~SqlCondition();
 private:

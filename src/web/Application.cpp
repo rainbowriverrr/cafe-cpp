@@ -8,21 +8,25 @@
 Application::Application(const Wt::WEnvironment &env) : Wt::WApplication(env)
 {
     setTitle("Cafe C++");
+    
+    setLoadingIndicator(std::make_unique<CustomLoadingIndicator>());
 
     useStyleSheet("resources/css/style.css");
     messageResourceBundle().use("resources/html/templates");
 
     internalPathChanged().connect(this, &Application::handleInternalPath);
     
+    auth = new Authenticator();
+    
     navbar = root()->addNew<NavbarWidget>();
-    body = root()->addNew<Wt::WText>("Home Page");
+    body = root()->addNew<HomePage>();
     
     setInternalPath("/home", false);
 }
 
 Application::~Application()
 {
-    
+    delete auth;
 }
 
 void Application::handleInternalPath(const std::string &internalPath)
@@ -31,7 +35,7 @@ void Application::handleInternalPath(const std::string &internalPath)
     
     if (internalPath == "/home")
     {
-        body = root()->addNew<Wt::WText>("Temp Home Page");
+        body = root()->addNew<HomePage>();
     }
     else if (internalPath == "/menu")
     {
@@ -41,13 +45,21 @@ void Application::handleInternalPath(const std::string &internalPath)
     {
         body = root()->addNew<OrderListPage>();
     }
+    else if (internalPath == "/sales")
+    {
+        body = root()->addNew<SalesPage>();
+    }
     else if (internalPath == "/inventory")
     {
-        body = root()->addNew<Wt::WText>("Temp Inventory Page");
+        body = root()->addNew<InventoryPage>();
     }
     else if (internalPath == "/cart")
     {
-        body = root()->addNew<Wt::WText>("Temp Cart Page");
+        body = root()->addNew<CartPage>();
+    }
+    else if (internalPath == "/create-user")
+    {
+        body = root()->addNew<Wt::WText>("Temp Create User Page");
     }
     else if (internalPath == "/login")
     {
@@ -63,4 +75,20 @@ void Application::handleInternalPath(const std::string &internalPath)
     doJavaScript("const items = document.getElementsByClassName('navbar-item');"
                  "for (const item of items) item.classList.remove('navbar-item-active');"
                  "document.getElementById('navbar-item-" + internalPath.substr(1) + "').classList.add('navbar-item-active');");
+}
+
+Authenticator * Application::getAuth()
+{
+    return auth;
+}
+
+void Application::reset()
+{
+    root()->removeWidget(navbar);
+    root()->removeWidget(body);
+    
+    navbar = root()->addNew<NavbarWidget>();
+    body = root()->addNew<HomePage>();
+    
+    setInternalPath("/home", false);
 }

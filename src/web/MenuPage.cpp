@@ -10,24 +10,41 @@ MenuPage::MenuPage() {
     Wt::WContainerWidget *page = addWidget(std::make_unique<Wt::WContainerWidget>());
     addStyleClass("list");
 
+    std::string sessionID = Wt::WApplication::instance()->sessionId();
+
     for (std::vector<MenuItem>::iterator it = menuItems.begin(); it != menuItems.end(); it++) {
         std::string name = it->getName();
         double price = it->getPrice();
         std::string description = it->getDescription();
 
-        auto orderItem = [this, name] {
+        auto orderItem = [this, name, sessionID] {
             time_t now = time(0);
             tm *localTime = std::localtime(&now);
             std::string formattedDate = std::to_string(localTime->tm_year + 1900) + "-" + std::to_string(localTime->tm_mon + 1) + "-" + std::to_string(localTime->tm_mday) + " " + std::to_string(localTime->tm_hour) + ":" + std::to_string(localTime->tm_min) + ":" + std::to_string(localTime->tm_sec);
             std::cout << formattedDate << std::endl;
 
-            OrderMaster orderMast = OrderMaster(0, "test", formattedDate, 0);
-            int orderNum = (int)DBHelper::getInstance().insert(orderMast);
+            std::vector<SqlCondition> conditions = {SqlCondition("sessionID", "=", sessionID)};
+            conditions.push_back(SqlCondition("status", "=", "cart"));
+            std::vector<OrderMaster> orderMasters = DBHelper::getInstance().selectWhere(OrderMaster(), conditions);
+            long orderNum = 0;
+            if (orderMasters.size() == 0) {
+                OrderMaster orderMast = OrderMaster(0, "test", formattedDate, "cart", sessionID);
+                orderNum = DBHelper::getInstance().insert(orderMast);
+            } else {
+                orderNum = orderMasters[0].getOrderNumber();
+            }
 
-            OrderDetail orderDeets = OrderDetail(0, orderNum, name, 1);
-            DBHelper::getInstance().insert(orderDeets);
-
-            Wt::WApplication::instance()->setInternalPath("/orders", true);
+            conditions = {SqlCondition("orderNumber", "=", (int)orderNum)};
+            conditions.push_back(SqlCondition("menuItemName", "=", name));
+            std::vector<OrderDetail> orderDetails = DBHelper::getInstance().selectWhere(OrderDetail(), conditions);
+            if (orderDetails.size() == 0) {
+                OrderDetail orderDetail = OrderDetail(0, (int)orderNum, name, 1);
+                DBHelper::getInstance().insert(orderDetail);
+            } else {
+                OrderDetail orderDetail = orderDetails[0];
+                orderDetail.setQuantity(orderDetail.getQuantity() + 1);
+                DBHelper::getInstance().update(orderDetail);
+            }
         };
 
         MenuItemWidget *itemWidget = page->addWidget(std::make_unique<MenuItemWidget>(name, price, description));
